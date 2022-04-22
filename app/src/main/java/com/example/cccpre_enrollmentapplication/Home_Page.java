@@ -1,0 +1,28 @@
+package com.example.cccpre_enrollmentapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.content.Intent;
+import android.view.View;
+
+public class Home_Page extends AppCompatActivity {
+public Button pre_enrollment;
+public Button evaluate;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.homepage);
+        pre_enrollment=(Button) findViewById(R.id.preenroll);
+
+        pre_enrollment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Home_Page.this,Pre_Enrollment.class);
+                startActivity(intent);
+            }
+        });
+    }
+}

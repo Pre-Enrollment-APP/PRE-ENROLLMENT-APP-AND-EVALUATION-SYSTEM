@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg2"
+
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/menu" />
+
+    <!-- Add TextView to display the date -->
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/arial"
+        android:text="Welcome"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/ccctext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_below="@+id/welcome"
+        android:text="Cainta Catholic College"
+        android:textSize="25dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/yellow"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/studenttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:fontFamily="@font/arial"
+        android:text="Students!"
+        android:layout_below="@+id/ccctext"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/studenttext"
+        android:layout_marginLeft="125dp"
+        android:src="@drawable/clockwhite" />
+
+    <DigitalClock
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/studenttext"
+        android:layout_marginLeft="160dp"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="25dp" />
+
+
+
+    <!-- Add CalendarView to display the Calendar -->
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/edittext_round"
+        android:alpha="0.5">
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp">
+
+        </CalendarView>
+
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="540dp">
+
+        <Button
+            android:id="@+id/preenroll"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_round"
+            android:ems="7"
+            android:fontFamily="@font/arial"
+            android:gravity="center"
+            android:text="Pre-Enroll"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/evaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/preenroll"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_round"
+            android:ems="7"
+            android:fontFamily="@font/arial"
+            android:gravity="center"
+            android:text="Evaluate"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
