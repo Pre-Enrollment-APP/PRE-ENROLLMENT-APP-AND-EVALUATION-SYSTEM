@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".evaluationform"
+            android:exported="false" />
+        <activity
             android:name=".Pre_Enrollment"
             android:exported="false" />
         <activity
