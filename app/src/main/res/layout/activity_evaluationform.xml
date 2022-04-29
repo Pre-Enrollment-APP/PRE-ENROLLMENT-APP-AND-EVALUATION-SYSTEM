@@ -24,18 +24,42 @@
         android:src="@drawable/editing" />
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/boxy" />
+
+    <TextView
+        android:layout_width="450dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="190dp"
+        android:gravity="center"
+        android:hint="AOSDQIWODJSOAIDJQWIE"
+        android:text="@+id/name"
+        />
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="42dp"
+        android:src="@drawable/user" />
+
+    <ImageView
         android:layout_width="320dp"
         android:layout_height="460dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="340dp"
         android:src="@drawable/rec74" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="410dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="395dp"
         android:background="@drawable/edittext_round"
         android:drawablePadding="30dp"
         android:ems="10" />
@@ -44,8 +68,83 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="410dp"
-        android:src="@drawable/ccc"/>
+        android:layout_marginTop="395dp"
+        android:src="@drawable/ccc" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/gender"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="650dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/date"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="780dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="More"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
 
 
 
