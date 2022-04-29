@@ -37,8 +37,7 @@
         android:layout_marginTop="190dp"
         android:gravity="center"
         android:hint="AOSDQIWODJSOAIDJQWIE"
-        android:text="@+id/name"
-        />
+        android:text="@+id/name" />
 
 
     <ImageView

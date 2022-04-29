@@ -9,8 +9,40 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menu" />
 
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ccc" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="135dp"
+        android:text="Cainta Catholic College"
+
+    <TextView
+        android:layout_width="2500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        android:text="A. BONIFACIO AVENUE, POBLACION CAINTA RIZAL"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="165dp"
+        android:text="CURRICULUM A.Y 2018-2022"
 
 
 
