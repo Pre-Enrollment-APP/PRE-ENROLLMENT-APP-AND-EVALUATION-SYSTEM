@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evaluationform">
+    android:background="@drawable/bg3"
+    android:paddingLeft="30dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello World!"
-        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/darkmenu" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:text="Hello World!2" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:text="Hello World!3" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/editing" />
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="460dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:src="@drawable/rec74" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="410dp"
+        android:background="@drawable/edittext_round"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="410dp"
+        android:src="@drawable/ccc"/>
+
+
+
 
 </RelativeLayout>
