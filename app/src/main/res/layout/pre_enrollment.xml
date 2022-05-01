@@ -190,7 +190,7 @@
         <EditText
             android:id="@+id/SC1"
             android:layout_width="100dp"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/SC"
             android:layout_marginTop="5dp" />
 
@@ -253,14 +253,14 @@
         <EditText
             android:id="@+id/SC10"
             android:layout_width="100dp"
-            android:layout_height="0dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/SC9"
             android:layout_marginTop="5dp" />
 
         <Spinner
             android:id="@+id/Des1"
             android:layout_width="150dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/Des"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
