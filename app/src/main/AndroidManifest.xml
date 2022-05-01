@@ -19,6 +19,9 @@
             android:name=".About"
             android:exported="false" />
         <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".evaluationform"
             android:exported="false" />
         <activity

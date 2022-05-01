@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    tools:context=".profile">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/darkmenu" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="365dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/editing" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="420dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="375dp"
+        android:src="@drawable/rec74" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/boxy"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:layout_width="450dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="180dp"
+        android:gravity="center_horizontal"
+        android:text="Dela Cruz, Juan Ponce"
+        android:textSize="25dp"
+        android:textColor="@color/white"/>
+    <View
+        android:layout_width="270dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        android:layout_marginTop="215dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:text="2019-XXXX"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:text="3RD YEAR"
+        android:textSize="20dp"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="395dp"
+        android:src="@drawable/ccc" />
+
+    <EditText
+        android:id="@+id/course"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="395dp"
+        android:text="COURSE" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="430dp"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="35dp"
+        android:text="NUMBER" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="490dp"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="35dp"
+        android:text="EMAIL" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="550dp"
+        android:drawableLeft="@drawable/address"
+        android:drawablePadding="35dp"
+        android:text="ADDRESS" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="610dp"
+        android:drawableLeft="@drawable/gender"
+        android:drawablePadding="35dp"
+        android:text="GENDER" />
+
+    <EditText
+        android:id="@+id/bday"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="670dp"
+        android:drawableLeft="@drawable/date"
+        android:drawablePadding="35dp"
+        android:text="BIRTHDATE" />
+
+    <Button
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="790dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="MORE"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+
+
+
+</RelativeLayout>
