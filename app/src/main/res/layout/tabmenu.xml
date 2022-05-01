@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rec8"
+    tools:context=".tabmenu">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:id="@+id/stname"
+        android:layout_width="210dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="145dp"
+        android:text="@+id/stname"
+        android:hint="STUDENT NAME"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/stnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="210dp"
+        android:hint="STUDENT NUMBER"
+        android:textColorHint="@color/white"
+        android:text="@+id/stnumber"
+        android:textColor="@color/white"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="@color/bluegrey"
+        android:layout_marginTop="260dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="280dp"
+        android:drawableLeft="@drawable/homeicon"
+        android:text="Home"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="@color/bluegrey"
+        android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="370dp"
+        android:drawableLeft="@drawable/usermini"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="@color/bluegrey"
+        android:layout_marginTop="440dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="460dp"
+        android:drawableLeft="@drawable/infoicon"
+        android:text="Info"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:background="@color/bluegrey"
+        android:layout_marginTop="530dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="550dp"
+        android:drawableLeft="@drawable/logout"
+        android:text="Log Out"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
