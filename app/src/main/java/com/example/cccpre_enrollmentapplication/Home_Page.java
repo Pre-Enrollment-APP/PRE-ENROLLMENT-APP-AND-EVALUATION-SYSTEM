@@ -9,14 +9,14 @@ import android.view.View;
 
 public class Home_Page extends AppCompatActivity {
 public Button pre_enrollment;
-public Button activity_about;
+public Button Evaluation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
-        pre_enrollment=(Button) findViewById(R.id.preenroll);
-        activity_about=(Button) findViewById(R.id.evaluate);
+        pre_enrollment=findViewById(R.id.preenroll);
+        Evaluation = findViewById(R.id.evaluate);
 
 
         pre_enrollment.setOnClickListener(new View.OnClickListener() {
@@ -27,11 +27,11 @@ public Button activity_about;
             }
         });
 
-        activity_about.setOnClickListener(new View.OnClickListener() {
+        Evaluation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent lol=new Intent(Home_Page.this,About.class);
-                startActivity(lol);
+                Intent intent= new Intent(Home_Page.this,evaluationform.class);
+                startActivity(intent);
             }
         });
 
