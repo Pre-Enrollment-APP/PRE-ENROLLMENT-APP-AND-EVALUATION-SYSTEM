@@ -51,7 +51,7 @@
         android:layout_marginTop="180dp"
         android:gravity="center_horizontal"
         android:hint="AOSDQIWODJSOAIDJQWIE"
-        android:text="placeholder name"
+        android:text="PLACEHOLDER"
         android:textSize="25dp" />
 
     <TextView
