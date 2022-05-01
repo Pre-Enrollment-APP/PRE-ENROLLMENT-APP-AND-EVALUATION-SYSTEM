@@ -56,6 +56,7 @@
             android:layout_width="450dp"
             android:layout_height="40dp"
             android:layout_marginTop="180dp"
+            android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             android:hint="AOSDQIWODJSOAIDJQWIE"
             android:text="PLACEHOLDER"
