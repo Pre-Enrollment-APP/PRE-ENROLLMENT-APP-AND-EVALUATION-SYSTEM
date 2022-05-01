@@ -270,7 +270,7 @@
         <Spinner
             android:id="@+id/Des2"
             android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_below="@+id/Des1"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
@@ -280,7 +280,7 @@
         <Spinner
             android:id="@+id/Des3"
             android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_below="@+id/Des2"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
@@ -290,7 +290,7 @@
         <Spinner
             android:id="@+id/Des4"
             android:layout_width="150dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_below="@+id/Des3"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
