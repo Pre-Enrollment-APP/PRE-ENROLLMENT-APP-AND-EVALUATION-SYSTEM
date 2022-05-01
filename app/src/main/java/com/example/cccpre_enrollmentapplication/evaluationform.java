@@ -9,6 +9,6 @@ public class evaluationform extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evaluationform);
+        setContentView(R.layout.evaluationform);
     }
 }
