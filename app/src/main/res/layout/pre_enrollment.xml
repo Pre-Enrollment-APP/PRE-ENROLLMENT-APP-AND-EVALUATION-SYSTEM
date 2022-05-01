@@ -74,7 +74,6 @@
                 android:text="1st Year" />
             <!--android:onClick="onRadioButtonClicked"-->
 
-
             <RadioButton
                 android:id="@+id/radio_old"
                 android:layout_width="wrap_content"
