@@ -487,7 +487,7 @@
             android:ems="10" />
 
         <EditText
-            android:id="@+id/grade2 "
+            android:id="@+id/grade2"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="275dp"
