@@ -7,19 +7,21 @@
     android:background="@drawable/bg3"
     tools:context=".profile">
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <ImageButton
+        android:id="@+id/menubutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/darkmenu" />
+        android:src="@drawable/menudark"/>
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <ImageButton
+        android:id="@+id/editbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="365dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/editing" />
+        android:src="@drawable/editbutton"/>
 
     <ImageView
         android:layout_width="400dp"
