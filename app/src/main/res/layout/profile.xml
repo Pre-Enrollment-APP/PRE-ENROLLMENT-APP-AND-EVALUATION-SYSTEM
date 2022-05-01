@@ -116,7 +116,7 @@
         android:text="EMAIL" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/address"
         android:layout_width="290dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
