@@ -55,8 +55,8 @@
         <TextView
             android:layout_width="450dp"
             android:layout_height="40dp"
-            android:layout_marginTop="180dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="180dp"
             android:gravity="center_horizontal"
             android:hint="AOSDQIWODJSOAIDJQWIE"
             android:text="PLACEHOLDER"
@@ -82,7 +82,7 @@
         <Spinner
             android:id="@+id/course"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="240dp"
             android:background="@drawable/edittext_rectangle"
@@ -100,10 +100,10 @@
         <Spinner
             android:id="@+id/yrlvl"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edittext_rectangle"
+            android:layout_height="15dp"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="240dp"
+            android:background="@drawable/edittext_rectangle"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
 
@@ -118,10 +118,10 @@
         <Spinner
             android:id="@+id/semester"
             android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edittext_rectangle"
+            android:layout_height="15dp"
             android:layout_marginLeft="260dp"
             android:layout_marginTop="240dp"
+            android:background="@drawable/edittext_rectangle"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
 
@@ -274,6 +274,107 @@
             android:ems="10" />
 
         <!-- descriptive -->
+
+        <EditText
+            android:id="@+id/desc1"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="320dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc2"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="350dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc3"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="380dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc4"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="410dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+
+        <EditText
+            android:id="@+id/desc5"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="440dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc6"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="470dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc7"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="500dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc8"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="530dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc9"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="560dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc10"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="590dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/desc11"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="620dp"
+            android:drawablePadding="30dp"
+            android:ems="10" />
+
 
         <!-- Unit -->
 
