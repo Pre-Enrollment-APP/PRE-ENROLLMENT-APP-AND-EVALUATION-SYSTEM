@@ -33,11 +33,33 @@
     <TextView
         android:layout_width="450dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="190dp"
-        android:gravity="center"
         android:hint="AOSDQIWODJSOAIDJQWIE"
-        android:text="@+id/name" />
+        android:textColor="@color/white"
+        android:text="PLACEHOLDER"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="210dp"
+        android:textColor="@color/white"
+        android:text="student number"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
+        android:textColor="@color/white"
+        android:text="year level"/>
+
+
 
 
     <ImageView
