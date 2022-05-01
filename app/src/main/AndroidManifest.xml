@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".studentinfo"
+            android:exported="false" />
+        <activity
             android:name=".tabmenu"
             android:exported="false" />
         <activity

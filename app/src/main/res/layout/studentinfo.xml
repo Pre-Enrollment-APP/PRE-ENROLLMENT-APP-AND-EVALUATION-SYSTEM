@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    tools:context=".studentinfo">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/darkmenu" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="365dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/editing" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ccc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:gravity="center_horizontal"
+        android:text="Student Information"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="140dp"
+        android:text="Surname: "
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="140dp"
+        android:text="@+id/stsurname"
+        android:hint="SURNAME"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="170dp"
+        android:text="Given Name: "
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="170dp"
+        android:text="@+id/stgvname"
+        android:hint="NAME"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="200dp"
+        android:text="Middle Name: "
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="200dp"
+        android:text="@+id/stmdname"
+        android:hint="MIDDLE NAME"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="230dp"
+        android:text="Birthplace: "
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="230dp"
+        android:text="@+id/stbirthpl"
+        android:hint="BIRTHPLACE"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="260dp"
+        android:text="Age: "
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="260dp"
+        android:text="@+id/stage"
+        android:hint="AGE"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:gravity="center_horizontal"
+        android:text="Contact Information"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="420dp"
+        android:text="Mother: "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="420dp"
+        android:hint="MOTHER NAME"
+        android:text="@+id/momname"
+        android:textColor="@color/white"
+        android:textColorHint="@color/bluegrey"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="460dp"
+        android:text="Father: "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="460dp"
+        android:text="@+id/dadname"
+        android:hint="FATHER NAME"
+        android:textColorHint="@color/bluegrey"
+        android:textColor="@color/white"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="500dp"
+        android:text="PHONE NUMBER OF PARENTS: "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="500dp"
+        android:hint="09XXXXXXXXX"
+        android:text="@+id/stparcontact"
+        android:textColor="@color/white"
+        android:textColorHint="@color/bluegrey"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="570dp"
+        android:text="Contact Person: "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="570dp"
+        android:text="@+id/stguard"
+        android:hint="GUARDIAN"
+        android:textColorHint="@color/bluegrey"
+        android:textColor="@color/white"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="610dp"
+        android:text="PHONE NUMBER OF CONTACT PERSON: "
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="242dp"
+        android:layout_marginTop="610dp"
+        android:hint="09XXXXXXXXX"
+        android:text="@+id/gcontact"
+        android:textColor="@color/white"
+        android:textColorHint="@color/bluegrey"
+        android:textSize="20dp" />
+
+
+
+
+
+
+
+
+</RelativeLayout>
