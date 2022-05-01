@@ -59,7 +59,7 @@
             android:layout_marginTop="180dp"
             android:gravity="center_horizontal"
             android:hint="AOSDQIWODJSOAIDJQWIE"
-            android:text="PLACEHOLDER"
+            android:text="juan"
             android:textSize="25dp" />
 
         <TextView
