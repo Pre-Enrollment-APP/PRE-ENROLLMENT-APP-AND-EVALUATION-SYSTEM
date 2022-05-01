@@ -12,8 +12,8 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
+        android:layout_marginLeft="5dp"
         android:src="@drawable/menu" />
 
     <!-- Add TextView to display the date -->
@@ -58,7 +58,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_below="@+id/studenttext"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="120dp"
         android:src="@drawable/clockwhite" />
 
     <DigitalClock
@@ -86,7 +86,8 @@
         <CalendarView
             android:id="@+id/calendar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+           >
 
         </CalendarView>
 
