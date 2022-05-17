@@ -35,76 +35,67 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="135dp"
-            android:text="Cainta Catholic College" />
+            android:text="Student Name:" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="135dp"
+            android:text="@+id/stname"
+            android:hint="student NAME"/>
 
         <TextView
             android:layout_width="2500dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="150dp"
-            android:text="A. BONIFACIO AVENUE, POBLACION CAINTA RIZAL" />
+            android:text="Student No.: " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="150dp"
+            android:text="@+id/stnumber"
+            android:hint="student NUMBER"/>
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="165dp"
-            android:text="CURRICULUM A.Y 2018-2022" />
+            android:text="Section:" />
 
         <TextView
-            android:layout_width="450dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="165dp"
+            android:text="@+id/stcourse"
+            android:hint="student course"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
-            android:gravity="center_horizontal"
-            android:hint="AOSDQIWODJSOAIDJQWIE"
-            android:text="juan"
-            android:textSize="25dp" />
+            android:text="School Year: " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="205dp"
-            android:gravity="center_horizontal"
-            android:text="Student's Name" />
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="180dp"
+            android:text="@+id/schoolyear"
+            android:hint="school year"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="220dp"
-            android:gravity="center_horizontal"
-            android:hint="number of student"
-            android:text="@+id/studentnumber" />
-
-        <Spinner
-            android:id="@+id/course"
-            android:layout_width="70dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="240dp"
-            android:background="@drawable/edittext_rectangle"
-            android:spinnerMode="dropdown"
-            android:tooltipText="COURSE" />
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="260dp"
-            android:gravity="center_horizontal"
-            android:text="Course" />
 
         <Spinner
             android:id="@+id/yrlvl"
             android:layout_width="70dp"
             android:layout_height="15dp"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="200dp"
             android:background="@drawable/edittext_rectangle"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
@@ -112,17 +103,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="200dp"
             android:gravity="center_horizontal"
-            android:text="Year Level" />
+            android:text="Year Level: " />
+
 
         <Spinner
             android:id="@+id/semester"
             android:layout_width="70dp"
             android:layout_height="15dp"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="230dp"
             android:background="@drawable/edittext_rectangle"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
@@ -130,10 +121,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="260dp"
-            android:layout_marginTop="260dp"
-            android:gravity="center_horizontal"
-            android:text="Semester" />
+            android:layout_marginTop="230dp"
+            android:text="Semester: " />
 
         <TextView
             android:layout_width="50dp"
