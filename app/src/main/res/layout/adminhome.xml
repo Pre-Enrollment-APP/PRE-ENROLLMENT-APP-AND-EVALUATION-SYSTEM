@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".adminhome">
+
+    <ImageButton
+        android:id="@+id/menubutton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menudark" />
+
+    <ImageView
+        android:id="@+id/clockimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="120dp"
+        android:src="@drawable/clockwhite" />
+
+    <DigitalClock
+        android:id="@+id/clock"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="135dp"
+        android:fontFamily="@font/arial"
+        android:textAllCaps="true"
+        android:layout_toRightOf="@id/clockimage"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+
+    <Button
+        android:id="@+id/stlist"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/edittext_round"
+        android:src="@drawable/estudyante"
+        android:drawablePadding="250dp"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Student List"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/curriculum"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Curriculum"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/grades"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Grades"
+        android:drawableLeft="@drawable/student"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/accounting"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Accounting"
+        android:drawableLeft="@drawable/student"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+
+
+</RelativeLayout>
