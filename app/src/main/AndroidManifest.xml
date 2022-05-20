@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".infosheet2pageONE"
+            android:exported="false" />
+        <activity
+            android:name=".appsub_popup"
+            android:exported="false" />
+        <activity
             android:name=".loginmain2"
             android:exported="false" />
         <activity
