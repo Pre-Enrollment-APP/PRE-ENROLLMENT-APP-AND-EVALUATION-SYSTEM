@@ -9,6 +9,6 @@ public class registrar_curriculum extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registrar_curriculum);
+        setContentView(R.layout.registrar_curriculumlist);
     }
 }

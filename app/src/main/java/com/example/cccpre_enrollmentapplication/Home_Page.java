@@ -14,7 +14,7 @@ public Button Evaluation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.student_homepage);
         pre_enrollment=findViewById(R.id.preenroll);
         Evaluation = findViewById(R.id.evaluate);
 

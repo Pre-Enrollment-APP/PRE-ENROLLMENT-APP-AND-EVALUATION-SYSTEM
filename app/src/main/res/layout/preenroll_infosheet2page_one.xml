@@ -296,8 +296,8 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="520dp"
         android:fontFamily="@font/arial"
-        android:textColor="@color/black"
         android:hint="subject1"
+        android:textColor="@color/black"
         android:textSize="15dp" />
 
     <EditText

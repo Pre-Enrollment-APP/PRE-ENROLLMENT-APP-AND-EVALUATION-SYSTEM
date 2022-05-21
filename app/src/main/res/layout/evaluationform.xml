@@ -157,7 +157,7 @@
             android:text="Grade" />
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="275dp"
             android:layout_marginTop="290dp"
@@ -679,8 +679,8 @@
             android:layout_marginLeft="135dp"
             android:layout_marginTop="695dp"
             android:drawablePadding="30dp"
-            android:text="Total:"
-            android:ems="10" />
+            android:ems="10"
+            android:text="Total:" />
 
         <EditText
             android:id="@+id/sttotal"
@@ -697,8 +697,8 @@
             android:layout_marginLeft="235dp"
             android:layout_marginTop="695dp"
             android:drawablePadding="30dp"
-            android:text="GWA:"
-            android:ems="10" />
+            android:ems="10"
+            android:text="GWA:" />
 
         <EditText
             android:id="@+id/stgwa"
