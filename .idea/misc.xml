@@ -30,6 +30,8 @@
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_evaluationform.xml" value="0.25" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_main.xml" value="0.209375" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_profile.xml" value="0.16" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/admin_accounting.xml" value="0.11594202898550725" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/admin_menu2.xml" value="0.1810810810810811" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/admingrades.xml" value="0.1810810810810811" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/adminhome.xml" value="0.1810810810810811" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/adminmenu2.xml" value="0.25" />
@@ -42,9 +44,15 @@
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/logine_page.xml" value="0.209375" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/logine_page_admin.xml" value="0.1810810810810811" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/loginmain2.xml" value="0.22" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_curriculum.xml" value="0.22" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/pre_enrollment.xml" value="0.22" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/preenroll_infosheet2page_one.xml" value="0.25" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/profile.xml" value="0.18" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_curriculumlist.xml" value="0.11594202898550725" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_student_list.xml" value="0.18" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrarpage.xml" value="0.1810810810810811" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_homepage.xml" value="0.1810810810810811" />
+        <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_profile.xml" value="0.22" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/studentinfo.xml" value="0.22" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/tabmenu.xml" value="0.18" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/userselect.xml" value="0.1810810810810811" />
