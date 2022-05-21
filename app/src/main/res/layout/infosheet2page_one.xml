@@ -138,15 +138,15 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <EditText
-            android:id="@+id/stcourse"
-            android:layout_width="85dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="290dp"
-            android:layout_toRightOf="@+id/course"
-            android:background="@drawable/edittext_rectangle"
-            android:spinnerMode="dropdown"
-            android:tooltipText="COURSE" />
+    <EditText
+        android:id="@+id/stcourse"
+        android:layout_width="85dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="290dp"
+        android:layout_toRightOf="@+id/course"
+        android:background="@drawable/edittext_rectangle"
+        android:spinnerMode="dropdown"
+        android:tooltipText="COURSE" />
 
         <TextView
             android:id="@+id/mjr"
@@ -159,15 +159,15 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <EditText
-            android:id="@+id/stmajor"
-            android:layout_width="85dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="290dp"
-            android:layout_toRightOf="@+id/mjr"
-            android:background="@drawable/edittext_rectangle"
-            android:spinnerMode="dropdown"
-            android:tooltipText="MAJOR" />
+    <EditText
+        android:id="@+id/stmajor"
+        android:layout_width="85dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="290dp"
+        android:layout_toRightOf="@+id/mjr"
+        android:background="@drawable/edittext_rectangle"
+        android:spinnerMode="dropdown"
+        android:tooltipText="MAJOR" />
 
         <TextView
             android:id="@+id/sem"
@@ -221,15 +221,15 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <Spinner
-            android:id="@+id/stpymnt"
-            android:layout_width="185dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="400dp"
-            android:layout_toRightOf="@+id/mode"
-            android:background="@drawable/edittext_rectangle"
-            android:spinnerMode="dropdown"
-            android:tooltipText="COURSE" />
+    <Spinner
+        android:id="@+id/stpymnt"
+        android:layout_width="185dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="400dp"
+        android:layout_toRightOf="@+id/mode"
+        android:background="@drawable/edittext_rectangle"
+        android:spinnerMode="dropdown"
+        android:tooltipText="COURSE" />
 
         <TextView
             android:id="@+id/dpay"
@@ -252,16 +252,16 @@
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
 
-        <TextView
-            android:id="@+id/subcode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="490dp"
-            android:fontFamily="@font/arial"
-            android:text="Subject Code"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+    <TextView
+        android:id="@+id/subcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="490dp"
+        android:fontFamily="@font/arial"
+        android:text="Subject Code"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
         <TextView
             android:id="@+id/descript"
@@ -287,33 +287,179 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <EditText
-            android:id="@+id/stcode"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="520dp"
-            android:fontFamily="@font/arial"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+    <!-- subject code -->
 
+    <EditText
+        android:id="@+id/subject1"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="520dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject1"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject2"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject1"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject2"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject3"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject2"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject3"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject4"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject3"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject4"
+        android:textSize="15dp" />
+
+
+
+    <!-- subject code end -->
+
+    <!-- description -->
+
+    <EditText
+        android:id="@+id/description1"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="520dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/subject1"
+        android:textColor="@color/black"
+        android:hint="description1"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description2"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/description1"
+        android:layout_toRightOf="@+id/subject2"
+        android:textColor="@color/black"
+        android:hint="description2"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description3"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/description2"
+        android:layout_toRightOf="@+id/subject3"
+        android:textColor="@color/black"
+        android:hint="description3"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description4"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/description3"
+        android:layout_toRightOf="@+id/subject4"
+        android:textColor="@color/black"
+        android:hint="description4"
+        android:textSize="15dp" />
+
+
+    <!-- description end -->
+
+    <!-- unit -->
+
+    <EditText
+        android:id="@+id/unit1"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="520dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description1"
+        android:textColor="@color/black"
+        android:hint="unit1"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit2"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description2"
+        android:layout_below="@+id/unit1"
+        android:textColor="@color/black"
+        android:hint="unit2"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit3"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description3"
+        android:layout_below="@+id/unit2"
+        android:textColor="@color/black"
+        android:hint="unit3"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit4"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description4"
+        android:layout_below="@+id/unit3"
+        android:textColor="@color/black"
+        android:hint="unit4"
+        android:textSize="15dp" />
+
+    <!-- unit end -->
 
         <!-- button -->
 
-        <Button
-            android:id="@+id/more"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="745dp"
-            android:background="@drawable/edittext_round"
-            android:ems="7"
-            android:fontFamily="@font/arial"
-            android:gravity="center"
-            android:text="SUBMIT"
-            android:textAllCaps="false"
-            android:textColor="@color/blue"
-            android:textSize="20dp" />
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="710dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="NEXT"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <!-- button end -->
 
 
 </RelativeLayout>

@@ -16,6 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".registrarpage"
+            android:exported="false" />
+        <activity
+            android:name=".infosheet2pageTWO"
+            android:exported="false" />
+        <activity
+            android:name=".adminmenu2"
+            android:exported="false" />
+        <activity
             android:name=".logine_pageADMIN"
             android:exported="false" />
         <activity

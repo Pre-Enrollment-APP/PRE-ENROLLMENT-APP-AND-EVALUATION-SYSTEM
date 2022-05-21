@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".infosheet2pageTWO">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menu" />
+
+    <ImageView
+        android:id="@+id/ccc"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ccc" />
+
+    <TextView
+        android:id="@+id/cdis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ccc"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="COLLEGE DEPARTMENT \n INFORMATION SHEET"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cdis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="Please fill out the form"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/subcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="190dp"
+        android:fontFamily="@font/arial"
+        android:text="Subject Code"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/descript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="190dp"
+        android:fontFamily="@font/arial"
+        android:text="Description"
+        android:layout_toRightOf="@+id/subcode"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="190dp"
+        android:fontFamily="@font/arial"
+        android:text="Unit"
+        android:layout_toRightOf="@+id/descript"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- subject code -->
+
+    <EditText
+        android:id="@+id/subject5"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subcode"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:hint="subject5"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject6"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject5"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject6"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject7"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject6"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/black"
+        android:hint="subject7"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject8"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject7"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:hint="subject8"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject9"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject8"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:hint="subject9"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject10"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject9"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:hint="subject10"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/subject11"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject10"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:hint="subject11"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+
+
+    <!-- subject code end -->
+
+    <!-- description -->
+
+    <EditText
+        android:id="@+id/description5"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descript"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/subject5"
+        android:fontFamily="@font/arial"
+        android:hint="description5"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description6"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/description5"
+        android:layout_toRightOf="@+id/subject6"
+        android:textColor="@color/black"
+        android:hint="description6"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description7"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/arial"
+        android:layout_below="@+id/description6"
+        android:layout_toRightOf="@+id/subject7"
+        android:textColor="@color/black"
+        android:hint="description7"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description8"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description7"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/subject8"
+        android:fontFamily="@font/arial"
+        android:hint="description8"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description9"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description8"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/subject9"
+        android:fontFamily="@font/arial"
+        android:hint="description9"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description10"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description9"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/subject10"
+        android:fontFamily="@font/arial"
+        android:hint="description10"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/description11"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description10"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/subject11"
+        android:fontFamily="@font/arial"
+        android:hint="description11"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+
+    <!-- description end -->
+
+    <!-- unit -->
+
+    <EditText
+        android:id="@+id/unit5"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/description5"
+        android:layout_below="@id/unit"
+        android:fontFamily="@font/arial"
+        android:hint="unit5"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit6"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description6"
+        android:layout_below="@+id/unit5"
+        android:textColor="@color/black"
+        android:hint="unit6"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit7"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/arial"
+        android:layout_toRightOf="@+id/description7"
+        android:layout_below="@+id/unit6"
+        android:textColor="@color/black"
+        android:hint="unit7"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit8"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unit7"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/description8"
+        android:fontFamily="@font/arial"
+        android:hint="unit8"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit9"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unit8"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/description9"
+        android:fontFamily="@font/arial"
+        android:hint="unit9"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit10"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unit9"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/description10"
+        android:fontFamily="@font/arial"
+        android:hint="unit10"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/unit11"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unit10"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/description11"
+        android:fontFamily="@font/arial"
+        android:hint="unit11"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- unit end -->
+
+    <!-- button -->
+
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="745dp"
+        android:background="@drawable/edittext_round"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="SUBMIT"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <!-- button end -->
+
+</RelativeLayout>

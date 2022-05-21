@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".adminmenu2">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:text="Admins"
+        android:textSize="30dp"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/buttonregistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="275dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/admin"
+        android:drawableTint="@color/black"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="REGISTRAR"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/buttonaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/admin"
+        android:drawableTint="@color/black"
+        android:layout_below="@+id/buttonregistrar"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="ACCOUNTING"
+        android:textSize="28dp" />
+
+    <Button
+        android:id="@+id/buttonmis"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/admin"
+        android:drawableTint="@color/black"
+        android:layout_below="@+id/buttonaccount"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="MIS"
+        android:textSize="30dp" />
+
+</RelativeLayout>
