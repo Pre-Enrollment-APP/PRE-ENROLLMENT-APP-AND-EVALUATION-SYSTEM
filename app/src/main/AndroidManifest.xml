@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".logine_pageADMIN"
+            android:exported="false" />
+        <activity
+            android:name=".userselect"
+            android:exported="false" />
+        <activity
             android:name=".admingrades"
             android:exported="false" />
         <activity

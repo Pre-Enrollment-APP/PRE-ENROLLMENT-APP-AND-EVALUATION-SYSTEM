@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".logine_pageADMIN">
+
+    <TextView
+        android:id="@+id/helloo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="79dp"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Hello Admin! Welcome!"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/helloo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:text="Login to your account"
+        android:textColor="@color/white"
+        android:fontFamily="@font/arial"/>
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:text="Username:"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/white"
+        android:hint="Student ID"/>
+
+    <EditText
+        android:id="@+id/adminuser"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/icon_username"
+        android:drawablePadding="30dp"
+        android:ems="10" />
+    <TextView
+        android:id="@+id/adminpassword"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/adminuser"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:text="Password:"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/white"
+        android:hint="Student ID"/>
+
+    <EditText
+        android:id="@+id/adpass"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/adminpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/ic_lock"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="517dp"
+        android:fontFamily="@font/arial"
+        android:text="Remember Me"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="510dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="Forget Password?"
+        android:textColor="@color/red" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="570dp"
+        android:background="@drawable/edittext_round"
+        android:ems="5"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="25dp" />
+
+
+</RelativeLayout>
