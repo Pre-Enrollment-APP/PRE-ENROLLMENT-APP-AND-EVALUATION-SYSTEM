@@ -9,6 +9,6 @@ public class admingrades extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admingrades);
+        setContentView(R.layout.registrar_gradelist);
     }
 }
