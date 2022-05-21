@@ -9,6 +9,6 @@ public class infosheet2pageONE extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.infosheet2page_one);
+        setContentView(R.layout.preenroll_infosheet2page_one);
     }
 }

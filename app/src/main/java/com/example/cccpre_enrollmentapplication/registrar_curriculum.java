@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class infosheet2pageTWO extends AppCompatActivity {
+public class registrar_curriculum extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.preenroll_infosheet2page_two);
+        setContentView(R.layout.registrar_curriculum);
     }
 }
