@@ -40,9 +40,6 @@
             android:name=".admingrades"
             android:exported="false" />
         <activity
-            android:name=".adminhome"
-            android:exported="false" />
-        <activity
             android:name=".infosheet2pageONE"
             android:exported="false" />
         <activity
