@@ -32,7 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="275dp"
         android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/ADMIN"
+        android:drawableLeft="@drawable/admin"
         android:drawableTint="@color/black"
         android:ems="7"
         android:fontFamily="@font/arial"
