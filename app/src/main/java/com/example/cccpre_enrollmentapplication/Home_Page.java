@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
 
 public class Home_Page extends AppCompatActivity {
 public Button pre_enrollment;
 public Button Evaluation;
+public ImageButton menu_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,15 @@ public Button Evaluation;
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(Home_Page.this,evaluationform.class);
+                startActivity(intent);
+            }
+        });
+
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Home_Page.this,tabmenu.class);
                 startActivity(intent);
             }
         });

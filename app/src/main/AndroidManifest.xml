@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".Pre_Enrollment_nextpage"
+            android:exported="false" />
+        <activity
             android:name=".registrar_curriculum"
             android:exported="false" />
         <activity

@@ -10,9 +10,12 @@
     android:orientation="vertical">
 
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
@@ -21,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:paddingLeft="30dp">
+        android:paddingLeft="30dp"
+        android:paddingTop="13dp">
 
         <ImageView
             android:id="@+id/ccc"
@@ -60,7 +64,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="180dp"
             android:background="@drawable/bg_round_border"
             android:paddingLeft="20dp"
             android:paddingTop="5dp">
@@ -105,47 +109,167 @@
 
 
         <TextView
-            android:id="@+id/last"
+            android:id="@+id/fullnametext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="248dp"
+            android:layout_marginTop="270dp"
             android:fontFamily="@font/arial"
-            android:text="Last School Attended"
+            android:text="Full Name"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <EditText
-            android:id="@+id/LastSchoolAttended"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
+            android:id="@+id/fullname"
+            android:layout_width="218dp"
+            android:layout_height="25dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="248dp"
-            android:layout_toRightOf="@+id/last"
+            android:layout_marginTop="270dp"
+            android:layout_toRightOf="@+id/fullnametext"
             android:background="@drawable/editext_miniround"
-            android:hint="SY: 2021 -2022"
+            android:hint="Juan Dela Cruz"
             android:paddingLeft="5dp" />
 
         <TextView
-            android:id="@+id/MOP"
+            android:id="@+id/coursetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/last"
+            android:layout_below="@+id/fullname"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/arial"
+            android:text="Course"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/course"
+            android:layout_width="85dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/fullname"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/coursetext"
+            android:background="@drawable/editext_miniround"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/majortext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullname"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@id/course"
+            android:fontFamily="@font/arial"
+            android:text="Major"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+        android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/major"
+            android:layout_width="85dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/fullname"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/majortext"
+            android:background="@drawable/editext_miniround"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/semestertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coursetext"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/arial"
+            android:text="Semester"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/semester"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/course"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/semestertext"
+            android:background="@drawable/editext_miniround"
+            android:paddingLeft="5dp" />
+
+
+        <TextView
+            android:id="@+id/sectiontext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/majortext"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@id/course"
+            android:fontFamily="@font/arial"
+            android:text="Section"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+        <Spinner
+            android:id="@+id/section"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/major"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/sectiontext"
+            android:background="@drawable/editext_miniround"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/moptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/semestertext"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
             android:fontFamily="@font/arial"
             android:text="Mode of Payment"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <Spinner
-            android:id="@+id/modeofpayment"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/LastSchoolAttended"
+            android:id="@+id/mop"
+            android:layout_width="145dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/semester"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="7dp"
-            android:layout_toRightOf="@+id/last"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/moptext"
+            android:background="@drawable/editext_miniround"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/dptext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moptext"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/arial"
+            android:text="Downpayment"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <Spinner
+            android:id="@+id/downpayment"
+            android:layout_width="145dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/mop"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/dptext"
             android:background="@drawable/editext_miniround"
             android:paddingLeft="5dp" />
 
@@ -153,8 +277,8 @@
             android:id="@+id/SC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/MOP"
-            android:layout_marginTop="15dp"
+            android:layout_below="@+id/dptext"
+            android:layout_marginTop="35dp"
             android:fontFamily="@font/arial"
             android:text="SUBJECT CODE"
             android:textColor="@color/black"
@@ -162,12 +286,11 @@
 
         <TextView
             android:id="@+id/Des"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/MOP"
+            android:layout_below="@+id/dptext"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="35dp"
             android:layout_toRightOf="@+id/SC"
             android:fontFamily="@font/arial"
             android:text="DESCRIPTION"
@@ -178,28 +301,29 @@
             android:id="@+id/units"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/MOP"
+            android:layout_below="@+id/downpayment"
             android:layout_marginLeft="52dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="35dp"
             android:layout_toRightOf="@+id/Des"
             android:fontFamily="@font/arial"
             android:text="UNITS"
             android:textColor="@color/black"
             android:textSize="13dp" />
 
+
         <EditText
             android:id="@+id/SC1"
             android:layout_width="100dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/SC"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="7dp" />
 
         <EditText
             android:id="@+id/SC2"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_below="@+id/SC1"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="7dp" />
 
         <EditText
             android:id="@+id/SC3"
@@ -208,160 +332,40 @@
             android:layout_below="@+id/SC2"
             android:layout_marginTop="5dp" />
 
-        <EditText
-            android:id="@+id/SC4"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC3"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC5"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC4"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC6"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC5"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC7"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC6"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC8"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC7"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC9"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC8"
-            android:layout_marginTop="5dp" />
-
-        <EditText
-            android:id="@+id/SC10"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/SC9"
-            android:layout_marginTop="5dp" />
-
         <Spinner
             android:id="@+id/Des1"
             android:layout_width="150dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/Des"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@+id/SC1"
             android:background="@drawable/editext_miniround" />
 
         <Spinner
             android:id="@+id/Des2"
             android:layout_width="150dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/Des1"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="17dp"
             android:layout_toRightOf="@+id/SC2"
             android:background="@drawable/editext_miniround" />
 
         <Spinner
             android:id="@+id/Des3"
             android:layout_width="150dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:layout_below="@+id/Des2"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="18dp"
             android:layout_toRightOf="@+id/SC2"
             android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des4"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des3"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des5"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des4"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des6"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des5"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des7"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des6"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des8"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des7"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des9"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des8"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
-        <Spinner
-            android:id="@+id/Des10"
-            android:layout_width="150dp"
-            android:layout_height="20dp"
-            android:layout_below="@+id/Des9"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/SC2"
-            android:background="@drawable/editext_miniround" />
-
 
         <EditText
             android:id="@+id/units1"
             android:layout_width="70dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/units"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
@@ -379,89 +383,31 @@
         <EditText
             android:id="@+id/units3"
             android:layout_width="70dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/units2"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/Des1" />
 
-        <EditText
-            android:id="@+id/units4"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units3"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units5"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units4"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units6"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units5"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units7"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units6"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units8"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units7"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units9"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units8"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
-
-        <EditText
-            android:id="@+id/units10"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/units9"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/Des1" />
 
         <Button
-            android:id="@+id/sumitform"
+            android:id="@+id/nextpage"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_below="@+id/Des10"
+            android:layout_below="@+id/Des3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/edittext_round"
-            android:ems="7"
+            android:backgroundTint="@color/blue"
+            android:ems="4"
             android:fontFamily="@font/arial"
             android:gravity="center"
-            android:text="Submit"
+            android:letterSpacing="0.1"
+            android:text="Next"
             android:textAllCaps="false"
-            android:textColor="@color/blue"
-            android:textSize="20dp" />
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+
     </RelativeLayout>
 </RelativeLayout>

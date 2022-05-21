@@ -9,9 +9,12 @@
     tools:context=".MainActivity">
 
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
