@@ -53,8 +53,8 @@
         android:layout_marginTop="180dp"
         android:gravity="center_horizontal"
         android:text="Dela Cruz, Juan Ponce"
-        android:textSize="25dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="25dp" />
     <View
         android:layout_width="270dp"
         android:layout_height="2dp"

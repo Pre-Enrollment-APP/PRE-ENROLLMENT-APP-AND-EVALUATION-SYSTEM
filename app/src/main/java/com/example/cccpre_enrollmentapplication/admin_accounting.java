@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class registrar_curriculum extends AppCompatActivity {
+public class admin_accounting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registrar_curriculumlist);
+        setContentView(R.layout.admin_accounting);
     }
 }
