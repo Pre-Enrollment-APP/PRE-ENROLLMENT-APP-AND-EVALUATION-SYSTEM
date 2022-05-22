@@ -62,7 +62,7 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cccadd"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/arial"
         android:lineSpacingExtra="5dp"
@@ -72,13 +72,13 @@
 
     <EditText
         android:id="@+id/searchbar"
-        android:layout_width="155dp"
+        android:layout_width="170dp"
         android:layout_height="48dp"
         android:layout_below="@+id/cccadd"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_toRightOf="@+id/stnotext"
-        android:background="@drawable/edittext_rectangle"
+        android:background="@drawable/editext_miniround"
         android:drawableRight="@drawable/searchimg"
         android:fontFamily="@font/arial"
         android:spinnerMode="dropdown"
@@ -123,344 +123,365 @@
         android:textColor="@color/black"
         android:textSize="15dp" />
 
-        <!-- student number -->
-    <EditText
-        android:id="@+id/stno1"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stnotext2"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/stnotext2">
 
-    <EditText
-        android:id="@+id/stno2"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno1"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/stno3"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno2"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+                <!-- student number -->
+                <EditText
+                    android:id="@+id/stno1"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
+                <EditText
+                    android:id="@+id/stno2"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno1"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/stno4"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno3"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+                <EditText
+                    android:id="@+id/stno3"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno2"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
 
-    <EditText
-        android:id="@+id/stno5"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno4"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stno6"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno5"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stno7"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno6"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stno8"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stno7"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial"
-        android:hint="20XX-XXXX"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+                <EditText
+                    android:id="@+id/stno4"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno3"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
 
-        <!-- student number end -->
+                <EditText
+                    android:id="@+id/stno5"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno4"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-        <!-- student name -->
+                <EditText
+                    android:id="@+id/stno6"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno5"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/stname1"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stnametext"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno1"
-        android:layout_toRightof="@+stno1"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+                <EditText
+                    android:id="@+id/stno7"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno6"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <EditText
-        android:id="@+id/stname2"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname1"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno2"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname3"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname2"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno3"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname4"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname3"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno4"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname5"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname4"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno5"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname6"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname5"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno6"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname7"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname6"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno7"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/stname8"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/stname7"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/stno8"
-        android:fontFamily="@font/arial"
-        android:hint="full name"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stname"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+                <EditText
+                    android:id="@+id/stno8"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stno7"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/arial"
+                    android:hint="20XX-XXXX"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stnumber"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
 
-    <!-- student name end-->
+                <!-- student number end -->
 
-    <Button
-        android:id="@+id/edit1"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/stnametext"
-        android:layout_toRightOf="@id/stname1"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <!-- student name -->
 
-    <Button
-        android:id="@+id/edit2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit1"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/stname2"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname1"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno1"
+                    android:layout_toRightof="@+stno1"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit3"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit2"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/stname3"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname2"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno2"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit4"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit3"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/stname4"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname3"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno3"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit5"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit4"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/stname5"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname4"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno4"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit6"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit5"
-        android:layout_toRightOf="@id/stname6"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname5"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno5"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit7"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit6"
-        android:layout_toRightOf="@id/stname7"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname6"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno6"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/edit8"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_below="@+id/edit7"
-        android:layout_toRightOf="@id/stname8"
-        android:background="@drawable/edittext_round"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:text="Edit"
-        android:textAllCaps="false"
-        android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/stname7"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno7"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/stname8"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/stname7"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/stno8"
+                    android:fontFamily="@font/arial"
+                    android:hint="full name"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@+id/stname"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+
+                <!-- student name end-->
+
+                <Button
+                    android:id="@+id/edit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/stname1"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit1"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/stname2"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit2"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/stname3"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit3"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/stname4"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit4"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/stname5"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit6"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit5"
+                    android:layout_toRightOf="@id/stname6"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit7"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit6"
+                    android:layout_toRightOf="@id/stname7"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/edit8"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/edit7"
+                    android:layout_toRightOf="@id/stname8"
+                    android:background="@drawable/edittext_round"
+                    android:ems="7"
+                    android:fontFamily="@font/arial"
+                    android:text="Edit"
+                    android:textAllCaps="false"
+                    android:textSize="20dp" />
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+    </ScrollView>
+
+
 
     <Button
         android:id="@+id/submitbutton"
