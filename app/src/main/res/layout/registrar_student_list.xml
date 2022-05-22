@@ -123,7 +123,7 @@
         android:textColor="@color/black"
         android:textSize="15dp" />
 
-        <!-- student number -->
+    <!-- student number -->
     <EditText
         android:id="@+id/stno1"
         android:layout_width="90dp"
@@ -231,9 +231,9 @@
         android:textSize="15dp" />
 
 
-        <!-- student number end -->
+    <!-- student number end -->
 
-        <!-- student name -->
+    <!-- student name -->
 
     <EditText
         android:id="@+id/stname1"
@@ -242,7 +242,6 @@
         android:layout_below="@+id/stnametext"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@id/stno1"
-        android:layout_toRightof="@+stno1"
         android:fontFamily="@font/arial"
         android:hint="full name"
         android:lineSpacingExtra="5dp"
@@ -476,18 +475,6 @@
         android:textAllCaps="false"
         android:textColor="@color/blue"
         android:textSize="20dp" />
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
