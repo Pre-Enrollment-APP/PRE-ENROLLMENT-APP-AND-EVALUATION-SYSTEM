@@ -2,39 +2,65 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:layout_centerVertical="true">
+
+
+    <ImageButton
+        android:id="@+id/menuicon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menu" />
 
     <ImageView
         android:layout_width="450dp"
         android:layout_height="250dp"
         android:layout_marginTop="35dp"
-        android:src="@drawable/boxy"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:layout_centerVertical="true"
+        android:src="@drawable/boxy" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/arial"
         android:gravity="center"
         android:text="Your application is submitted.\n Proceed to the cashier for payment \n Thank you!"
         android:textColor="@color/white"
-        android:fontFamily="@font/arial"
         android:textSize="20sp" />
 
-    <TextView
+    <Button
         android:id="@+id/downloadbutton"
-        android:fontFamily="@font/arial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180sp"
+        android:layout_marginTop="350dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:fontFamily="@font/arial"
         android:gravity="center"
         android:text="Download Registration Form."
-        android:textColor="@color/white"
-        android:clickable="true"
+        android:textColor="@color/red"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/downloadbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_round"
+        android:text="back" />
 
 
 </RelativeLayout>
