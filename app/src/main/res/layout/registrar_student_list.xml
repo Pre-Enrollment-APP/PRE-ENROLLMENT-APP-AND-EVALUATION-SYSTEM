@@ -6,12 +6,16 @@
     android:background="@drawable/background"
     tools:context=".registrar_student_list">
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
+
 
     <ImageView
         android:id="@+id/ccc"
@@ -49,8 +53,8 @@
 
     <ImageView
         android:id="@+id/bluebox"
-        android:layout_width="2000dp"
-        android:layout_height="120dp"
+        android:layout_width="340dp"
+        android:layout_height="80dp"
         android:layout_below="@id/cccadd"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
@@ -62,21 +66,20 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cccadd"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/arial"
-        android:lineSpacingExtra="5dp"
-        android:text="Student Number: "
+        android:text="Student Number:"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="17dp" />
 
     <EditText
         android:id="@+id/searchbar"
         android:layout_width="155dp"
-        android:layout_height="48dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/cccadd"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="28dp"
         android:layout_toRightOf="@+id/stnotext"
         android:background="@drawable/edittext_round"
         android:drawableRight="@drawable/searchimg"

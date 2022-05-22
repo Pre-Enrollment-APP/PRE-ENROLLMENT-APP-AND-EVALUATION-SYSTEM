@@ -8,12 +8,14 @@
     tools:context=".mis_accounting">
 
     <ImageButton
-        android:id="@+id/menubutton"
+        android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/menudark" />
+        android:src="@drawable/menu" />
 
     <ImageView
         android:id="@+id/ccc"
@@ -56,7 +58,7 @@
         android:layout_below="@+id/cccadd"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/edittext_rectangle"
+        android:background="@drawable/editext_miniround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 
@@ -78,7 +80,7 @@
         android:layout_below="@+id/cccadd"
         android:layout_marginLeft="282dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/edittext_rectangle"
+        android:background="@drawable/editext_miniround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 

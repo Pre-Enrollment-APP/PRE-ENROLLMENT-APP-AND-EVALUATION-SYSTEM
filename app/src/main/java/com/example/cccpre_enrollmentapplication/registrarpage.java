@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.view.View;
 
 public class registrarpage extends AppCompatActivity {
-public Button student_list;
-public Button curriculum;
+public ImageButton student_list;
+public ImageButton curriculum;
+public ImageButton menu_page;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public Button curriculum;
         });
 
 
-        curriculum=findViewById(R.id.curriculum);
+        curriculum=findViewById(R.id.curr);
         curriculum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,5 +35,15 @@ public Button curriculum;
                 startActivity(intent);
             }
         });
+
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(registrarpage.this,tabmenu.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

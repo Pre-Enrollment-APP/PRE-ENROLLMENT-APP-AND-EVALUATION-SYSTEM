@@ -9,10 +9,10 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="135dp"
+        android:layout_height="115dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:src="@drawable/user" />
 
     <TextView
@@ -26,50 +26,35 @@
         android:textColor="@color/white"
         />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonregistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="275dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/admin"
-        android:drawableTint="@color/black"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="REGISTRAR"
-        android:textSize="30dp" />
+        android:layout_marginTop="285dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/registraradminicon" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonaccount"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/buttonregistrar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/admin"
-        android:drawableTint="@color/black"
-        android:layout_below="@+id/buttonregistrar"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="ACCOUNTING"
-        android:textSize="28dp" />
+        android:layout_marginTop="30dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/accountingadminicon" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonmis"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/buttonaccount"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/admin"
-        android:drawableTint="@color/black"
-        android:layout_below="@+id/buttonaccount"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="MIS"
-        android:textSize="30dp" />
+        android:layout_marginTop="30dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/misadminicon" />
 </RelativeLayout>
