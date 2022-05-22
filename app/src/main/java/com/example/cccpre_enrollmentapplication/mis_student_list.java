@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class registrar_student_list extends AppCompatActivity {
+public class mis_student_list extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
