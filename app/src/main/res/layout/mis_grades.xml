@@ -27,6 +27,7 @@
         android:id="@+id/cccname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
         android:layout_below="@+id/ccc"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
@@ -65,13 +66,13 @@
     <EditText
         android:id="@+id/misname"
         android:layout_width="400dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@id/schoolyear"
         android:gravity="center_horizontal"
-        android:text="@+id/stname"
         android:hint="STUDENT NAME"
+        android:text="@+id/stname"
         android:textColor="@color/black"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/text1"
@@ -596,6 +597,45 @@
 
     <!-- prereq end -->
     <!-- end of lists -->
+
+    <TextView
+        android:id="@+id/totaltext"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preq8"
+        android:layout_marginLeft="135dp"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="Total:" />
+
+    <EditText
+        android:id="@+id/sttotal"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/preq8"
+        android:layout_toRightOf="@+id/totaltext"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="@+id/unittotal" />
+
+    <TextView
+        android:id="@+id/gwatext"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preq8"
+        android:layout_marginLeft="235dp"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="GWA:" />
+
+    <EditText
+        android:id="@+id/stgwa"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="705dp"
+        android:layout_toRightOf="@+id/gwatext"
+        android:drawablePadding="30dp"
+        android:ems="10" />
 
     <!-- button -->
 

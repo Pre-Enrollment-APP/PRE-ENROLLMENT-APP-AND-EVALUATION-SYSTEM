@@ -26,25 +26,30 @@
         android:textColor="@color/white"/>
 
 
-    <ImageButton
+    <Button
         android:id="@+id/buttonadmin"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/admin"
+        android:drawableTint="@color/black"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
         android:layout_below="@id/textuser"
-        android:scaleType="fitXY"
-        android:background="?attr/selectableItemBackground"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="7dp"
-        android:src="@drawable/menu"
-         />
+        android:text="ADMIN"
+        android:textAllCaps="false"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/buttonstudent"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
+        android:layout_below="@+id/buttonadmin"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/edittext_round"
         android:drawableLeft="@drawable/student"
         android:drawableTint="@color/black"
