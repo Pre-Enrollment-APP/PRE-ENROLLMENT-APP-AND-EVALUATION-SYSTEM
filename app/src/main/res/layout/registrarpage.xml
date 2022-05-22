@@ -29,11 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="Registrar"
-        android:textSize="30dp"
+        android:layout_marginTop="170dp"
         android:fontFamily="@font/arial"
-        android:textColor="@color/white"/>
+        android:text="Registrar"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
 
     <ImageButton
         android:id="@+id/stlist"
@@ -48,30 +48,24 @@
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:scaleType="fitXY"
-        android:src="@drawable/stdntList_btn"
+        android:src="@drawable/list"
         android:text="Student List"
         android:textAllCaps="false"
         android:textColor="@color/blue"
         android:textSize="20dp" />
 
     <ImageButton
-        android:id="@+id/curriculum"
+        android:id="@+id/curr"
         android:layout_width="260dp"
         android:layout_height="155dp"
         android:layout_below="@+id/stlist"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:drawableLeft="@drawable/curri_btn"
-        android:scaleType="fitXY"
-        android:src="@drawable/curri_btn"
         android:background="?attr/selectableItemBackground"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="Curriculum"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:src="@drawable/curri_btn"
+        android:scaleType="fitXY"
+
+        />
 
 
 </RelativeLayout>

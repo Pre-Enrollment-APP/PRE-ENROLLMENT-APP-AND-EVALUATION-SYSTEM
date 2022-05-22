@@ -9,11 +9,11 @@ import android.content.Intent;
 import android.view.View;
 
 public class registrar_curriculum extends AppCompatActivity {
-public ImageButton menu_page;
+    public ImageButton menu_page;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registrar_curriculumlist);
+        setContentView(R.layout.activity_registrar_curriculum);
 
         menu_page=findViewById(R.id.menuicon);
         menu_page.setOnClickListener(new View.OnClickListener() {

@@ -10,6 +10,8 @@ import android.view.View;
 public class registrarpage extends AppCompatActivity {
 public ImageButton student_list;
 public ImageButton curriculum;
+public ImageButton menu_page;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +27,23 @@ public ImageButton curriculum;
         });
 
 
-        curriculum=findViewById(R.id.curriculum);
+        curriculum=findViewById(R.id.curr);
         curriculum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrarpage.this,registrar_curriculum.class);
+                Intent intent=new Intent(registrarpage.this,accounting_account.class);
                 startActivity(intent);
             }
         });
+
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(registrarpage.this,tabmenu.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

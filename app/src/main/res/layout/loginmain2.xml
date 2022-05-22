@@ -16,6 +16,7 @@
         android:src="@drawable/user" />
 
     <TextView
+        android:id="@+id/textuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -25,20 +26,18 @@
         android:textColor="@color/white"/>
 
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonadmin"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="275dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/admin"
-        android:drawableTint="@color/black"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="ADMIN"
-        android:textSize="30dp" />
+        android:layout_below="@id/textuser"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menu"
+         />
 
     <Button
         android:id="@+id/buttonstudent"
