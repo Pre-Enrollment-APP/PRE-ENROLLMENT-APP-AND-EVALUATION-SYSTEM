@@ -345,10 +345,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="520dp"
-        android:fontFamily="@font/arial"
         android:layout_toRightOf="@+id/subject1"
-        android:textColor="@color/black"
+        android:fontFamily="@font/arial"
         android:hint="description1"
+        android:textColor="@color/black"
         android:textSize="15dp" />
 
     <EditText
