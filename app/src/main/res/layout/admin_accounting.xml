@@ -33,54 +33,37 @@
         android:textColor="@color/white"
         android:textSize="30dp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/stbscs"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="115dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="225dp"
-        android:background="@drawable/edittext_round"
-        android:drawablePadding="250dp"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:src="@drawable/estudyante"
-        android:text="BSCS"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:src="@drawable/bscs"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
+     />
 
-    <Button
+    <ImageButton
         android:id="@+id/stbsoa"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="115dp"
         android:layout_marginLeft="210dp"
         android:layout_marginTop="225dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/student"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="BSOA"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:scaleType="fitXY"
+        android:src="@drawable/bsoa"
+        android:background="?attr/selectableItemBackground"
+      />
 
-    <Button
+    <ImageButton
         android:id="@+id/ABREED"
-        android:layout_width="wrap_content"
+        android:layout_width="155dp"
         android:layout_height="115dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="355dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/student"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="ABREED"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="20dp" />
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/abreed" />
 
     <Button
         android:id="@+id/stbeed"

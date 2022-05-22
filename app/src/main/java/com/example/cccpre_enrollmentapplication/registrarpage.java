@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.view.View;
 
 public class registrarpage extends AppCompatActivity {
-public Button student_list;
-public Button curriculum;
+public ImageButton student_list;
+public ImageButton curriculum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
