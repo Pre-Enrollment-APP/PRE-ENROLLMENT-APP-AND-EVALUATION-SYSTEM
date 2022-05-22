@@ -16,9 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication" >
         <activity
-            android:name=".infosheet_confirmation_page"
-            android:exported="false" />
-        <activity
             android:name=".accounting_account"
             android:exported="false" />
         <activity
