@@ -14,7 +14,7 @@ public ImageButton menu_page;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mis_student_list);
+        setContentView(R.layout.registrar_student_list);
 
         menu_page=findViewById(R.id.menuicon);
         menu_page.setOnClickListener(new View.OnClickListener() {

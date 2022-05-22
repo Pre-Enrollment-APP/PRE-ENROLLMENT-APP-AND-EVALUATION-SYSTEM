@@ -31,7 +31,7 @@ public ImageButton menu_page;
         curriculum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrarpage.this,accounting_account.class);
+                Intent intent=new Intent(registrarpage.this,registrar_curriculum.class);
                 startActivity(intent);
             }
         });
