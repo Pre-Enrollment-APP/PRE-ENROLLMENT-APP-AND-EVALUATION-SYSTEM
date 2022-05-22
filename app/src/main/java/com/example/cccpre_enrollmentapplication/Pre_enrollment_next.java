@@ -1,14 +1,20 @@
 package com.example.cccpre_enrollmentapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Pre_enrollment_next extends AppCompatActivity {
 public ImageButton menu_page;
+private AlertDialog.Builder diaglogBuilder;
+private AlertDialog dialog;
+private Button ok;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +26,10 @@ public ImageButton menu_page;
             Intent intent=new Intent(Pre_enrollment_next.this,tabmenu.class);
             startActivity(intent);
         });
+
+
+
+
     }
+
 }
