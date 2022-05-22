@@ -11,7 +11,7 @@ Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.adminmenu2);
+        setContentView(R.layout.admin_menu2);
 
         handler=new Handler();
         handler.postDelayed(new Runnable() {
