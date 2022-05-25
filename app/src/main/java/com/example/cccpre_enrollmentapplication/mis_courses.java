@@ -8,28 +8,19 @@ import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
 
-public class registrar_curriculum extends AppCompatActivity {
-    public ImageButton menu_page;
-    public ImageButton bscs,beed,bsoa,bsba,ABREED;
+
+public class mis_courses extends AppCompatActivity {
+    public ImageButton menu_page,bscs,beed,bsoa,ABREED,bsba,bsed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar_curriculum);
+        setContentView(R.layout.mis_courses);
 
         menu_page=findViewById(R.id.menuicon);
         menu_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,tabmenu.class);
-                startActivity(intent);
-            }
-        });
-
-        menu_page=findViewById(R.id.menuicon);
-        menu_page.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,registrar_curriculum_form.class);
+                Intent intent=new Intent(mis_courses.this,tabmenu.class);
                 startActivity(intent);
             }
         });
@@ -38,37 +29,48 @@ public class registrar_curriculum extends AppCompatActivity {
         bscs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,registrar_curriculum_form.class);
+                Intent intent=new Intent(mis_courses.this,mis_student_list.class);
                 startActivity(intent);
             }
         });
 
-        beed=findViewById(R.id.stbscs);
+        beed=findViewById(R.id.stbeed);
         beed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,registrar_curriculum_form.class);
+                Intent intent=new Intent(mis_courses.this,mis_student_list.class);
                 startActivity(intent);
             }
         });
 
-        bsoa=findViewById(R.id.stbsoa);
-        bsoa.setOnClickListener(new View.OnClickListener() {
+        bsed=findViewById(R.id.stbsed);
+        bsed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,registrar_curriculum_form.class);
+                Intent intent=new Intent(mis_courses.this,mis_student_list.class);
                 startActivity(intent);
             }
         });
+
+        bsba=findViewById(R.id.stbsba);
+        bsba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mis_courses.this,mis_student_list.class);
+                startActivity(intent);
+            }
+        });
+
 
         ABREED=findViewById(R.id.ABREED);
         ABREED.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrar_curriculum.this,registrar_curriculum_form.class);
+                Intent intent=new Intent(mis_courses.this,mis_student_list.class);
                 startActivity(intent);
             }
         });
+
 
 
 

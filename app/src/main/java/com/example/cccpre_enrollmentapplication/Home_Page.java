@@ -9,8 +9,8 @@ import android.content.Intent;
 import android.view.View;
 
 public class Home_Page extends AppCompatActivity {
-public Button pre_enrollment;
-public Button Evaluation;
+public ImageButton pre_enrollment;
+public ImageButton Evaluation;
 public ImageButton menu_page;
 
     @Override

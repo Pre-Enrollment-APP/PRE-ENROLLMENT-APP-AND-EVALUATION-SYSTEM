@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".mis_curriculum">
+    tools:context=".mis_grades">
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
@@ -26,6 +29,7 @@
         android:id="@+id/cccname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-15dp"
         android:layout_below="@+id/ccc"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
@@ -62,36 +66,52 @@
         android:textSize="15dp" />
 
     <EditText
-        android:id="@+id/miscurri"
+        android:id="@+id/misname"
         android:layout_width="400dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@id/schoolyear"
         android:gravity="center_horizontal"
-        android:text="BACHELOR OF XXXXXXXXXX"
+        android:hint="STUDENT NAME"
+        android:text="@+id/stname"
         android:textColor="@color/black"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/miscurri"
+        android:layout_below="@+id/misname"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:lineSpacingExtra="5dp"
-        android:text="Course"
+        android:text="Student Name"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="@+id/stnumber"
+        android:hint="2019-XXXX"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+
     <Spinner
         android:id="@+id/yrlevel"
-        android:layout_width="85dp"
+        android:layout_width="95dp"
         android:layout_height="25dp"
         android:layout_below="@+id/text1"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/editext_miniround"
+        android:background="@drawable/edittext_semiround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 
@@ -113,7 +133,7 @@
         android:layout_below="@+id/text1"
         android:layout_marginLeft="282dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/editext_miniround"
+        android:background="@drawable/edittext_semiround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 
@@ -579,6 +599,45 @@
 
     <!-- prereq end -->
     <!-- end of lists -->
+
+    <TextView
+        android:id="@+id/totaltext"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preq8"
+        android:layout_marginLeft="135dp"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="Total:" />
+
+    <EditText
+        android:id="@+id/sttotal"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/preq8"
+        android:layout_toRightOf="@+id/totaltext"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="@+id/unittotal" />
+
+    <TextView
+        android:id="@+id/gwatext"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preq8"
+        android:layout_marginLeft="235dp"
+        android:drawablePadding="30dp"
+        android:ems="10"
+        android:text="GWA:" />
+
+    <EditText
+        android:id="@+id/stgwa"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="705dp"
+        android:layout_toRightOf="@+id/gwatext"
+        android:drawablePadding="30dp"
+        android:ems="10" />
 
     <!-- button -->
 

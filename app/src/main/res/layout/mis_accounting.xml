@@ -120,20 +120,21 @@
         android:textColor="@color/black"
         android:textSize="15dp" />
 
+    <!-- scroll view -->
+
     <TextView
         android:id="@+id/amounttext"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/misctext"
-        android:layout_marginLeft="170dp"
+        android:layout_marginLeft="127dp"
+        android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/feedetail"
         android:fontFamily="@font/arial"
         android:lineSpacingExtra="5dp"
         android:text="Amount"
         android:textColor="@color/black"
         android:textSize="15dp" />
-
-    <!-- scroll view -->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -581,17 +582,19 @@
 
     <Button
         android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="765dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/edittext_round"
+        android:backgroundTint="@color/blue"
         android:ems="7"
         android:fontFamily="@font/arial"
         android:gravity="center"
-        android:text="OK"
+        android:text="edit"
         android:textAllCaps="false"
-        android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         android:textSize="20dp" />
 

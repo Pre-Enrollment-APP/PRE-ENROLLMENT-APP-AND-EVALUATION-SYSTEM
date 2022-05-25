@@ -25,25 +25,34 @@
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/adminhome.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/adminmenu2.xml" value="0.17447916666666666" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/appsub_popup.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/download.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/edit_student_list.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/evaluationform.xml" value="0.22" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/homepage.xml" value="0.16666666666666666" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/infosheet_confirmation_page.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/login_admin.xml" value="0.144017094017094" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/logine_page.xml" value="0.16666666666666666" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/logine_page_admin.xml" value="0.1" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/loginmain2.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_accounting.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_courses.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_curriculum.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_grade.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_grades.xml" value="0.17552083333333332" />
-        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_student_list.xml" value="0.17552083333333332" />
-        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/pre_enrollment.xml" value="0.1" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/mis_student_list.xml" value="0.14666666666666667" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/pre_enrollment.xml" value="0.22" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/preenroll_infosheet2page_one.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/preenroll_infosheet2page_two.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_curriculum_form.xml" value="0.22" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_curriculumlist.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_gradelist.xml" value="0.17552083333333332" />
-        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_student_list.xml" value="0.1" />
-        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_studentinfo.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_student_list.xml" value="0.14666666666666667" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_studentinfo.xml" value="0.144017094017094" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrarpage.xml" value="0.1" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_evaluation_form.xml" value="0.22" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_homepage.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_profile.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/tabmenu.xml" value="0.22" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/editext_miniround.xml" value="0.151" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/edittext_rectangle.xml" value="0.155" />
         <entry key="..\:/Users/dodgepc/Desktop/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/edittext_semiround.xml" value="0.151" />

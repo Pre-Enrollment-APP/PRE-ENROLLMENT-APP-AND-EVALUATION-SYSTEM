@@ -12,7 +12,7 @@
         android:layout_height="135dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/user" />
 
     <TextView
@@ -20,43 +20,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="220dp"
         android:text="Select User"
-        android:textSize="20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="20dp" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonadmin"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textuser"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/admin"
-        android:drawableTint="@color/black"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:layout_below="@id/textuser"
-        android:text="ADMIN"
-        android:textAllCaps="false"
-        android:textSize="30dp" />
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/admin_btn" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonstudent"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/buttonadmin"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/edittext_round"
-        android:drawableLeft="@drawable/student"
-        android:drawableTint="@color/black"
-        android:ems="7"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="STUDENT"
-        android:textAllCaps="false"
-        android:textSize="30dp" />
+        android:layout_marginTop="30dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
+        android:src="@drawable/student_btn" />
 </RelativeLayout>

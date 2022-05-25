@@ -2,37 +2,40 @@ package com.example.cccpre_enrollmentapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.content.Intent;
+import android.view.View;
 
-public class loginmain2 extends AppCompatActivity {
-public ImageButton Admin;
-public ImageButton Student;
+public class download extends AppCompatActivity {
+public ImageButton menu_page;
+    public Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginmain2);
+        setContentView(R.layout.download);
 
-        Admin= findViewById(R.id.buttonadmin);
-        Student= findViewById(R.id.buttonstudent);
-        Admin.setOnClickListener(new View.OnClickListener() {
+
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(loginmain2.this,adminmenu2.class);
+                Intent intent=new Intent(download.this,tabmenu.class);
                 startActivity(intent);
             }
         });
 
-        Student.setOnClickListener(new View.OnClickListener() {
+        home=findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(loginmain2.this,login.class);
+                Intent intent=new Intent(download.this,Home_Page.class);
                 startActivity(intent);
-
             }
         });
+
+
     }
 }

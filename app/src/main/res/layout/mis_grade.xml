@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".mis_grades">
+    tools:context=".mis_grade">
 
-    <ImageButton
-        android:id="@+id/menubutton"
+    <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/menudark" />
+        android:src="@drawable/menu" />
 
     <ImageView
         android:id="@+id/ccc"
@@ -27,7 +26,6 @@
         android:id="@+id/cccname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-15dp"
         android:layout_below="@+id/ccc"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
@@ -64,43 +62,27 @@
         android:textSize="15dp" />
 
     <EditText
-        android:id="@+id/misname"
+        android:id="@+id/miscurri"
         android:layout_width="400dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_below="@id/schoolyear"
         android:gravity="center_horizontal"
-        android:hint="STUDENT NAME"
-        android:text="@+id/stname"
+        android:text="BACHELOR OF XXXXXXXXXX"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/misname"
+        android:layout_below="@+id/miscurri"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:lineSpacingExtra="5dp"
-        android:text="Student Name"
+        android:text="Course"
         android:textColor="@color/black"
         android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text1"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:lineSpacingExtra="5dp"
-        android:text="@+id/stnumber"
-        android:hint="2019-XXXX"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
 
     <Spinner
         android:id="@+id/yrlevel"
@@ -109,7 +91,7 @@
         android:layout_below="@+id/text1"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/edittext_rectangle"
+        android:background="@drawable/editext_miniround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 
@@ -131,7 +113,7 @@
         android:layout_below="@+id/text1"
         android:layout_marginLeft="282dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/edittext_rectangle"
+        android:background="@drawable/editext_miniround"
         android:spinnerMode="dropdown"
         android:tooltipText="YEARLEVEL" />
 
@@ -200,7 +182,7 @@
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:lineSpacingExtra="5dp"
-        android:text="Pre-Req"
+        android:text="Grade"
         android:textColor="@color/black" />
 
     <!-- course code -->
@@ -507,7 +489,8 @@
         android:layout_marginTop="18dp"
         android:layout_toRightOf="@id/unit1"
         android:fontFamily="@font/arial"
-        android:hint="prereq1"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -519,7 +502,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit2"
         android:fontFamily="@font/arial"
-        android:hint="prereq2"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -531,7 +515,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit3"
         android:fontFamily="@font/arial"
-        android:hint="prereq3"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -543,7 +528,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit4"
         android:fontFamily="@font/arial"
-        android:hint="prereq4"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -555,7 +541,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit5"
         android:fontFamily="@font/arial"
-        android:hint="prereq5"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -567,7 +554,8 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit6"
         android:fontFamily="@font/arial"
-        android:hint="prereq6"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -578,8 +566,8 @@
         android:layout_below="@+id/preq6"
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit7"
-        android:fontFamily="@font/arial"
-        android:hint="prereq7"
+        android:fontFamily="@font/arial" android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
@@ -591,77 +579,31 @@
         android:layout_marginLeft="15dp"
         android:layout_toRightOf="@id/unit8"
         android:fontFamily="@font/arial"
-        android:hint="prereq8"
+        android:hint="0.0"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="15dp" />
 
     <!-- prereq end -->
     <!-- end of lists -->
 
-    <TextView
-        android:id="@+id/totaltext"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/preq8"
-        android:layout_marginLeft="135dp"
-        android:drawablePadding="30dp"
-        android:ems="10"
-        android:text="Total:" />
-
-    <EditText
-        android:id="@+id/sttotal"
-        android:layout_width="50dp"
-        android:layout_height="25dp"
-        android:layout_below="@id/preq8"
-        android:layout_toRightOf="@+id/totaltext"
-        android:drawablePadding="30dp"
-        android:ems="10"
-        android:text="@+id/unittotal" />
-
-    <TextView
-        android:id="@+id/gwatext"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/preq8"
-        android:layout_marginLeft="235dp"
-        android:drawablePadding="30dp"
-        android:ems="10"
-        android:text="GWA:" />
-
-    <EditText
-        android:id="@+id/stgwa"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="705dp"
-        android:layout_toRightOf="@+id/gwatext"
-        android:drawablePadding="30dp"
-        android:ems="10" />
-
     <!-- button -->
 
     <Button
-        android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
+        android:id="@+id/save"
+        android:layout_width="55dp"
         android:layout_height="30dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="750dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/edittext_round"
         android:ems="7"
         android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="OK"
+        android:text="save"
+        android:backgroundTint="@color/blue"
         android:textAllCaps="false"
-        android:textColor="@color/blue"
+        android:textColor="@color/white"
         android:textSize="20dp" />
-
-
-
-
-
-
-
-
-
 
 
 </RelativeLayout>

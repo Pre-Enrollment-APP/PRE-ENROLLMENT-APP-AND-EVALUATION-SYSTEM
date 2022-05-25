@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class Pre_enrollment_next extends AppCompatActivity {
 public ImageButton menu_page;
-private AlertDialog.Builder diaglogBuilder;
-private AlertDialog dialog;
 private Button ok;
 
     @Override
@@ -24,6 +22,13 @@ private Button ok;
 
         menu_page.setOnClickListener(view -> {
             Intent intent=new Intent(Pre_enrollment_next.this,tabmenu.class);
+            startActivity(intent);
+        });
+
+        ok=findViewById(R.id.submitform);
+
+        ok.setOnClickListener(view -> {
+            Intent intent=new Intent(Pre_enrollment_next.this,download.class);
             startActivity(intent);
         });
 
