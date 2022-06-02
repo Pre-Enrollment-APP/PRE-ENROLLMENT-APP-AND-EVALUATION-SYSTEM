@@ -8,10 +8,10 @@
     tools:context=".tabmenu">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="90dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
         android:src="@drawable/user" />
 
     <TextView
@@ -21,6 +21,7 @@
         android:layout_marginLeft="170dp"
         android:layout_marginTop="145dp"
         android:text="@+id/stname"
+        android:fontFamily="@font/arial"
         android:hint="STUDENT NAME"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -35,81 +36,88 @@
         android:hint="STUDENT NUMBER"
         android:textColorHint="@color/white"
         android:text="@+id/stnumber"
+        android:fontFamily="@font/arial"
         android:textColor="@color/white"
-        android:textSize="22dp" />
+        android:textSize="20dp" />
 
     <View
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:background="@color/bluegrey"
-        android:layout_marginTop="260dp"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
         android:layout_marginTop="280dp"
+        android:background="@color/bluegrey" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:drawableLeft="@drawable/homeicon"
-        android:text="Home"
+        android:fontFamily="@font/arial"
+        android:text="  Home"
         android:textColor="@color/white"
-        android:textSize="35dp" />
+        android:textSize="30dp" />
 
     <View
         android:layout_width="350dp"
         android:layout_height="2dp"
         android:background="@color/bluegrey"
-        android:layout_marginTop="350dp"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
         android:layout_marginTop="370dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/studentprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="390dp"
+        android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/usermini"
-        android:text="Profile"
+        android:fontFamily="@font/arial"
+        android:text="  Profile"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="35dp" />
+        android:textSize="30dp" />
 
     <View
         android:layout_width="350dp"
         android:layout_height="2dp"
         android:background="@color/bluegrey"
-        android:layout_marginTop="440dp"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
         android:layout_marginTop="460dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"
+        android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/infoicon"
-        android:text="Info"
+        android:fontFamily="@font/arial"
+        android:text="  About"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="35dp" />
+        android:textSize="30dp" />
 
 
     <View
         android:layout_width="350dp"
         android:layout_height="2dp"
         android:background="@color/bluegrey"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="550dp"
         android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="570dp"
+        android:fontFamily="@font/arial"
         android:drawableLeft="@drawable/logout"
-        android:text="Log Out"
+        android:text="  Log Out"
         android:textColor="@color/white"
-        android:textSize="35dp" />
+        android:textSize="30dp" />
 
 
 

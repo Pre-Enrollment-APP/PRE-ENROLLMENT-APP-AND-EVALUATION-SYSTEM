@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 public class adminmenu2 extends AppCompatActivity {
 public ImageButton registrar;
     public ImageButton accounting;
+    public ImageButton mis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,16 @@ public ImageButton registrar;
             public void onClick(View view) {
                 Intent hello=new Intent(adminmenu2.this,accounting_account.class);
                 startActivity(hello);
+            }
+        });
+
+
+        mis=findViewById(R.id.buttonmis);
+        mis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(adminmenu2.this,mis_courses.class);
+                startActivity(intent);
             }
         });
     }

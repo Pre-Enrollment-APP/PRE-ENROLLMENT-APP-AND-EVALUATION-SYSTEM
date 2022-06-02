@@ -10,19 +10,19 @@ import android.content.Intent;
 import android.view.View;
 
 
-public class appsub_popup extends AppCompatActivity {
+public class infosheet_confirmation_page extends AppCompatActivity {
 public ImageButton menu_page;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.appsub_popup);
+        setContentView(R.layout.infosheet_confirmation_page);
 
 
         menu_page=findViewById(R.id.menuicon);
         menu_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(appsub_popup.this,tabmenu.class);
+                Intent intent=new Intent(infosheet_confirmation_page.this,tabmenu.class);
                 startActivity(intent);
             }
         });

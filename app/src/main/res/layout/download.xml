@@ -20,21 +20,21 @@
     <ImageView
         android:layout_width="450dp"
         android:layout_height="250dp"
+        android:layout_centerVertical="true"
         android:layout_marginTop="35dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:layout_centerVertical="true"
         android:src="@drawable/boxy" />
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="300dp"
         android:fontFamily="@font/arial"
         android:gravity="center"
-        android:text="Your application is submitted.\n Proceed to the cashier for payment \n Thank you!"
+        android:text="Your registration form are ready to download"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
@@ -53,7 +53,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/homes"
+        android:id="@+id/home"
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_below="@id/downloadbutton"

@@ -102,36 +102,25 @@
         android:layout_height="match_parent"
         android:layout_marginTop="540dp">
 
-        <Button
+        <ImageButton
             android:id="@+id/preenroll"
-            android:layout_width="wrap_content"
+            android:layout_width="165dp"
             android:layout_height="135dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/edittext_round"
-            android:ems="7"
-            android:fontFamily="@font/arial"
-            android:gravity="center"
-            android:text="Pre-Enroll"
-            android:textAllCaps="false"
-            android:textColor="@color/blue"
-            android:textSize="20dp" />
+            android:scaleType="fitXY"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/preenroll_btn"  />
 
-        <Button
+        <ImageButton
             android:id="@+id/evaluate"
-            android:layout_width="wrap_content"
+            android:layout_width="165dp"
             android:layout_height="135dp"
             android:layout_marginLeft="210dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/edittext_round"
-            android:ems="7"
-            android:fontFamily="@font/arial"
-            android:gravity="center"
-            android:text="Evaluate"
-            android:paddingTop="10dp"
-            android:textAllCaps="false"
-            android:textColor="@color/blue"
-            android:textSize="20dp" />
+            android:scaleType="fitXY"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/evaluate_btn"/>
 
     </RelativeLayout>
 

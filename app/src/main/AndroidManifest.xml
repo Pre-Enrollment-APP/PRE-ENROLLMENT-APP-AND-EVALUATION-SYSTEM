@@ -22,6 +22,24 @@
             android:name=".test_table"
             android:exported="false" />
         <activity
+            android:name=".login_registrar"
+            android:exported="false" />
+        <activity
+            android:name=".edit_student_list"
+            android:exported="false" />
+        <activity
+            android:name=".download"
+            android:exported="false" />
+        <activity
+            android:name=".mis_grade"
+            android:exported="false" />
+        <activity
+            android:name=".mis_courses"
+            android:exported="false" />
+        <activity
+            android:name=".registrar_curriculum_form"
+            android:exported="false" />
+        <activity
             android:name=".accounting_account"
             android:exported="false" />
         <activity
@@ -41,9 +59,6 @@
             android:exported="false" />
         <activity
             android:name=".registrarpage"
-            android:exported="false" />
-        <activity
-            android:name=".infosheet2pageTWO"
             android:exported="false" />
         <activity
             android:name=".adminmenu2"
@@ -86,7 +101,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

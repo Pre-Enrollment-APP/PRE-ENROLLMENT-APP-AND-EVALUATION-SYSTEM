@@ -25,5 +25,17 @@ public ImageButton menu_page;
             }
         });
 
+
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mis_accounting.this,tabmenu.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }

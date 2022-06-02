@@ -98,7 +98,7 @@
             android:layout_height="15dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="200dp"
-            android:background="@drawable/edittext_rectangle"
+            android:background="@drawable/edittext_semiround"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
 
@@ -116,7 +116,7 @@
             android:layout_height="15dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="230dp"
-            android:background="@drawable/edittext_rectangle"
+            android:background="@drawable/edittext_semiround"
             android:spinnerMode="dropdown"
             android:tooltipText="COURSE" />
 

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class mis_curriculum extends AppCompatActivity {
+public class edit_student_list extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mis_curriculum);
+        setContentView(R.layout.edit_student_list);
     }
 }
