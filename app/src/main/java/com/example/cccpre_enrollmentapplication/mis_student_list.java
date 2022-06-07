@@ -3,12 +3,13 @@ package com.example.cccpre_enrollmentapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
 
-public class mis_student_list extends AppCompatActivity {
+public class mis_student_list extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 public ImageButton menu_page;
 public Button edit1,edit2, edit3;
     @Override
@@ -53,6 +54,18 @@ public Button edit1,edit2, edit3;
             }
         });
 
+
+
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }
