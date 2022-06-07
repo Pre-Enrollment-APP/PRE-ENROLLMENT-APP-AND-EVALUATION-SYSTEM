@@ -93,7 +93,7 @@
 
 
         <Spinner
-            android:id="@+id/yrlvl"
+            android:id="@+id/yrlvl_spinner"
             android:layout_width="70dp"
             android:layout_height="15dp"
             android:layout_marginLeft="80dp"
@@ -111,7 +111,7 @@
 
 
         <Spinner
-            android:id="@+id/semester"
+            android:id="@+id/semester_spinner"
             android:layout_width="70dp"
             android:layout_height="15dp"
             android:layout_marginLeft="80dp"
