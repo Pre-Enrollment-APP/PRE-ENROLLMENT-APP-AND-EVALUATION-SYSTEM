@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
-    tools:context=".MainActivity"
     android:layout_centerVertical="true">
 
     <TextView
@@ -119,6 +118,18 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/createaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="Create an account"
+        android:textColor="@color/white" />
+
 
 
 

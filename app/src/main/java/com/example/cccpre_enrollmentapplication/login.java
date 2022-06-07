@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 public class login extends AppCompatActivity {
 public Button Login;
+public Button CAA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,15 @@ public Button Login;
         });
         //create account
 
+        CAA=findViewById(R.id.createaccount);
 
+        CAA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(login.this,registerUser.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
