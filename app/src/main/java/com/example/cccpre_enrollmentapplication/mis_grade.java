@@ -55,7 +55,8 @@ public class mis_grade extends AppCompatActivity implements AdapterView.OnItemSe
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        Toast.makeText(getApplicationContext(),yrlevel_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),sem_array[i] , Toast.LENGTH_LONG).show();
     }
 
     @Override

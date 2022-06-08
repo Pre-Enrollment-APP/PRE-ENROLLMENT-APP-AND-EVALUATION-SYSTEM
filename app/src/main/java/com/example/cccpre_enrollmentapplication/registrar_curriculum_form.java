@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 
 
-public class registrar_curriculum_form extends AppCompatActivity {
-public ImageButton menu_page;
+public class registrar_curriculum_form extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    public ImageButton menu_page;
     String [] yrlevel_array = {"1st Year", "2nd Year", "3rd Year", "4th Year"};
     String [] sem_array = {"1st Semester", "2nd Semester"};
     @Override
@@ -49,5 +49,16 @@ public ImageButton menu_page;
         spin.setAdapter(ab);
 
         // SEMESTER SPINNER
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Toast.makeText(getApplicationContext(),yrlevel_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),sem_array[i] , Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

@@ -90,7 +90,11 @@ public Button next_page;
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        Toast.makeText(getApplicationContext(),course_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),major_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),sem_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),section_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),mop_array[i] , Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -48,7 +48,8 @@ public class evaluationform extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        Toast.makeText(getApplicationContext(),yrlevel_array[i] , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),sem_array2[i] , Toast.LENGTH_LONG).show();
     }
 
     @Override
