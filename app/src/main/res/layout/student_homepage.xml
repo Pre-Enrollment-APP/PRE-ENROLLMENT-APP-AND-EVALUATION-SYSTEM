@@ -118,9 +118,9 @@
             android:layout_height="135dp"
             android:layout_marginLeft="210dp"
             android:layout_marginTop="20dp"
-            android:scaleType="fitXY"
             android:background="?attr/selectableItemBackground"
-            android:src="@drawable/evaluate_btn"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/evaluate_btn" />
 
     </RelativeLayout>
 

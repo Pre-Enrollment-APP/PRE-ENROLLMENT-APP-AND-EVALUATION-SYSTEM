@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Version/app/src/main/res/layout/login_registrar.xml" value="0.209375" />
+        <entry key="..\:/Version/app/src/main/res/layout/mis_accounting.xml" value="0.25" />
+        <entry key="..\:/Version/app/src/main/res/layout/student_evaluation_form.xml" value="0.15" />
+        <entry key="..\:/Version/app/src/main/res/layout/student_homepage.xml" value="0.1810810810810811" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="true" project-jdk-name="14" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

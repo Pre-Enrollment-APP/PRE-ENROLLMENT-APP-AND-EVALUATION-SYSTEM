@@ -103,6 +103,7 @@
             android:tooltipText="COURSE" />
 
         <TextView
+            android:id="@+id/yearlevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"

@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 
-public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Pre_Enrollment extends AppCompatActivity{
 public ImageButton menu_page;
 public Button next_page;
 
@@ -38,67 +38,5 @@ public Button next_page;
             Intent intent=new Intent(Pre_Enrollment.this,Pre_enrollment_next.class);
             startActivity(intent);
         });
-        // COURSE SPINNER
-        Spinner spin = (Spinner) findViewById(R.id.course);
-                spin.setOnClickListener((View.OnClickListener) this);
-
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,course_array);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(aa);
-        // COURSE SPINNER
-
-
-        // MAJOR SPINNER
-        Spinner spin2 = (Spinner) findViewById(R.id.major);
-        spin2.setOnClickListener((View.OnClickListener) this);
-
-        ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,major_array);
-        ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(ab);
-        // MAJOR SPINNER
-
-        // SEMESTER SPINNER
-        Spinner spin3 = (Spinner)  findViewById(R.id.semester);
-        spin3.setOnClickListener((View.OnClickListener) this);
-
-        ArrayAdapter ac = new ArrayAdapter(this,android.R.layout.simple_spinner_item,sem_array);
-        ac.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(ac);
-        // SEMESTER SPINNER
-
-        // SECTION SPINNER
-        Spinner spin4 = (Spinner) findViewById(R.id.section);
-        spin4.setOnClickListener((View.OnClickListener) this);
-
-        ArrayAdapter ad = new ArrayAdapter(this,android.R.layout.simple_spinner_item,section_array);
-        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(ad);
-        // SECTION SPINNER
-
-        // MODE OF PAYMENT SPINNER
-        Spinner spin5 = (Spinner) findViewById(R.id.mop);
-        spin5.setOnClickListener((View.OnClickListener) this);
-
-        ArrayAdapter ae = new ArrayAdapter(this,android.R.layout.simple_spinner_item,mop_array);
-        ae.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin.setAdapter(ae);
-        // MODE OF PAYMENT SPINNER
-
-
-
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(getApplicationContext(),course_array[i] , Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),major_array[i] , Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),sem_array[i] , Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),section_array[i] , Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),mop_array[i] , Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }
+    }
