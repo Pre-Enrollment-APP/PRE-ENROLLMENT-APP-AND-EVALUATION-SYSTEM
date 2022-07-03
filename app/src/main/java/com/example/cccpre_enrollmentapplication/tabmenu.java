@@ -8,14 +8,18 @@ import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class tabmenu extends AppCompatActivity {
 public Button profile;
-public Button about;
+public Button about, logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabmenu);
         profile=findViewById(R.id.studentprofile);
+        about=findViewById(R.id.about);
+        logout=findViewById(R.id.logout);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,7 +28,7 @@ public Button about;
             }
         });
 
-        about=findViewById(R.id.about);
+
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,8 +37,14 @@ public Button about;
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(tabmenu.this, login.class));
 
-
+            }
+        });
 
 
 
