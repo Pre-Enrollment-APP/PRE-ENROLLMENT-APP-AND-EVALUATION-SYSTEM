@@ -87,7 +87,7 @@
         android:inputType="textPassword" />
 
     <CheckBox
-        android:id="@+id/checkbox_meat"
+        android:id="@+id/checkbox_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"

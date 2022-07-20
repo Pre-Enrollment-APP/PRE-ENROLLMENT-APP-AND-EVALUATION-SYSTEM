@@ -13,9 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 
-public class Pre_Enrollment extends AppCompatActivity{
-public ImageButton menu_page;
-public Button next_page;
+public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+private ImageButton menu_page;
+private Button next_page;
 
     String [] course_array = {"BSCS", "BSBA", "BSOA", "ABREED", "BEED", "BSED"};
     String [] major_array = {"A", "B", "C", "D"};
@@ -27,16 +27,22 @@ public Button next_page;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pre_enrollment);
         menu_page=findViewById(R.id.menuicon);
-        next_page=(Button)findViewById(R.id.nextpage);
 
         menu_page.setOnClickListener(view -> {
             Intent intent=new Intent(Pre_Enrollment.this,tabmenu.class);
             startActivity(intent);
         });
 
-        next_page.setOnClickListener(view -> {
-            Intent intent=new Intent(Pre_Enrollment.this,Pre_enrollment_next.class);
-            startActivity(intent);
-        });
+
 }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
     }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+}

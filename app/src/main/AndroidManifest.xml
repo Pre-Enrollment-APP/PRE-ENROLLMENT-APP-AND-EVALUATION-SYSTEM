@@ -16,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
-            android:name=".misaccountingforspinner"
+            android:name=".resetpassword"
             android:exported="false" />
+
         <activity
             android:name=".registerUser"
             android:exported="false" />
@@ -68,9 +69,6 @@
             android:exported="false" />
         <activity
             android:name=".admingrades"
-            android:exported="false" />
-        <activity
-            android:name=".infosheet2pageONE"
             android:exported="false" />
         <activity
             android:name=".loginmain2"

@@ -64,7 +64,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-           >
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/fullnametxt"
@@ -79,15 +79,15 @@
             <EditText
                 android:id="@+id/fullname"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/fullnametxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/icon_username"
                 android:drawablePadding="30dp"
                 android:ems="10"
-                android:hint="Lastname,Firstname M.I." />
+                android:hint="" />
 
             <TextView
                 android:id="@+id/emailtext"
@@ -104,11 +104,11 @@
             <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/emailtext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
 
             <TextView
@@ -126,11 +126,33 @@
             <EditText
                 android:id="@+id/password"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/passwordtxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
+                android:drawableLeft="@drawable/ic_lock"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/studentnumbertxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Student number:"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/studentnumber"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/studentnumbertxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock"
                 android:inputType="textPassword" />
 
@@ -138,22 +160,22 @@
                 android:id="@+id/coursetext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/password"
+                android:layout_below="@+id/studentnumber"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
                 android:text="Course"
                 android:textColor="@color/white" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/course"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/coursetext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
-                android:drawableLeft="@drawable/ic_lock" />
+                android:background="@drawable/editext_miniround" />
+
             <TextView
                 android:id="@+id/addresstext"
                 android:layout_width="wrap_content"
@@ -162,38 +184,40 @@
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Address"
+                android:text="Address:"
                 android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/address"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/addresstext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
+
             <TextView
-                android:id="@+id/fathernametext"
+                android:id="@+id/contactnumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/address"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Father Name"
+                android:text="Contact number:"
                 android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/fathername"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_below="@+id/fathernametext"
+                android:layout_height="50dp"
+                android:layout_below="@+id/contactnumber"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
+
             <TextView
                 android:id="@+id/mothernametext"
                 android:layout_width="wrap_content"
@@ -212,7 +236,7 @@
                 android:layout_below="@+id/mothernametext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
 
             <TextView
@@ -232,13 +256,13 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/datetext"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/editext_miniround"
                 android:fontFamily="@font/arial"
                 android:onClick="opendatePicker"
-                android:textAlignment="center"
                 android:text=" JAN 01 2022"
-                android:background="@drawable/edittext_round"
-                android:layout_marginLeft="30dp"
+                android:textAlignment="center"
                 android:textSize="20dp" />
 
             <TextView
@@ -255,11 +279,11 @@
             <EditText
                 android:id="@+id/number"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_below="@+id/numbertext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/edittext_round"
+                android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
 
 
@@ -267,21 +291,20 @@
     </ScrollView>
 
 
-
     <Button
         android:id="@+id/registeruser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="610dp"
+        android:layout_marginTop="620dp"
         android:background="@drawable/edittext_round"
+        android:backgroundTint="@color/blue"
         android:ems="5"
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:text="Create"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/blue"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="25dp" />
 
     <ProgressBar

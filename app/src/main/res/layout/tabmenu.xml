@@ -15,7 +15,7 @@
         android:src="@drawable/user" />
 
     <TextView
-        android:id="@+id/stname"
+        android:id="@+id/fullname"
         android:layout_width="210dp"
         android:layout_height="70dp"
         android:layout_marginLeft="170dp"
@@ -28,16 +28,28 @@
         android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/stnumber"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="170dp"
         android:layout_marginTop="210dp"
-        android:hint="STUDENT NUMBER"
-        android:textColorHint="@color/white"
-        android:text="@+id/stnumber"
         android:fontFamily="@font/arial"
+        android:hint="STUDENT NUMBER"
+        android:text="@+id/stnumber"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+
+        android:fontFamily="@font/arial"
+        android:hint="STUDENT NUMBER"
+        android:layout_below="@id/email"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20dp" />
 
     <View

@@ -4,12 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,9 +27,11 @@ import java.util.logging.Logger;
 
 public class login extends AppCompatActivity implements View.OnClickListener  {
 private EditText emailadd, pass;
-private Button register,logIn;
+private Button register,logIn,forgetpassword;
 private FirebaseAuth mAuth;
 private  ProgressBar progressBar;
+private CheckBox checkbox_password;
+
 
 
     @Override
@@ -32,6 +39,7 @@ private  ProgressBar progressBar;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.logine_page);
 
+        forgetpassword=(Button)findViewById(R.id.forget);
         register=(Button) findViewById(R.id.createaccount);
         register.setOnClickListener(this);
         logIn=(Button) findViewById(R.id.logIn);
@@ -40,10 +48,21 @@ private  ProgressBar progressBar;
         progressBar=(ProgressBar) findViewById(R.id.progressbar);
         pass=(EditText) findViewById(R.id.password);
         mAuth=FirebaseAuth.getInstance();
+        checkbox_password=findViewById(R.id.checkbox_pass);
 
-
+        forgetpassword.setOnClickListener(this);
+        checkbox_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+                else{
+                    pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
     }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -53,8 +72,13 @@ private  ProgressBar progressBar;
             case R.id.logIn:
                 userLogin();
                 break;
+            case R.id.forget:
+                Intent intent=new Intent(login.this,resetpassword.class);
+                startActivity(intent);
         }
     }
+
+
     private void userLogin(){
         String Email=emailadd.getText().toString().trim();
         String Password=pass.getText().toString().trim();
@@ -91,15 +115,18 @@ private  ProgressBar progressBar;
                 }else
                     user.sendEmailVerification();
                 Toast.makeText(login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
                 }
 
             else
             {
                 Toast.makeText(login.this,"Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
             }
 
         }
 
     });
     }
+
 }
