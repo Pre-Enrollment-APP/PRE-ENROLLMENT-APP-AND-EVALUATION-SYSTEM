@@ -198,52 +198,10 @@
                 android:drawableLeft="@drawable/ic_lock" />
 
             <TextView
-                android:id="@+id/contactnumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/address"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/arial"
-                android:text="Contact number:"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/fathername"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/contactnumber"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock" />
-
-            <TextView
-                android:id="@+id/mothernametext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fathername"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/arial"
-                android:text="Mothers Name"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/mothername"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:layout_below="@+id/mothernametext"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock" />
-
-            <TextView
                 android:id="@+id/datetext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/mothername"
+                android:layout_below="@+id/address"
                 android:layout_marginLeft="70dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
@@ -286,6 +244,92 @@
                 android:background="@drawable/editext_miniround"
                 android:drawableLeft="@drawable/ic_lock" />
 
+
+
+
+
+            <TextView
+                android:id="@+id/mothernametext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/number"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Mother Name"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/mothername"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/mothernametext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:drawableLeft="@drawable/ic_lock" />
+
+            <TextView
+                android:id="@+id/mothernumbertxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mothername"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Contact Number:"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/mothernumber"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/mothernumbertxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:drawableLeft="@drawable/ic_lock" />
+
+            <TextView
+                android:id="@+id/fathernametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mothernumber"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Father Name"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/fathername"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/fathernametxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:drawableLeft="@drawable/ic_lock" />
+            <TextView
+                android:id="@+id/fathernumbertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fathername"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Contact Number:"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/fathernumber"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/fathernumbertext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:drawableLeft="@drawable/ic_lock" />
 
         </RelativeLayout>
     </ScrollView>

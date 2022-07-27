@@ -1,0 +1,138 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.navigation",
+    "module": "navigation-fragment",
+    "version": "2.5.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5-20220421031748+0000"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-ktx",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-runtime",
+          "version": {
+            "requires": "2.5.0"
+          }
+        },
+        {
+          "group": "androidx.slidingpanelayout",
+          "module": "slidingpanelayout",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation-fragment-2.5.0.aar",
+          "url": "navigation-fragment-2.5.0.aar",
+          "size": 67712,
+          "sha512": "3f1f02720b34d31c2fe9e5c87a7b2389ecad6ec8ce1320b2bcd089e92764999fe905212ee70796cd14a9bc6bfde8dc61888a70b8d4a3e331480df245a24ee4c6",
+          "sha256": "6b70876349b1bc44591ab66f91b67c58e3d9c4472210b9aede614d49c4d0f16a",
+          "sha1": "1c758809a8c18715bdd0fba8b474d9d8d750c526",
+          "md5": "02a0916e39bfa8c7f9d71d77d7be2d6b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.fragment",
+          "module": "fragment-ktx",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-runtime",
+          "version": {
+            "requires": "2.5.0"
+          }
+        },
+        {
+          "group": "androidx.slidingpanelayout",
+          "module": "slidingpanelayout",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation-fragment-2.5.0.aar",
+          "url": "navigation-fragment-2.5.0.aar",
+          "size": 67712,
+          "sha512": "3f1f02720b34d31c2fe9e5c87a7b2389ecad6ec8ce1320b2bcd089e92764999fe905212ee70796cd14a9bc6bfde8dc61888a70b8d4a3e331480df245a24ee4c6",
+          "sha256": "6b70876349b1bc44591ab66f91b67c58e3d9c4472210b9aede614d49c4d0f16a",
+          "sha1": "1c758809a8c18715bdd0fba8b474d9d8d750c526",
+          "md5": "02a0916e39bfa8c7f9d71d77d7be2d6b"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "navigation-fragment-2.5.0-sources.jar",
+          "url": "navigation-fragment-2.5.0-sources.jar",
+          "size": 24003,
+          "sha512": "d0327876bb22f0951c353dcbfe2bc42769899f2c3e6838e58a91ca86b2c7cbef4f1468d7b7568ae25a3d157347f7cf02c8e4082e8150484abbc8020ecc34f18e",
+          "sha256": "1d03fa06379629e25c3f5ac5dd50c35063b4767b8ed35495408233aeb11cd915",
+          "sha1": "8d901ab79e496cbab76b148a57727938406fe19e",
+          "md5": "d7cc7de317ffe33443400511be09d2e5"
+        }
+      ]
+    }
+  ]
+}

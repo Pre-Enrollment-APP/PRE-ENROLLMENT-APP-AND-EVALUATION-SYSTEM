@@ -1,5 +1,6 @@
 package com.example.cccpre_enrollmentapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,13 +9,26 @@ import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class tabmenu extends AppCompatActivity {
-    public Button profile;
-    public Button about, logout;
-    TextView name,course,email;
+    private Button profile;
+    private Button about, logout;
+    private TextView studentNumber;
+    private User usuario=new User();
+    private FirebaseUser user;
+    private DatabaseReference firebaseDatabase;
+    private FirebaseAuth mAuth;
+    private String  userID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +41,6 @@ public class tabmenu extends AppCompatActivity {
 
         //
 
-        name=findViewById(R.id.fullname);
-        course=findViewById(R.id.course);
-        email=findViewById(R.id.email);
 
 
         profile.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +69,38 @@ public class tabmenu extends AppCompatActivity {
             }
         });
 
+    mAuth=FirebaseAuth.getInstance();
+
+    TextView fullName=(TextView) findViewById(R.id.fullname);
+        TextView Course =(TextView) findViewById(R.id.course);
+     studentNumber=(TextView)findViewById(R.id.studentnumber);
+
+    user=FirebaseAuth.getInstance().getCurrentUser();
+    DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
+    userID=user.getUid();
+    databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+            String name =snapshot.child("Name").getValue().toString();
+            String course =snapshot.child("Course").getValue().toString();
+            String studentnumber =snapshot.child("Student_number").getValue().toString();
+
+            fullName.setText(name);
+            Course.setText(course);
+            studentNumber.setText(studentnumber)
+            ;
+
+
+
+        }
+
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+            Toast.makeText(tabmenu.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
+
+        }
+    });
 
 
     }

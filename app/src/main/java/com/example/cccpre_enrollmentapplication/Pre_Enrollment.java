@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 private ImageButton menu_page;
 private Button next_page;
+private Spinner semester;
 
     String [] course_array = {"BSCS", "BSBA", "BSOA", "ABREED", "BEED", "BSED"};
     String [] major_array = {"A", "B", "C", "D"};
@@ -32,6 +33,12 @@ private Button next_page;
             Intent intent=new Intent(Pre_Enrollment.this,tabmenu.class);
             startActivity(intent);
         });
+
+        semester.findViewById(R.id.semester);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.courses, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        semester.setAdapter(adapter);
+        semester.setOnItemSelectedListener(this);
 
 
 }

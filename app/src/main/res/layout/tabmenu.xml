@@ -16,41 +16,36 @@
 
     <TextView
         android:id="@+id/fullname"
-        android:layout_width="210dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="145dp"
-        android:text="@+id/stname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="125dp"
         android:fontFamily="@font/arial"
-        android:hint="STUDENT NAME"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/studentnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="170dp"
-        android:layout_marginTop="210dp"
+        android:layout_below="@+id/fullname"
+        android:layout_marginLeft="150dp"
         android:fontFamily="@font/arial"
-        android:hint="STUDENT NUMBER"
-        android:text="@+id/stnumber"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20dp" />
+
     <TextView
         android:id="@+id/course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="170dp"
-
+        android:layout_below="@id/studentnumber"
+        android:layout_marginLeft="150dp"
         android:fontFamily="@font/arial"
-        android:hint="STUDENT NUMBER"
-        android:layout_below="@id/email"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <View
         android:layout_width="350dp"

@@ -24,14 +24,7 @@ private DatabaseReference reference;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_profile);
 
-        more=findViewById(R.id.more);
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(profile.this,studentinfo.class);
-                startActivity(intent);
-            }
-        });
+
 
         user =FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance().getReference("Users");

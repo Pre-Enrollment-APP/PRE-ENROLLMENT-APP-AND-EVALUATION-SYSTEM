@@ -30,7 +30,7 @@ import java.util.Calendar;
 
 public class registerUser extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private FirebaseAuth mAuth;
-    private EditText name, pass, emailadd,add,fname,mname,num;
+    private EditText name, pass,studentnumber, emailadd,add,fnumber,mnumber,fname,mname,num;
     private ProgressBar progressbar;
     private Button registeruser,date;
     private ImageButton Back;
@@ -52,7 +52,11 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         num=findViewById(R.id.number);
         date=findViewById(R.id.date);
         fname=findViewById(R.id.fathername);
+        fnumber=findViewById(R.id.fathernumber);
         mname=findViewById(R.id.mothername);
+        mnumber=findViewById(R.id.mothernumber);
+        studentnumber=findViewById(R.id.studentnumber);
+
 
         registeruser = findViewById(R.id.registeruser);
         registeruser.setOnClickListener(this);
@@ -96,11 +100,15 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         String Password = pass.getText().toString().trim();
         String Course = course.getSelectedItem().toString().trim();
         String Name = name.getText().toString().trim();
-        String Number= num.getText().toString().trim();
+        String Contact_Number= num.getText().toString().trim();
         String Birthday=date.getText().toString().trim();
         String Address= add.getText().toString().trim();
         String Mother =mname.getText().toString().trim();
         String Father =fname.getText().toString().trim();
+        String Student_number=studentnumber.getText().toString().trim();
+        String Father_number=fnumber.getText().toString().trim();
+        String Mother_number=mnumber.getText().toString().trim();
+
 
 
         if (Name.isEmpty()) {
@@ -148,7 +156,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             return;
 
         }
-        if (Number.isEmpty()) {
+        if (Contact_Number.isEmpty()) {
             num.setError("Contact # is required!");
             num.requestFocus();
             return;
@@ -176,8 +184,8 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user=new User (Name,Course,Email);
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Mother_number,Father,Father_number);
+                            FirebaseDatabase.getInstance().getReference("User")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
