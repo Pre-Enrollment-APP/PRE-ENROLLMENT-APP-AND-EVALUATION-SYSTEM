@@ -25,7 +25,6 @@ public class tabmenu extends AppCompatActivity {
     private TextView studentNumber;
     private User usuario=new User();
     private FirebaseUser user;
-    private DatabaseReference firebaseDatabase;
     private FirebaseAuth mAuth;
     private String  userID;
 
