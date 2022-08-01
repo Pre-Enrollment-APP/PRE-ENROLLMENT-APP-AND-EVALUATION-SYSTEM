@@ -4,19 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class studentinfo extends AppCompatActivity {
-public ImageButton menu_page;
-public ImageButton edit;
+private ImageButton menu_page;
+private ImageButton edit;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrar_studentinfo);
 
-        menu_page=findViewById(R.id.menuicon);
+
         menu_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
