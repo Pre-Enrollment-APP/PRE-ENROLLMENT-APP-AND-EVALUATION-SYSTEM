@@ -36,11 +36,11 @@ public class profile extends AppCompatActivity {
         studentnumber=findViewById(R.id.Snumber);
         emailadd=findViewById(R.id.SP_email);
         course=findViewById(R.id.course);
-        add=findViewById(R.id.address);
+        add=findViewById(R.id.SP_address);
         fnumber=findViewById(R.id.SP_fathernumber);
         mnumber=findViewById(R.id.SP_mothernumber);
-        fname=findViewById(R.id.fathername);
-        mname=findViewById(R.id.mothername);
+        fname=findViewById(R.id.SP_fathername);
+        mname=findViewById(R.id.SP_mothername);
         num=findViewById(R.id.SP_number);
         bday=findViewById(R.id.SP_bday);
 
@@ -55,9 +55,34 @@ public class profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 String Name =snapshot.child("Name").getValue().toString();
+                String StudentNumber=snapshot.child("Student_number").getValue().toString();
+                String Course=snapshot.child("Course").getValue().toString();
 
+                //String Number=snapshot.child("Number").getValue().toString();
+                String Email =snapshot.child("Email").getValue().toString();
+                String Address=snapshot.child("Address").getValue().toString();
+                String Birthday=snapshot.child("Birthday").getValue().toString();
+                String MotherName=snapshot.child("Mother").getValue().toString();
+                String FatherName=snapshot.child("Father").getValue().toString();
+                String Fathernumber=snapshot.child("Father_number").getValue().toString();
+                String Mothernumber=snapshot.child("Mother_number").getValue().toString();
 
                 name.setText(Name);
+                course.setText(Course);
+                studentnumber.setText(StudentNumber);
+
+                //num.setText(Number);
+                emailadd.setText(Email);
+                add.setText(Address);
+                bday.setText(Birthday);
+                mname.setText(MotherName);
+                fname.setText(FatherName);
+                fnumber.setText(Fathernumber);
+                mnumber.setText(Mothernumber);
+
+
+
+
 
             }
 
