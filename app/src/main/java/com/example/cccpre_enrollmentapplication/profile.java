@@ -27,6 +27,7 @@ public class profile extends AppCompatActivity {
     private FirebaseUser user;
     private String userID;
     private FirebaseAuth mAuth;
+    private ImageButton editButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,17 @@ public class profile extends AppCompatActivity {
         mname=findViewById(R.id.SP_mothername);
         num=findViewById(R.id.SP_number);
         bday=findViewById(R.id.SP_bday);
+
+        editButton=findViewById(R.id.editbutton);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(profile.this,StudentProfile_Edit.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
         mAuth=FirebaseAuth.getInstance();

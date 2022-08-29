@@ -108,9 +108,9 @@
             android:layout_height="135dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:scaleType="fitXY"
             android:background="?attr/selectableItemBackground"
-            android:src="@drawable/preenroll_btn"  />
+            android:scaleType="fitXY"
+            android:src="@drawable/preenroll_btn" />
 
         <ImageButton
             android:id="@+id/evaluate"

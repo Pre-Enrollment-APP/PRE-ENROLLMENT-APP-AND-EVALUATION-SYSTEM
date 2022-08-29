@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity"
+    tools:context=".Pre_Enrollment"
     android:orientation="vertical">
 
 
@@ -62,6 +62,7 @@
             android:textSize="10dp" />
 
 
+</RelativeLayout>
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="70dp"
@@ -498,5 +499,5 @@
             android:textColor="@color/white">
 
         </Button>
-    </RelativeLayout>
+
     </RelativeLayout>

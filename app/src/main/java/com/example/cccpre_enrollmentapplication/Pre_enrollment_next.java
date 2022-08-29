@@ -21,19 +21,7 @@ private Button ok;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pre_enrollment_next);
 
-        menu_page=findViewById(R.id.menuicon);
 
-        menu_page.setOnClickListener(view -> {
-            Intent intent=new Intent(Pre_enrollment_next.this,tabmenu.class);
-            startActivity(intent);
-        });
-
-        ok=findViewById(R.id.submitform);
-
-        ok.setOnClickListener(view -> {
-            Intent intent=new Intent(Pre_enrollment_next.this,download.class);
-            startActivity(intent);
-        });
 
 
 
