@@ -16,25 +16,23 @@
         android:layout_height="30dp"
         android:scaleType="fitXY"
         android:background="?attr/selectableItemBackground"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
 
-
-    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:paddingLeft="30dp"
         android:paddingTop="13dp">
 
-        <ImageView
-            android:id="@+id/ccc"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/ccc" />
+    <ImageView
+        android:id="@+id/ccc"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ccc" />
 
         <TextView
             android:id="@+id/cdis"
@@ -49,89 +47,76 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cdis"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/arial"
-            android:gravity="center"
-            android:lineSpacingExtra="5dp"
-            android:text="Please fill out the form"
-            android:textSize="10dp" />
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cdis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="Please fill out the form"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/studentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/arial"
+        android:hint="Name"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@id/coursetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/studentName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/arial"
+        android:text="Course"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@id/course"
+        android:layout_width="145dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/studentName"
+        android:layout_marginStart="20dp"
+        android:clickable="false"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/coursetext"
+        android:background="@drawable/editext_miniround" />
 
 
-</RelativeLayout>
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="180dp"
-            android:background="@drawable/bg_round_border"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp">
+    <TextView
+        android:id="@+id/semestertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/coursetext"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/arial"
+        android:text="Semester"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
-            <RadioButton
-                android:id="@+id/radio_new"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/arial"
-                android:text="1st Year" />
-            <!--android:onClick="onRadioButtonClicked"-->
-
-            <RadioButton
-                android:id="@+id/radio_old"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/radio_new"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/arial"
-                android:text="2nd Year" />
-
-            <RadioButton
-                android:id="@+id/radio_cross"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_toRightOf="@+id/radio_new"
-                android:fontFamily="@font/arial"
-                android:text="3rd Year" />
-
-            <RadioButton
-                android:id="@+id/radio_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/radio_cross"
-                android:layout_marginStart="136dp"
-                android:fontFamily="@font/arial"
-                android:text="4th Year" />
-
-
-        </RelativeLayout>
-
-
-        <TextView
-            android:id="@+id/semestertext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="260dp"
-            android:fontFamily="@font/arial"
-            android:text="Semester"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-
-        <Spinner
-            android:id="@+id/semester"
-            android:layout_width="80dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="260dp"
-            android:layout_toRightOf="@+id/semestertext"
-            android:background="@drawable/editext_miniround"
-            android:paddingLeft="5dp" />
+    <Spinner
+        android:id="@+id/semester"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="260dp"
+        android:layout_toRightOf="@+id/semestertext"
+        android:background="@drawable/editext_miniround"
+        android:paddingLeft="5dp" />
 
 
         <TextView
@@ -146,16 +131,16 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
 
-        <Spinner
-            android:id="@+id/mop"
-            android:layout_width="145dp"
-            android:layout_height="25dp"
-            android:layout_below="@+id/semester"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/moptext"
-            android:background="@drawable/editext_miniround"
-            android:paddingLeft="5dp" />
+    <Spinner
+        android:id="@+id/mop"
+        android:layout_width="145dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/semester"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/moptext"
+        android:background="@drawable/editext_miniround"
+        android:paddingLeft="5dp" />
 
         <TextView
             android:id="@+id/sectiontext"
@@ -194,18 +179,18 @@
             android:textColor="@color/black"
             android:textSize="13dp" />
 
-        <TextView
-            android:id="@+id/Des"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/section"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="13dp"
-            android:layout_toRightOf="@+id/SC"
-            android:fontFamily="@font/arial"
-            android:text="DESCRIPTION"
-            android:textColor="@color/black"
-            android:textSize="13dp" />
+    <TextView
+        android:id="@+id/Des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/SC"
+        android:fontFamily="@font/arial"
+        android:text="DESCRIPTION"
+        android:textColor="@color/black"
+        android:textSize="13dp" />
 
         <TextView
             android:id="@+id/units"
@@ -223,7 +208,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="258dp"
+            android:layout_height="348dp"
             android:layout_below="@id/SC"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
@@ -388,15 +373,16 @@
                     android:layout_marginTop="18dp"
                     android:layout_toRightOf="@+id/SC2"
                     android:background="@drawable/editext_miniround" />
+
                 <Spinner
-                android:id="@+id/Des10"
-                android:layout_width="150dp"
-                android:layout_height="25dp"
-                android:layout_below="@+id/Des9"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="18dp"
-                android:layout_toRightOf="@+id/SC2"
-                android:background="@drawable/editext_miniround" />
+                    android:id="@+id/Des10"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/Des9"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_toRightOf="@+id/SC2"
+                    android:background="@drawable/editext_miniround" />
 
                 <EditText
                     android:id="@+id/units1"
@@ -485,19 +471,24 @@
                     android:layout_toRightOf="@+id/Des1" />
 
 
+
             </RelativeLayout>
         </ScrollView>
-
+    <RelativeLayout
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="660dp"
             android:background="@drawable/edittext_semiround"
             android:backgroundTint="@color/blue"
             android:text="Ok"
             android:textColor="@color/white">
 
         </Button>
-
     </RelativeLayout>
+
+</RelativeLayout>

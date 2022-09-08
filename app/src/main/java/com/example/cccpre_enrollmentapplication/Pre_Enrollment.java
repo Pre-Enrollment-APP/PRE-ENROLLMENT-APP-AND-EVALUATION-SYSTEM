@@ -1,22 +1,29 @@
 package com.example.cccpre_enrollmentapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.content.Intent;
 import android.widget.Spinner;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class Pre_Enrollment extends AppCompatActivity {
     private ImageButton menu_page;
     private Button next_page;
     private Spinner semester;
+    private FirebaseUser user;
 
     //String [] course_array = {"BSCS", "BSBA", "BSOA", "ABREED", "BEED", "BSED"};
     // String [] major_array = {"A", "B", "C", "D"};
@@ -27,6 +34,13 @@ public class Pre_Enrollment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pre_enrollment);
+
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("Course&Curriculum");
+
+
+
+
 
     }
 }

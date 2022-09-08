@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">CCC Pre-Enrollment Application</string>
     <string-array name="courses">
-        <item>Bachelor of Science in Computer </item>
+        <item>Bachelor of Science in Computer Science </item>
         <item>Bachelor of Elementary Education </item>
         <item>Bachelor of Science in Office Administration</item>
+        <item>Bachelor of Science in Business Administration </item>
+        <item>Bachelor of Arts in Religious Education</item>
+        <item>Bachelor of Secondary Education</item>
     </string-array>
     <string name="title_activity_try">TRY</string>
     <!-- Strings used for fragments for navigation -->

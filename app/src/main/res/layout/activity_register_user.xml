@@ -336,23 +336,26 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        >
 
 
-    <Button
-        android:id="@+id/registeruser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/edittext_round"
-        android:backgroundTint="@color/blue"
-        android:ems="5"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:text="Create"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
+        <Button
+            android:id="@+id/registeruser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/edittext_round"
+            android:backgroundTint="@color/blue"
+            android:layout_alignParentBottom="true"
+            android:ems="5"
+            android:fontFamily="@font/arial"
+            android:gravity="center"
+            android:text="Create"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_marginBottom="37dp"/>
     </RelativeLayout>
 
     <ProgressBar

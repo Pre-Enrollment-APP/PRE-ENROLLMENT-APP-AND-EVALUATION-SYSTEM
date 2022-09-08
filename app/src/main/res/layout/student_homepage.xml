@@ -89,8 +89,7 @@
         <CalendarView
             android:id="@+id/calendar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           >
+            android:layout_height="wrap_content">
 
         </CalendarView>
 
@@ -104,9 +103,9 @@
 
         <ImageButton
             android:id="@+id/preenroll"
-            android:layout_width="165dp"
-            android:layout_height="135dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="145dp"
+            android:layout_height="125dp"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="20dp"
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitXY"
@@ -114,8 +113,8 @@
 
         <ImageButton
             android:id="@+id/evaluate"
-            android:layout_width="165dp"
-            android:layout_height="135dp"
+            android:layout_width="145dp"
+            android:layout_height="125dp"
             android:layout_marginLeft="210dp"
             android:layout_marginTop="20dp"
             android:background="?attr/selectableItemBackground"

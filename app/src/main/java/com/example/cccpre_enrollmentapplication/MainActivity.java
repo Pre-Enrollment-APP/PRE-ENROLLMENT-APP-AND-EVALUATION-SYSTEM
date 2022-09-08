@@ -17,7 +17,7 @@ Handler handler;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent =new Intent (MainActivity.this,loginmain2.class);
+                Intent intent =new Intent (MainActivity.this,login.class);
                 startActivity(intent);
                 finish();
 

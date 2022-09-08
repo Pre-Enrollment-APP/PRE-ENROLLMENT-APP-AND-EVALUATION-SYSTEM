@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".update_dialog"
+            android:exported="false" />
+        <activity
             android:name=".StudentProfile_Edit"
             android:exported="false" />
         <activity

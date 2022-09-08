@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +34,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
     private EditText add,fnumber,mnumber,fname,mname,num,bday,emailadd;
     private FirebaseUser user;
     private String userID;
+    public String _Name,_Email, Number,_Course, _Address, _Birthday,_Contact_Number,_Mother,_Mother_number,_Father,_Father_number;
     private FirebaseAuth mAuth;
 
 
@@ -54,14 +56,11 @@ public class StudentProfile_Edit extends AppCompatActivity {
         mnumber=findViewById(R.id.SP_mothernumber);
         fname=findViewById(R.id.SP_fathername);
         mname=findViewById(R.id.SP_mothername);
-        num=findViewById(R.id.SP_number);
         bday=findViewById(R.id.SP_bday);
         SAVEPROFILE=findViewById(R.id.editbutton);
+         num=findViewById(R.id.SP_number);
 
 
-
-
-        mAuth=FirebaseAuth.getInstance();
         user=FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
         userID=user.getUid();
@@ -77,7 +76,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 String StudentNumber=snapshot.child("Student_number").getValue().toString();
                 String Course=snapshot.child("Course").getValue().toString();
 
-                //String Number=snapshot.child("Contact_Number").getValue().toString();
+                String Number=snapshot.child("Contact_Number").getValue().toString();
                 String Email =snapshot.child("Email").getValue().toString();
                 String Address=snapshot.child("Address").getValue().toString();
                 String Birthday=snapshot.child("Birthday").getValue().toString();
@@ -90,7 +89,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 course.setText(Course);
                 studentnumber.setText(StudentNumber);
 
-                //num.setText(Number);
+                num.setText(Number);
                 emailadd.setText(Email);
                 add.setText(Address);
                 bday.setText(Birthday);
@@ -110,6 +109,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
         SAVEPROFILE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String Email = emailadd.getText().toString().trim();
                 String Course = coursespinner.getSelectedItem().toString().trim();
                 String Name = name.getText().toString().trim();
@@ -122,20 +122,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 String Father_number=fnumber.getText().toString().trim();
                 String Mother_number=mnumber.getText().toString().trim();
 
-                HashMap hashMap=new HashMap();
-                hashMap.put("Address",Address);
 
-        databaseRef.child(userID).updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
-            @Override
-            public void onComplete(@NonNull Task task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(StudentProfile_Edit.this, "Updated", Toast.LENGTH_SHORT).show();
-                } else
-                {
-                    Toast.makeText(StudentProfile_Edit.this, "Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
 
 
@@ -144,5 +131,25 @@ public class StudentProfile_Edit extends AppCompatActivity {
         });
 
 
+    }
+
+
+    public void Update(View view) {
+        if(isNameChange()){
+            Toast.makeText(this, "Data has been updated", Toast.LENGTH_SHORT).show();
+
+        }
+        else Toast.makeText(this, "Data is same cannot be updated ", Toast.LENGTH_SHORT).show();
+    }
+    private boolean isNameChange(){
+        if (!_Address.equals(add.getText().toString())){
+            DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
+            databaseRef.child(userID).child("Address").setValue(add.getText().toString());
+            _Address=add.getText().toString();
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
