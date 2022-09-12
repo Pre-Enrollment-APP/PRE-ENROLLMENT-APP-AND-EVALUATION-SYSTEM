@@ -1,6 +1,5 @@
 package com.example.cccpre_enrollmentapplication;
 
-import android.location.Address;
 
 public class User {
 

@@ -1,14 +1,14 @@
 package com.example.cccpre_enrollmentapplication;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.content.Intent;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class profile extends AppCompatActivity {
-    private TextView name, studentnumber, course;
-    private EditText add,fnumber,mnumber,fname,mname,num,bday,emailadd;
+
+    private TextView name,studentnumber,course;
+    private EditText add, fnumber,mnumber,fname,mname,num,bday, emailadd;
     private FirebaseUser user;
     private String userID;
     private FirebaseAuth mAuth;
@@ -45,17 +46,16 @@ public class profile extends AppCompatActivity {
         num=findViewById(R.id.SP_number);
         bday=findViewById(R.id.SP_bday);
 
+
+
         editButton=findViewById(R.id.editbutton);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(profile.this,StudentProfile_Edit.class);
-                startActivity(intent);
+
             }
         });
-
-
-
 
         mAuth=FirebaseAuth.getInstance();
         user=FirebaseAuth.getInstance().getCurrentUser();
@@ -65,7 +65,6 @@ public class profile extends AppCompatActivity {
         databaseRef.child(userID).addListenerForSingleValueEvent((new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 String Name =snapshot.child("Name").getValue().toString();
                 String StudentNumber=snapshot.child("Student_number").getValue().toString();
                 String Course=snapshot.child("Course").getValue().toString();
@@ -91,11 +90,7 @@ public class profile extends AppCompatActivity {
                 fname.setText(FatherName);
                 fnumber.setText(Fathernumber);
                 mnumber.setText(Mothernumber);
-
-
-
-
-
+                
             }
 
             @Override
@@ -103,9 +98,6 @@ public class profile extends AppCompatActivity {
                 Toast.makeText(profile.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
             }
         }));
-
-
-
 
     }
 }

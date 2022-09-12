@@ -178,7 +178,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
 
 
-        progressbar.setVisibility(View.VISIBLE);
+       progressbar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -192,11 +192,11 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
                                                 Toast.makeText(registerUser.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
-                                                progressbar.setVisibility(View.GONE);
+                                                //  progressbar.setVisibility(View.GONE);
                                                 //redirect to login
                                             } else {
                                                 Toast.makeText(registerUser.this,"Failed to register! try again.",Toast.LENGTH_LONG).show();
-                                                progressbar.setVisibility(View.GONE);
+                                                //progressbar.setVisibility(View.GONE);
                                             }
 
                                         }

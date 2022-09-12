@@ -3,18 +3,17 @@ package com.example.cccpre_enrollmentapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
-import android.widget.Button;
-import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,15 +22,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.logging.Logger;
 
-public class login extends AppCompatActivity implements View.OnClickListener  {
-private EditText emailadd, pass;
-private Button register,logIn,forgetpassword;
-private FirebaseAuth mAuth;
-private  ProgressBar progressBar;
-private CheckBox checkbox_password;
-
+public class login extends AppCompatActivity implements View.OnClickListener {
+    private EditText emailadd, pass;
+    private Button register, logIn, forgetpassword;
+    private FirebaseAuth mAuth;
+    private ProgressBar progressBar;
+    private CheckBox checkbox_password;
 
 
     @Override
@@ -39,45 +36,49 @@ private CheckBox checkbox_password;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.logine_page);
 
-        forgetpassword=(Button)findViewById(R.id.forget);
-        register=(Button) findViewById(R.id.createaccount);
-        register.setOnClickListener(this);
-        logIn=(Button) findViewById(R.id.logIn);
-        logIn.setOnClickListener(this);
-        emailadd=(EditText) findViewById(R.id.email);
-        progressBar=(ProgressBar) findViewById(R.id.progressbar);
-        pass=(EditText) findViewById(R.id.password);
-        mAuth=FirebaseAuth.getInstance();
-        checkbox_password=findViewById(R.id.checkbox_pass);
 
-        forgetpassword.setOnClickListener(this);
+        forgetpassword = (Button) findViewById(R.id.forget);
+        emailadd = (EditText) findViewById(R.id.email);
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        pass = (EditText) findViewById(R.id.password);
+        checkbox_password = findViewById(R.id.checkbox_pass);
+
+        register = (Button) findViewById(R.id.createaccount);
+        register.setOnClickListener(this);
+
+        logIn = (Button) findViewById(R.id.logIn);
+        logIn.setOnClickListener(this);
+
+        mAuth = FirebaseAuth.getInstance();
+
         checkbox_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+                if (b) {
                     pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                }
-                else{
+
+                } else {
                     pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
             }
         });
+
     }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.createaccount:
-                startActivity(new Intent(this,registerUser.class));
+                startActivity(new Intent(this, registerUser.class));
                 break;
             case R.id.logIn:
                 userLogin();
                 break;
-            case R.id.forget:
-                Intent intent=new Intent(login.this,resetpassword.class);
-                startActivity(intent);
-        }
-    }
 
+
+        }
+
+    }
 
     private void userLogin(){
         String Email=emailadd.getText().toString().trim();
@@ -104,29 +105,30 @@ private CheckBox checkbox_password;
             pass.requestFocus();
             return;
         }
+
         progressBar.setVisibility(View.VISIBLE);
-    mAuth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-        @Override
-        public void onComplete(@NonNull Task<AuthResult> task) {
-            if (task.isSuccessful()){
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if(user.isEmailVerified()){
-                    startActivity(new Intent(login.this,Home_Page.class));
-                }else
-                    user.sendEmailVerification();
-                Toast.makeText(login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
-                progressBar.setVisibility(View.GONE);
+
+        mAuth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+                    if (user.isEmailVerified()){
+                        startActivity(new Intent(login.this,Home_Page.class));
+                    }
+                    else{
+                        user.sendEmailVerification();
+                        Toast.makeText(login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+                }
+                else{
+                    Toast.makeText(login.this,"Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 }
 
-            else
-            {
-                Toast.makeText(login.this,"Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
-                progressBar.setVisibility(View.GONE);
             }
-
-        }
-
-    });
+        });
     }
 
 }
