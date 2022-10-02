@@ -1,0 +1,180 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.navigation",
+    "module": "navigation-common",
+    "version": "2.5.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5-20220421031748+0000"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-savedstate",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.savedstate",
+          "module": "savedstate-ktx",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation-common-2.5.2.aar",
+          "url": "navigation-common-2.5.2.aar",
+          "size": 155950,
+          "sha512": "bfec659def750b0ea2abd8c1ec7a6102cb10453276eec87536f9fd70e3eaff614285c9934d2f5e5037cb1e956cd0a462cb9b8e7a50000fab32a320f1dc3eea40",
+          "sha256": "2147409f1ef55bf0d7147ab0fd49e3d8ca4bb3d52ad7c621b5968ff51defdc89",
+          "sha1": "d09a25084645cf0f831fb96c119c7ef453b74a65",
+          "md5": "0021b0f6cb1d2fd11fca189025e5a34d"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.collection",
+          "module": "collection-ktx",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-ktx",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-viewmodel-savedstate",
+          "version": {
+            "requires": "2.5.1"
+          }
+        },
+        {
+          "group": "androidx.savedstate",
+          "module": "savedstate-ktx",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "navigation-common-2.5.2.aar",
+          "url": "navigation-common-2.5.2.aar",
+          "size": 155950,
+          "sha512": "bfec659def750b0ea2abd8c1ec7a6102cb10453276eec87536f9fd70e3eaff614285c9934d2f5e5037cb1e956cd0a462cb9b8e7a50000fab32a320f1dc3eea40",
+          "sha256": "2147409f1ef55bf0d7147ab0fd49e3d8ca4bb3d52ad7c621b5968ff51defdc89",
+          "sha1": "d09a25084645cf0f831fb96c119c7ef453b74a65",
+          "md5": "0021b0f6cb1d2fd11fca189025e5a34d"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "navigation-common-2.5.2-sources.jar",
+          "url": "navigation-common-2.5.2-sources.jar",
+          "size": 54874,
+          "sha512": "862c0be71f12a6f62a5fd874cd2c996ccdf74813637cdfac24ca479dfab1421f08afa92b04ea1a640908250d203dc85f453a5bf3041644360c90274bfb201600",
+          "sha256": "a775c00223af5ca08949d75165877f9b6582e6eb018d1f131bc7288e8de4d1df",
+          "sha1": "f1d0bca09bca0aefde801761736f097f6710c803",
+          "md5": "bd0a87fcf266ca4f83a361f68fd7b9ed"
+        }
+      ]
+    }
+  ]
+}

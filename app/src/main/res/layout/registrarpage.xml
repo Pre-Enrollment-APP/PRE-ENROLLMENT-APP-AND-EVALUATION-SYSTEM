@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    tools:context=".registrarpage">
+
+    <ImageButton
+        android:id="@+id/menuicon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menu" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/ccc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/arial"
+        android:text="Registrar"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/stlist"
+        android:layout_width="260dp"
+        android:layout_height="155dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="265dp"
+        android:background="?attr/selectableItemBackground"
+        android:drawablePadding="250dp"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/list"
+        android:text="Student List"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <ImageButton
+        android:id="@+id/curr"
+        android:layout_width="260dp"
+        android:layout_height="155dp"
+        android:layout_below="@+id/stlist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/curri_btn"
+        android:scaleType="fitXY"
+
+        />
+
+
+</RelativeLayout>

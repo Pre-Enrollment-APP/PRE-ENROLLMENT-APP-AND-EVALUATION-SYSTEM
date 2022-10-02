@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".admingrades">
+
+    <ImageButton
+        android:id="@+id/menubutton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/menudark" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ccc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:gravity="center_horizontal"
+        android:text="Grades"
+        android:textColor="@color/white"
+        android:fontFamily="@font/arial"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/stbscs"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/edittext_round"
+        android:drawablePadding="250dp"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:src="@drawable/estudyante"
+        android:text="BSCS"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/stbsoa"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="BSOA"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/ABREED"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="355dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="ABREED"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/stbeed"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="355dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="BEED"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/stbsed"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="485dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="BSED"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/stbsba"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="485dp"
+        android:background="@drawable/edittext_round"
+        android:drawableLeft="@drawable/student"
+        android:ems="7"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:text="BSBA"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="20dp" />
+
+</RelativeLayout>
