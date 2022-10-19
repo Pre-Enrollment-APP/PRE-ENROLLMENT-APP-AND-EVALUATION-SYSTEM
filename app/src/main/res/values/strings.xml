@@ -9,17 +9,11 @@
         <item>Bachelor of Secondary Education</item>
     </string-array>
     <string-array name="semester">
-        <item>--SELECT--</item>
-        <item>1st Semester</item>
-        <item>2nd Semester</item>
-    </string-array>
-    <string-array name="year_level">
-        <item>1st year</item>
-        <item>2nd year</item>
-        <item>3rd year</item>
-        <item>4th year</item>
+        <item>--Select--</item>
+        <item>1st yr, 1st sem</item>
+        <item>1st yr, 2nd sem</item>
+   /</string-array>
 
-    </string-array>
     <string name="title_activity_try">TRY</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

@@ -59,8 +59,9 @@ public class profile extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
         user=FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
         userID=user.getUid();
+        DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
+
 
         databaseRef.child(userID).addListenerForSingleValueEvent((new ValueEventListener() {
             @Override
@@ -70,7 +71,7 @@ public class profile extends AppCompatActivity {
                 String StudentNumber=snapshot.child("Student_number").getValue().toString();
                 String Course=snapshot.child("Course").getValue().toString();
 
-                //String Number=snapshot.child("Number").getValue().toString();
+                String Number=snapshot.child("Number").getValue().toString();
                 String Email =snapshot.child("Email").getValue().toString();
                 String Address=snapshot.child("Address").getValue().toString();
                 String Birthday=snapshot.child("Birthday").getValue().toString();
@@ -83,7 +84,7 @@ public class profile extends AppCompatActivity {
                 course.setText(Course);
                 studentnumber.setText(StudentNumber);
 
-                //num.setText(Number);
+                num.setText(Number);
                 emailadd.setText(Email);
                 add.setText(Address);
                 bday.setText(Birthday);

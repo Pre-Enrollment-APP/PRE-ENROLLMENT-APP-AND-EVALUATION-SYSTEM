@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -46,26 +48,29 @@ public class resetpassword extends AppCompatActivity {
     }
 
    private void resetpass(){
-        String email=emailEditText.getText().toString().trim();
-        if (email.isEmpty()) {
+        String Email=emailEditText.getText().toString().trim();
+        if (Email.isEmpty()) {
             emailEditText.setError("Email is required");
             emailEditText.requestFocus();
 
         }
-       if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+       if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
            emailEditText.setError("please provide valid email");
+           emailEditText.requestFocus();
            return;
        }
        progressBar.setVisibility(View.VISIBLE);
-       auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+       auth.sendPasswordResetEmail(Email).addOnSuccessListener(new OnSuccessListener<Void>() {
            @Override
-           public void onComplete(@NonNull Task<Void> task) {
-               if (task.isSuccessful()){
-                   Toast.makeText(resetpassword.this, "Check your email to reset your password", Toast.LENGTH_SHORT).show();
-               }
-               else{
-                   Toast.makeText(resetpassword.this, "Try again, something wrong happened", Toast.LENGTH_SHORT).show();
-               }
+           public void onSuccess(Void unused) {
+               Toast.makeText(resetpassword.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
+               progressBar.setVisibility(View.GONE);
+           }
+       }).addOnFailureListener(new OnFailureListener() {
+           @Override
+           public void onFailure(@NonNull Exception e) {
+               Toast.makeText(resetpassword.this, "something wrong"+e.getMessage(), Toast.LENGTH_SHORT).show();
+               progressBar.setVisibility(View.GONE);
            }
        });
     }

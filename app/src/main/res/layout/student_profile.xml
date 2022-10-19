@@ -64,13 +64,13 @@
         android:id="@+id/Snumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:hint="Student number"
         android:textColor="@color/white"
-        android:textSize="20dp"
         android:textColorHint="@color/white"
-        android:hint="Student number"/>
+        android:textSize="20dp" />
 
     <TextView
         android:id="@id/course"
