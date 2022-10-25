@@ -86,7 +86,7 @@
 
     <TextView
         android:id="@id/course"
-        android:layout_width="270dp"
+        android:layout_width="290dp"
         android:layout_height="22dp"
         android:layout_below="@id/studentName"
         android:layout_marginStart="20dp"
@@ -98,18 +98,41 @@
         android:focusable="false"
         android:focusableInTouchMode="false" />
 
-
     <TextView
-        android:id="@+id/sectiontext"
+        android:id="@+id/schoolyeartext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/semestertext"
-        android:layout_marginStart="10dp"
+        android:layout_below="@id/course"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="18dp"
+        android:layout_toRightOf="@id/semester"
         android:fontFamily="@font/arial"
-        android:text="Section"
+        android:text="S.Y"
         android:textColor="@color/black"
         android:textSize="15dp" />
+
+    <Spinner
+        android:id="@+id/schoolyear"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/course"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/schoolyeartext"
+        android:background="@drawable/editext_miniround"
+        android:paddingLeft="5dp" />
+
+    <TextView
+    android:id="@+id/sectiontext"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/semester"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="18dp"
+    android:fontFamily="@font/arial"
+    android:text="Section"
+    android:textColor="@color/black"
+    android:textSize="15dp" />
 
     <Spinner
         android:id="@+id/section"
@@ -165,7 +188,7 @@
         android:layout_width="130dp"
         android:layout_height="25dp"
         android:layout_below="@+id/course"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="2dp"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/semestertext"
         android:background="@drawable/editext_miniround"

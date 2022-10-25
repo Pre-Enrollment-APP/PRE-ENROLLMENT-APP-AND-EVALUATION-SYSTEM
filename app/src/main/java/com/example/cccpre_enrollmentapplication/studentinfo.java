@@ -1,47 +1,51 @@
 package com.example.cccpre_enrollmentapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class studentinfo{
+    String name;
+    String course;
+    String schoolyear;
+    String yearAndsem;
+    String mop;
+    String semester;
+    String section;
+    String des1;
+    String des2;
+    String des3;
+    String des4;
+    String des5;
+    String des6;
+    String des7;
+    String des8;
+    String des9;
+    String des10;
 
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.content.Intent;
-import android.view.View;
-import android.widget.TextView;
+    String unit1;
+    String unit2;
+    String unit3;
+    String unit4;
+    String unit5;
+    String unit6;
+    String unit7;
+    String unit8;
+    String unit9;
+    String unit10;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-public class studentinfo extends AppCompatActivity {
-private ImageButton menu_page;
-private ImageButton edit;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.registrar_studentinfo);
-
-
-        menu_page.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(studentinfo.this,tabmenu.class);
-                startActivity(intent);
-            }
-        });
-
-        edit=findViewById(R.id.editbutton);
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(studentinfo.this,edit_student_list.class);
-                startActivity(intent);
-            }
-        });
+    String sc1;
+    String sc2;
+    String sc3;
+    String sc4;
+    String sc5;
+    String sc6;
+    String sc7;
+    String sc8;
+    String sc9;
+    String sc0;
 
 
 
-    }
+
+
+
+
+
 }

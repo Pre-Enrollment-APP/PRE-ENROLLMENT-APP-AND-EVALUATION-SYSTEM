@@ -22,8 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class profile extends AppCompatActivity {
-    private TextView name, studentnumber, course;
-    private EditText add,fnumber,mnumber,fname,mname,num,bday,emailadd;
+    public TextView name, studentnumber, course;
+    public EditText add,fnumber,mnumber,fname,mname,num,bday,emailadd;
     private FirebaseUser user;
     private String userID;
     private FirebaseAuth mAuth;
@@ -92,10 +92,6 @@ public class profile extends AppCompatActivity {
                 fname.setText(FatherName);
                 fnumber.setText(Fathernumber);
                 mnumber.setText(Mothernumber);
-
-
-
-
 
             }
 

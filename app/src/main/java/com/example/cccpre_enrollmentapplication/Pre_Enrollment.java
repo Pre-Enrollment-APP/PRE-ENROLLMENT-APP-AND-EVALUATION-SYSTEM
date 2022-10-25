@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -30,13 +31,21 @@ public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnI
     private ImageButton menu_page;
     private Button ok;
     private TextView name,course;
-    private Spinner semester, year;
+    private Spinner semester, schoolyear,section,mop;
     private EditText des1,des2,des3,des4,des5,des6,des7,des8,des9,des10;
     private EditText units1,units2,units3,units4,units5,units6,units7,units8,units9,units10;
+    ArrayAdapter<String> sectionlist;
+    String[] sections;
     private String userID;
     private DatabaseReference databaseRef;
     private FirebaseUser user;
     private EditText SC1,SC2,SC3,SC4,SC5,SC6,SC7,SC8,SC9,SC10;
+
+
+    //print pdf
+    FirebaseDatabase database=FirebaseDatabase.getInstance();
+    DatabaseReference print=database.getReference("record");
+    studentinfo dataObj=new studentinfo();
 
 
     @Override
@@ -46,6 +55,8 @@ public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnI
         name = findViewById(R.id.studentName);
         course = findViewById(R.id.course);
         semester = findViewById(R.id.semester);
+        section=findViewById(R.id.section);
+        schoolyear= findViewById(R.id.schoolyear);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         databaseRef = FirebaseDatabase.getInstance().getReference("User");
@@ -84,6 +95,9 @@ public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnI
         units9=findViewById(R.id.units9);
         units10=findViewById(R.id.units10);
 
+        sections=new String[]{"A","B","C","D","E"};
+        sectionlist=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,sections);
+        section.setAdapter(sectionlist);
 
         //year spinner
 
@@ -96,6 +110,7 @@ public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnI
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         semester.setAdapter(adapter);
         semester.setOnItemSelectedListener(this);
+
 
 
         databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -118,8 +133,15 @@ public class Pre_Enrollment extends AppCompatActivity implements AdapterView.OnI
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Pre_Enrollment.this,registrar_student_list.class);
-                startActivity(intent);
+
+                dataObj.name=String.valueOf(name.getText());
+                dataObj.course=String.valueOf(course.getText());
+
+
+
+
+
+
             }
         });
 
