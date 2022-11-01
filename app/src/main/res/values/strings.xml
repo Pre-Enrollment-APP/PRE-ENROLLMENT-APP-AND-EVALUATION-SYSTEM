@@ -9,7 +9,7 @@
         <item>Bachelor of Secondary Education</item>
     </string-array>
     <string-array name="semester">
-        <item>--Select--</item>
+        <item>----</item>
         <item>1st yr, 1st sem</item>
         <item>1st yr, 2nd sem</item>
    /</string-array>
