@@ -8,9 +8,9 @@ import android.widget.ImageButton;
 import android.view.View;
 
 public class registrarpage extends AppCompatActivity {
-public ImageButton student_list;
-public ImageButton curriculum;
-public ImageButton menu_page;
+private ImageButton student_list;
+    private ImageButton curriculum;
+    private ImageButton menu_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,8 @@ public ImageButton menu_page;
         student_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(registrarpage.this,registrar_student_list.class);
-                startActivity(intent);
+           //     Intent intent=new Intent(registrarpage.this,registrar_student_list.class);
+           //     startActivity(intent);
             }
         });
 

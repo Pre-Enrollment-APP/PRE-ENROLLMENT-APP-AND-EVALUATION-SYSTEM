@@ -3,15 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_evaluationform.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_pre_enrollment_next.xml" value="0.13333333333333333" />
-        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_register_user.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_register_user.xml" value="0.1" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_resetpassword.xml" value="0.17552083333333332" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/activity_update_dialog.xml" value="0.1" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/logine_page.xml" value="0.17282051282051283" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/pre_enrollment.xml" value="0.22" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrar_student_list.xml" value="0.1" />
         <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/registrarpage.xml" value="0.17552083333333332" />
-        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_profile.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_evaluation_form.xml" value="0.17552083333333332" />
+        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_profile.xml" value="0.1" />
+        <entry key="..\:/THESIS APP/CCC_PEGVA/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/layout/student_profile_edit.xml" value="0.12777777777777777" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/bg_round_border.xml" value="0.1485" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/ccc_small_background.xml" value="0.172" />
         <entry key="..\:/THESIS APP/PRE-ENROLLMENT-APP-AND-EVALUATION-SYSTEM/app/src/main/res/drawable/edit_user_icon.xml" value="0.1" />

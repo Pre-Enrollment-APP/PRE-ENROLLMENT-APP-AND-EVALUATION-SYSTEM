@@ -1,4 +1,4 @@
-package com.example.cccpre_enrollmentapplication;
+/* package com.example.cccpre_enrollmentapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -133,7 +133,7 @@ public class registrar_student_list extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });*/
+        });
     }
     private void callFindViewById(){
         saveAndPrintButton=findViewById(R.id.btnSaveAndPrint);
@@ -151,4 +151,4 @@ public class registrar_student_list extends AppCompatActivity {
 
 
     }
-}
+} */

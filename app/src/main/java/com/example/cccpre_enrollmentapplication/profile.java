@@ -3,12 +3,14 @@ package com.example.cccpre_enrollmentapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 
 public class profile extends AppCompatActivity {
     public TextView name, studentnumber, course;
@@ -28,6 +32,8 @@ public class profile extends AppCompatActivity {
     private String userID;
     private FirebaseAuth mAuth;
     private ImageButton editButton;
+
+    private ProgressBar progressbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,7 @@ public class profile extends AppCompatActivity {
         mname=findViewById(R.id.SP_mothername);
         num=findViewById(R.id.SP_number);
         bday=findViewById(R.id.SP_bday);
+        progressbar= findViewById(R.id.progressbar);
 
         editButton=findViewById(R.id.editbutton);
         editButton.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +69,7 @@ public class profile extends AppCompatActivity {
         userID=user.getUid();
         DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
 
-
+        progressbar.setVisibility(View.VISIBLE);
         databaseRef.child(userID).addListenerForSingleValueEvent((new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -71,7 +78,7 @@ public class profile extends AppCompatActivity {
                 String StudentNumber=snapshot.child("Student_number").getValue().toString();
                 String Course=snapshot.child("Course").getValue().toString();
 
-                String Number=snapshot.child("Number").getValue().toString();
+                String Number=snapshot.child("Contact_Number").getValue().toString();
                 String Email =snapshot.child("Email").getValue().toString();
                 String Address=snapshot.child("Address").getValue().toString();
                 String Birthday=snapshot.child("Birthday").getValue().toString();
@@ -93,6 +100,8 @@ public class profile extends AppCompatActivity {
                 fnumber.setText(Fathernumber);
                 mnumber.setText(Mothernumber);
 
+                progressbar.setVisibility(View.GONE);
+
             }
 
             @Override
@@ -100,8 +109,6 @@ public class profile extends AppCompatActivity {
                 Toast.makeText(profile.this, "Something wrong happened!", Toast.LENGTH_SHORT).show();
             }
         }));
-
-
 
 
     }

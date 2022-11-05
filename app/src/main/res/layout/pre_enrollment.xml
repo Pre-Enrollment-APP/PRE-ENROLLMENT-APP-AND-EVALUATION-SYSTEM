@@ -20,11 +20,6 @@
         android:layout_marginTop="7dp"
         android:src="@drawable/menu" />
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerHorizontal="true"
-    android:paddingLeft="30dp"
-    android:paddingTop="13dp">
 
     <ImageView
         android:id="@+id/ccc"
@@ -33,6 +28,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/ccc" />
+
+    <TextView
+        android:id="@+id/gmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Student number"
+        android:layout_toRightOf="@id/ccc"
+        android:visibility="invisible"
+        android:layout_marginTop="80dp"/>
+    <TextView
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Birthday"
+        android:layout_toRightOf="@id/ccc"
+        android:visibility="invisible"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:id="@+id/cdis"
@@ -71,6 +83,14 @@
         android:hint="Name"
         android:textColor="@color/black"
         android:textSize="20dp" />
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_below="@id/studentName"
+        android:visibility="invisible"
+        android:layout_marginTop="80dp"/>
 
     <TextView
         android:id="@id/coursetext"
@@ -86,10 +106,10 @@
 
     <TextView
         android:id="@id/course"
-        android:layout_width="290dp"
+        android:layout_width="307dp"
         android:layout_height="22dp"
         android:layout_below="@id/studentName"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/coursetext"
         android:background="@drawable/editext_miniround"
@@ -111,35 +131,38 @@
         android:textColor="@color/black"
         android:textSize="15dp" />
 
-    <Spinner
+    <EditText
         android:id="@+id/schoolyear"
-        android:layout_width="80dp"
+        android:layout_width="85dp"
         android:layout_height="25dp"
         android:layout_below="@id/course"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/schoolyeartext"
         android:background="@drawable/editext_miniround"
-        android:paddingLeft="5dp" />
+        android:hint="2000-2001"
+        android:inputType="number"
+        android:paddingLeft="5dp"
+        android:textSize="15dp" />
 
     <TextView
-    android:id="@+id/sectiontext"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/semester"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="18dp"
-    android:fontFamily="@font/arial"
-    android:text="Section"
-    android:textColor="@color/black"
-    android:textSize="15dp" />
+        android:id="@+id/sectiontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/semester"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/arial"
+        android:text="Section"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
     <Spinner
         android:id="@+id/section"
         android:layout_width="80dp"
-        android:layout_height="25dp"
+        android:layout_height="22dp"
         android:layout_below="@id/semester"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/sectiontext"
         android:background="@drawable/editext_miniround"
@@ -151,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/semestertext"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="18dp"
         android:layout_toRightOf="@id/section"
         android:fontFamily="@font/arial"
@@ -162,7 +185,7 @@
     <Spinner
         android:id="@+id/mop"
         android:layout_width="80dp"
-        android:layout_height="25dp"
+        android:layout_height="22dp"
         android:layout_below="@+id/semester"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
@@ -186,7 +209,7 @@
     <Spinner
         android:id="@+id/semester"
         android:layout_width="130dp"
-        android:layout_height="25dp"
+        android:layout_height="22dp"
         android:layout_below="@+id/course"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="15dp"

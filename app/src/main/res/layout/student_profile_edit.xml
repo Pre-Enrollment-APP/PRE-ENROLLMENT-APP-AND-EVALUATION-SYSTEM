@@ -45,10 +45,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="40dp"
-        android:onClick="Update"
         android:src="@drawable/user" />
 
-    <TextView
+    <EditText
         android:id="@+id/SP_fullname"
         android:layout_width="450dp"
         android:layout_height="40dp"
@@ -65,7 +64,7 @@
         android:layout_below="@+id/SP_fullname"
         android:background="@color/black" />
 
-    <TextView
+    <EditText
         android:id="@+id/Snumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -152,15 +151,18 @@
                 android:hint="ADDRESS" />
 
 
-            <EditText
+            <Button
                 android:id="@+id/SP_bday"
+                style="?android:spinnerStyle"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/SP_address"
+                android:layout_below="@+id/SP_address"
                 android:layout_centerHorizontal="true"
                 android:drawableLeft="@drawable/date"
                 android:drawablePadding="35dp"
-                android:hint="BIRTHDATE" />
+                android:onClick="opendatePicker"
+                android:text=" JAN 01 2022"
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/SP_mothername"
@@ -205,7 +207,14 @@
 
         </RelativeLayout>
     </ScrollView>
-
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"/>
 
 
 

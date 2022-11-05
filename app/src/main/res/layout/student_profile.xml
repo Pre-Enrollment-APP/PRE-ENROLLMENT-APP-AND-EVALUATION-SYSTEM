@@ -21,8 +21,8 @@
         android:id="@+id/editbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="365dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginLeft="345dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/editbutton" />
 
 
@@ -87,11 +87,12 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="380dp"
+        android:layout_height="4000dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="365dp"
+        android:layout_marginTop="357dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rec74"
         android:fadeScrollbars="false"
         android:padding="16dp"
@@ -101,7 +102,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="380dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="0dp">
 
             <ImageView
@@ -149,13 +150,13 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_email"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/address"
-                android:drawablePadding="35dp"
-                android:hint="ADDRESS"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/address"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="ADDRESS" />
 
 
             <EditText
@@ -164,13 +165,13 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_address"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
-                android:hint="BIRTHDATE"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="BIRTHDATE" />
 
             <EditText
                 android:id="@+id/SP_mothername"
@@ -178,13 +179,13 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_bday"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
-                android:hint="Mother Name"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="Mother Name" />
 
             <EditText
                 android:id="@+id/SP_mothernumber"
@@ -192,13 +193,13 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_mothername"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
-                android:hint="Contact Number"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="Contact Number" />
 
             <EditText
                 android:id="@+id/SP_fathername"
@@ -206,13 +207,13 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_mothernumber"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
-                android:hint="Father Name"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="Father Name" />
 
             <EditText
                 android:id="@+id/SP_fathernumber"
@@ -220,17 +221,26 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_fathername"
                 android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
-                android:hint="Contact Number"
                 android:clickable="false"
                 android:cursorVisible="false"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
                 android:focusable="false"
-                android:focusableInTouchMode="false"/>
+                android:focusableInTouchMode="false"
+                android:hint="Contact Number" />
 
 
         </RelativeLayout>
     </ScrollView>
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"/>
+
 
 
 
