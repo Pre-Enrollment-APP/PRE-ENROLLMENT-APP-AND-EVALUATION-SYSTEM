@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    app:cardElevation="12dp"
+    android:backgroundTint="@color/lightblue"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/codename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arial"
+            android:text="Code: "
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+        <TextView
+            android:layout_toRightOf="@id/codename"
+            android:id="@+id/subcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="this is code"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/destext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subcode"
+            android:fontFamily="@font/arial"
+            android:text="Description: "
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/codename"
+            android:layout_toRightOf="@id/destext"
+            android:hint="this is the description"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/grades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/arial"
+            android:layout_alignParentEnd="true"
+            android:inputType="numberDecimal"
+            android:hint="0.00"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

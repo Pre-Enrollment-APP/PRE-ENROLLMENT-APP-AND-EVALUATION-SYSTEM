@@ -59,12 +59,11 @@
         android:scrollbarFadeDuration="0"
         android:scrollbars="vertical"
         android:layout_below="@id/text"
-        android:layout_marginBottom="140dp">
+        android:layout_marginBottom="100dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_marginTop="10dp">
 
 
@@ -283,12 +282,12 @@
                 android:id="@+id/mothernumber"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:inputType="number"
                 android:layout_below="@+id/mothernumbertxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock" />
+                android:drawableLeft="@drawable/ic_lock"
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/fathernametxt"
@@ -329,9 +328,9 @@
                 android:layout_below="@+id/fathernumbertext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:inputType="number"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock" />
+                android:drawableLeft="@drawable/ic_lock"
+                android:inputType="number" />
 
         </RelativeLayout>
     </ScrollView>
@@ -340,9 +339,12 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
         android:padding="0dp">
 
         <Button
