@@ -17,43 +17,48 @@ public class FirebaseDatabaseHelper {
 
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceGrades;
-    private List<Grades> grade= new ArrayList<>();
+    private List<Grades> grade = new ArrayList<>();
     private FirebaseUser user;
     private String userID;
 
-    public interface DataStatus{
-        void DataIsLoaded(List<Grades> grade, List<String>keys);
+    public interface DataStatus {
+        void DataIsLoaded(List<Grades> grade, List<String> keys);
+
         void DataIsInserted();
+
         void DataIsUpdated();
+
         void DataIsDeleted();
     }
 
     public FirebaseDatabaseHelper() {
-        mDatabase=FirebaseDatabase.getInstance();
-        mReferenceGrades=mDatabase.getReference("User/Grades/first_year/1st_sem");
-        user= FirebaseAuth.getInstance().getCurrentUser();
-        userID=user.getUid();
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userID = user.getUid();
+        mDatabase = FirebaseDatabase.getInstance();
+        mReferenceGrades = mDatabase.getReference("User");
     }
 
-    public void viewGrades(final DataStatus dataStatus){
-        mReferenceGrades.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                grade.clear();
-                List<String> keys =new ArrayList<>();
-                for(DataSnapshot keyNode:snapshot.getChildren()){
-                    keys.add(keyNode.getKey());
-                    Grades grades =keyNode.getValue(Grades.class);
-                    grade.add(grades);
+    public void viewGrades(final DataStatus dataStatus) {
+            mReferenceGrades.child(userID).child("Grades").child("first_year").child("first_sem").addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        grade.clear();
+                        List<String> keys = new ArrayList<>();
+                        for (DataSnapshot keyNode : snapshot.getChildren()) {
+                            keys.add(keyNode.getKey());
+                            Grades grades = keyNode.getValue(Grades.class);
+                            grade.add(grades);
+                        }
+                        dataStatus.DataIsLoaded(grade, keys);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
                 }
-                dataStatus.DataIsLoaded(grade,keys);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        );
     }
 }

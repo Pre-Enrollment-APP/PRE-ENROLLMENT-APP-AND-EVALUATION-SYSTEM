@@ -8,100 +8,118 @@
     tools:context=".tabmenu">
 
     <ImageView
+        android:id="@+id/profilepic"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/user" />
 
     <TextView
         android:id="@+id/fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_toRightOf="@id/profilepic"
         android:fontFamily="@font/arial"
+        android:hint="Student Name"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="25dp" />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/studentnumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fullname"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profilepic"
         android:fontFamily="@font/arial"
+        android:hint="student number"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        android:textSize="19dp" />
 
     <TextView
         android:id="@+id/course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/studentnumber"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profilepic"
         android:fontFamily="@font/arial"
+        android:hint="course"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="15dp" />
+        android:textSize="14dp" />
 
     <View
+        android:id="@+id/view1"
         android:layout_width="350dp"
         android:layout_height="2dp"
+        android:layout_below="@id/course"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="35dp"
         android:background="@color/bluegrey" />
 
-    <TextView
+    <Button
+        android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/view1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/homeicon"
         android:fontFamily="@font/arial"
+        android:padding="20dp"
+        android:scaleType="fitXY"
         android:text="  Home"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30dp" />
 
     <View
+        android:id="@+id/view2"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:background="@color/bluegrey"
-        android:layout_marginTop="370dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/home"
+        android:background="@color/bluegrey" />
 
     <Button
         android:id="@+id/studentprofile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/view2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="390dp"
         android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/usermini"
         android:fontFamily="@font/arial"
+        android:padding="20sp"
         android:text="  Profile"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30dp" />
 
     <View
+        android:id="@+id/view3"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:background="@color/bluegrey"
-        android:layout_marginTop="460dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/studentprofile"
+        android:background="@color/bluegrey" />
 
     <Button
         android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/view3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="480dp"
         android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/infoicon"
         android:fontFamily="@font/arial"
+        android:padding="20dp"
         android:text="  About"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -109,31 +127,49 @@
 
 
     <View
+        android:id="@+id/view4"
         android:layout_width="350dp"
         android:layout_height="2dp"
-        android:background="@color/bluegrey"
-        android:layout_marginTop="550dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@id/about"
+        android:layout_centerHorizontal="true"
+        android:background="@color/bluegrey" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/about"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="570dp"
         android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/logout"
         android:fontFamily="@font/arial"
+        android:padding="20dp"
         android:scaleType="fitXY"
         android:text="  Log Out"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="30dp" />
 
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:src="@drawable/ccc" />
 
-
-
-
+    <Button
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:background="?attr/selectableItemBackground"
+        android:paddingEnd="20dp"
+        android:text="How to use the PEGVA app?"
+        android:textAllCaps="false"
+        android:textColor="@color/red"
+        android:textSize="15dp" />
 
 
 

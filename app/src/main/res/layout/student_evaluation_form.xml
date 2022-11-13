@@ -8,11 +8,25 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="50dp"
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Grades"
+        android:letterSpacing="0.2"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

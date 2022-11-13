@@ -49,8 +49,9 @@
 
     <EditText
         android:id="@+id/SP_fullname"
-        android:layout_width="450dp"
-        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/profile"
         android:gravity="center_horizontal"
         android:textColor="@color/white"
@@ -87,7 +88,7 @@
         android:hint="Course"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <ScrollView
         android:layout_width="wrap_content"

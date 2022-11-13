@@ -14,10 +14,10 @@
         android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:scaleType="fitXY"
-        android:background="?attr/selectableItemBackground"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="7dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
         android:src="@drawable/menu" />
 
 
@@ -28,6 +28,21 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:src="@drawable/ccc" />
+
+    <Button
+        android:id="@+id/view_sched"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edittext_semiround"
+        android:backgroundTint="@color/red"
+        android:text="View Schedule"
+        android:textColor="@color/white"
+        android:textSize="10dp" />
 
     <TextView
         android:id="@+id/gmail"
@@ -106,8 +121,11 @@
 
     <TextView
         android:id="@id/course"
-        android:layout_width="307dp"
+        android:layout_width="295dp"
         android:layout_height="22dp"
+        android:textSize="13dp"
+        android:paddingStart="10dp"
+        android:hint="this is the course"
         android:layout_below="@id/studentName"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -133,7 +151,7 @@
 
     <EditText
         android:id="@+id/schoolyear"
-        android:layout_width="85dp"
+        android:layout_width="70dp"
         android:layout_height="25dp"
         android:layout_below="@id/course"
         android:layout_marginLeft="3dp"
@@ -141,9 +159,8 @@
         android:layout_toRightOf="@+id/schoolyeartext"
         android:background="@drawable/editext_miniround"
         android:hint="2000-2001"
-        android:inputType="number"
         android:paddingLeft="5dp"
-        android:textSize="15dp" />
+        android:textSize="10dp" />
 
     <TextView
         android:id="@+id/sectiontext"
@@ -175,7 +192,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/semestertext"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="13dp"
         android:layout_toRightOf="@id/section"
         android:fontFamily="@font/arial"
         android:text="Mode of Payment"
@@ -220,11 +237,13 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="340dp"
         android:layout_below="@id/moptext"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
         android:fadeScrollbars="false"
         android:scrollbarFadeDuration="0"
         android:scrollbars="vertical">
@@ -232,7 +251,8 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/section">
+            android:layout_below="@id/section"
+            >
             <TableRow>
                 <TextView
                     android:id="@+id/SC"
@@ -250,8 +270,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/section"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="13dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
                     android:layout_toRightOf="@+id/SC"
                     android:fontFamily="@font/arial"
                     android:text="DESCRIPTION"
@@ -264,7 +284,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/section"
                     android:layout_gravity="center"
-                    android:layout_marginTop="13dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
                     android:layout_toRightOf="@+id/Des"
                     android:fontFamily="@font/arial"
                     android:text="UNITS"
@@ -276,12 +297,13 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC1"
-                    android:layout_width="50dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
                     android:cursorVisible="false"
-                    android:clickable="false"
+
                     android:focusable="false"
                     />
 
@@ -300,13 +322,13 @@
 
                 <EditText
                     android:id="@+id/units1"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:hint="None"
-                    android:textSize="10dp"
                     android:cursorVisible="false"
                     android:focusable="false"
                    />
@@ -316,8 +338,8 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC2"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -328,17 +350,18 @@
                     android:id="@+id/Des2"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units2"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -361,17 +384,18 @@
                     android:id="@+id/Des3"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units3"
-                    android:layout_width="150dp"
+                    android:layout_width="10dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -394,17 +418,18 @@
                     android:id="@+id/Des4"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units4"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -416,8 +441,8 @@
 
                 <EditText
                     android:id="@+id/SC5"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -429,17 +454,18 @@
                     android:id="@+id/Des5"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units5"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -450,8 +476,8 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC6"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -462,17 +488,18 @@
                     android:id="@+id/Des6"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units6"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -484,8 +511,8 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC7"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -496,17 +523,18 @@
                     android:id="@+id/Des7"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units7"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
@@ -518,8 +546,8 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC8"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -531,23 +559,24 @@
                     android:id="@+id/Des8"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units8"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="None"
-                    android:textSize="10dp"/>
+                   />
 
 
             </TableRow>
@@ -555,8 +584,8 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC9"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
                     android:clickable="false"
                     android:hint="None"
                     android:textSize="10dp"
@@ -566,24 +595,25 @@
                 <EditText
                     android:id="@+id/Des9"
                     android:layout_width="150dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp"/>
                 <EditText
                     android:id="@+id/units9"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="None"
-                    android:textSize="10dp"/>
+                  />
 
 
             </TableRow>
@@ -591,35 +621,36 @@
             <TableRow>
                 <EditText
                     android:id="@+id/SC10"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
                     android:clickable="false"
                     android:hint="None"
-                    android:textSize="10dp"
                     android:cursorVisible="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"/>
                 <EditText
                     android:id="@+id/Des10"
                     android:layout_width="150dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp"
                     android:layout_toRightOf="@+id/SC1"
                     android:hint="None"
                     android:textSize="10dp" />
                 <EditText
                     android:id="@+id/units10"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:layout_marginTop="0dp"
                     android:clickable="false"
                     android:cursorVisible="false"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="None"
-                    android:textSize="10dp"/>
+                   />
 
 
             </TableRow>
@@ -632,7 +663,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="20dp">
+
         <Button
             android:id="@+id/ok"
             android:layout_width="wrap_content"

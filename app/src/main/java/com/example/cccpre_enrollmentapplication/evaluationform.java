@@ -18,19 +18,21 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class evaluationform extends AppCompatActivity{
+public class evaluationform extends AppCompatActivity {
 
-  RecyclerView recyclerView;
+    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_evaluation_form);
 
-        recyclerView=(RecyclerView) findViewById(R.id.rv);
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
+
         new FirebaseDatabaseHelper().viewGrades(new FirebaseDatabaseHelper.DataStatus() {
             @Override
             public void DataIsLoaded(List<Grades> grade, List<String> keys) {
-                new RecycleView_Config().setConfig(recyclerView,evaluationform.this,grade,keys);
+                new RecycleView_Config().setConfig(recyclerView, evaluationform.this, grade, keys);
             }
 
             @Override
@@ -50,8 +52,5 @@ public class evaluationform extends AppCompatActivity{
         });
 
 
-
-
-
-        }
     }
+}

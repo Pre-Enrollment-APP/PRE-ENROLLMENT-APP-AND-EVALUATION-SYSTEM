@@ -1,44 +1,44 @@
 package com.example.cccpre_enrollmentapplication;
 
 public class Grades {
-    private String code;
-    private String description;
-    private String grade;
+    private String Course_Code;
+    private String Desc_title;
+    private String Grade;
 
-    public Grades(){
-
-    }
-
-    public Grades(String code, String description,String grade){
-
-        this.code=code;
-        this.description=description;
-        this.grade=grade;
-
+    public Grades() {
 
     }
 
-    public String getCode() {
-        return code;
+    public Grades(String code, String description, String grade) {
+
+        this.Course_Code = code;
+        this.Desc_title = description;
+        this.Grade = grade;
+
+
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public String getCourse_Code() {
+        return Course_Code;
     }
 
-    public String getDescription() {
-        return description;
+    public void setCourse_Code(String course_Code) {
+        Course_Code = course_Code;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getDesc_title() {
+        return Desc_title;
+    }
+
+    public void setDesc_title(String desc_title) {
+        Desc_title = desc_title;
     }
 
     public String getGrade() {
-        return grade;
+        return Grade;
     }
 
     public void setGrade(String grade) {
-        this.grade = grade;
+        Grade = grade;
     }
 }
