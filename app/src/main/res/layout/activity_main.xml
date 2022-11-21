@@ -3,38 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:layout_centerVertical="true"
     android:background="@drawable/bg">
 
     <ImageView
-        android:id="@+id/ccc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/ccc" />
-
-
-    <TextView
-        android:id="@+id/pegea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ccc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:lineSpacingExtra="15dp"
-        android:text="Pre-Enrollment and \nGrade Evaluation App"
-        android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:id="@+id/logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/finallogo" />
 
     <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pegea"
+        android:id="@+id/progressBar"
+        android:layout_marginTop="100dp"
+        android:layout_width="120dp"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="@color/black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:layout_below="@id/logo"
+        android:layout_height="wrap_content" />
+
 
 </RelativeLayout>

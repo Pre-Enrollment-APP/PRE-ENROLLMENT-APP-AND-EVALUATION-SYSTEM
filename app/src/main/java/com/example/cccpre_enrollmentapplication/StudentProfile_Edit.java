@@ -145,6 +145,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
         String Student_number=studentnumber.getText().toString().trim();
         String Father_number=fnumber.getText().toString().trim();
         String Mother_number=mnumber.getText().toString().trim();
+        String Gender = "";
 
         User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Mother_number,Father,Father_number);
 

@@ -32,7 +32,7 @@
         <activity
             android:name=".registerUser"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".login_registrar"
             android:exported="false" />

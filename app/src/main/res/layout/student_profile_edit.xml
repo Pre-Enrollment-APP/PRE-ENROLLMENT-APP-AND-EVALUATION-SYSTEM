@@ -30,65 +30,63 @@
         />
 
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="290dp"
         android:layout_height="270dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/boxy" />
+        android:padding="10dp"
+        android:background="@drawable/boxy" >
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/user" />
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user" />
 
-    <EditText
-        android:id="@+id/SP_fullname"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile"
-        android:gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
+        <EditText
+            android:id="@+id/SP_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile"
+            android:paddingTop="0dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="Joana marie caranto ochodada"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="270dp"
-        android:layout_height="2dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/SP_fullname"
-        android:background="@color/black" />
 
-    <EditText
-        android:id="@+id/Snumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:hint="Student number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        <EditText
+            android:id="@+id/Snumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SP_fullname"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="0dp"
+            android:gravity="center_horizontal"
+            android:hint="Student number"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
 
-    <TextView
-        android:id="@id/course"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Snumber"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:gravity="center_horizontal"
-        android:hint="Course"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="15dp" />
+        <TextView
+            android:id="@id/course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Snumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:paddingStart="5dp"
+            android:hint="Bachelor of Science in fdfdfsdadSecondary Educati0n "
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18dp" />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -134,7 +132,7 @@
             <EditText
                 android:id="@+id/SP_email"
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_below="@+id/SP_number"
                 android:layout_centerHorizontal="true"
                 android:drawableLeft="@drawable/email"
@@ -151,13 +149,47 @@
                 android:drawablePadding="35dp"
                 android:hint="ADDRESS" />
 
+            <TextView
+                android:id="@+id/gendertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SP_address"
+                android:padding="5dp"
+                android:textColor="@color/blue"
+                android:fontFamily="@font/arial"
+                android:layout_marginStart="10dp"
+                android:text="Gender"
+                android:textSize="16dp" />
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SP_address"
+                android:background="@color/white"
+                android:layout_marginStart="80dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="Male" />
+            </RadioGroup>
 
             <Button
                 android:id="@+id/SP_bday"
                 style="?android:spinnerStyle"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/SP_address"
+                android:layout_below="@+id/gender"
                 android:layout_centerHorizontal="true"
                 android:drawableLeft="@drawable/date"
                 android:drawablePadding="35dp"

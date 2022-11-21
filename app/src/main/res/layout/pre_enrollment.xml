@@ -5,10 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     tools:context=".Pre_Enrollment"
+
     android:orientation="vertical">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue"></View>
 
     <ImageButton
         android:id="@+id/menuicon"
@@ -21,660 +25,810 @@
         android:src="@drawable/menu" />
 
 
-    <ImageView
-        android:id="@+id/ccc"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ccc" />
-
-    <Button
-        android:id="@+id/view_sched"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/edittext_semiround"
-        android:backgroundTint="@color/red"
-        android:text="View Schedule"
-        android:textColor="@color/white"
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/gmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Student number"
-        android:layout_toRightOf="@id/ccc"
-        android:visibility="invisible"
-        android:layout_marginTop="80dp"/>
-    <TextView
-        android:id="@+id/birthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Birthday"
-        android:layout_toRightOf="@id/ccc"
-        android:visibility="invisible"
-        android:layout_marginTop="80dp"/>
-
-    <TextView
-        android:id="@+id/cdis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ccc"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:lineSpacingExtra="5dp"
-        android:text="COLLEGE DEPARTMENT \n INFORMATION SHEET"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@+id/txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cdis"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/arial"
-        android:gravity="center"
-        android:lineSpacingExtra="5dp"
-        android:text="Please fill out the form"
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/studentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/arial"
-        android:hint="Name"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Address"
-        android:layout_below="@id/studentName"
-        android:visibility="invisible"
-        android:layout_marginTop="80dp"/>
-
-    <TextView
-        android:id="@id/coursetext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/studentName"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/arial"
-        android:text="Course"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <TextView
-        android:id="@id/course"
-        android:layout_width="295dp"
-        android:layout_height="22dp"
-        android:textSize="13dp"
-        android:paddingStart="10dp"
-        android:hint="this is the course"
-        android:layout_below="@id/studentName"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/coursetext"
-        android:background="@drawable/editext_miniround"
-        android:clickable="false"
-        android:cursorVisible="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false" />
-
-    <TextView
-        android:id="@+id/schoolyeartext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/course"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="18dp"
-        android:layout_toRightOf="@id/semester"
-        android:fontFamily="@font/arial"
-        android:text="S.Y"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <EditText
-        android:id="@+id/schoolyear"
-        android:layout_width="70dp"
-        android:layout_height="25dp"
-        android:layout_below="@id/course"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/schoolyeartext"
-        android:background="@drawable/editext_miniround"
-        android:hint="2000-2001"
-        android:paddingLeft="5dp"
-        android:textSize="10dp" />
-
-    <TextView
-        android:id="@+id/sectiontext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/semester"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="@font/arial"
-        android:text="Section"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <Spinner
-        android:id="@+id/section"
-        android:layout_width="80dp"
-        android:layout_height="22dp"
-        android:layout_below="@id/semester"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/sectiontext"
-        android:background="@drawable/editext_miniround"
-        android:paddingLeft="5dp" />
-
-
-    <TextView
-        android:id="@+id/moptext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/semestertext"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="13dp"
-        android:layout_toRightOf="@id/section"
-        android:fontFamily="@font/arial"
-        android:text="Mode of Payment"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-    <Spinner
-        android:id="@+id/mop"
-        android:layout_width="80dp"
-        android:layout_height="22dp"
-        android:layout_below="@+id/semester"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/moptext"
-        android:background="@drawable/editext_miniround"
-        android:paddingLeft="5dp" />
-
-    <TextView
-        android:id="@+id/semestertext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/course"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="17dp"
-        android:fontFamily="@font/arial"
-        android:text="Year &amp; Semester"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
-
-
-    <Spinner
-        android:id="@+id/semester"
-        android:layout_width="130dp"
-        android:layout_height="22dp"
-        android:layout_below="@+id/course"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/semestertext"
-        android:background="@drawable/editext_miniround"
-        android:paddingLeft="5dp" />
-
-
-
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="340dp"
-        android:layout_below="@id/moptext"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:fadeScrollbars="false"
+
         android:scrollbarFadeDuration="0"
         android:scrollbars="vertical">
 
-        <TableLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/section"
-            >
-            <TableRow>
-                <TextView
-                    android:id="@+id/SC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="13dp"
-                    android:fontFamily="@font/arial"
-                    android:text="SUBJECT CODE"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
 
-                <TextView
-                    android:id="@+id/Des"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/section"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@+id/SC"
-                    android:fontFamily="@font/arial"
-                    android:text="DESCRIPTION"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
+            android:layout_marginTop="0dp">
 
-                <TextView
-                    android:id="@+id/units"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/section"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@+id/Des"
-                    android:fontFamily="@font/arial"
-                    android:text="UNITS"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-            </TableRow>
+            <ImageView
+                android:id="@+id/ccc"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/ccc" />
 
 
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC1"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
+            <TextView
+                android:id="@+id/gmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_toRightOf="@id/ccc"
+                android:hint="Student number"
+                android:visibility="invisible" />
 
-                    android:focusable="false"
-                    />
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_toRightOf="@id/ccc"
+                android:hint="Birthday"
+                android:visibility="invisible" />
 
-                <EditText
-                    android:id="@+id/Des1"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:hint="None"
-                    android:textSize="10dp" />
+            <TextView
+                android:id="@+id/cdis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ccc"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="COLLEGE DEPARTMENT \n INFORMATION SHEET"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-                <EditText
-                    android:id="@+id/units1"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                   />
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cdis"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="Please fill out the form"
+                android:textSize="10dp" />
 
+            <TextView
+                android:id="@+id/studentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:hint="Name"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
-            </TableRow>
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC2"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des2"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units2"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/studentName"
+                android:layout_marginTop="80dp"
+                android:hint="Address"
+                android:visibility="invisible" />
 
+            <TextView
+                android:id="@id/coursetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/studentName"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/arial"
+                android:text="Course"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            </TableRow>
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC3"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des3"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units3"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <TextView
+                android:id="@id/course"
+                android:layout_width="295dp"
+                android:layout_height="22dp"
+                android:layout_below="@id/studentName"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/coursetext"
+                android:background="@drawable/editext_miniround"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="this is the course"
+                android:paddingStart="10dp"
+                android:textSize="13dp" />
 
+            <TextView
+                android:id="@+id/schoolyeartext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/course"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/semester"
+                android:fontFamily="@font/arial"
+                android:text="S.Y"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            </TableRow>
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC4"
-                    android:layout_width="100dp"
-                    android:layout_height="35dp"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des4"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units4"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <EditText
+                android:id="@+id/schoolyear"
+                android:layout_width="70dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/course"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/schoolyeartext"
+                android:background="@drawable/editext_miniround"
+                android:hint="2000-2001"
+                android:paddingLeft="5dp"
+                android:textSize="10dp" />
 
+            <TextView
+                android:id="@+id/sectiontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/semester"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/arial"
+                android:text="Section"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            </TableRow>
-            <TableRow>
-
-                <EditText
-                    android:id="@+id/SC5"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-
-                <EditText
-                    android:id="@+id/Des5"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units5"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <Spinner
+                android:id="@+id/section"
+                android:layout_width="80dp"
+                android:layout_height="22dp"
+                android:layout_below="@id/semester"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/sectiontext"
+                android:background="@drawable/editext_miniround"
+                android:paddingLeft="5dp" />
 
 
-            </TableRow>
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC6"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des6"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units6"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <TextView
+                android:id="@+id/moptext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/semestertext"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@id/section"
+                android:fontFamily="@font/arial"
+                android:text="Mode of Payment"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/mop"
+                android:layout_width="80dp"
+                android:layout_height="22dp"
+                android:layout_below="@+id/semester"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/moptext"
+                android:background="@drawable/editext_miniround"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/semestertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/course"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/arial"
+                android:text="Year &amp; Semester"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
 
-            </TableRow>
-
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC7"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des7"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units7"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+            <Spinner
+                android:id="@+id/semester"
+                android:layout_width="130dp"
+                android:layout_height="22dp"
+                android:layout_below="@+id/course"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/semestertext"
+                android:background="@drawable/editext_miniround"
+                android:paddingLeft="5dp" />
 
 
-            </TableRow>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/section"
+                android:layout_marginStart="20dp">
 
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC8"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
+                <TableRow>
 
-                <EditText
-                    android:id="@+id/Des8"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units8"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:hint="None"
-                   />
+                    <TextView
+                        android:id="@+id/SC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/arial"
+                        android:text="CODE"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
 
+                    <TextView
+                        android:id="@+id/Des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/section"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/SC"
+                        android:fontFamily="@font/arial"
+                        android:text="DESCRIPTION"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
 
-            </TableRow>
+                    <TextView
+                        android:id="@+id/units"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/section"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/Des"
+                        android:fontFamily="@font/arial"
+                        android:text="UNITS"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
 
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC9"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:textSize="10dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des9"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp"/>
-                <EditText
-                    android:id="@+id/units9"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:hint="None"
-                  />
+                    <TextView
+                        android:id="@+id/sched"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/section"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/Des"
+                        android:fontFamily="@font/arial"
+                        android:text="SCHEDULE    "
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+                </TableRow>
 
 
-            </TableRow>
+                <TableRow>
 
-            <TableRow>
-                <EditText
-                    android:id="@+id/SC10"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="10dp"
-                    android:clickable="false"
-                    android:hint="None"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"/>
-                <EditText
-                    android:id="@+id/Des10"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_toRightOf="@+id/SC1"
-                    android:hint="None"
-                    android:textSize="10dp" />
-                <EditText
-                    android:id="@+id/units10"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="10dp"
-                    android:layout_marginTop="0dp"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:hint="None"
-                   />
+                    <EditText
+                        android:id="@+id/SC1"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des1"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units1"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched1"
+                        android:layout_width="70dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
 
 
-            </TableRow>
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC2"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des2"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units2"
+                        android:layout_width="10dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched2"
+                        android:layout_width="70dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
 
 
-        </TableLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC3"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des3"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units3"
+                        android:layout_width="10dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched3"
+                        android:layout_width="70dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC4"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des4"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units4"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched4"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC5"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des5"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units5"
+                        android:layout_width="10dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched5"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC6"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des6"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units6"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched6"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC7"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des7"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units7"
+                        android:layout_width="10dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched7"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC8"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des8"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units8"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched8"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:id="@+id/SC9"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des9"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units9"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched9"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/SC10"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/Des10"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_toRightOf="@+id/SC1"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/units10"
+                        android:layout_width="40dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+                    <EditText
+                        android:id="@+id/sched10"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="50dp"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="None"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/edittext_semiround"
+                android:backgroundTint="@color/blue"
+                android:text="Ok"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
     </ScrollView>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp">
-
-        <Button
-            android:id="@+id/ok"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:background="@drawable/edittext_semiround"
-            android:backgroundTint="@color/blue"
-            android:text="Ok"
-            android:textColor="@color/white">
-
-        </Button>
-    </RelativeLayout>
 
 </RelativeLayout>
