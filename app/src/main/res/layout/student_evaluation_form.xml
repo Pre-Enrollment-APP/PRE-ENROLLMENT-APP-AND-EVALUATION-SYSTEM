@@ -4,29 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bglight"
     tools:context=".MainActivity"
     android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+
+        <View
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/menuicon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:background="?attr/selectableItemBackground"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.2"
+            android:padding="10dp"
+            android:text="View Grades"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            tools:ignore="MissingConstraints" />
+
+
+    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Grades"
-        android:letterSpacing="0.2"
-        android:fontFamily="@font/arial"
-        android:textColor="@color/white"
-        android:padding="8dp"
-        android:textSize="15dp"
-        android:textAlignment="center"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

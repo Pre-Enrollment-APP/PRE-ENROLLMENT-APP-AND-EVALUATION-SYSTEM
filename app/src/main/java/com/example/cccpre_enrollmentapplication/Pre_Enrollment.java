@@ -688,8 +688,9 @@ public class Pre_Enrollment extends AppCompatActivity {
         canvas.drawLine(40, 705, 200, 705, paint);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         canvas.drawText("Adviser", 100, 720, paint);
+        canvas.drawText("*This",40,780,paint);
         paint.setTextAlign(Paint.Align.RIGHT);
-        canvas.drawLine(myPageInfo1.getPageWidth() - 210, 705, myPageInfo1.getPageWidth() - 40, 705, paint);
+        canvas.drawLine(myPageInfo1.getPageWidth() - 210, 705, myPageInfo1.getPageWidth() - 50, 705, paint);
         canvas.drawText("Student Signature", myPageInfo1.getPageWidth() - 80, 720, paint);
 
 

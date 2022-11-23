@@ -13,36 +13,36 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
-Handler handler;
-ProgressBar progressBar;
-@Override
+    Handler handler;
+    ProgressBar progressBar;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    handler = new Handler();
-
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-    if (firebaseUser != null) {
-        Intent intent = new Intent(MainActivity.this, Home_Page.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    } else {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        handler = new Handler();
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null && user.isEmailVerified()) {
+                Intent intent = new Intent(MainActivity.this, Home_Page.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);;
 
 
-                Intent intent = new Intent(MainActivity.this, login.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+        } else {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
 
 
-            }
-        }, 2400);
+                    Intent intent = new Intent(MainActivity.this, login.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
 
 
+                }
+            }, 2400);
+
+
+        }
     }
-}
 }

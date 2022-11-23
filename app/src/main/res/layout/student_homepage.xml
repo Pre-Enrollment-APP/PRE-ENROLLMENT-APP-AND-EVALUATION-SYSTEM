@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bgblue"
     tools:context=".MainActivity">
 
 
@@ -13,54 +13,38 @@
         android:id="@+id/menuicon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:scaleType="fitXY"
-        android:background="?attr/selectableItemBackground"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitXY"
         android:src="@drawable/menu" />
 
     <!-- Add TextView to display the date -->
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/ccc"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:fontFamily="@font/arial"
-        android:text="Welcome"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        />
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ccc" />
 
     <TextView
         android:id="@+id/ccctext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/welcome"
+        android:layout_below="@+id/ccc"
         android:text="Cainta Catholic College"
         android:textSize="25dp"
         android:fontFamily="@font/arial"
         android:textColor="@color/yellow"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/studenttext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/arial"
-        android:text="Students!"
-        android:layout_below="@+id/ccctext"
-        android:textSize="25dp"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/studenttext"
+        android:layout_below="@+id/ccctext"
         android:layout_toLeftOf="@+id/clock"
         android:layout_marginEnd="7dp"
         android:src="@drawable/clockwhite" />
@@ -69,7 +53,7 @@
         android:id="@+id/clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/studenttext"
+        android:layout_below="@+id/ccctext"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/arial"
         android:textAllCaps="true"
@@ -95,7 +79,7 @@
         </CalendarView>
 
 
-</RelativeLayout>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -104,33 +88,37 @@
 
         <ImageButton
             android:id="@+id/preenroll"
-            android:layout_width="125dp"
-            android:layout_height="95dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="145dp"
+            android:layout_height="105dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitXY"
-            android:src="@drawable/preenroll_btn" />
+            android:src="@drawable/enlist" />
 
         <ImageButton
             android:id="@+id/evaluate"
-            android:layout_width="125dp"
-            android:layout_height="95dp"
+            android:layout_width="145dp"
+            android:layout_height="105dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
+            android:layout_margin="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitXY"
-            android:src="@drawable/evaluate_btn" />
+            android:src="@drawable/viewgrades_btn" />
+
         <TextView
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="yes"
             android:layout_below="@+id/preenroll"
             android:layout_marginStart="50dp"
-            android:visibility="invisible"/>
+            android:hint="yes"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

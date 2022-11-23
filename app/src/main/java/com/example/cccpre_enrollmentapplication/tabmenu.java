@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class tabmenu extends AppCompatActivity {
     private Button profile;
-    private Button about, logout;
+    private Button about, logout,contact_us,home;
     private TextView studentNumber;
     private FirebaseUser user;
     private FirebaseAuth mAuth;
@@ -34,18 +34,37 @@ public class tabmenu extends AppCompatActivity {
         setContentView(R.layout.tabmenu);
         profile=findViewById(R.id.studentprofile);
         about=findViewById(R.id.about);
-        logout=findViewById(R.id.logout);
+        logout=findViewById(R.id.log_out);
+        contact_us=findViewById(R.id.contact_us);
+        home=findViewById(R.id.home);
 
 
-        //
+    home.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent =new Intent(tabmenu.this,Home_Page.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
+        }
+    });
 
+    contact_us.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // contact us pages
+        }
+    });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(tabmenu.this,profile.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
 
@@ -55,6 +74,7 @@ public class tabmenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(tabmenu.this,About.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
 
@@ -67,6 +87,7 @@ public class tabmenu extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
             }
         });
@@ -90,8 +111,7 @@ public class tabmenu extends AppCompatActivity {
 
                 fullName.setText(name);
                 Course.setText(course);
-                studentNumber.setText(studentnumber)
-                ;
+                studentNumber.setText(studentnumber);
 
 
 
@@ -105,5 +125,11 @@ public class tabmenu extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 }

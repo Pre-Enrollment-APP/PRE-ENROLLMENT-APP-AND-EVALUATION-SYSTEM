@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,8 +44,9 @@ public class StudentProfile_Edit extends AppCompatActivity {
     private String userID;
     public String _Name,_Email, Number,_Course, _Address, _Birthday,_Contact_Number,_Mother,_Mother_number,_Father,_Father_number;
     private FirebaseAuth mAuth;
-
+    private ImageView profile;
     ProgressBar progressbar;
+    private ImageButton back;
 
     private Button SAVEPROFILE;
     private Spinner coursespinner;
@@ -68,14 +70,35 @@ public class StudentProfile_Edit extends AppCompatActivity {
         SAVEPROFILE=findViewById(R.id.editbutton);
          num=findViewById(R.id.SP_number);
         progressbar= findViewById(R.id.progressbar);
-
+        profile=findViewById(R.id.profile);
         user=FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
         userID=user.getUid();
+        back=findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(StudentProfile_Edit.this,profile.class);
+                startActivity(intent);
 
+            }
+        });
         mAuth= FirebaseAuth.getInstance();
         FirebaseUser firebaseUser;
         firebaseUser = mAuth.getCurrentUser();
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(StudentProfile_Edit.this,upload_photo.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+
+
+            }
+        });
 
 
         databaseRef.child(userID).addListenerForSingleValueEvent((new ValueEventListener() {
@@ -99,6 +122,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 name.setText(Name);
                 course.setText(Course);
                 studentnumber.setText(StudentNumber);
+
                 num.setText(Number);
                 emailadd.setText(Email);
                 add.setText(Address);
@@ -166,7 +190,6 @@ public class StudentProfile_Edit extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
                             Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
-                    finish();
 
 
 
@@ -240,5 +263,9 @@ public class StudentProfile_Edit extends AppCompatActivity {
     public void opendatePicker(View view) {
         datePickerDialog.show();
     }
-
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
 }

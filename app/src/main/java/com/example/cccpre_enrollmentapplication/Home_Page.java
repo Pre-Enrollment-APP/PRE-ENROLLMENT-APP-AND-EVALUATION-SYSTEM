@@ -75,6 +75,7 @@ public class Home_Page extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(Home_Page.this,tabmenu.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
         });
 

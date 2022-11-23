@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CCCPreEnrollmentApplication">
         <activity
+            android:name=".upload_photo"
+            android:exported="false" />
+        <activity
             android:name=".schedule"
             android:exported="false" />
         <activity
@@ -32,7 +35,7 @@
         <activity
             android:name=".registerUser"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".login_registrar"
             android:exported="false" />

@@ -11,7 +11,10 @@
         android:id="@+id/back"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="?attr/selectableItemBackground"
         android:scaleType="fitXY"
         android:src="@drawable/back" />
@@ -21,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:letterSpacing="0.2"
@@ -74,23 +77,24 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="11dp"
                 android:fontFamily="@font/arial"
-                android:text="Fullname*"
+                android:text="Fullname* ex: Juan L. Delacruz"
                 android:textColor="@color/white" />
 
             <EditText
                 android:id="@+id/fullname"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/fullnametxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/icon_username"
-                android:drawablePadding="0dp"
                 android:ems="10"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your complete name"
+                android:paddingLeft="20dp"
                 android:textSize="15dp" />
 
             <TextView
@@ -108,15 +112,19 @@
             <EditText
                 android:id="@+id/email"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/emailtext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your email address"
+                android:paddingLeft="20dp"
                 android:textSize="15dp" />
+
 
             <TextView
                 android:id="@+id/passwordtxt"
@@ -133,15 +141,18 @@
             <EditText
                 android:id="@+id/password"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:layout_below="@+id/passwordtxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your desire password"
                 android:inputType="textPassword"
+                android:paddingLeft="20dp"
                 android:textSize="15dp" />
 
             <TextView
@@ -158,13 +169,16 @@
             <EditText
                 android:id="@+id/studentnumber"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/studentnumbertxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
+                android:paddingLeft="20dp"
                 android:fontFamily="@font/arial"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:hint="Enter your student number"
                 android:inputType="number"
                 android:textSize="15dp" />
@@ -183,10 +197,13 @@
             <Spinner
                 android:id="@+id/course"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/coursetext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your complete course"
@@ -206,57 +223,25 @@
             <EditText
                 android:id="@+id/address"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/addresstext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your complete address"
                 android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/gendertext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/address"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/arial"
-                android:text="Gender*"
-                android:textColor="@color/white" />
-
-            <RadioGroup
-                android:id="@+id/gender"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/gendertext"
-                android:layout_marginLeft="35dp"
-                android:background="@color/white"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Female" />
-
-                <RadioButton
-                    android:id="@+id/male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:text="Male" />
-            </RadioGroup>
 
 
             <TextView
                 android:id="@+id/datetext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/gender"
+                android:layout_below="@+id/address"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
@@ -267,13 +252,16 @@
                 android:id="@+id/date"
                 style="?android:spinnerStyle"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/datetext"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="35dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/editext_miniround"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your birthday"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:onClick="opendatePicker"
                 android:textAlignment="center"
                 android:textSize="15dp" />
@@ -292,14 +280,18 @@
             <EditText
                 android:id="@+id/number"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/numbertext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your contact number"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:inputType="number"
+                android:paddingLeft="20dp"
                 android:textSize="15dp" />
 
 
@@ -317,12 +309,15 @@
             <EditText
                 android:id="@+id/mothername"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/mothernametext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your Mother's name"
                 android:textSize="15dp" />
@@ -341,14 +336,17 @@
             <EditText
                 android:id="@+id/mothernumber"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:layout_below="@+id/mothernumbertxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:paddingLeft="20dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your mother's contact No."
+                android:hint="Enter your father's contact no."
                 android:inputType="number"
                 android:textSize="15dp" />
 
@@ -366,12 +364,15 @@
             <EditText
                 android:id="@+id/fathername"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/fathernametxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
+                android:paddingLeft="20dp"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your father's name"
                 android:textSize="15dp" />
@@ -383,6 +384,7 @@
                 android:layout_below="@+id/fathername"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
+                android:inputType="number"
                 android:fontFamily="@font/arial"
                 android:text="Contact Number*"
                 android:textColor="@color/white" />
@@ -390,12 +392,15 @@
             <EditText
                 android:id="@+id/fathernumber"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_below="@+id/fathernumbertext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:backgroundTint="@color/bluegrey"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:paddingLeft="20dp"
                 android:background="@drawable/editext_miniround"
-                android:drawableLeft="@drawable/ic_lock"
                 android:fontFamily="@font/arial"
                 android:hint="Enter your father's contact no."
                 android:inputType="number"

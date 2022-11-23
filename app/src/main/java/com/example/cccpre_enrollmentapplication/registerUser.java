@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +16,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,6 +28,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -36,9 +43,11 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressbar;
     private Button registeruser,date;
     private ImageButton Back;
+    private static final String TAG="registerUser";
     private Button DateButton;
     private DatePickerDialog datePickerDialog;
     private Spinner course;
+    private ImageView profile_pic;
 
 
 
@@ -46,6 +55,8 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
+        Toast.makeText(this, "You can register now", Toast.LENGTH_SHORT).show();
         mAuth = FirebaseAuth.getInstance();
         name = findViewById(R.id.fullname);
         pass = findViewById(R.id.password);
@@ -78,6 +89,17 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         course.setAdapter(adapter);
         course.setOnItemSelectedListener(this);
+
+        profile_pic=findViewById(R.id.profile);
+
+        profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(registerUser.this,upload_photo.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 
@@ -110,7 +132,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         String Student_number=studentnumber.getText().toString().trim();
         String Father_number=fnumber.getText().toString().trim();
         String Mother_number=mnumber.getText().toString().trim();
-
+        String Gender="";
 
 
         if (Name.isEmpty()) {
@@ -118,29 +140,21 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             name.requestFocus();
             return;
 
-        }
-
-        if (Password.isEmpty()) {
+        } if (Password.isEmpty()) {
             pass.setError("Password is required!");
             pass.requestFocus();
             return;
 
-        }
-        if (Email.isEmpty()) {
+        } if (Email.isEmpty()) {
             emailadd.setError("Email is required!");
             emailadd.requestFocus();
             return;
         }
-
-
-
-
         if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
             emailadd.setError("please provide valid email");
             emailadd.requestFocus();
             return;
         }
-
         if (Password.length() < 6) {
             pass.setError("min password length should be 6 characters");
             pass.requestFocus();
@@ -164,55 +178,104 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             return;
 
         }
+        if (Father_number.isEmpty()) {
+            num.setError("Contact # is required!");
+            num.requestFocus();
+            return;
+
+        }
+        if (Mother_number.isEmpty()) {
+            num.setError("Contact # is required!");
+            num.requestFocus();
+            return;
+
+        }
+
         if (Mother.isEmpty()) {
             mname.setError("Contact # is required!");
             mname.requestFocus();
             return;
 
         }
-
         if (Father.isEmpty()) {
             fname.setError("Contact # is required!");
             fname.requestFocus();
             return;
 
         }
+        if(Student_number.length()!=8){
+            studentnumber.setError("Invalid Student ");
 
 
+        }
+        if(Mother_number.length()!=11){
+            studentnumber.setError("Invalid Number, It should be 11 digits ");
 
+
+        }
+        if(Father_number.length()!=11){
+            studentnumber.setError("Invalid Number, It should be 11 digits");
+
+
+        }
+        if(Contact_Number.length()!=11){
+            studentnumber.setError("Invalid Number, It should be 11 digits ");
+
+
+        }
         progressbar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(Email, Password)
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(Email, Password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Mother_number,Father,Father_number);
+                        if(task.isSuccessful()) {
+                            User user = new User(Name, Email, Student_number, Course, Address, Birthday, Contact_Number, Mother, Mother_number, Father, Father_number);
                             FirebaseDatabase.getInstance().getReference("User")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
-                                            if(task.isSuccessful()){
-                                                Toast.makeText(registerUser.this,"User has been registered successfully",Toast.LENGTH_LONG).show();
-                                                progressbar.setVisibility(View.GONE);
-                                                //redirect to login
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                                Intent intent= new Intent(registerUser.this,login.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
+                                                startActivity(intent);
+                                                finish();
                                             } else {
-                                                Toast.makeText(registerUser.this,"Failed to register! try again.",Toast.LENGTH_LONG).show();
-                                                progressbar.setVisibility(View.GONE);
+                                                Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
                                             }
+                                            progressbar.setVisibility(View.GONE);
 
                                         }
                                     });
 
                         }else {
-                            Toast.makeText(registerUser.this,"Failed to register! try again.",Toast.LENGTH_LONG);
+                            try {
+                                throw task.getException();
+                            }catch (FirebaseAuthWeakPasswordException e){
+                                pass.setError("Your password is too week. User a mix of alphabets,numbers and special character");
+                                pass.requestFocus();
+                            }catch (FirebaseAuthInvalidCredentialsException e){
+                                emailadd.setError("Your email is invalid or already in user. Kindly re-enter.");
+                                emailadd.requestFocus();
+                            }catch (FirebaseAuthUserCollisionException e){
+                                pass.setError("User is already registered with this email.");
+                                pass.requestFocus();
+                            }catch (Exception e){
+                                Log.e(TAG, e.getMessage());
+                                Toast.makeText(registerUser.this,e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
                             progressbar.setVisibility(View.GONE);
                         }
                     }
                 });
+
         initDatePicker();
         DateButton=findViewById(R.id.date);
     }
+
+
     private String getTodaysDate() {
         Calendar cal= Calendar.getInstance();
         int year=cal.get(Calendar.YEAR);

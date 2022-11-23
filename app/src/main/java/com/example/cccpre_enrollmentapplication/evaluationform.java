@@ -1,6 +1,10 @@
 package com.example.cccpre_enrollmentapplication;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +25,7 @@ import java.util.List;
 public class evaluationform extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    private ImageButton menu_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,15 @@ public class evaluationform extends AppCompatActivity {
         setContentView(R.layout.student_evaluation_form);
 
         recyclerView = (RecyclerView) findViewById(R.id.rv);
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(evaluationform.this,tabmenu.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
 
         new FirebaseDatabaseHelper().viewGrades(new FirebaseDatabaseHelper.DataStatus() {
             @Override

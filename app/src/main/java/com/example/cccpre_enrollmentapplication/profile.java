@@ -31,7 +31,7 @@ public class profile extends AppCompatActivity {
     private FirebaseUser user;
     private String userID;
     private FirebaseAuth mAuth;
-    private ImageButton editButton;
+    private ImageButton editButton, menu_page;
 
     private ProgressBar progressbar;
     @Override
@@ -62,6 +62,15 @@ public class profile extends AppCompatActivity {
         });
 
 
+        menu_page=findViewById(R.id.menuicon);
+        menu_page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(profile.this,tabmenu.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
 
 
         mAuth=FirebaseAuth.getInstance();
@@ -111,5 +120,10 @@ public class profile extends AppCompatActivity {
         }));
 
 
+    }
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
     }
 }

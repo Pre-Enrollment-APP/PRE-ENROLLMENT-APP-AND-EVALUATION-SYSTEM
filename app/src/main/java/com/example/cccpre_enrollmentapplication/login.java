@@ -1,8 +1,10 @@
 package com.example.cccpre_enrollmentapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -125,17 +127,36 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                     }
                     else{
                         user.sendEmailVerification();
-                        Toast.makeText(login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
+                        showAlertDialog();
                     }
                 }
                 else{
                     Toast.makeText(login.this,"Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
+
                 }
 
             }
         });
+    }
+    private void showAlertDialog(){
+        AlertDialog.Builder builder=new AlertDialog.Builder(login.this);
+        builder.setTitle("Email Not Verified");
+        builder.setMessage("Please verify your email now.");
+
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent=new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            }
+        });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 
 }
