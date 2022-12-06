@@ -2,6 +2,7 @@ package com.example.cccpre_enrollmentapplication;
 
 import static android.content.ContentValues.TAG;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NotificationChannel;
@@ -13,7 +14,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -58,24 +62,28 @@ public class MainActivity extends AppCompatActivity {
         }
         createNotificationChannel();
         getToken();
+        subscribeToTopic();
     }
+
     private void getToken()
     {
-    FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
-    //if task is failed then
-    if (!task.isSuccessful())
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task ->
+        {
+            //if task is failed then
+            if (!task.isSuccessful())
+            {
+                Log.d(TAG, "onComplete: Failed to get the Token");
+            }
+            String token=task.getResult();
+            Log.d(TAG, "onComplete " + token);
+        });
+    }
+    private void createNotificationChannel()
     {
-    Log.d(TAG, "onComplete: Failed to get the Token");
-    }
-        String token=task.getResult();
-        Log.d(TAG, "onComplete" + token);
-    });
-    }
-    private void createNotificationChannel() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "firebaseNotificationChannel";
-            String description = "Receive Firebase notification";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            CharSequence name = "firebaseNotifChannel";
+            String description = "This is the channel to receive firebase notifications";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
@@ -83,5 +91,18 @@ public class MainActivity extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+    private void subscribeToTopic()
+    {
+        FirebaseMessaging.getInstance().subscribeToTopic("newsletter")
+                .addOnCompleteListener(new OnCompleteListener<Void>()
+                {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
+
+                        Toast.makeText(MainActivity.this, "subscribed", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
