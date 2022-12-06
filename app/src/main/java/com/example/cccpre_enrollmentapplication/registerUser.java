@@ -106,29 +106,20 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         units10 = findViewById(R.id.unit10);
 
 
-        g1 = findViewById(R.id.sched1);
-        g2 = findViewById(R.id.sched2);
-        g3 = findViewById(R.id.sched3);
-        g4 = findViewById(R.id.sched4);
-        g5 = findViewById(R.id.sched5);
-        g6 = findViewById(R.id.sched6);
-        g7 = findViewById(R.id.sched7);
-        g8 = findViewById(R.id.sched8);
-        g9 = findViewById(R.id.sched9);
-        g10 = findViewById(R.id.sched10);
-        g1.setText("");
-        g2.setText("");
-        g3.setText("");
-        g4 .setText("");
-        g5 .setText("");
-        g6.setText("");
-        g8.setText("");
-        g9.setText("");
-        g10.setText("");
+        g1 = findViewById(R.id.g1);
+        g2 = findViewById(R.id.g2);
+        g3 = findViewById(R.id.g3);
+        g4 = findViewById(R.id.g4);
+        g5 = findViewById(R.id.g5);
+        g6 = findViewById(R.id.g6);
+        g7 = findViewById(R.id.g7);
+        g8 = findViewById(R.id.g8);
+        g9 = findViewById(R.id.g9);
+        g10 = findViewById(R.id.g10);
 
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
+        //  user = FirebaseAuth.getInstance().getCurrentUser();
+      //  userID = user.getUid();
 
 
         //user profile id
@@ -419,15 +410,14 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         dataObj.sc9=String.valueOf(SC9.getText());
         dataObj.sc10=String.valueOf(SC10.getText());
         dataObj.grade1=String.valueOf(g1.getText());
-        dataObj.grade2=String.valueOf(g2.getText());
-        dataObj.grade3=String.valueOf(g3.getText());
-        dataObj.grade4=String.valueOf(g4.getText());
-        dataObj.grade5=String.valueOf(g5.getText());
-        dataObj.grade6=String.valueOf(g6.getText());
-        dataObj.grade7=String.valueOf(g7.getText());
-        dataObj.grade8=String.valueOf(g8.getText());
-        dataObj.grade9=String.valueOf(g9.getText());
-        dataObj.grade10=String.valueOf(g10.getText());
+        dataObj.grade2=String.valueOf(g1.getText());
+        dataObj.grade3=String.valueOf(g1.getText());
+        dataObj.grade4=String.valueOf(g1.getText());
+        dataObj.grade5=String.valueOf(g1.getText());
+        dataObj.grade6=String.valueOf(g1.getText());
+        dataObj.grade7=String.valueOf(g1.getText());
+        dataObj.grade8=String.valueOf(g1.getText());
+        dataObj.grade9=String.valueOf(g1.getText());
 
 
 
@@ -449,7 +439,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                print.child(userID).child("grades").setValue(dataObj);
+                                                print.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").setValue(dataObj);
                                                 Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                                 Intent intent= new Intent(registerUser.this,login.class);
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
