@@ -36,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -352,17 +353,17 @@ public class Pre_Enrollment extends AppCompatActivity {
                 dataObj.schoolyear = String.valueOf(schoolyear.getText());
                 dataObj.yearAndsem = String.valueOf(semester.getSelectedItem());
                 dataObj.section = String.valueOf(section.getSelectedItem());
-                dataObj.des5 = String.valueOf(des10.getText());
                 dataObj.address = String.valueOf(address.getText());
                 dataObj.des1 = String.valueOf(des1.getText());
                 dataObj.des2 = String.valueOf(des2.getText());
                 dataObj.des3 = String.valueOf(des3.getText());
                 dataObj.des4 = String.valueOf(des4.getText());
                 dataObj.des5 = String.valueOf(des5.getText());
-                dataObj.des5 = String.valueOf(des6.getText());
-                dataObj.des5 = String.valueOf(des7.getText());
-                dataObj.des5 = String.valueOf(des8.getText());
-                dataObj.des5 = String.valueOf(des9.getText());
+                dataObj.des6 = String.valueOf(des6.getText());
+                dataObj.des7 = String.valueOf(des7.getText());
+                dataObj.des8 = String.valueOf(des8.getText());
+                dataObj.des9= String.valueOf(des9.getText());
+                dataObj.des10 = String.valueOf(des10.getText());
                 dataObj.s1=String.valueOf(s1.getText());
                 dataObj.s2=String.valueOf(s2.getText());
                 dataObj.s3=String.valueOf(s3.getText());
@@ -373,6 +374,7 @@ public class Pre_Enrollment extends AppCompatActivity {
                 dataObj.s8=String.valueOf(s8.getText());
                 dataObj.s9=String.valueOf(s9.getText());
                 dataObj.s10=String.valueOf(s10.getText());
+
 
                 dataObj.date = new Date().getTime();
                 dataObj.birthday = String.valueOf(birthday.getText());
@@ -596,7 +598,6 @@ public class Pre_Enrollment extends AppCompatActivity {
         Canvas canvas = myPage1.getCanvas();
         //
         File file = new File(this.getExternalFilesDir("/"), "Form.pdf" );
-        //
         canvas.drawBitmap(scaledbmp, (myPageInfo1.getPageWidth() / 2) - 20, 10, paint);
 
 

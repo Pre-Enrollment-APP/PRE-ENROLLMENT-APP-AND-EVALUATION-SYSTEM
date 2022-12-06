@@ -1,12 +1,16 @@
 package com.example.cccpre_enrollmentapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -31,6 +35,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -38,15 +46,22 @@ import java.util.HashMap;
 
 public class StudentProfile_Edit extends AppCompatActivity {
     private TextView  course;
-    private EditText name, studentnumber,add,fnumber,mnumber,fname,mname,num,emailadd;
+    private EditText name, studentnumber,add,ename,enumber,fname,mname,num,emailadd;
     Button bday;
     private FirebaseUser user;
     private String userID;
     public String _Name,_Email, Number,_Course, _Address, _Birthday,_Contact_Number,_Mother,_Mother_number,_Father,_Father_number;
     private FirebaseAuth mAuth;
-    private ImageView profile;
+    private ImageView  buttonUploadPicChoose;
     ProgressBar progressbar;
     private ImageButton back;
+
+    private FirebaseAuth authProfile;
+    private StorageReference storageReference;
+    private FirebaseUser firebaseUser;
+    private Uri uriImage;
+    private static final int PICK_IMAGE_REQUEST = 1;
+
 
     private Button SAVEPROFILE;
     private Spinner coursespinner;
@@ -62,19 +77,27 @@ public class StudentProfile_Edit extends AppCompatActivity {
         emailadd=findViewById(R.id.SP_email);
         course=findViewById(R.id.course);
         add=findViewById(R.id.SP_address);
-        fnumber=findViewById(R.id.SP_fathernumber);
-        mnumber=findViewById(R.id.SP_mothernumber);
+        enumber=findViewById(R.id.SP_Emergencynumber);
+        ename=findViewById(R.id.SP_Emergencyname);
         fname=findViewById(R.id.SP_fathername);
         mname=findViewById(R.id.SP_mothername);
         bday=findViewById(R.id.SP_bday);
         SAVEPROFILE=findViewById(R.id.editbutton);
-         num=findViewById(R.id.SP_number);
+        num=findViewById(R.id.SP_number);
         progressbar= findViewById(R.id.progressbar);
-        profile=findViewById(R.id.profile);
+        buttonUploadPicChoose=findViewById(R.id.profile);
         user=FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference databaseRef= FirebaseDatabase.getInstance().getReference("User");
         userID=user.getUid();
         back=findViewById(R.id.back);
+
+        authProfile = FirebaseAuth.getInstance();
+        firebaseUser = authProfile.getCurrentUser();
+
+        storageReference = FirebaseStorage.getInstance().getReference("DisplayPic");
+
+        Uri uri = firebaseUser.getPhotoUrl();
+        Picasso.with(StudentProfile_Edit.this).load(uri).into( buttonUploadPicChoose);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,19 +106,12 @@ public class StudentProfile_Edit extends AppCompatActivity {
 
             }
         });
-        mAuth= FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser;
-        firebaseUser = mAuth.getCurrentUser();
 
-        profile.setOnClickListener(new View.OnClickListener() {
+
+        buttonUploadPicChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(StudentProfile_Edit.this,upload_photo.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-
+                openFileChooser();
 
             }
         });
@@ -115,8 +131,8 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 String Birthday=snapshot.child("Birthday").getValue().toString();
                 String MotherName=snapshot.child("Mother").getValue().toString();
                 String FatherName=snapshot.child("Father").getValue().toString();
-                String Fathernumber=snapshot.child("Father_number").getValue().toString();
-                String Mothernumber=snapshot.child("Mother_number").getValue().toString();
+                String Emergencynumber=snapshot.child("Emergency_number").getValue().toString();
+                String Emergencyname=snapshot.child("Emergency_name").getValue().toString();
 
 
                 name.setText(Name);
@@ -129,9 +145,11 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 bday.setText(Birthday);
                 mname.setText(MotherName);
                 fname.setText(FatherName);
-                fnumber.setText(Fathernumber);
-                mnumber.setText(Mothernumber);
+                enumber.setText(Emergencynumber);
+                ename.setText(Emergencyname);
                 progressbar.setVisibility(View.GONE);
+
+
 
             }
 
@@ -144,7 +162,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
 
 
 
-       SAVEPROFILE.setOnClickListener(new View.OnClickListener() {
+        SAVEPROFILE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -167,15 +185,14 @@ public class StudentProfile_Edit extends AppCompatActivity {
         String Mother =mname.getText().toString().trim();
         String Father =fname.getText().toString().trim();
         String Student_number=studentnumber.getText().toString().trim();
-        String Father_number=fnumber.getText().toString().trim();
-        String Mother_number=mnumber.getText().toString().trim();
-        String Gender = "";
+        String Emergency_number=enumber.getText().toString().trim();
+        String Emergency_name=ename.getText().toString().trim();
 
-        User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Mother_number,Father,Father_number);
+        User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Emergency_number,Father,Emergency_name);
 
-      DatabaseReference referenceProfile =FirebaseDatabase.getInstance().getReference("User");
+        DatabaseReference referenceProfile =FirebaseDatabase.getInstance().getReference("User");
 
-      userID=firebaseUser.getUid();
+        userID=firebaseUser.getUid();
         progressbar.setVisibility(View.VISIBLE);
 
         referenceProfile.child(userID).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -184,9 +201,11 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 if(task.isSuccessful()){
                     UserProfileChangeRequest profileUpdate =new UserProfileChangeRequest.Builder().build();
                     firebaseUser.updateProfile(profileUpdate);
+                    Uri uri=firebaseUser.getPhotoUrl();
+                    Picasso.with(StudentProfile_Edit.this).load(uri).into(buttonUploadPicChoose);
                     Toast.makeText(StudentProfile_Edit.this, "Update Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent= new Intent(StudentProfile_Edit.this, ContactsContract.Profile.class);
+                    Intent intent= new Intent(StudentProfile_Edit.this, profile.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
                             Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
@@ -196,13 +215,14 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 }else {
                     try {
 
-                            throw task.getException();
-                        }catch(Exception e){
-                            Toast.makeText(StudentProfile_Edit.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                        }
+                        throw task.getException();
+                    }catch(Exception e){
+                        Toast.makeText(StudentProfile_Edit.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                progressbar.setVisibility(View.GONE);
                 }
+                UploadPic();
+                progressbar.setVisibility(View.GONE);
+            }
         });
     }
 
@@ -268,4 +288,56 @@ public class StudentProfile_Edit extends AppCompatActivity {
         super.finish();
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    private void UploadPic() {
+        if (uriImage != null) {
+            //save the image with uid of the currently logged user
+
+            StorageReference fileReference = storageReference.child(authProfile.getCurrentUser().getUid() + "."
+                    + getFileExtension(uriImage));
+            //Upload image to Storage
+            fileReference.putFile(uriImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Uri downloadUri=uri;
+                            firebaseUser=authProfile.getCurrentUser();
+                            UserProfileChangeRequest profileUpdates=new UserProfileChangeRequest.Builder()
+                                    .setPhotoUri(downloadUri).build();
+                            firebaseUser.updateProfile(profileUpdates);
+                        }
+                    });
+                }
+            });
+        }
+    }
+    private String getFileExtension(Uri uri) {
+        ContentResolver cR=getContentResolver();
+        MimeTypeMap mime= MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            uriImage = data.getData();
+            buttonUploadPicChoose.setImageURI(uriImage);
+
+
+        }
+    }
+
+
 }

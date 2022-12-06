@@ -37,17 +37,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
-        android:padding="10dp"
-        android:background="@drawable/boxy" >
+        android:background="@drawable/boxy"
+        android:padding="10dp">
+
 
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/user" />
+            android:src="@drawable/upload_photo" />
+
 
         <EditText
             android:id="@+id/SP_fullname"
@@ -68,10 +70,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/SP_fullname"
             android:layout_centerHorizontal="true"
-            android:paddingTop="0dp"
             android:gravity="center_horizontal"
             android:hint="Student number"
+            android:paddingTop="0dp"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="15dp" />
 
         <TextView
@@ -91,10 +94,10 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="380dp"
+        android:layout_height="390dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="365dp"
+        android:layout_marginTop="335dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rec74"
         android:fadeScrollbars="false"
@@ -105,7 +108,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="380dp"
+            android:layout_height="390dp"
             android:layout_marginTop="0dp">
 
             <ImageView
@@ -174,31 +177,33 @@
                 android:drawablePadding="35dp"
                 android:hint="Mother Name" />
 
+
+
             <EditText
-                android:id="@+id/SP_mothernumber"
+                android:id="@+id/SP_fathername"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_mothername"
                 android:layout_centerHorizontal="true"
                 android:drawableLeft="@drawable/date"
                 android:drawablePadding="35dp"
-                android:hint="Contact Number" />
-
-            <EditText
-                android:id="@+id/SP_fathername"
-                android:layout_width="290dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/SP_mothernumber"
-                android:layout_centerHorizontal="true"
-                android:drawableLeft="@drawable/date"
-                android:drawablePadding="35dp"
                 android:hint="Father Name" />
-
             <EditText
-                android:id="@+id/SP_fathernumber"
+                android:id="@+id/SP_Emergencyname"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_fathername"
+                android:layout_centerHorizontal="true"
+                android:drawableLeft="@drawable/date"
+                android:drawablePadding="35dp"
+                android:hint="Contact Person" />
+
+            <EditText
+                android:id="@+id/SP_Emergencynumber"
+                android:layout_width="290dp"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:layout_below="@id/SP_Emergencyname"
                 android:layout_centerHorizontal="true"
                 android:drawableLeft="@drawable/date"
                 android:drawablePadding="35dp"

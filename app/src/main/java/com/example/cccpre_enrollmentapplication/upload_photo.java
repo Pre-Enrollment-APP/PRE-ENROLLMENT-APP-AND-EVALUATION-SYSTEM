@@ -101,7 +101,7 @@ public class upload_photo extends AppCompatActivity {
             StorageReference fileReference = storageReference.child(authProfile.getCurrentUser().getUid() + "."
                     + getFileExtension(uriImage));
             //Upload image to Storage
-            fileReference.putFile(uriImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                fileReference.putFile(uriImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

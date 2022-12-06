@@ -1,100 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/bg3"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/swipe"
     tools:context=".profile">
 
-    <ImageButton
-        android:id="@+id/menuicon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="7dp"
-        android:background="?attr/selectableItemBackground"
-        android:scaleType="fitXY"
-        android:src="@drawable/darkmenu" />
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg3"
+        android:id="@+id/drawer_layout"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start"
+        >
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/nav_view"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/main_menu"
+            android:layout_gravity="start"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu"
+        android:background="#00008577"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        />
 
     <ImageButton
         android:id="@+id/editbutton"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:background="?attr/selectableItemBackground"
-        android:src="@drawable/editbutton" />
-
-
-    <ImageView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/editbtn" />
+
+
+
+
+    <RelativeLayout
+        android:layout_width="290dp"
         android:layout_height="270dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/boxy" />
+        android:background="@drawable/boxy"
+        android:padding="10dp" >
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/user" />
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/user" />
 
-    <TextView
-        android:id="@+id/SP_fullname"
-        android:layout_width="450dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/profile"
-        android:gravity="center_horizontal"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/SP_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="0dp"
+            android:text="Joana marie caranto ochodada"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="270dp"
-        android:layout_height="2dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/SP_fullname"
-        android:background="@color/black" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="270dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/SP_fullname"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black" />
 
-    <TextView
-        android:id="@+id/Snumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:hint="Student number"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/Snumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SP_fullname"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:hint="Student number"
+            android:paddingTop="0dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15dp" />
 
-    <TextView
-        android:id="@id/course"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Snumber"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:gravity="center_horizontal"
-        android:hint="Course"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@id/course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Snumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:hint="Bachelor of Science in fdfdfsdadSecondary Educati0n "
+            android:paddingStart="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="17dp"  />
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="4000dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="357dp"
+        android:layout_marginTop="335dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/rec74"
-        android:fadeScrollbars="false"
+        android:fadeScrollbars="true"
         android:padding="16dp"
         android:scrollbarFadeDuration="0"
         android:scrollbars="vertical">
@@ -187,8 +223,10 @@
                 android:focusableInTouchMode="false"
                 android:hint="Mother Name" />
 
+
+
             <EditText
-                android:id="@+id/SP_mothernumber"
+                android:id="@+id/SP_fathername"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
                 android:layout_below="@id/SP_mothername"
@@ -199,13 +237,12 @@
                 android:drawablePadding="35dp"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:hint="Contact Number" />
-
+                android:hint="Father Name" />
             <EditText
-                android:id="@+id/SP_fathername"
+                android:id="@+id/SP_Emergencyname"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/SP_mothernumber"
+                android:layout_below="@id/SP_fathername"
                 android:layout_centerHorizontal="true"
                 android:clickable="false"
                 android:cursorVisible="false"
@@ -213,15 +250,16 @@
                 android:drawablePadding="35dp"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
-                android:hint="Father Name" />
+                android:hint="Contact Number" />
 
             <EditText
-                android:id="@+id/SP_fathernumber"
+                android:id="@+id/SP_Emergencynumber"
                 android:layout_width="290dp"
                 android:layout_height="50dp"
-                android:layout_below="@id/SP_fathername"
+                android:layout_below="@id/SP_Emergencyname"
                 android:layout_centerHorizontal="true"
                 android:clickable="false"
+                android:inputType="number"
                 android:cursorVisible="false"
                 android:drawableLeft="@drawable/date"
                 android:drawablePadding="35dp"
@@ -239,10 +277,12 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:visibility="gone"
-        tools:ignore="MissingConstraints"/>
+        />
 
 
 
 
 
 </RelativeLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

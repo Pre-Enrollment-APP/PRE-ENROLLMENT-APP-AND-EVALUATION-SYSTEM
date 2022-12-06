@@ -7,6 +7,11 @@
     android:background="@drawable/bg"
     tools:context=".registerUser">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="try"
+        android:id="@+id/tr"/>
     <ImageButton
         android:id="@+id/back"
         android:layout_width="30dp"
@@ -206,7 +211,7 @@
                 android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your complete course"
+                android:hint="Enter your course"
                 android:textSize="15dp" />
 
             <TextView
@@ -303,7 +308,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Mother Name*"
+                android:text="Mother's Name*"
                 android:textColor="@color/white" />
 
             <EditText
@@ -323,42 +328,14 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/mothernumbertxt"
+                android:id="@+id/fathernametxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/mothername"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Contact Number*"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/mothernumber"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:backgroundTint="@color/bluegrey"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                android:layout_below="@+id/mothernumbertxt"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:paddingLeft="20dp"
-                android:background="@drawable/editext_miniround"
-                android:fontFamily="@font/arial"
-                android:hint="Enter your father's contact no."
-                android:inputType="number"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/fathernametxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/mothernumber"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/arial"
-                android:text="Father Name*"
+                android:text="Father's Name*"
                 android:textColor="@color/white" />
 
             <EditText
@@ -368,20 +345,47 @@
                 android:layout_below="@+id/fathernametxt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/bluegrey"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
                 android:background="@drawable/editext_miniround"
-                android:paddingLeft="20dp"
+                android:backgroundTint="@color/bluegrey"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your father's name"
+                android:hint="Enter your father's contact no."
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/fathernumbertext"
+                android:id="@+id/emergencynametxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/fathername"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:text="Contact Person Name*"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/emergencyname"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/emergencynametxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:backgroundTint="@color/bluegrey"
+                android:fontFamily="@font/arial"
+                android:hint="Contact person incase of emergency"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/emergencynumbertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/emergencyname"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:inputType="number"
@@ -390,27 +394,27 @@
                 android:textColor="@color/white" />
 
             <EditText
-                android:id="@+id/fathernumber"
+                android:id="@+id/emergencycontactnumber"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_below="@+id/fathernumbertext"
+                android:layout_below="@+id/emergencynumbertext"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/bluegrey"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                android:paddingLeft="20dp"
                 android:background="@drawable/editext_miniround"
+                android:backgroundTint="@color/bluegrey"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your father's contact no."
+                android:hint="Enter contact number"
                 android:inputType="number"
+                android:paddingLeft="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="15dp" />
 
             <Button
                 android:id="@+id/registeruser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fathernumber"
+                android:layout_below="@id/emergencycontactnumber"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
@@ -437,6 +441,215 @@
         android:layout_centerHorizontal="true"
         android:visibility="gone"
         tools:ignore="MissingConstraints"/>
+    <!-- for grades purposes-->
+         <!-- 1sty 1st sem-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des1"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des2"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des3"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des4"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des5"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des6"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des7"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des8"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des9"
+        android:visibility="gone"/>
+           <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Des10"
+    android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit1"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit2"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit3"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit4"
+        android:visibility="gone"/>   <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/unit5"
+    android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit6"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit7"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit9"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit8"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit10"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC1"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC2"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC3"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC4"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC5"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC6"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC7"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC8"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC9"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SC10"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g3"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g1"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g2"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g4"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g5"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g6"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g7"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g8"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g9"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/g10"
+        android:visibility="gone"/>
+
 
 
 </RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bg">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profilepic"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/user"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+    <TextView
+        android:id="@+id/fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/profilepic"
+        android:fontFamily="@font/arial"
+        android:hint="Student Name"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/studentnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fullname"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profilepic"
+        android:fontFamily="@font/arial"
+        android:hint="student number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/studentnumber"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profilepic"
+        android:fontFamily="@font/arial"
+        android:hint="course"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="14dp" />
+
+
+
+
+
+</RelativeLayout>

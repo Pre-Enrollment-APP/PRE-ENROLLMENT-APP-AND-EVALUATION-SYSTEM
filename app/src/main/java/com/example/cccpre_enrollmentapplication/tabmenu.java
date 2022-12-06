@@ -3,11 +3,13 @@ package com.example.cccpre_enrollmentapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,14 +20,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 public class tabmenu extends AppCompatActivity {
     private Button profile;
     private Button about, logout,contact_us,home;
     private TextView studentNumber;
+   private ImageView profilepic;
     private FirebaseUser user;
     private FirebaseAuth mAuth;
     private String  userID;
+    private FirebaseAuth authProfile;
+    private StorageReference storageReference;
+    private FirebaseUser firebaseUser;
+    private Uri uriImage;
 
 
     @Override
@@ -37,6 +47,12 @@ public class tabmenu extends AppCompatActivity {
         logout=findViewById(R.id.log_out);
         contact_us=findViewById(R.id.contact_us);
         home=findViewById(R.id.home);
+        authProfile = FirebaseAuth.getInstance();
+        firebaseUser = authProfile.getCurrentUser();
+        profilepic=findViewById(R.id.profilepic);
+
+        storageReference = FirebaseStorage.getInstance().getReference("DisplayPic");
+
 
 
     home.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +129,8 @@ public class tabmenu extends AppCompatActivity {
                 Course.setText(course);
                 studentNumber.setText(studentnumber);
 
-
+                Uri uri=firebaseUser.getPhotoUrl();
+                Picasso.with(tabmenu.this).load(uri).into(profilepic);
 
             }
 
