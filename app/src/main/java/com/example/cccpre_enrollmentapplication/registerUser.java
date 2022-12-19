@@ -52,18 +52,24 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     private String userID;
     private FirebaseUser user;
     private TextView SC1, SC2, SC3, SC4, SC5, SC6, SC7, SC8, SC9, SC10;
+    private TextView SC1_2, SC2_2, SC3_2, SC4_2, SC5_2, SC6_2, SC7_2, SC8_2, SC9_2, SC10_2;
     private  TextView g1, g2, g3, g4, g5, g6, g7, g8, g9, g10;
+    private  TextView g1_2, g2_2, g3_2, g4_2, g5_2, g6_2, g7_2, g8_2, g9_2, g10_2;
     private  TextView des1, des2, des3, des4, des5, des6, des7, des8, des9, des10;
+    private  TextView des1_2, des2_2, des3_2, des4_2, des5_2, des6_2, des7_2, des8_2, des9_2, des10_2;
     private TextView units1, units2, units3, units4, units5, units6, units7, units8, units9, units10;
+    private TextView units1_2, units2_2, units3_2, units4_2, units5_2, units6_2, units7_2, units8_2, units9_2, units10_2;
     private static final String TAG="registerUser";
     private Button DateButton;
     private DatePickerDialog datePickerDialog;
     private Spinner course;
     private ImageView profile_pic;
     private  FirebaseDatabase database=FirebaseDatabase.getInstance();
-    DatabaseReference print = FirebaseDatabase.getInstance().getReference("User");
+    DatabaseReference grade1 = FirebaseDatabase.getInstance().getReference("User");
+    DatabaseReference grade2 = FirebaseDatabase.getInstance().getReference("User");
     DatabaseReference course_curriculum =FirebaseDatabase.getInstance().getReference( "course_curriculum");
     Student_Grades dataObj = new Student_Grades();
+    Student_Grades1_2 dataObj1 = new Student_Grades1_2();
 
 
     @Override
@@ -117,6 +123,51 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         g9 = findViewById(R.id.g9);
         g10 = findViewById(R.id.g10);
 
+        SC1_2 = findViewById(R.id.SC1_2);
+        SC2_2 = findViewById(R.id.SC2_2);
+        SC3_2 = findViewById(R.id.SC3_2);
+        SC4_2 = findViewById(R.id.SC4_2);
+        SC5_2 = findViewById(R.id.SC5_2);
+        SC6_2 = findViewById(R.id.SC6_2);
+        SC7_2 = findViewById(R.id.SC7_2);
+        SC8_2 = findViewById(R.id.SC8_2);
+        SC9_2 = findViewById(R.id.SC9_2);
+        SC10_2 = findViewById(R.id.SC10_2);
+
+        des1_2 = findViewById(R.id.Des1_2);
+        des2_2 = findViewById(R.id.Des2_2);
+        des3_2 = findViewById(R.id.Des3_2);
+        des4_2 = findViewById(R.id.Des4_2);
+        des5_2 = findViewById(R.id.Des5_2);
+        des6_2 = findViewById(R.id.Des6_2);
+        des7_2 = findViewById(R.id.Des7_2);
+        des8_2 = findViewById(R.id.Des8_2);
+        des9_2 = findViewById(R.id.Des9_2);
+        des10_2 = findViewById(R.id.Des10_2);
+
+        units1_2 = findViewById(R.id.unit1_2);
+        units2_2 = findViewById(R.id.unit2_2);
+        units3_2 = findViewById(R.id.unit3_2);
+        units4_2 = findViewById(R.id.unit4_2);
+        units5_2 = findViewById(R.id.unit5_2);
+        units6_2 = findViewById(R.id.unit6_2);
+        units7_2 = findViewById(R.id.unit7_2);
+        units8_2 = findViewById(R.id.unit8_2);
+        units9_2 = findViewById(R.id.unit9_2);
+        units10_2 = findViewById(R.id.unit10_2);
+
+
+        g1_2 = findViewById(R.id.g1_2);
+        g2_2 = findViewById(R.id.g2_2);
+        g3_2 = findViewById(R.id.g3_2);
+        g4_2 = findViewById(R.id.g4_2);
+        g5_2 = findViewById(R.id.g5_2);
+        g6_2 = findViewById(R.id.g6_2);
+        g7_2 = findViewById(R.id.g7_2);
+        g8_2 = findViewById(R.id.g8_2);
+        g9_2 = findViewById(R.id.g9_2);
+        g10_2 = findViewById(R.id.g10_2);
+
 
         //  user = FirebaseAuth.getInstance().getCurrentUser();
       //  userID = user.getUid();
@@ -161,7 +212,17 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         profile_pic=findViewById(R.id.profile);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-        ///////// //retrieve the course and curriculum for grades/////////////////
+
+        profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(registerUser.this,upload_photo.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
         course_curriculum.child("bscs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -186,27 +247,28 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC8.setText(code8);
                 SC9.setText(code9);
                 SC10.setText(code10);
-              /*  String code1_2sem= snapshot.child("first_year").child("first_sem").child("subject2").child("code").getValue().toString().trim();
-                String code2_2sem= snapshot.child("first_year").child("first_sem").child("subject2").child("code").getValue().toString();
-                String code3_2sem= snapshot.child("first_year").child("first_sem").child("subject3").child("code").getValue().toString();
-                String code4_2sem= snapshot.child("first_year").child("first_sem").child("subject4").child("code").getValue().toString();
-                String code5_2sem= snapshot.child("first_year").child("first_sem").child("subject5").child("code").getValue().toString();
-                String code6_2sem= snapshot.child("first_year").child("first_sem").child("subject6").child("code").getValue().toString();
-                String code7_2sem= snapshot.child("first_year").child("first_sem").child("subject7").child("code").getValue().toString();
-                String code8_2sem= snapshot.child("first_year").child("first_sem").child("subject8").child("code").getValue().toString();
-                String code9_2sem= snapshot.child("first_year").child("first_sem").child("subject9").child("code").getValue().toString();
-                String code10_2sem= snapshot.child("first_year").child("first_sem").child("subject10").child("code").getValue().toString();
-                SC1.setText(code1_2sem);
-                SC2.setText(code2_2sem);
-                SC3.setText(code3_2sem);
-                SC4.setText(code4_2sem);
-                SC5.setText(code5_2sem);
-                SC6.setText(code6_2sem);
-                SC7.setText(code7_2sem);
-                SC8.setText(code8_2sem);
-                SC9.setText(code9_2sem);
-                SC10.setText(code10_2sem);*/
-                String D1= snapshot.child("first_year").child("first_sem").child("subject2").child("descriptive_title").getValue().toString().trim();
+
+                String code1_2sem= snapshot.child("first_year").child("second_sem").child("subject_1").child("code").getValue().toString();
+              String code2_2sem= snapshot.child("first_year").child("second_sem").child("subject_2").child("code").getValue().toString();
+                String code3_2sem= snapshot.child("first_year").child("second_sem").child("subject_3").child("code").getValue().toString();
+                String code4_2sem= snapshot.child("first_year").child("second_sem").child("subject_4").child("code").getValue().toString();
+                String code5_2sem= snapshot.child("first_year").child("second_sem").child("subject_5").child("code").getValue().toString();
+                String code6_2sem= snapshot.child("first_year").child("second_sem").child("subject_6").child("code").getValue().toString();
+                String code7_2sem= snapshot.child("first_year").child("second_sem").child("subject_7").child("code").getValue().toString();
+                String code8_2sem= snapshot.child("first_year").child("second_sem").child("subject_8").child("code").getValue().toString();
+                String code9_2sem= snapshot.child("first_year").child("second_sem").child("subject_9").child("code").getValue().toString();
+                String code10_2sem= snapshot.child("first_year").child("second_sem").child("subject_10").child("code").getValue().toString();
+                SC1_2.setText(code1_2sem);
+                SC2_2.setText(code2_2sem);
+                SC3_2.setText(code3_2sem);
+                SC4_2.setText(code4_2sem);
+                SC5_2.setText(code5_2sem);
+                SC6_2.setText(code6_2sem);
+                SC7_2.setText(code7_2sem);
+                SC8_2.setText(code8_2sem);
+                SC9_2.setText(code9_2sem);
+                SC10_2.setText(code10_2sem);
+                String D1= snapshot.child("first_year").child("first_sem").child("subject1").child("descriptive_title").getValue().toString().trim();
                 String D2= snapshot.child("first_year").child("first_sem").child("subject2").child("descriptive_title").getValue().toString();
                 String D3= snapshot.child("first_year").child("first_sem").child("subject3").child("descriptive_title").getValue().toString();
                 String D4= snapshot.child("first_year").child("first_sem").child("subject4").child("descriptive_title").getValue().toString();
@@ -216,20 +278,57 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 String D8= snapshot.child("first_year").child("first_sem").child("subject8").child("descriptive_title").getValue().toString();
                 String D9= snapshot.child("first_year").child("first_sem").child("subject9").child("descriptive_title").getValue().toString();
                 String D10= snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
-                des1.setText(code1);
-                des2.setText(code2);
-                des3.setText(code3);
-                des4.setText(code4);
-                des5.setText(code5);
-                des6.setText(code6);
-                des7.setText(code7);
-                des8.setText(code8);
-                des9.setText(code9);
-                des10.setText(code10);
+                des1.setText(D1);
+                des2.setText(D2);
+                des3.setText(D3);
+                des4.setText(D4);
+                des5.setText(D5);
+                des6.setText(D6);
+                des7.setText(D7);
+                des8.setText(D8);
+                des9.setText(D9);
+                des10.setText(D10);
 
-
-
-
+                String D1_2sem= snapshot.child("first_year").child("second_sem").child("subject_1").child("descriptive_title").getValue().toString();
+               String D2_2sem= snapshot.child("first_year").child("second_sem").child("subject_2").child("descriptive_title").getValue().toString();
+               String D3_2sem= snapshot.child("first_year").child("second_sem").child("subject_3").child("descriptive_title").getValue().toString();
+               String D4_2sem= snapshot.child("first_year").child("second_sem").child("subject_4").child("descriptive_title").getValue().toString();
+               String D5_2sem= snapshot.child("first_year").child("second_sem").child("subject_5").child("descriptive_title").getValue().toString();
+               String D6_2sem= snapshot.child("first_year").child("second_sem").child("subject_6").child("descriptive_title").getValue().toString();
+               String D7_2sem= snapshot.child("first_year").child("second_sem").child("subject_7").child("descriptive_title").getValue().toString();
+               String D8_2sem= snapshot.child("first_year").child("second_sem").child("subject_8").child("descriptive_title").getValue().toString();
+               String D9_2sem= snapshot.child("first_year").child("second_sem").child("subject_9").child("descriptive_title").getValue().toString();
+               String D10_2sem= snapshot.child("first_year").child("second_sem").child("subject_10").child("descriptive_title").getValue().toString();
+               des1_2.setText(D1_2sem);
+               des2_2.setText(D2_2sem);
+               des3_2.setText(D3_2sem);
+               des4_2.setText(D4_2sem);
+               des5_2.setText(D5_2sem);
+               des6_2.setText(D6_2sem);
+               des7_2.setText(D7_2sem);
+               des8_2.setText(D8_2sem);
+               des9_2.setText(D9_2sem);
+               des10_2.setText(D10_2sem);
+                String unit1= snapshot.child("first_year").child("first_sem").child("subject1").child("units").getValue().toString();
+                String unit2= snapshot.child("first_year").child("first_sem").child("subject2").child("units").getValue().toString();
+                String unit3= snapshot.child("first_year").child("first_sem").child("subject3").child("units").getValue().toString();
+                String unit4= snapshot.child("first_year").child("first_sem").child("subject4").child("units").getValue().toString();
+                String unit5= snapshot.child("first_year").child("first_sem").child("subject5").child("units").getValue().toString();
+                String unit6= snapshot.child("first_year").child("first_sem").child("subject6").child("units").getValue().toString();
+                String unit7= snapshot.child("first_year").child("first_sem").child("subject7").child("units").getValue().toString();
+                String unit8= snapshot.child("first_year").child("first_sem").child("subject8").child("units").getValue().toString();
+                String unit9= snapshot.child("first_year").child("first_sem").child("subject9").child("units").getValue().toString();
+                String unit10= snapshot.child("first_year").child("first_sem").child("subject10").child("units").getValue().toString();
+                units1.setText(unit1);
+                units2.setText(unit2);
+                units3.setText(unit3);
+                units4.setText(unit4);
+                units5.setText(unit5);
+                units6.setText(unit6);
+                units7.setText(unit7);
+                units8.setText(unit8);
+                units9.setText(unit9);
+                units10.setText(unit10);
 
 
             }
@@ -239,14 +338,8 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-        profile_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(registerUser.this,upload_photo.class);
-                startActivity(intent);
 
-            }
-        });
+
     }
 
 
@@ -367,62 +460,13 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        dataObj.des1 = String.valueOf(des1.getText());
-        dataObj.des2 = String.valueOf(des2.getText());
-        dataObj.des3 = String.valueOf(des3.getText());
-        dataObj.des4 = String.valueOf(des4.getText());
-        dataObj.des5 = String.valueOf(des5.getText());
-        dataObj.des6 = String.valueOf(des6.getText());
-        dataObj.des7 = String.valueOf(des7.getText());
-        dataObj.des8 = String.valueOf(des8.getText());
-        dataObj.des9= String.valueOf(des9.getText());
-        dataObj.des10 = String.valueOf(des10.getText());
+        if(Course.equals("Bachelor of Science in Computer Science")){
+            Bscsgradeview();
+            if(Course.equals("Bachelor of Science in Computer Science")){
+                Bscsgrades();
+            }
 
-        dataObj.unit1=String.valueOf(units1.getText());
-        dataObj.unit2=String.valueOf(units2.getText());
-        dataObj.unit3=String.valueOf(units3.getText());
-        dataObj.unit4=String.valueOf(units4.getText());
-        dataObj.unit5=String.valueOf(units5.getText());
-        dataObj.unit6=String.valueOf(units6.getText());
-        dataObj.unit7=String.valueOf(units7.getText());
-        dataObj.unit8=String.valueOf(units8.getText());
-        dataObj.unit9=String.valueOf(units9.getText());
-        dataObj.unit10=String.valueOf(units10.getText());
-
-        dataObj.sc1=String.valueOf(SC1.getText());
-        dataObj.sc2=String.valueOf(SC2.getText());
-        dataObj.sc3=String.valueOf(SC3.getText());
-        dataObj.sc4=String.valueOf(SC4.getText());
-        dataObj.sc5=String.valueOf(SC5.getText());
-        dataObj.sc6=String.valueOf(SC6.getText());
-        dataObj.sc7=String.valueOf(SC7.getText());
-        dataObj.sc8=String.valueOf(SC8.getText());
-        dataObj.sc9=String.valueOf(SC9.getText());
-        dataObj.sc10=String.valueOf(SC10.getText());
-        dataObj.sc1=String.valueOf(SC1.getText());
-        dataObj.sc2=String.valueOf(SC2.getText());
-        dataObj.sc3=String.valueOf(SC3.getText());
-        dataObj.sc4=String.valueOf(SC4.getText());
-        dataObj.sc5=String.valueOf(SC5.getText());
-        dataObj.sc6=String.valueOf(SC6.getText());
-        dataObj.sc7=String.valueOf(SC7.getText());
-        dataObj.sc8=String.valueOf(SC8.getText());
-        dataObj.sc9=String.valueOf(SC9.getText());
-        dataObj.sc10=String.valueOf(SC10.getText());
-        dataObj.grade1=String.valueOf(g1.getText());
-        dataObj.grade2=String.valueOf(g1.getText());
-        dataObj.grade3=String.valueOf(g1.getText());
-        dataObj.grade4=String.valueOf(g1.getText());
-        dataObj.grade5=String.valueOf(g1.getText());
-        dataObj.grade6=String.valueOf(g1.getText());
-        dataObj.grade7=String.valueOf(g1.getText());
-        dataObj.grade8=String.valueOf(g1.getText());
-        dataObj.grade9=String.valueOf(g1.getText());
-
-
-
-
-
+        }
 
         progressbar.setVisibility(View.VISIBLE);
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -439,7 +483,8 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                print.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").setValue(dataObj);
+                                                grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("first_sem").setValue(dataObj);
+                                              grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("second_sem").setValue(dataObj1);
                                                 Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                                 Intent intent= new Intent(registerUser.this,login.class);
                                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
@@ -476,6 +521,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
         initDatePicker();
         DateButton=findViewById(R.id.date);
+
 
     }
 
@@ -562,9 +608,234 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
     private  void Bscsgrades(){
 
+        dataObj.des1 = String.valueOf(des1.getText());
+        dataObj.des2 = String.valueOf(des2.getText());
+        dataObj.des3 = String.valueOf(des3.getText());
+        dataObj.des4 = String.valueOf(des4.getText());
+        dataObj.des5 = String.valueOf(des5.getText());
+        dataObj.des6 = String.valueOf(des6.getText());
+        dataObj.des7 = String.valueOf(des7.getText());
+        dataObj.des8 = String.valueOf(des8.getText());
+        dataObj.des9= String.valueOf(des9.getText());
+        dataObj.des10 = String.valueOf(des10.getText());
+
+        dataObj.unit1=String.valueOf(units1.getText());
+        dataObj.unit2=String.valueOf(units2.getText());
+        dataObj.unit3=String.valueOf(units3.getText());
+        dataObj.unit4=String.valueOf(units4.getText());
+        dataObj.unit5=String.valueOf(units5.getText());
+        dataObj.unit6=String.valueOf(units6.getText());
+        dataObj.unit7=String.valueOf(units7.getText());
+        dataObj.unit8=String.valueOf(units8.getText());
+        dataObj.unit9=String.valueOf(units9.getText());
+        dataObj.unit10=String.valueOf(units10.getText());
+
+        dataObj.sc1=String.valueOf(SC1.getText());
+        dataObj.sc2=String.valueOf(SC2.getText());
+        dataObj.sc3=String.valueOf(SC3.getText());
+        dataObj.sc4=String.valueOf(SC4.getText());
+        dataObj.sc5=String.valueOf(SC5.getText());
+        dataObj.sc6=String.valueOf(SC6.getText());
+        dataObj.sc7=String.valueOf(SC7.getText());
+        dataObj.sc8=String.valueOf(SC8.getText());
+        dataObj.sc9=String.valueOf(SC9.getText());
+        dataObj.sc10=String.valueOf(SC10.getText());
+        dataObj.sc1=String.valueOf(SC1.getText());
+        dataObj.sc2=String.valueOf(SC2.getText());
+        dataObj.sc3=String.valueOf(SC3.getText());
+        dataObj.sc4=String.valueOf(SC4.getText());
+        dataObj.sc5=String.valueOf(SC5.getText());
+        dataObj.sc6=String.valueOf(SC6.getText());
+        dataObj.sc7=String.valueOf(SC7.getText());
+        dataObj.sc8=String.valueOf(SC8.getText());
+        dataObj.sc9=String.valueOf(SC9.getText());
+        dataObj.sc10=String.valueOf(SC10.getText());
+        dataObj.grade1=String.valueOf(g1.getText());
+        dataObj.grade2=String.valueOf(g1.getText());
+        dataObj.grade3=String.valueOf(g1.getText());
+        dataObj.grade4=String.valueOf(g1.getText());
+        dataObj.grade5=String.valueOf(g1.getText());
+        dataObj.grade6=String.valueOf(g1.getText());
+        dataObj.grade7=String.valueOf(g1.getText());
+        dataObj.grade8=String.valueOf(g1.getText());
+        dataObj.grade9=String.valueOf(g1.getText());
+
+        dataObj1.des1_12 = String.valueOf(des1_2.getText());
+        dataObj1.des2_12 = String.valueOf(des2_2.getText());
+        dataObj1.des3_12 = String.valueOf(des3_2.getText());
+        dataObj1.des4_12 = String.valueOf(des4_2.getText());
+        dataObj1.des5_12 = String.valueOf(des5_2.getText());
+        dataObj1.des6_12 = String.valueOf(des6_2.getText());
+        dataObj1.des7_12 = String.valueOf(des7_2.getText());
+        dataObj1.des8_12 = String.valueOf(des8_2.getText());
+        dataObj1.des9_12= String.valueOf(des9_2.getText());
+        dataObj1.des10_12 = String.valueOf(des10_2.getText());
+
+        dataObj1.unit1_12=String.valueOf(units1_2.getText());
+        dataObj1.unit2_12=String.valueOf(units2_2.getText());
+        dataObj1.unit3_12=String.valueOf(units3_2.getText());
+        dataObj1.unit4_12=String.valueOf(units4_2.getText());
+        dataObj1.unit5_12=String.valueOf(units5_2.getText());
+        dataObj1.unit6_12=String.valueOf(units6_2.getText());
+        dataObj1.unit7_12=String.valueOf(units7_2.getText());
+        dataObj1.unit8_12=String.valueOf(units8_2.getText());
+        dataObj1.unit9_12=String.valueOf(units9_2.getText());
+        dataObj1.unit10_12=String.valueOf(units10_2.getText());
+
+        dataObj1.sc1_12=String.valueOf(SC1_2.getText());
+        dataObj1.sc2_12=String.valueOf(SC2_2.getText());
+       /* \\\dataObj1.sc3_12=String.valueOf(SC3_2.getText());
+        dataObj1.sc4=String.valueOf(SC4_2.getText());
+        dataObj1.sc5=String.valueOf(SC5_2.getText());
+        dataObj1.sc6=String.valueOf(SC6_2.getText());
+        dataObj1.sc7=String.valueOf(SC7_2.getText());
+        dataObj1.sc8=String.valueOf(SC8_2.getText());
+        dataObj1.sc9=String.valueOf(SC9_2.getText());
+        dataObj1.sc10=String.valueOf(SC10_2.getText());
+        dataObj1.sc1=String.valueOf(SC1_2.getText());
+        dataObj1.sc2=String.valueOf(SC2_2.getText());
+        dataObj1.sc3=String.valueOf(SC3_2.getText());
+        dataObj1.sc4=String.valueOf(SC4_2.getText());
+        dataObj1.sc5=String.valueOf(SC5_2.getText());
+        dataObj1.sc6=String.valueOf(SC6_2.getText());
+        dataObj1.sc7=String.valueOf(SC7_2.getText());
+        dataObj1.sc8=String.valueOf(SC8_2.getText());
+        dataObj1.sc9=String.valueOf(SC9_2.getText());
+        dataObj1.sc10=String.valueOf(SC10_2.getText());
+        dataObj1.grade1=String.valueOf(g1_2.getText());
+        dataObj1.grade2=String.valueOf(g2_2.getText());
+        dataObj1.grade3=String.valueOf(g3_2.getText());
+        dataObj1.grade4=String.valueOf(g4_2.getText());
+        dataObj1.grade5=String.valueOf(g5_2.getText());
+        dataObj1.grade6=String.valueOf(g6_2.getText());
+        dataObj1.grade7=String.valueOf(g7_2.getText());
+        dataObj1.grade8=String.valueOf(g8_2.getText());
+        dataObj1.grade9=String.valueOf(g9_2.getText());
+        dataObj1.grade10=String.valueOf(g10_2.getText()); */
+
 
 
     }
+
+    ///////// //retrieve the course and curriculum for grades/////////////////
+   private void Bscsgradeview(){
+       course_curriculum.child("bscs").addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot snapshot) {
+               String code1= snapshot.child("first_year").child("first_sem").child("subject1").child("code").getValue().toString();
+               String code2= snapshot.child("first_year").child("first_sem").child("subject2").child("code").getValue().toString();
+               String code3= snapshot.child("first_year").child("first_sem").child("subject3").child("code").getValue().toString();
+               String code4= snapshot.child("first_year").child("first_sem").child("subject4").child("code").getValue().toString();
+               String code5= snapshot.child("first_year").child("first_sem").child("subject5").child("code").getValue().toString();
+               String code6= snapshot.child("first_year").child("first_sem").child("subject6").child("code").getValue().toString();
+               String code7= snapshot.child("first_year").child("first_sem").child("subject7").child("code").getValue().toString();
+               String code8= snapshot.child("first_year").child("first_sem").child("subject8").child("code").getValue().toString();
+               String code9= snapshot.child("first_year").child("first_sem").child("subject9").child("code").getValue().toString();
+               String code10= snapshot.child("first_year").child("first_sem").child("subject10").child("code").getValue().toString();
+               SC1.setText(code1);
+               SC2.setText(code2);
+               SC3.setText(code3);
+               SC4.setText(code4);
+               SC5.setText(code5);
+               SC6.setText(code6);
+               SC7.setText(code7);
+               SC8.setText(code8);
+               SC9.setText(code9);
+               SC10.setText(code10);
+         String code1_2sem= snapshot.child("first_year").child("second_sem").child("subject_1").child("code").getValue().toString().trim();
+                String code2_2sem= snapshot.child("first_year").child("second_sem").child("subject_2").child("code").getValue().toString();
+                String code3_2sem= snapshot.child("first_year").child("second_sem").child("subject_3").child("code").getValue().toString();
+                String code4_2sem= snapshot.child("first_year").child("second_sem").child("subject_4").child("code").getValue().toString();
+                String code5_2sem= snapshot.child("first_year").child("second_sem").child("subject_5").child("code").getValue().toString();
+                String code6_2sem= snapshot.child("first_year").child("second_sem").child("subject_6").child("code").getValue().toString();
+                String code7_2sem= snapshot.child("first_year").child("second_sem").child("subject_7").child("code").getValue().toString();
+                String code8_2sem= snapshot.child("first_year").child("second_sem").child("subject_8").child("code").getValue().toString();
+                String code9_2sem= snapshot.child("first_year").child("second_sem").child("subject_9").child("code").getValue().toString();
+                String code10_2sem= snapshot.child("first_year").child("second_sem").child("subject_10").child("code").getValue().toString();
+                SC1_2.setText(code1_2sem);
+                SC2_2.setText(code2_2sem);
+                SC3_2.setText(code3_2sem);
+                SC4_2.setText(code4_2sem);
+                SC5_2.setText(code5_2sem);
+                SC6_2.setText(code6_2sem);
+                SC7_2.setText(code7_2sem);
+                SC8_2.setText(code8_2sem);
+                SC9_2.setText(code9_2sem);
+                SC10_2.setText(code10_2sem);
+               String D1= snapshot.child("first_year").child("first_sem").child("subject1").child("descriptive_title").getValue().toString().trim();
+               String D2= snapshot.child("first_year").child("first_sem").child("subject2").child("descriptive_title").getValue().toString();
+               String D3= snapshot.child("first_year").child("first_sem").child("subject3").child("descriptive_title").getValue().toString();
+               String D4= snapshot.child("first_year").child("first_sem").child("subject4").child("descriptive_title").getValue().toString();
+               String D5= snapshot.child("first_year").child("first_sem").child("subject5").child("descriptive_title").getValue().toString();
+               String D6= snapshot.child("first_year").child("first_sem").child("subject6").child("descriptive_title").getValue().toString();
+               String D7= snapshot.child("first_year").child("first_sem").child("subject7").child("descriptive_title").getValue().toString();
+               String D8= snapshot.child("first_year").child("first_sem").child("subject8").child("descriptive_title").getValue().toString();
+               String D9= snapshot.child("first_year").child("first_sem").child("subject9").child("descriptive_title").getValue().toString();
+               String D10= snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+               des1.setText(D1);
+               des2.setText(D2);
+               des3.setText(D3);
+               des4.setText(D4);
+               des5.setText(D5);
+               des6.setText(D6);
+               des7.setText(D7);
+               des8.setText(D8);
+               des9.setText(D9);
+               des10.setText(D10);
+
+               //1st2sem
+             String D1_2sem= snapshot.child("first_year").child("second_sem").child("subject_1").child("descriptive_title").getValue().toString().trim();
+               String D2_2sem= snapshot.child("first_year").child("second_sem").child("subject_2").child("descriptive_title").getValue().toString();
+               String D3_2sem= snapshot.child("first_year").child("second_sem").child("subject_3").child("descriptive_title").getValue().toString();
+               String D4_2sem= snapshot.child("first_year").child("second_sem").child("subject_4").child("descriptive_title").getValue().toString();
+               String D5_2sem= snapshot.child("first_year").child("second_sem").child("subject_5").child("descriptive_title").getValue().toString();
+               String D6_2sem= snapshot.child("first_year").child("second_sem").child("subject_6").child("descriptive_title").getValue().toString();
+               String D7_2sem= snapshot.child("first_year").child("second_sem").child("subject_7").child("descriptive_title").getValue().toString();
+               String D8_2sem= snapshot.child("first_year").child("second_sem").child("subject_8").child("descriptive_title").getValue().toString();
+               String D9_2sem= snapshot.child("first_year").child("second_sem").child("subject_9").child("descriptive_title").getValue().toString();
+               String D10_2sem= snapshot.child("first_year").child("second_sem").child("subject_10").child("descriptive_title").getValue().toString();
+               des1_2.setText(D1_2sem);
+               des2_2.setText(D2_2sem);
+               des3_2.setText(D3_2sem);
+               des4_2.setText(D4_2sem);
+               des5_2.setText(D5_2sem);
+               des6_2.setText(D6_2sem);
+               des7_2.setText(D7_2sem);
+               des8_2.setText(D8_2sem);
+               des9_2.setText(D9_2sem);
+               des10_2.setText(D10_2sem);
+               String unit1= snapshot.child("first_year").child("first_sem").child("subject1").child("units").getValue().toString();
+               String unit2= snapshot.child("first_year").child("first_sem").child("subject2").child("units").getValue().toString();
+               String unit3= snapshot.child("first_year").child("first_sem").child("subject3").child("units").getValue().toString();
+               String unit4= snapshot.child("first_year").child("first_sem").child("subject4").child("units").getValue().toString();
+               String unit5= snapshot.child("first_year").child("first_sem").child("subject5").child("units").getValue().toString();
+               String unit6= snapshot.child("first_year").child("first_sem").child("subject6").child("units").getValue().toString();
+               String unit7= snapshot.child("first_year").child("first_sem").child("subject7").child("units").getValue().toString();
+               String unit8= snapshot.child("first_year").child("first_sem").child("subject8").child("units").getValue().toString();
+               String unit9= snapshot.child("first_year").child("first_sem").child("subject9").child("units").getValue().toString();
+               String unit10= snapshot.child("first_year").child("first_sem").child("subject10").child("units").getValue().toString();
+               units1.setText(unit1);
+               units2.setText(unit2);
+               units3.setText(unit3);
+               units4.setText(unit4);
+               units5.setText(unit5);
+               units6.setText(unit6);
+               units7.setText(unit7);
+               units8.setText(unit8);
+               units9.setText(unit9);
+               units10.setText(unit10);
+
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+
+           }
+       });
+
+
+
+   }
 
 
 }
