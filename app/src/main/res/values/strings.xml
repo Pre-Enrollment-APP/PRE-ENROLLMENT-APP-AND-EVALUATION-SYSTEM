@@ -6,13 +6,15 @@
         <item>Bachelor of Science in Office Administration</item>
         <item>Bachelor of Science in Business Administration</item>
         <item>Bachelor of Arts in Religious Education</item>
-        <item>Bachelor of Secondary Education</item>
+        <item>Bachelor of Secondary Education Major in English</item>
+        <item>Bachelor of Secondary Education Major in Math</item>
+        <item>Bachelor of Secondary Education Major in Science</item>
     </string-array>
     <string-array name="semester">
         <item>----</item>
         <item>1st yr, 1st sem</item>
         <item>1st yr, 2nd sem</item>
-        /
+
     </string-array>
 
     <string name="title_activity_try">TRY</string>

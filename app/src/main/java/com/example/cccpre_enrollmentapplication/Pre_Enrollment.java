@@ -66,7 +66,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     //print pdf
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference print = database.getReference("record");
+    DatabaseReference print = database.getReference("User");
     studentinfo dataObj = new studentinfo();
 
 
@@ -154,18 +154,107 @@ public class Pre_Enrollment extends AppCompatActivity {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bscs1y1sSched_A();
 
-                            }
-                            if (YearSem.equals("1st yr, 2nd sem")) {
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
                                 bscs1y2sSched_A();
 
-                            }
-                            if (YearSem.equals("2st yr, 1nd sem")) {
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
                                 bscs2y1sSched_A();
 
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bscs2y2sSched_A();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bscs3y1sSched_A();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bscs3y2sSched_A();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bscs4y1sSched_A();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bscs4y2sSched_A();
                             }
 
 
-                        }else {
+                        }
+
+                        else if(Course.equals("Bachelor of Elementary Education")) {
+                        if (YearSem.equals("1st yr, 1st sem")) {
+                            beed1y1sSched_A();
+
+                        } else if (YearSem.equals("1st yr, 2nd sem")) {
+                            beed1y2sSched_A();
+
+                        } else if (YearSem.equals("2nd yr, 1st sem")) {
+                            beed2y1sSched_A();
+
+                        } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                            beed2y2sSched_A();
+                        } else if (YearSem.equals("3rd yr, 1st sem")) {
+                            beed3y1sSched_A();
+
+                        }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                            bscs3y2sSched_A();
+                        } else if (YearSem.equals("4th yr, 1st sem")) {
+                            bscs4y1sSched_A();
+
+                        }else if (YearSem.equals("4th yr, 2nd sem")) {
+                            bscs4y2sSched_A();
+                        }
+
+
+                    }
+                        //bsoa
+                        else if(Course.equals("Bachelor of Science in Office Administration")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsoa1y1sSched_A();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsoa1y2sSched_A();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsoa2y1sSched_A();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsoa2y2sSched_A();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsoa3y1sSched_A();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsoa3y2sSched_A();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsoa4y1sSched_A();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsoa4y2sSched_A();
+                            }
+
+
+                        }else if (Course.equals("Bachelor of Science in Business Administration")){
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsba1y1sSched_A();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsba1y2sSched_A();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsba2y1sSched_A();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsba2y2sSched_A();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsba3y1sSched_A();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsba3y2sSched_A();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsba4y1sSched_A();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsba4y2sSched_A();
+                            }
+
+                        }
+                        else {
                             Toast.makeText(Pre_Enrollment.this, "Choose your *Year and Semester* first", Toast.LENGTH_SHORT).show();
                         }
                         break;
@@ -176,17 +265,130 @@ public class Pre_Enrollment extends AppCompatActivity {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bscs1y1sSched_B();
 
-                            }
-                            if (YearSem.equals("1st yr, 2nd sem")) {
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
                                 bscs1y2sSched_B();
 
-                            }
-                            if (YearSem.equals("2st yr, 1nd sem")) {
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
                                 bscs2y1sSched_B();
 
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bscs2y2sSched_B();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bscs3y1sSched_B();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bscs3y2sSched_B();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bscs4y1sSched_B();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bscs4y2sSched_B();
                             }
 
+
                         }
+
+                        else if(Course.equals("Bachelor of Elementary Education")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                beed1y1sSched_B();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                beed1y2sSched_B();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                beed2y1sSched_B();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                beed2y2sSched_B();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                beed3y1sSched_B();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                beed3y2sSched_B();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                beed4y1sSched_B();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                beed4y2sSched_B();
+                            }
+
+                        }else if(Course.equals("Bachelor of Science in Office Administration")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsoa1y1sSched_B();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsoa1y2sSched_B();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsoa2y1sSched_B();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsoa2y2sSched_B();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsoa3y1sSched_B();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsoa3y2sSched_B();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsoa4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsoa4y2sSched_B();
+                            }
+
+                        }else if(Course.equals("Bachelor of Science in Business Administration")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsoa1y1sSched_B();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsba1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsba2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsba2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsba3y1sSched_B();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsba3y2sSched_B();
+
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsba4y1sSched_B();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsba4y2sSched_B();
+                            }
+
+                        }else if(Course.equals("Bachelor of Arts in Religious Education")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else {
+                            Toast.makeText(Pre_Enrollment.this, "Choose your *Year and Semester* first", Toast.LENGTH_SHORT).show();
+                        }
+                        break;
 
                     }
                     case "C":{
@@ -194,14 +396,123 @@ public class Pre_Enrollment extends AppCompatActivity {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bscs1y1sSched_C();
 
-                            }
-                            if (YearSem.equals("1st yr, 2nd sem")) {
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
                                 bscs1y2sSched_C();
 
-                            }
-                            if (YearSem.equals("2st yr, 1nd sem")) {
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
                                 bscs2y1sSched_C();
 
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bscs2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bscs3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bscs3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bscs4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bscs4y2sSched_C();
+                            }
+
+
+                        }
+
+                        else if(Course.equals("Bachelor of Elementary Education")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                beed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                beed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                beed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                beed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                beed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                beed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                beed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                beed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Science in Office Administration")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsoa1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsoa1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsoa2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsoa2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsoa3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsoa3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsoa4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsoa4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Science in Business Administration")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                bsoa1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                bsba1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                bsba2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                bsba2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                bsba3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bsba3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bsba4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bsba4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Arts in Religious Education")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
                             }
 
                         }else {
@@ -239,7 +550,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
 //////////// /////////////////////////MODE OF PAYMENT DROPDOWN /////////////////////////////////////////
 
-        MOP = new String[]{"-select-", "A - Cash", "- Installment"};
+        MOP = new String[]{"-select-", "A - Cash", "B- Installment"};
         moplist = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MOP);
         mop.setAdapter(moplist);
 
@@ -274,6 +585,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 if (Course.equals("Bachelor of Science in Computer Science")) {
                                     BSCS1y1sem();
 
+                                }else if (Course.equals("Bachelor of Elementary Education")){
+                                   // BEED1y2sem();
                                 }
 
                             }
@@ -379,7 +692,7 @@ public class Pre_Enrollment extends AppCompatActivity {
                 dataObj.date = new Date().getTime();
                 dataObj.birthday = String.valueOf(birthday.getText());
 
-                print.child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
+                print.child("record").child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
 
                 if (dataObj.schoolyear.isEmpty()) {
                     schoolyear.setError("School year is required!");
@@ -408,7 +721,7 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
 
 /////////////////////////////////////* SUBJECT EACH COURSE*////////////////////////////////
-
+///////////////BSCS//////////////////
     private void BSCS1y1sem() {
         DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum/bscs/first_year");
 
@@ -417,72 +730,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Introduction to Computing
-                String sub1 = snapshot.child("first_sem/subject1/code").getValue().toString();
-                String Des1 = snapshot.child("first_sem/subject1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("first_sem/subject1/units").getValue().toString();
+                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("first_sem/subject2/code").getValue().toString();
-                String Des2 = snapshot.child("first_sem/subject2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("first_sem/subject2/units").getValue().toString();
+                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("first_sem/subject3/code").getValue().toString();
-                String Des3 = snapshot.child("first_sem/subject3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("first_sem/subject3/units").getValue().toString();
+                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("first_sem/subject4/code").getValue().toString();
-                String Des4 = snapshot.child("first_sem/subject4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("first_sem/subject4/units").getValue().toString();
+                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("first_sem/subject5/code").getValue().toString();
-                String Des5 = snapshot.child("first_sem/subject5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("first_sem/subject5/units").getValue().toString();
+                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("first_sem/subject6/code").getValue().toString();
-                String Des6 = snapshot.child("first_sem/subject6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("first_sem/subject6/units").getValue().toString();
+                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
-                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
+                String sub7 = snapshot.child("first_sem/subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject_7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("first_sem/subject8/code").getValue().toString();
-                String Des8 = snapshot.child("first_sem/subject8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("first_sem/subject8/units").getValue().toString();
+                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("first_sem/subject9/code").getValue().toString();
-                String Des9 = snapshot.child("first_sem/subject9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("first_sem/subject9/units").getValue().toString();
+                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("first_sem/subject10/code").getValue().toString();
-                String Des10 = snapshot.child("first_sem/subject10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("first_sem/subject10/units").getValue().toString();
+                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subjec_t10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -498,7 +811,6 @@ public class Pre_Enrollment extends AppCompatActivity {
         });
 
     }
-
     private void BSCS1y2sem() {
 
         DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
@@ -589,6 +901,1268 @@ public class Pre_Enrollment extends AppCompatActivity {
         });
 
     }
+    private void BSCS2y1sem() {
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum/bscs/second_year");
+
+        databasecs.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BSCS2y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BSCS3y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BSCS3y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BSCS4y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BSCS4y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////BEED//////////////////
+    private void BEED1y1sem() {
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum/beed/first_year");
+
+        databasecs.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("first_sem/subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subjec_t10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED1y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED2y1sem() {
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum/beed/second_year");
+
+        databasecs.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED2y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED3y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED3y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED4y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void BEED4y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+    //////////////////////////////////// PRINT PDF //////////////////////////////////////////////////////
 
     private void printPDF() {
         PdfDocument myPdfDocument = new PdfDocument();
@@ -724,7 +2298,6 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
 
-
     //////////////////////////////////// BSCS SCHEDULE SECTION //////////////////////////////////////////////////////
 
               ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
@@ -852,7 +2425,7 @@ public class Pre_Enrollment extends AppCompatActivity {
             });
 
             }
-             ///////////////////////////////////1nd year 2st sem/////////////////////////////////////////
+             ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
     private void bscs1y2sSched_A() {
 
                  DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
@@ -977,7 +2550,7 @@ public class Pre_Enrollment extends AppCompatActivity {
         });
 
     }
-    ///////////////////////////////////2st year 1st sem/////////////////////////////////////////
+    ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
     private void bscs2y1sSched_A() {
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
@@ -1068,6 +2641,4417 @@ public class Pre_Enrollment extends AppCompatActivity {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
 
         database.child("bscs").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
+    private void bscs2y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs2y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs2y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
+    private void bscs3y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs3y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs3y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
+
+    private void bscs3y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs3y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs3y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
+
+    private void bscs4y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs4y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs4y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
+
+    private void bscs4y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs4y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bscs4y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+
+    //////////////////////////////////// BSOA SCHEDULE SECTION //////////////////////////////////////////////////////
+
+    ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
+    private void beed1y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void beed1y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void beed1y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
+    private void beed1y2sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void beed1y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void beed1y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
+    private void beed2y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void beed2y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void beed2y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
+    private void beed2y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed2y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed2y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
+    private void beed3y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed3y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed3y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
+
+    private void beed3y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed3y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed3y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
+
+    private void beed4y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed4y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed4y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
+
+    private void beed4y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed4y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void beed4y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    //////////////////////////////////// BSOA SCHEDULE SECTION //////////////////////////////////////////////////////
+
+    ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
+    private void bsoa1y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsoa1y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsoa1y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
+    private void bsoa1y2sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsoa1y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsoa1y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
+    private void bsoa2y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsoa2y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsoa2y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
+    private void bsoa2y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa2y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa2y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
+    private void bsoa3y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa3y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa3y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
+
+    private void bsoa3y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa3y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa3y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
+
+    private void bsoa4y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa4y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa4y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
+
+    private void bsoa4y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa4y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsoa4y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    //////////////////////////////////// BSBA SCHEDULE SECTION //////////////////////////////////////////////////////
+
+    ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
+    private void bsba1y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsba1y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsba1y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
+    private void bsba1y2sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsba1y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsba1y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
+    private void bsba2y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void bsba2y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void bsba2y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
+    private void bsba2y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba2y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba2y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
+    private void bsba3y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba3y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba3y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
+
+    private void bsba3y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba3y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba3y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
+
+     private void bsba4y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba4y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba4y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
+
+    private void bsba4y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba4y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsba4y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+
+    //////////////////////////////////// ABREED SCHEDULE SECTION //////////////////////////////////////////////////////
+
+    ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
+    private void abreed1y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void abreed1y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void abreed1y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
+    private void abreed1y2sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void abreed1y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void abreed1y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
+    private void abreed2y1sSched_A() {
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+    private void abreed2y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+    private void abreed2y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
+    private void abreed2y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed2y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed2y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
+    private void abreed3y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed3y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed3y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
+
+    private void abreed3y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed3y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed3y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
+
+    private void abreed4y1sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed4y1sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed4y1sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/c").getValue().toString();
+                String sub2 = snapshot.child("subject2/c").getValue().toString();
+                String sub3 = snapshot.child("subject3/c").getValue().toString();
+                String sub4 = snapshot.child("subject4/c").getValue().toString();
+                String sub5 = snapshot.child("subject5/c").getValue().toString();
+                String sub6 = snapshot.child("subject6/c").getValue().toString();
+                String sub7 = snapshot.child("subject7/c").getValue().toString();
+                String sub8 = snapshot.child("subject8/c").getValue().toString();
+                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub10 = snapshot.child("subject10/c").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
+
+    private void abreed4y2sSched_A(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed4y2sSched_B(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //sectionA
+                String sub1 = snapshot.child("subject1/b").getValue().toString();
+                String sub2 = snapshot.child("subject2/b").getValue().toString();
+                String sub3 = snapshot.child("subject3/b").getValue().toString();
+                String sub4 = snapshot.child("subject4/b").getValue().toString();
+                String sub5 = snapshot.child("subject5/b").getValue().toString();
+                String sub6 = snapshot.child("subject6/b").getValue().toString();
+                String sub7 = snapshot.child("subject7/b").getValue().toString();
+                String sub8 = snapshot.child("subject8/b").getValue().toString();
+                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub10 = snapshot.child("subject10/b").getValue().toString();
+
+
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void abreed4y2sSched_C(){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+
+        database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

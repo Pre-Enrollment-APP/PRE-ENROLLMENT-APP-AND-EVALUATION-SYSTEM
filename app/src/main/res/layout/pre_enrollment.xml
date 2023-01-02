@@ -11,25 +11,37 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@color/blue"></View>
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pre-enlistment"
+        android:fontFamily="@font/arial"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:padding="13dp"
+        android:textSize="17dp"/>
 
     <ImageButton
-        android:id="@+id/menuicon"
+        android:id="@+id/back"
         android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="7dp"
-        android:background="?attr/selectableItemBackground"
+        android:layout_height="25dp"
+        android:layout_marginStart="5dp"
         android:scaleType="fitXY"
-        android:src="@drawable/menu" />
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/back"
+
+        />
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:fadeScrollbars="false"
 
         android:scrollbarFadeDuration="0"

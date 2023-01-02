@@ -12,6 +12,17 @@
         android:layout_height="50dp"
         android:background="@color/blue"
         />
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="5dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/back"
+
+        />
     <TextView
         android:id="@+id/header_title"
         android:layout_width="wrap_content"
@@ -20,13 +31,13 @@
         android:fontFamily="@font/arial"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
-        android:padding="10dp"
+        android:padding="13dp"
         android:textSize="17dp"/>
     <Button
         android:id="@+id/firstyear"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header_title"
+        android:layout_marginTop="50dp"
         android:text="1st year"
         android:textSize="13dp"
         android:fontFamily="@font/arial"
@@ -36,7 +47,7 @@
         android:id="@+id/secondyear"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header_title"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="1dp"
         android:text="2nd year"
         android:textSize="13dp"
@@ -49,7 +60,7 @@
         android:layout_width="105dp"
         android:textSize="13dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header_title"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="1dp"
         android:text="3rd year"
         android:layout_toRightOf="@+id/secondyear"
@@ -60,7 +71,7 @@
         android:id="@+id/fourthyear"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/header_title"
+        android:layout_marginTop="50dp"
         android:layout_marginStart="1dp"
         android:text="4th year"
         android:textSize="13dp"

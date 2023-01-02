@@ -130,7 +130,12 @@ public class tabmenu extends AppCompatActivity {
                 studentNumber.setText(studentnumber);
 
                 Uri uri=firebaseUser.getPhotoUrl();
-                Picasso.with(tabmenu.this).load(uri).into(profilepic);
+
+                if(uri != null){
+                    Picasso.with(tabmenu.this).load(uri).into(profilepic);
+                }else{
+                    profilepic.setImageResource(R.drawable.user);
+                }
 
             }
 
