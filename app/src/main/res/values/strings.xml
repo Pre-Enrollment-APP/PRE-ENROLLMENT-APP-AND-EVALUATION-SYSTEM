@@ -15,6 +15,16 @@
         <item>1st yr, 1st sem</item>
         <item>1st yr, 2nd sem</item>
 
+        <item>2nd yr, 1st sem</item>
+        <item>2nd yr, 2nd sem</item>
+
+        <item>3rd yr, 1st sem</item>
+        <item>3rd yr, 2nd sem</item>
+
+        <item>4th yr, 1st sem</item>
+        <item>4th yr, 2nd sem</item>
+
+
     </string-array>
 
     <string name="title_activity_try">TRY</string>

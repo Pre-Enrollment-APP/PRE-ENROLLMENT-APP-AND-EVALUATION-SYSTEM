@@ -44,48 +44,65 @@
             android:padding="8dp"
             android:textSize="17dp"/>
 
-
-        <ImageView
-            android:id="@+id/ccc"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:src="@drawable/ccc"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/header_title"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="80dp"
+            android:backgroundTint="@color/superwhite"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pre-Enrollmet and Grade Viewing"
+                    android:fontFamily="@font/arial"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:id="@+id/text1"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkyellow"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/ccc"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
-            android:textAlignment="center"
-            android:layout_marginBottom="60dp"
-            android:fontFamily="@font/arial"
-            android:text="                 Cainta Catholic College (CCC) is a private school located at A. Bonifacio Ave., Brgy. San Andres Cainta, Rizal headed by Rev. Fr. Neil Vincent Tacbas, Ed. D.
+            android:layout_marginEnd="23dp"
+            android:layout_marginStart="23dp"
+            android:clickable="false"
+            android:layout_below="@+id/card1"
+            android:id="@+id/card2"
+            android:layout_marginBottom="15dp"
+            app:cardElevation="12dp"
 
-The school offers academic programs such as Nursery, Kinder, Grade School (Grade 1 to 6), Junior High School (Grade 7 to 10), Senior High School (Grade 11 to 12), and College.
+            app:cardCornerRadius="7dp">
 
-The school academic tracks/strands offered for Senior High School are Accounting, Business and Management (ABM), Science, Technology, Engineering and Mathematics (STEM), Humanities and Social Sciences (HUMSS), and General Academic Strand (GAS). Additionally, there are technical–vocational–livelihood (TVL) tracks available such as Information-Communications Technology (ICT), Computer System Servicing and Animation, Technological and Livelihood Education (TLE), Bread and Pastry Production NCII, Food and Beverages Services NCII, and Tailoring NCII.
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="This mobile application serves as a communication tool for the institution's students, professors, chairpersons, and registrars employee regarding pre-enlistment and grade viewing.
 
-Degree programs in Elementary Education, Secondary Education, Religious Education, Business Administration, Office Administration, and Computer Science are offered by the college department. The Department of Education (DepEd) and the Commission on Higher Education (CHED) both properly recognize Cainta Catholic College."
-            android:textColor="@color/black"
-            android:textSize="12dp" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="510dp"
-            android:fontFamily="@font/arial"
-            android:letterSpacing="0.2"
-            android:text="text"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
+\n\nThe mobile application has two important functions:
+\n(1) Pre-Enlistment
+\nIt includes the subjects to be enrolled, units, and scheduled days and times.
+\n(2) Grade Viewing
+\nIt includes the grades in all subjects evey semester.
+"
+                android:lineSpacingExtra="10dp"
+                android:fontFamily="@font/arial"
+                android:textSize="13dp"/>
+        </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
     </ScrollView>

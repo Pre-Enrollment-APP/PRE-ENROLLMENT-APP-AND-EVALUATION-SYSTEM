@@ -239,7 +239,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                             }
 
 
-                        }else if (Course.equals("Bachelor of Science in Business Administration")){
+                        }
+                        else if (Course.equals("Bachelor of Science in Business Administration")){
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bsba1y1sSched_A();
 
@@ -263,7 +264,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 bsba4y2sSched_A();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in English")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -287,7 +289,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -311,7 +314,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in Science")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -394,7 +398,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 beed4y2sSched_B();
                             }
 
-                        }else if(Course.equals("Bachelor of Science in Office Administration")) {
+                        }
+                        else if(Course.equals("Bachelor of Science in Office Administration")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bsoa1y1sSched_B();
 
@@ -418,7 +423,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 bsoa4y2sSched_B();
                             }
 
-                        }else if(Course.equals("Bachelor of Science in Business Administration")) {
+                        }
+                        else if(Course.equals("Bachelor of Science in Business Administration")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bsoa1y1sSched_B();
 
@@ -443,7 +449,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 bsba4y2sSched_B();
                             }
 
-                        }else if(Course.equals("Bachelor of Arts in Religious Education")) {
+                        }
+                        else if(Course.equals("Bachelor of Arts in Religious Education")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -467,7 +474,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in English")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -491,7 +499,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -515,7 +524,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in Science")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -539,7 +549,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else {
+                        }
+                        else {
                             Toast.makeText(Pre_Enrollment.this, "Choose your *Year and Semester* first", Toast.LENGTH_SHORT).show();
                         }
                         break;
@@ -572,7 +583,6 @@ public class Pre_Enrollment extends AppCompatActivity {
 
 
                         }
-
                         else if(Course.equals("Bachelor of Elementary Education")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 beed1y1sSched_C();
@@ -597,7 +607,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 beed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Science in Office Administration")) {
+                        }
+                        else if(Course.equals("Bachelor of Science in Office Administration")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bsoa1y1sSched_C();
 
@@ -621,7 +632,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 bsoa4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Science in Business Administration")) {
+                        }
+                        else if(Course.equals("Bachelor of Science in Business Administration")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bsoa1y1sSched_C();
 
@@ -645,7 +657,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 bsba4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Arts in Religious Education")) {
+                        }
+                        else if(Course.equals("Bachelor of Arts in Religious Education")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -669,7 +682,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in English")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -693,7 +707,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -717,7 +732,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
+                        }
+                        else if(Course.equals("Bachelor of Secondary Education in Science")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -741,7 +757,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
-                        }else {
+                        }
+                        else {
                             Toast.makeText(Pre_Enrollment.this, "Choose your *Year and Semester* first", Toast.LENGTH_SHORT).show();
                         }
                         break;

@@ -2,7 +2,9 @@ package com.example.cccpre_enrollmentapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 public class viewing_grades2 extends AppCompatActivity{
     String[] sem ={"1st Semester", "2nd Semester"};
     ArrayAdapter<String> semesterlist;
+    private SwipeRefreshLayout swipeCotainer;
     private ImageButton back;
     private Button firstyear, secondyear,thirdyear,fourthyear;
     private TextView course;
@@ -42,6 +45,7 @@ public class viewing_grades2 extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewing_grades2);
+        swipeToRefresh();
         user = FirebaseAuth.getInstance().getCurrentUser();
         semester=findViewById(R.id.semestergrades);
 
@@ -50,7 +54,7 @@ public class viewing_grades2 extends AppCompatActivity{
         thirdyear=findViewById(R.id.thirdyear);
         fourthyear=findViewById(R.id.fourthyear);
 
-        back=findViewById(R.id.backs);
+        back=findViewById(R.id.back);
 
 
         des1 = findViewById(R.id.d1);
@@ -1576,7 +1580,19 @@ public class viewing_grades2 extends AppCompatActivity{
         });
     }
 
-
+    @SuppressLint("ResourceAsColor")
+    private void swipeToRefresh(){
+        swipeCotainer=findViewById(R.id.swipe);
+        swipeCotainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                startActivity(getIntent());
+                finish();
+                overridePendingTransition(0,0);
+                swipeCotainer.setRefreshing(false);}
+        });
+        swipeCotainer.setColorSchemeColors(android.R.color.holo_blue_dark, android.R.color.holo_blue_light, android.R.color.holo_blue_bright, android.R.color.holo_blue_dark);
+    }
 
 }
 

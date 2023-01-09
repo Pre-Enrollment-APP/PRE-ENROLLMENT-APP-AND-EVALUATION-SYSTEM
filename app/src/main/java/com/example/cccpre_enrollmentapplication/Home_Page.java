@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -43,6 +45,7 @@ import com.squareup.picasso.Picasso;
     private FirebaseAuth auth;
     private DatabaseReference databaseRef;
     //drawer menu
+    private SwipeRefreshLayout swipeCotainer;
     private ImageView profilepic;
     private TextView status,fullnametab,studentno,coursetab;
     private FirebaseUser user;
@@ -56,7 +59,7 @@ import com.squareup.picasso.Picasso;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_homepage);
-
+        swipeToRefresh();
         auth=FirebaseAuth.getInstance();
 
         //tab menu
@@ -217,5 +220,18 @@ import com.squareup.picasso.Picasso;
         //drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+        @SuppressLint("ResourceAsColor")
+        private void swipeToRefresh(){
+            swipeCotainer=findViewById(R.id.swipe);
+            swipeCotainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    startActivity(getIntent());
+                    finish();
+                    overridePendingTransition(0,0);
+                    swipeCotainer.setRefreshing(false);}
+            });
+            swipeCotainer.setColorSchemeColors(android.R.color.holo_blue_dark, android.R.color.holo_blue_light, android.R.color.holo_blue_bright, android.R.color.holo_blue_dark);
+        }
 
 }
