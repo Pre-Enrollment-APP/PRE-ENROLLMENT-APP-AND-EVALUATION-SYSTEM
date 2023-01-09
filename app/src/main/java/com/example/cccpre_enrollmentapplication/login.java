@@ -68,7 +68,6 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         logIn = (Button) findViewById(R.id.logIn);
         logIn.setOnClickListener(this);
         emailadd.setSingleLine(true);
-        pass.setSingleLine(true);
         forgetpassword = findViewById(R.id.forget);
         forgetpassword.setOnClickListener(this);
 
