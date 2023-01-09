@@ -21,7 +21,8 @@
         android:layout_gravity="start"></com.google.android.material.navigation.NavigationView>
    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="match_parent"
+       android:id="@+id/swipe">
 
 
     <ScrollView
