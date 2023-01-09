@@ -85,7 +85,11 @@ public ImageButton menu_page;
                     studentno.setText(StudentNumber);
 
                     Uri uri=user.getPhotoUrl();
-                    Picasso.with(About.this).load(uri).into(profilepic);
+                    if(uri != null){
+                        Picasso.with(About.this).load(uri).into(profilepic);
+                    }else{
+                        profilepic.setImageResource(R.drawable.user);
+                    }
                 }
             }
 
@@ -118,8 +122,26 @@ public ImageButton menu_page;
                 Intent intent=new Intent(About.this,profile.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_about:
 
+            case R.id.nav_about:
+                Intent intent3=new Intent(About.this,About.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_help:
+                Intent intent5=new Intent(About.this,help.class);
+                startActivity(intent5);
+                break;
+            case R.id.nav_contactus:
+                Intent intent4=new Intent(About.this,contact_us.class);
+                startActivity(intent4);
+                break;
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                Intent intent2=new Intent(About.this, login.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
                 break;
 
         }

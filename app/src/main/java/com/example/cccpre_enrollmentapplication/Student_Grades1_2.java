@@ -35,15 +35,15 @@ public class Student_Grades1_2 {
         String sc9_12;
         String sc10_12;
 
-      String grade1_12;
-        String grade2_12;
-        String grade3_12;
-        String grade4_12;
-        String grade5_12;
-        String grade6_12;
-        String grade7_12;
-        String grade8_12;
-        String grade9_12;
+      String grade01_12;
+        String grade02_12;
+        String grade03_12;
+        String grade04_12;
+        String grade05_12;
+        String grade06_12;
+        String grade07_12;
+        String grade08_12;
+        String grade09_12;
         String grade10_12;
 
     public String getDes1_12() {
@@ -286,76 +286,76 @@ public class Student_Grades1_2 {
         this.sc10_12 = sc10_12;
     }
 
-    public String getGrade1_12() {
-        return grade1_12;
+    public String getGrade01_12() {
+        return grade01_12;
     }
 
-    public void setGrade1_12(String grade1_12) {
-        this.grade1_12 = grade1_12;
+    public void setGrade01_12(String grade01_12) {
+        this.grade01_12 = grade01_12;
     }
 
-    public String getGrade2_12() {
-        return grade2_12;
+    public String getGrade02_12() {
+        return grade02_12;
     }
 
-    public void setGrade2_12(String grade2_12) {
-        this.grade2_12 = grade2_12;
+    public void setGrade02_12(String grade02_12) {
+        this.grade02_12 = grade02_12;
     }
 
-    public String getGrade3_12() {
-        return grade3_12;
+    public String getGrade03_12() {
+        return grade03_12;
     }
 
-    public void setGrade3_12(String grade3_12) {
-        this.grade3_12 = grade3_12;
+    public void setGrade03_12(String grade03_12) {
+        this.grade03_12 = grade03_12;
     }
 
-    public String getGrade4_12() {
-        return grade4_12;
+    public String getGrade04_12() {
+        return grade04_12;
     }
 
-    public void setGrade4_12(String grade4_12) {
-        this.grade4_12 = grade4_12;
+    public void setGrade04_12(String grade04_12) {
+        this.grade04_12 = grade04_12;
     }
 
-    public String getGrade5_12() {
-        return grade5_12;
+    public String getGrade05_12() {
+        return grade05_12;
     }
 
-    public void setGrade5_12(String grade5_12) {
-        this.grade5_12 = grade5_12;
+    public void setGrade05_12(String grade05_12) {
+        this.grade05_12 = grade05_12;
     }
 
-    public String getGrade6_12() {
-        return grade6_12;
+    public String getGrade06_12() {
+        return grade06_12;
     }
 
-    public void setGrade6_12(String grade6_12) {
-        this.grade6_12 = grade6_12;
+    public void setGrade06_12(String grade06_12) {
+        this.grade06_12 = grade06_12;
     }
 
-    public String getGrade7_12() {
-        return grade7_12;
+    public String getGrade07_12() {
+        return grade07_12;
     }
 
-    public void setGrade7_12(String grade7_12) {
-        this.grade7_12 = grade7_12;
+    public void setGrade07_12(String grade07_12) {
+        this.grade07_12 = grade07_12;
     }
 
-    public String getGrade8_12() {
-        return grade8_12;
+    public String getGrade08_12() {
+        return grade08_12;
     }
 
-    public void setGrade8_12(String grade8_12) {
-        this.grade8_12 = grade8_12;
+    public void setGrade08_12(String grade08_12) {
+        this.grade08_12 = grade08_12;
     }
 
-    public String getGrade9_12() {
-        return grade9_12;
+    public String getGrade09_12() {
+        return grade09_12;
     }
 
-    public void setGrade9_12(String grade9_12) {
-        this.grade9_12 = grade9_12;
+    public void setGrade09_12(String grade09_12) {
+        this.grade09_12 = grade09_12;
     }
 
     public String getGrade10_12() {

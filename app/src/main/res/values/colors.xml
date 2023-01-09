@@ -15,4 +15,6 @@
     <color name="lightblue">#3856C4</color>
     <color name="greenblue">#1E5E6A</color>
     <color name="darkyellow">#F1B913</color>
+    <color name="superwhite">#FFFFFF</color>
+    <color name="gray">#403F3F</color>
 </resources>

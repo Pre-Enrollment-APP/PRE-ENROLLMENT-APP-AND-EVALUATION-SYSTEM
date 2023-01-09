@@ -34,15 +34,15 @@ public class Student_Grades {
     String sc9;
     String sc10;
 
-    String grade1;
-    String grade2;
-    String grade3;
-    String grade4;
-    String grade5;
-    String grade6;
-    String grade7;
-    String grade8;
-    String grade9;
+    String grade01;
+    String grade02;
+    String grade03;
+    String grade04;
+    String grade05;
+    String grade06;
+    String grade07;
+    String grade08;
+    String grade09;
     String grade10;
 
     public String getDes1() {
@@ -285,76 +285,76 @@ public class Student_Grades {
         this.sc10 = sc10;
     }
 
-    public String getGrade1() {
-        return grade1;
+    public String getGrade01() {
+        return grade01;
     }
 
-    public void setGrade1(String grade1) {
-        this.grade1 = grade1;
+    public void setGrade01(String grade01) {
+        this.grade01 = grade01;
     }
 
-    public String getGrade2() {
-        return grade2;
+    public String getGrade02() {
+        return grade02;
     }
 
-    public void setGrade2(String grade2) {
-        this.grade2 = grade2;
+    public void setGrade02(String grade02) {
+        this.grade02 = grade02;
     }
 
-    public String getGrade3() {
-        return grade3;
+    public String getGrade03() {
+        return grade03;
     }
 
-    public void setGrade3(String grade3) {
-        this.grade3 = grade3;
+    public void setGrade03(String grade03) {
+        this.grade03 = grade03;
     }
 
-    public String getGrade4() {
-        return grade4;
+    public String getGrade04() {
+        return grade04;
     }
 
-    public void setGrade4(String grade4) {
-        this.grade4 = grade4;
+    public void setGrade04(String grade04) {
+        this.grade04 = grade04;
     }
 
-    public String getGrade5() {
-        return grade5;
+    public String getGrade05() {
+        return grade05;
     }
 
-    public void setGrade5(String grade5) {
-        this.grade5 = grade5;
+    public void setGrade05(String grade05) {
+        this.grade05 = grade05;
     }
 
-    public String getGrade6() {
-        return grade6;
+    public String getGrade06() {
+        return grade06;
     }
 
-    public void setGrade6(String grade6) {
-        this.grade6 = grade6;
+    public void setGrade06(String grade06) {
+        this.grade06 = grade06;
     }
 
-    public String getGrade7() {
-        return grade7;
+    public String getGrade07() {
+        return grade07;
     }
 
-    public void setGrade7(String grade7) {
-        this.grade7 = grade7;
+    public void setGrade07(String grade07) {
+        this.grade07 = grade07;
     }
 
-    public String getGrade8() {
-        return grade8;
+    public String getGrade08() {
+        return grade08;
     }
 
-    public void setGrade8(String grade8) {
-        this.grade8 = grade8;
+    public void setGrade08(String grade08) {
+        this.grade08 = grade08;
     }
 
-    public String getGrade9() {
-        return grade9;
+    public String getGrade09() {
+        return grade09;
     }
 
-    public void setGrade9(String grade9) {
-        this.grade9 = grade9;
+    public void setGrade09(String grade09) {
+        this.grade09 = grade09;
     }
 
     public String getGrade10() {

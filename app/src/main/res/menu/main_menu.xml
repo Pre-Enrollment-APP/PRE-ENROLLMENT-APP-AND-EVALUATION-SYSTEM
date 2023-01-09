@@ -5,23 +5,33 @@
         <item
             android:id="@+id/nav_home"
             android:title="Home"
+            android:iconTint="@color/blue"
             android:icon="@drawable/homeicon"/>
         <item
             android:id="@+id/nav_profile"
             android:title="Profile"
+            android:iconTint="@color/blue"
             android:icon="@drawable/person"/>
         <item
             android:id="@+id/nav_contactus"
+            android:iconTint="@color/blue"
             android:title="Contact us"
             android:icon="@drawable/ic_baseline_local_phone_24"/>
         <item
+            android:id="@+id/nav_help"
+            android:iconTint="@color/blue"
+            android:title="Help"
+            android:icon="@drawable/help"/>
+        <item
             android:id="@+id/nav_about"
             android:title="About"
+            android:iconTint="@color/blue"
             android:icon="@drawable/about"/>
         <item
             android:id="@+id/nav_logout"
-            android:title="Profile"
-            android:icon="@drawable/homeicon"/>
+            android:title="Logout"
+            android:iconTint="@color/blue"
+            android:icon="@drawable/logout"/>
     </group>
 
 </menu>

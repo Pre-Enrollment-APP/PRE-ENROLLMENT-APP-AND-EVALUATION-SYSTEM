@@ -3,6 +3,7 @@ package com.example.cccpre_enrollmentapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -59,6 +60,7 @@ public class Pre_Enrollment extends AppCompatActivity {
     private String userID;
     private DatabaseReference databaseRef;
     private FirebaseUser user;
+    private ImageButton back;
     private EditText SC1, SC2, SC3, SC4, SC5, SC6, SC7, SC8, SC9, SC10;
     private EditText s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
     //logo image print
@@ -83,6 +85,7 @@ public class Pre_Enrollment extends AppCompatActivity {
         gmail = findViewById(R.id.gmail);
         address = findViewById(R.id.address);
         birthday = findViewById(R.id.birthday);
+        back=findViewById(R.id.back);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         databaseRef = FirebaseDatabase.getInstance().getReference("User");
@@ -132,6 +135,13 @@ public class Pre_Enrollment extends AppCompatActivity {
         s8 = findViewById(R.id.sched8);
         s9 = findViewById(R.id.sched9);
         s10 = findViewById(R.id.sched10);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Pre_Enrollment.this, Home_Page.class));
+            }
+        });
+
 
 
 //////////// /////////////////////////S E C T I O N DROPDOWN///////////////////////////////////////////////////
@@ -178,31 +188,31 @@ public class Pre_Enrollment extends AppCompatActivity {
                         }
 
                         else if(Course.equals("Bachelor of Elementary Education")) {
-                        if (YearSem.equals("1st yr, 1st sem")) {
-                            beed1y1sSched_A();
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                beed1y1sSched_A();
 
-                        } else if (YearSem.equals("1st yr, 2nd sem")) {
-                            beed1y2sSched_A();
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                beed1y2sSched_A();
 
-                        } else if (YearSem.equals("2nd yr, 1st sem")) {
-                            beed2y1sSched_A();
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                beed2y1sSched_A();
 
-                        } else if (YearSem.equals("2nd yr, 2nd sem")) {
-                            beed2y2sSched_A();
-                        } else if (YearSem.equals("3rd yr, 1st sem")) {
-                            beed3y1sSched_A();
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                beed2y2sSched_A();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                beed3y1sSched_A();
 
-                        }else if (YearSem.equals("3rd yr, 2nd sem")) {
-                            bscs3y2sSched_A();
-                        } else if (YearSem.equals("4th yr, 1st sem")) {
-                            bscs4y1sSched_A();
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                bscs3y2sSched_A();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                bscs4y1sSched_A();
 
-                        }else if (YearSem.equals("4th yr, 2nd sem")) {
-                            bscs4y2sSched_A();
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                bscs4y2sSched_A();
+                            }
+
+
                         }
-
-
-                    }
                         //bsoa
                         else if(Course.equals("Bachelor of Science in Office Administration")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
@@ -251,6 +261,78 @@ public class Pre_Enrollment extends AppCompatActivity {
 
                             }else if (YearSem.equals("4th yr, 2nd sem")) {
                                 bsba4y2sSched_A();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
                             }
 
                         }
@@ -362,6 +444,78 @@ public class Pre_Enrollment extends AppCompatActivity {
                             }
 
                         }else if(Course.equals("Bachelor of Arts in Religious Education")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 abreed1y1sSched_C();
 
@@ -515,6 +669,78 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 abreed4y2sSched_C();
                             }
 
+                        }else if(Course.equals("Bachelor of Secondary Education in English")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Eduction in Math")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
+                        }else if(Course.equals("Bachelor of Secondary Education in Science")) {
+                            if (YearSem.equals("1st yr, 1st sem")) {
+                                abreed1y1sSched_C();
+
+                            } else if (YearSem.equals("1st yr, 2nd sem")) {
+                                abreed1y2sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 1st sem")) {
+                                abreed2y1sSched_C();
+
+                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                                abreed2y2sSched_C();
+                            } else if (YearSem.equals("3rd yr, 1st sem")) {
+                                abreed3y1sSched_C();
+
+                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
+                                abreed3y2sSched_C();
+                            } else if (YearSem.equals("4th yr, 1st sem")) {
+                                abreed4y1sSched_C();
+
+                            }else if (YearSem.equals("4th yr, 2nd sem")) {
+                                abreed4y2sSched_C();
+                            }
+
                         }else {
                             Toast.makeText(Pre_Enrollment.this, "Choose your *Year and Semester* first", Toast.LENGTH_SHORT).show();
                         }
@@ -586,8 +812,22 @@ public class Pre_Enrollment extends AppCompatActivity {
                                     BSCS1y1sem();
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
-                                   // BEED1y2sem();
+                                    BEED1y1sem();
+                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                    // BEED1y2sem();
+                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                    // BEED1y2sem();
                                 }
+                                else if (Course.equals("Bachelor of Science in Office Administration")){
+                                    // BEED1y2sem();
+                                }  else if (Course.equals("Bachelor of Science in Business Administration")){
+                                    // BEED1y2sem();
+                                }else if (Course.equals("Bachelor of Science in Business Administration")){
+                                    // BEED1y2sem();
+                                }else if (Course.equals("Bachelor of Arts in Religious Education")){
+                                    // BEED1y2sem();
+                                }
+
 
                             }
 
@@ -692,7 +932,7 @@ public class Pre_Enrollment extends AppCompatActivity {
                 dataObj.date = new Date().getTime();
                 dataObj.birthday = String.valueOf(birthday.getText());
 
-                print.child("record").child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
+                print.child(userID).child("pre-enlist").child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
 
                 if (dataObj.schoolyear.isEmpty()) {
                     schoolyear.setError("School year is required!");
@@ -720,7 +960,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
 
-/////////////////////////////////////* SUBJECT EACH COURSE*////////////////////////////////
+    /////////////////////////////////////* SUBJECT EACH COURSE*////////////////////////////////
 ///////////////BSCS//////////////////
     private void BSCS1y1sem() {
         DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum/bscs/first_year");
@@ -730,72 +970,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Introduction to Computing
-                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("first_sem/subject1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("first_sem/subject2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("first_sem/subject3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("first_sem/subject4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("first_sem/subject5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("first_sem/subject6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("first_sem/subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("first_sem/subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("first_sem/subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("first_sem/subject8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("first_sem/subject9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("first_sem/subjec_t10/units").getValue().toString();
+                String sub10 = snapshot.child("first_sem/subject10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2160,6 +2400,727 @@ public class Pre_Enrollment extends AppCompatActivity {
         });
 
     }
+    private void bsed_e1y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e1y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void bsed_e2y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e2y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e3y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e3y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e4y1sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+    private void bsed_e4y2sem() {
+
+        DatabaseReference databasecs = FirebaseDatabase.getInstance().getReference("course_curriculum");
+
+        databasecs.child("bsed_e").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                //Introduction to Computing
+                String sub1 = snapshot.child("subject_1/code").getValue().toString();
+                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                SC1.setText(sub1);
+                des1.setText(Des1);
+                units1.setText(Unit);
+
+                String sub2 = snapshot.child("subject_2/code").getValue().toString();
+                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                SC2.setText(sub2);
+                des2.setText(Des2);
+                units2.setText(Unit2);
+
+                String sub3 = snapshot.child("subject_3/code").getValue().toString();
+                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                SC3.setText(sub3);
+                des3.setText(Des3);
+                units3.setText(Unit3);
+
+                String sub4 = snapshot.child("subject_4/code").getValue().toString();
+                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                SC4.setText(sub4);
+                des4.setText(Des4);
+                units4.setText(Unit4);
+
+                String sub5 = snapshot.child("subject_5/code").getValue().toString();
+                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                SC5.setText(sub5);
+                des5.setText(Des5);
+                units5.setText(Unit5);
+
+                String sub6 = snapshot.child("subject_6/code").getValue().toString();
+                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                SC6.setText(sub6);
+                des6.setText(Des6);
+                units6.setText(Unit6);
+
+                String sub7 = snapshot.child("subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                SC7.setText(sub7);
+                des7.setText(Des7);
+                units7.setText(Unit7);
+
+                String sub8 = snapshot.child("subject_8/code").getValue().toString();
+                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                SC8.setText(sub8);
+                des8.setText(Des8);
+                units8.setText(Unit8);
+
+                String sub9 = snapshot.child("subject_9/code").getValue().toString();
+                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                SC9.setText(sub9);
+                des9.setText(Des9);
+                units9.setText(Unit9);
+
+                String sub10 = snapshot.child("subject_10/code").getValue().toString();
+                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                SC10.setText(sub10);
+                des10.setText(Des10);
+                units10.setText(Unit10);
+
+
+            }
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
 
     //////////////////////////////////// PRINT PDF //////////////////////////////////////////////////////
@@ -2263,7 +3224,7 @@ public class Pre_Enrollment extends AppCompatActivity {
         canvas.drawLine(40, 705, 200, 705, paint);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         canvas.drawText("Adviser", 100, 720, paint);
-        canvas.drawText("*This",40,780,paint);
+        canvas.drawText("*This is not valid until it is signed by the adviser.",40,780,paint);
         paint.setTextAlign(Paint.Align.RIGHT);
         canvas.drawLine(myPageInfo1.getPageWidth() - 210, 705, myPageInfo1.getPageWidth() - 50, 705, paint);
         canvas.drawText("Student Signature", myPageInfo1.getPageWidth() - 80, 720, paint);
@@ -2300,7 +3261,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     //////////////////////////////////// BSCS SCHEDULE SECTION //////////////////////////////////////////////////////
 
-              ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
+    ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
     private void bscs1y1sSched_A() {
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
@@ -2322,16 +3283,16 @@ public class Pre_Enrollment extends AppCompatActivity {
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
-                    s1.setText(sub1);
-                    s2.setText(sub2);
-                    s3.setText(sub3);
-                    s4.setText(sub4);
-                    s5.setText(sub5);
-                    s6.setText(sub6);
-                    s7.setText(sub7);
-                    s8.setText(sub8);
-                    s9.setText(sub9);
-                    s10.setText(sub10);
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
 
 
             }
@@ -2418,57 +3379,57 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s9.setText(sub9);
                 s10.setText(sub10);
             }
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
-             ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
+        });
+
+    }
+    ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
     private void bscs1y2sSched_A() {
 
-                 DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
 
-                 database.child("bscs").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
-                     @Override
-                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+        database.child("bscs").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                         //sectionA
-                         String sub1 = snapshot.child("subject1/a").getValue().toString();
-                         String sub2 = snapshot.child("subject2/a").getValue().toString();
-                         String sub3 = snapshot.child("subject3/a").getValue().toString();
-                         String sub4 = snapshot.child("subject4/a").getValue().toString();
-                         String sub5 = snapshot.child("subject5/a").getValue().toString();
-                         String sub6 = snapshot.child("subject6/a").getValue().toString();
-                         String sub7 = snapshot.child("subject7/a").getValue().toString();
-                         String sub8 = snapshot.child("subject8/a").getValue().toString();
-                         String sub9 = snapshot.child("subject9/a").getValue().toString();
-                         String sub10 = snapshot.child("subject10/a").getValue().toString();
-
-
-                         s1.setText(sub1);
-                         s2.setText(sub2);
-                         s3.setText(sub3);
-                         s4.setText(sub4);
-                         s5.setText(sub5);
-                         s6.setText(sub6);
-                         s7.setText(sub7);
-                         s8.setText(sub8);
-                         s9.setText(sub9);
-                         s10.setText(sub10);
+                //sectionA
+                String sub1 = snapshot.child("subject1/a").getValue().toString();
+                String sub2 = snapshot.child("subject2/a").getValue().toString();
+                String sub3 = snapshot.child("subject3/a").getValue().toString();
+                String sub4 = snapshot.child("subject4/a").getValue().toString();
+                String sub5 = snapshot.child("subject5/a").getValue().toString();
+                String sub6 = snapshot.child("subject6/a").getValue().toString();
+                String sub7 = snapshot.child("subject7/a").getValue().toString();
+                String sub8 = snapshot.child("subject8/a").getValue().toString();
+                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
-                     }
+                s1.setText(sub1);
+                s2.setText(sub2);
+                s3.setText(sub3);
+                s4.setText(sub4);
+                s5.setText(sub5);
+                s6.setText(sub6);
+                s7.setText(sub7);
+                s8.setText(sub8);
+                s9.setText(sub9);
+                s10.setText(sub10);
 
-                     @Override
-                     public void onCancelled(@NonNull DatabaseError error) {
 
-                     }
-                 });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
-             }
+    }
     private void bscs1y2sSched_B(){
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
 
@@ -5896,7 +6857,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
 
-     private void bsba4y1sSched_A(){
+    private void bsba4y1sSched_A(){
         DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
 
         database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -7087,6 +8048,12 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        // TODO Auto-generated method stub
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
 
 }
+

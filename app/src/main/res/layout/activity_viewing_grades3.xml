@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewingGrades"
+    tools:context=".viewing_grades3"
     android:background="@drawable/bglight">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-     >
 
     <View
         android:layout_width="match_parent"
@@ -17,17 +13,18 @@
         android:background="@color/blue"
         />
     <ImageButton
-        android:id="@+id/back"
-        android:layout_width="23dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="5dp"
+        android:paddingTop="3dp"
         android:paddingStart="5dp"
+        android:paddingBottom="3dp"
+        android:id="@+id/backs"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="1dp"
+        android:scaleType="fitXY"
         android:layout_marginTop="8dp"
         android:background="?attr/selectableItemBackground"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:scaleType="fitXY"
         android:src="@drawable/back"
+
         />
     <TextView
         android:id="@+id/header_title"
@@ -48,52 +45,51 @@
         android:id="@+id/first"
         android:gravity="center">
 
-            <Button
-                android:id="@+id/firstyear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1st year"
-                android:textSize="13dp"
-                android:fontFamily="@font/arial"
-                android:textColor="@color/greenblue"
-                android:background="@color/white"/>
-            <Button
-                android:id="@+id/secondyear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2nd year"
-                android:textSize="13dp"
-                android:layout_toRightOf="@+id/firstyear"
-                android:fontFamily="@font/arial"
-                android:textColor="@color/white"
-                android:background="@color/blue"/>
+        <Button
+            android:id="@+id/firstyear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1st year"
+            android:textSize="13dp"
+            android:fontFamily="@font/arial"
+            android:textColor="@color/white"
+            android:background="@color/blue"/>
+        <Button
+            android:id="@+id/secondyear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2nd year"
+            android:textSize="13dp"
+            android:layout_toRightOf="@+id/firstyear"
+            android:fontFamily="@font/arial"
+            android:textColor="@color/white"
+            android:background="@color/blue"/>
 
-            <Button
-                android:id="@+id/thirdyear"
-                android:layout_width="wrap_content"
-                android:textSize="13dp"
-                android:layout_height="wrap_content"
-                android:text="3rd year"
-                android:layout_toRightOf="@+id/secondyear"
-                android:fontFamily="@font/arial"
-                android:textColor="@color/white"
-                android:background="@color/blue"/>
-            <Button
-                android:id="@+id/fourthyear"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="4th year"
-                android:textSize="13dp"
-                android:layout_toRightOf="@+id/thirdyear"
-                android:fontFamily="@font/arial"
-                android:textColor="@color/white"
-                android:background="@color/blue"/>
+        <Button
+            android:id="@+id/thirdyear"
+            android:layout_width="wrap_content"
+            android:textSize="13dp"
+            android:layout_height="wrap_content"
+            android:text="3rd year"
+            android:layout_toRightOf="@+id/secondyear"
+            android:fontFamily="@font/arial"
+            android:textColor="@color/greenblue"
+            android:background="@color/white"/>
+        <Button
+            android:id="@+id/fourthyear"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="4th year"
+            android:textSize="13dp"
+            android:layout_toRightOf="@+id/thirdyear"
+            android:fontFamily="@font/arial"
+            android:textColor="@color/white"
+            android:background="@color/blue"/>
 
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
-        android:clickable="false"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_below="@+id/first"
@@ -129,97 +125,95 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginStart="23dp"
-        android:clickable="false"
-        android:id="@+id/card2"
-        android:layout_marginBottom="15dp"
-        app:cardElevation="12dp"
-        android:backgroundTint="@color/white"
-        app:cardCornerRadius="7dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="23dp"
+                android:layout_marginStart="23dp"
+                android:id="@+id/card2"
+                android:layout_marginBottom="15dp"
+                app:cardElevation="12dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="7dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/d1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/arial"
-            android:hint="Description"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="13dp"
-            android:textColor="@color/gray"
-            android:textSize="13dp" />
-        <View
-            android:id="@+id/v1"
-            android:layout_width="match_parent"
-                android:layout_below="@id/d1"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:background="@color/darkyellow"/>
-            <TextView
-                android:id="@+id/ut1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arial"
-                android:text="units:"
-                android:layout_below="@id/v1"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:textColor="@color/gray"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/u1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arial"
-                android:hint="0"
-                android:layout_toRightOf="@id/ut1"
-                android:layout_below="@id/v1"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="2dp"
-                android:textColor="@color/gray"
-                android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/d1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial"
+                        android:hint="Description"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="13dp"
+                        android:textColor="@color/gray"
+                        android:textSize="13dp" />
+                    <View
+                        android:id="@+id/v1"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/d1"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/darkyellow"/>
+                    <TextView
+                        android:id="@+id/ut1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial"
+                        android:text="units:"
+                        android:layout_below="@id/v1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="15dp"
+                        android:textColor="@color/gray"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/u1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial"
+                        android:hint="0"
+                        android:layout_toRightOf="@id/ut1"
+                        android:layout_below="@id/v1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="2dp"
+                        android:textColor="@color/gray"
+                        android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/gt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arial"
-                android:text="Grades:"
-                android:layout_below="@id/v1"
-                android:layout_toLeftOf="@+id/g1"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="13dp"
-                android:textColor="@color/gray"
-                android:textSize="15dp" />
-            <TextView
-                android:id="@+id/g1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/arial"
-                android:hint="0.0"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@id/v1"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="25dp"
-                android:textColor="@color/gray"
-                android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/gt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial"
+                        android:text="Grades:"
+                        android:layout_below="@id/v1"
+                        android:layout_toLeftOf="@+id/g1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="13dp"
+                        android:textColor="@color/gray"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/g1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/arial"
+                        android:hint="0.0"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/v1"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="25dp"
+                        android:textColor="@color/gray"
+                        android:textSize="15dp" />
 
-    </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
-                android:clickable="false"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_marginTop="15dp"
                 android:layout_centerHorizontal="true"
@@ -312,7 +306,6 @@
                 android:layout_marginTop="15dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginEnd="23dp"
-                android:clickable="false"
                 android:layout_marginStart="23dp"
                 android:id="@+id/card4"
                 android:layout_below="@id/card3"
@@ -1025,4 +1018,3 @@
     </ScrollView>
 
 </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

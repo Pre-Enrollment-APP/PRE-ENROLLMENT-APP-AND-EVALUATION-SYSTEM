@@ -36,15 +36,15 @@ public class Student_Grades2_1 {
     String sc9_21;
     String sc10_21;
 
-    String grade1_21;
-    String grade2_21;
-    String grade3_21;
-    String grade4_21;
-    String grade5_21;
-    String grade6_21;
-    String grade7_21;
-    String grade8_21;
-    String grade9_21;
+    String grade01_21;
+    String grade02_21;
+    String grade03_21;
+    String grade04_21;
+    String grade05_21;
+    String grade06_21;
+    String grade07_21;
+    String grade08_21;
+    String grade09_21;
     String grade10_21;
 
     public String getDes1_21() {
@@ -287,76 +287,76 @@ public class Student_Grades2_1 {
         this.sc10_21 = sc10_21;
     }
 
-    public String getGrade1_21() {
-        return grade1_21;
+    public String getGrade01_21() {
+        return grade01_21;
     }
 
-    public void setGrade1_21(String grade1_21) {
-        this.grade1_21 = grade1_21;
+    public void setGrade01_21(String grade01_21) {
+        this.grade01_21 = grade01_21;
     }
 
-    public String getGrade2_21() {
-        return grade2_21;
+    public String getGrade02_21() {
+        return grade02_21;
     }
 
-    public void setGrade2_21(String grade2_21) {
-        this.grade2_21 = grade2_21;
+    public void setGrade02_21(String grade02_21) {
+        this.grade02_21 = grade02_21;
     }
 
-    public String getGrade3_21() {
-        return grade3_21;
+    public String getGrade03_21() {
+        return grade03_21;
     }
 
-    public void setGrade3_21(String grade3_21) {
-        this.grade3_21 = grade3_21;
+    public void setGrade03_21(String grade03_21) {
+        this.grade03_21 = grade03_21;
     }
 
-    public String getGrade4_21() {
-        return grade4_21;
+    public String getGrade04_21() {
+        return grade04_21;
     }
 
-    public void setGrade4_21(String grade4_21) {
-        this.grade4_21 = grade4_21;
+    public void setGrade04_21(String grade04_21) {
+        this.grade04_21 = grade04_21;
     }
 
-    public String getGrade5_21() {
-        return grade5_21;
+    public String getGrade05_21() {
+        return grade05_21;
     }
 
-    public void setGrade5_21(String grade5_21) {
-        this.grade5_21 = grade5_21;
+    public void setGrade05_21(String grade05_21) {
+        this.grade05_21 = grade05_21;
     }
 
-    public String getGrade6_21() {
-        return grade6_21;
+    public String getGrade06_21() {
+        return grade06_21;
     }
 
-    public void setGrade6_21(String grade6_21) {
-        this.grade6_21 = grade6_21;
+    public void setGrade06_21(String grade06_21) {
+        this.grade06_21 = grade06_21;
     }
 
-    public String getGrade7_21() {
-        return grade7_21;
+    public String getGrade07_21() {
+        return grade07_21;
     }
 
-    public void setGrade7_21(String grade7_21) {
-        this.grade7_21 = grade7_21;
+    public void setGrade07_21(String grade07_21) {
+        this.grade07_21 = grade07_21;
     }
 
-    public String getGrade8_21() {
-        return grade8_21;
+    public String getGrade08_21() {
+        return grade08_21;
     }
 
-    public void setGrade8_21(String grade8_21) {
-        this.grade8_21 = grade8_21;
+    public void setGrade08_21(String grade08_21) {
+        this.grade08_21 = grade08_21;
     }
 
-    public String getGrade9_21() {
-        return grade9_21;
+    public String getGrade09_21() {
+        return grade09_21;
     }
 
-    public void setGrade9_21(String grade9_21) {
-        this.grade9_21 = grade9_21;
+    public void setGrade09_21(String grade09_21) {
+        this.grade09_21 = grade09_21;
     }
 
     public String getGrade10_21() {

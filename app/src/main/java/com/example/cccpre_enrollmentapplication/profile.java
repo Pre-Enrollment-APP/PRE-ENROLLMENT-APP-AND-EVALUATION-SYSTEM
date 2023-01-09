@@ -126,8 +126,16 @@ public class profile extends AppCompatActivity implements NavigationView.OnNavig
                     String StudentNumber=snapshot.child("Student_number").getValue().toString();
                     studentno.setText(StudentNumber);
 
-                    Uri uri=user.getPhotoUrl();
-                    Picasso.with(profile.this).load(uri).into(profilepic);
+                    Uri uri = firebaseUser.getPhotoUrl();
+
+                    if(uri != null){
+                        Picasso.with(profile.this).load(uri).into(profilepic);
+
+                    }else{
+                        profilepic.setImageResource(R.drawable.user);
+                    }
+                    progressbar.setVisibility(View.GONE);
+
                 }
             }
 
@@ -185,10 +193,14 @@ public class profile extends AppCompatActivity implements NavigationView.OnNavig
                 ename.setText(Emergencyname);
 
                Uri uri = firebaseUser.getPhotoUrl();
-               Picasso.with(profile.this).load(uri).into(profile);
+
+                if(uri != null){
+                    Picasso.with(profile.this).load(uri).into(profile);
+
+                }else{
+                    profile.setImageResource(R.drawable.user);
+                }
                 progressbar.setVisibility(View.GONE);
-
-
             }
 
             @Override
@@ -232,9 +244,25 @@ public class profile extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             case R.id.nav_profile:
                 break;
+            case R.id.nav_contactus:
+                Intent intent3=new Intent(profile.this,contact_us.class);
+                startActivity(intent3);
+                break;
             case R.id.nav_about:
                 Intent intent1=new Intent(profile.this,About.class);
                 startActivity(intent1);
+                break;
+            case R.id.nav_help:
+                Intent intent5=new Intent(profile.this,help.class);
+                startActivity(intent5);
+                break;
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                Intent intent2=new Intent(profile.this, login.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
                 break;
 
         }

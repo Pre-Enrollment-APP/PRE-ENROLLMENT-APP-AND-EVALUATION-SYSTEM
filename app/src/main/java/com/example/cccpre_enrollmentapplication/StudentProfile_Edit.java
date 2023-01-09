@@ -47,7 +47,7 @@ import java.util.HashMap;
 public class StudentProfile_Edit extends AppCompatActivity {
     private TextView  course;
     private EditText name, studentnumber,add,ename,enumber,fname,mname,num,emailadd;
-    Button bday;
+    private EditText bday;
     private FirebaseUser user;
     private String userID;
     public String _Name,_Email, Number,_Course, _Address, _Birthday,_Contact_Number,_Mother,_Mother_number,_Father,_Father_number;
@@ -149,7 +149,11 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 ename.setText(Emergencyname);
                 progressbar.setVisibility(View.GONE);
 
-
+                if(uri != null){
+                    Picasso.with(StudentProfile_Edit.this).load(uri).into(buttonUploadPicChoose);
+                }else{
+                    buttonUploadPicChoose.setImageResource(R.drawable.user);
+                }
 
             }
 

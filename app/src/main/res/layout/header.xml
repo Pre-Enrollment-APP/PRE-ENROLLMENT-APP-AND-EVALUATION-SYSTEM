@@ -9,8 +9,9 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="1dp"
         android:src="@drawable/user"
-        app:civ_border_color="#FF000000"
+        app:civ_border_color="@color/white"
         app:civ_border_width="2dp" />
 
     <TextView
@@ -50,7 +51,7 @@
         android:hint="course"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="14dp" />
+        android:textSize="12dp" />
 
 
 

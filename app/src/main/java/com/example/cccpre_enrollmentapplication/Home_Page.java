@@ -148,7 +148,7 @@ import com.squareup.picasso.Picasso;
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(Home_Page.this,evaluationform.class);
+                Intent intent=new Intent(Home_Page.this,ViewingGrades.class);
                 startActivity(intent);
             }
         });
@@ -193,6 +193,14 @@ import com.squareup.picasso.Picasso;
             case R.id.nav_about:
                 Intent intent1=new Intent(Home_Page.this,About.class);
                 startActivity(intent1);
+                break;
+            case R.id.nav_help:
+                Intent intent5=new Intent(Home_Page.this,help.class);
+                startActivity(intent5);
+                break;
+            case R.id.nav_contactus:
+                Intent intent3=new Intent(Home_Page.this,contact_us.class);
+                startActivity(intent3);
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();

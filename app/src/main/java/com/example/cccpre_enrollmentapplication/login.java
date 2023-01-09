@@ -44,8 +44,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
-    String gradesRetrieve = "GradesOk";
-    RetrieveGrades retrieveGrades = new RetrieveGrades();
+
 
 
     @Override
@@ -74,6 +73,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
 
         mAuth = FirebaseAuth.getInstance();
+
+
 
         checkbox_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

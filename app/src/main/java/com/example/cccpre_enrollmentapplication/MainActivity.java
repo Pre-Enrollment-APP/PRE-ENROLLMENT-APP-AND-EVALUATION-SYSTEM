@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task)
                     {
 
-                        Toast.makeText(MainActivity.this, "subscribed", Toast.LENGTH_SHORT).show();
+                       //
                     }
                 });
     }
