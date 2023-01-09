@@ -337,7 +337,7 @@
                 android:background="@drawable/editext_miniround"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your father's contact no."
+                android:hint="Enter your father's name."
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp" />

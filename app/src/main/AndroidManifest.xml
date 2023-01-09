@@ -151,7 +151,8 @@
             android:screenOrientation="fullSensor" />
         <activity
             android:name=".login"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -117,14 +117,20 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, "You can register now", Toast.LENGTH_SHORT).show();
         mAuth = FirebaseAuth.getInstance();
         name = findViewById(R.id.fullname);
+        name.setSingleLine(true);
         pass = findViewById(R.id.password);
+        pass.setSingleLine(true);
         emailadd = findViewById(R.id.email);
+        emailadd.setSingleLine(true);
         add = findViewById(R.id.address);
+        add.setSingleLine(true);
         num = findViewById(R.id.number);
         date = findViewById(R.id.date);
         fname = findViewById(R.id.fathername);
+       fname.setSingleLine(true);
         emergencynumber = findViewById(R.id.emergencycontactnumber);
         mname = findViewById(R.id.mothername);
+       mname.setSingleLine(true);
         emergencyname = findViewById(R.id.emergencyname);
         studentnumber = findViewById(R.id.studentnumber);
 
