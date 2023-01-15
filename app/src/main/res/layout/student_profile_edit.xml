@@ -17,6 +17,18 @@
         android:background="?attr/selectableItemBackground"
         android:scaleType="fitXY"
         android:src="@drawable/backblack" />
+    <TextView
+        android:id="@+id/ver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+        android:paddingStart="5dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="17dp" />
 
     <Button
         android:id="@+id/editbutton"
@@ -81,6 +93,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="15dp" />
+
 
         <TextView
             android:id="@id/course"

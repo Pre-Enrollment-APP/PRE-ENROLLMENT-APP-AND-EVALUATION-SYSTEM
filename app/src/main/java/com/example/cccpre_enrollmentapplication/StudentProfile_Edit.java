@@ -62,7 +62,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
     private Uri uriImage;
     private static final int PICK_IMAGE_REQUEST = 1;
 
-
+    private TextView verifyacc;
     private Button SAVEPROFILE;
     private Spinner coursespinner;
     private Button DateButton;
@@ -84,6 +84,8 @@ public class StudentProfile_Edit extends AppCompatActivity {
         bday=findViewById(R.id.SP_bday);
         SAVEPROFILE=findViewById(R.id.editbutton);
         num=findViewById(R.id.SP_number);
+        verifyacc=findViewById(R.id.ver);
+
         progressbar= findViewById(R.id.progressbar);
         buttonUploadPicChoose=findViewById(R.id.profile);
         user=FirebaseAuth.getInstance().getCurrentUser();
@@ -133,6 +135,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 String FatherName=snapshot.child("Father").getValue().toString();
                 String Emergencynumber=snapshot.child("Emergency_number").getValue().toString();
                 String Emergencyname=snapshot.child("Emergency_name").getValue().toString();
+                String verify=snapshot.child("verify").getValue().toString();
 
 
                 name.setText(Name);
@@ -147,6 +150,7 @@ public class StudentProfile_Edit extends AppCompatActivity {
                 fname.setText(FatherName);
                 enumber.setText(Emergencynumber);
                 ename.setText(Emergencyname);
+                verifyacc.setText(verify);
                 progressbar.setVisibility(View.GONE);
 
                 if(uri != null){
@@ -191,8 +195,9 @@ public class StudentProfile_Edit extends AppCompatActivity {
         String Student_number=studentnumber.getText().toString().trim();
         String Emergency_number=enumber.getText().toString().trim();
         String Emergency_name=ename.getText().toString().trim();
+        String verify = verifyacc.getText().toString().trim();
 
-        User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Emergency_number,Father,Emergency_name);
+        User user=new User (Name,Email, Student_number,Course, Address, Birthday,Contact_Number,Mother,Emergency_number,Father,Emergency_name,verify);
 
         DatabaseReference referenceProfile =FirebaseDatabase.getInstance().getReference("User");
 

@@ -298,7 +298,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Mother's Name*"
+                android:text="Mother Maiden's Name*"
                 android:textColor="@color/white" />
 
             <EditText
@@ -313,7 +313,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/editext_miniround"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your Mother's name"
+                android:hint="Enter your Mother Maiden's name"
                 android:textSize="15dp" />
 
             <TextView

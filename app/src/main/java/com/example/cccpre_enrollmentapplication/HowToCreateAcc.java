@@ -33,7 +33,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 
-public class help extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HowToCreateAcc extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageButton pre_enrollment;
     private ImageButton Evaluation;
     private FirebaseAuth auth;
@@ -51,19 +51,19 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_how_to_create_acc);
         //buttons
 
         text1=findViewById(R.id.card1);
         text2=findViewById(R.id.card2);
         text3=findViewById(R.id.card3);
         text4=findViewById(R.id.card4);
-        text5=findViewById(R.id.card5);
+        text5=findViewById(R.id.card6);
 
         text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToCreateAcc.class);
+                Intent intent=new Intent(HowToCreateAcc.this,HowToCreateAcc.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -71,7 +71,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToLogIn.class);
+                Intent intent=new Intent(HowToCreateAcc.this,HowToLogIn.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -79,7 +79,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
         text3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToReset.class);
+                Intent intent=new Intent(HowToCreateAcc.this,HowToReset.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -87,7 +87,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
         text4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToPreEnlist.class);
+                Intent intent=new Intent(HowToCreateAcc.this,HowToPreEnlist.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -95,7 +95,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
         text5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToViewGrade.class);
+                Intent intent=new Intent(HowToCreateAcc.this,HowToViewGrade.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -151,7 +151,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
                 }
 
                 if (uri != null) {
-                    Picasso.with(help.this).load(uri).into(profilepic);
+                    Picasso.with(HowToCreateAcc.this).load(uri).into(profilepic);
                 } else {
                     profilepic.setImageResource(R.drawable.user);
                 }
@@ -186,26 +186,26 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) { switch (item.getItemId()){
         case R.id.nav_home:
-            Intent intent2=new Intent(help.this,Home_Page.class);
+            Intent intent2=new Intent(HowToCreateAcc.this,Home_Page.class);
             startActivity(intent2);
             break;
         case R.id.nav_profile:
-            Intent intent=new Intent(help.this,profile.class);
+            Intent intent=new Intent(HowToCreateAcc.this,profile.class);
             startActivity(intent);
             break;
         case R.id.nav_about:
-            Intent intent1=new Intent(help.this,About.class);
+            Intent intent1=new Intent(HowToCreateAcc.this,About.class);
             startActivity(intent1);
             break;
         case R.id.nav_help:
             break;
         case R.id.contact_us:
-            Intent intent3=new Intent(help.this,contact_us.class);
+            Intent intent3=new Intent(HowToCreateAcc.this,contact_us.class);
             startActivity(intent3);
             break;
         case R.id.nav_logout:
             FirebaseAuth.getInstance().signOut();
-            Intent intent4=new Intent(help.this, login.class);
+            Intent intent4=new Intent(HowToCreateAcc.this, login.class);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

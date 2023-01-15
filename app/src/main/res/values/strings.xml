@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">P.E.G.V.A</string>
     <string-array name="courses">
+        <item>--Select your Course--</item>
         <item>Bachelor of Science in Computer Science</item>
         <item>Bachelor of Elementary Education</item>
         <item>Bachelor of Science in Office Administration</item>
@@ -11,7 +12,7 @@
         <item>Bachelor of Secondary Education Major in Science</item>
     </string-array>
     <string-array name="semester">
-        <item>----</item>
+        <item>--Select--</item>
         <item>1st yr, 1st sem</item>
         <item>1st yr, 2nd sem</item>
 

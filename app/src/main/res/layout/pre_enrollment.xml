@@ -199,11 +199,12 @@
                             android:layout_below="@+id/semester"
                             android:layout_marginStart="10dp"
                             android:layout_marginLeft="3dp"
+                            android:textAlignment="center"
                             android:layout_marginTop="15dp"
                             android:layout_toRightOf="@+id/schoolyeartext"
                             android:background="@drawable/editext_miniround"
                             android:fontFamily="@font/arial"
-                            android:hint="2000-2001"
+                            android:hint="0000-0000"
                             android:paddingLeft="5dp"
                             android:textColor="@color/black"
                             android:textSize="13dp" />
@@ -235,26 +236,27 @@
 
 
                         <TextView
-                            android:id="@+id/moptext"
+                            android:id="@+id/downpaymenttext"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/section"
                             android:layout_marginTop="15dp"
                             android:fontFamily="@font/arial"
-                            android:text="Mode of Payment"
+                            android:text="Down Payment"
                             android:textColor="@color/black"
                             android:textSize="15dp"
                             tools:ignore="MissingConstraints" />
 
-                        <Spinner
-                            android:id="@+id/mop"
+                        <EditText
+                            android:id="@+id/downpayment"
                             android:layout_width="210dp"
+                            android:inputType="number"
                             android:layout_height="22dp"
                             android:layout_below="@+id/section"
                             android:layout_marginLeft="10dp"
                             tools:ignore="MissingConstraints"
                             android:layout_marginTop="15dp"
-                            android:layout_toRightOf="@+id/moptext"
+                            android:layout_toRightOf="@+id/downpaymenttext"
                             android:background="@drawable/editext_miniround"
                             android:paddingLeft="5dp" />
 

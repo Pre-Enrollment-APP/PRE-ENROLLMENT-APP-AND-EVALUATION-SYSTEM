@@ -116,33 +116,6 @@
             android:layout_below="@+id/card2"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/superwhite"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="12dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="How to Create an Account"
-                    android:fontFamily="@font/arial"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:id="@+id/text3"
-                    android:padding="10dp"
-                    android:paddingStart="30dp"
-                    android:drawableEnd="@drawable/ic_baseline_arrow_right_alt_24"
-                    android:textColor="@color/darkyellow"/>
-
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/card2"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/superwhite"
             app:cardCornerRadius="20dp"
             app:cardElevation="12dp">
 
@@ -165,12 +138,12 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card5"
+            android:id="@+id/card4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/card4"
+            android:layout_below="@+id/card3"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/superwhite"
             app:cardCornerRadius="20dp"
@@ -195,12 +168,12 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card6"
+            android:id="@+id/card5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/card5"
+            android:layout_below="@+id/card4"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/superwhite"
             app:cardCornerRadius="20dp"

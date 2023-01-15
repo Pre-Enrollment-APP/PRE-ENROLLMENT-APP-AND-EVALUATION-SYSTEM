@@ -503,7 +503,7 @@ public class viewing_grades2 extends AppCompatActivity{
     }
     public void  BEED1y2sem(){
         //
-        databaseRef.child(userID).child("grades").child("third_year").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseRef.child(userID).child("grades").child("second_year").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -1593,6 +1593,13 @@ public class viewing_grades2 extends AppCompatActivity{
         });
         swipeCotainer.setColorSchemeColors(android.R.color.holo_blue_dark, android.R.color.holo_blue_light, android.R.color.holo_blue_bright, android.R.color.holo_blue_dark);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+    }
+
 
 }
 

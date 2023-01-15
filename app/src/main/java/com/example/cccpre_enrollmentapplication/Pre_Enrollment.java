@@ -56,6 +56,7 @@ public class Pre_Enrollment extends AppCompatActivity {
     ArrayAdapter<String> sectionlist;
     ArrayAdapter<String> moplist;
     String[] sections, MOP;
+    private  EditText downpayment;
     SimpleDateFormat datePattternformat = new SimpleDateFormat("yyyy-yyyy");
     private String userID;
     private DatabaseReference databaseRef;
@@ -78,7 +79,7 @@ public class Pre_Enrollment extends AppCompatActivity {
         setContentView(R.layout.pre_enrollment);
         name = findViewById(R.id.studentName);
         course = findViewById(R.id.course);
-        mop = findViewById(R.id.mop);
+        downpayment = findViewById(R.id.downpayment);
         semester = findViewById(R.id.semester);
         section = findViewById(R.id.section);
         schoolyear = findViewById(R.id.schoolyear);
@@ -146,7 +147,7 @@ public class Pre_Enrollment extends AppCompatActivity {
 
 //////////// /////////////////////////S E C T I O N DROPDOWN///////////////////////////////////////////////////
 
-        sections = new String[]{"--select--", "A", "B", "C",};
+        sections = new String[]{"--Select--", "A", "B", "C",};
         sectionlist = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, sections);
         section.setAdapter(sectionlist);
 
@@ -163,29 +164,27 @@ public class Pre_Enrollment extends AppCompatActivity {
                         if (Course.equals("Bachelor of Science in Computer Science")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
                                 bscs1y1sSched_A();
-
-                            } else if (YearSem.equals("1st yr, 2nd sem")) {
-                                bscs1y2sSched_A();
-
-                            } else if (YearSem.equals("2nd yr, 1st sem")) {
-                                bscs2y1sSched_A();
-
-                            } else if (YearSem.equals("2nd yr, 2nd sem")) {
-                                bscs2y2sSched_A();
-                            } else if (YearSem.equals("3rd yr, 1st sem")) {
-                                bscs3y1sSched_A();
-
-                            }else if (YearSem.equals("3rd yr, 2nd sem")) {
-                                bscs3y2sSched_A();
-                            } else if (YearSem.equals("4th yr, 1st sem")) {
-                                bscs4y1sSched_A();
-
-                            }else if (YearSem.equals("4th yr, 2nd sem")) {
-                                bscs4y2sSched_A();
                             }
+                            else if (YearSem.equals("1st yr, 2nd sem")) {
+                            bscs1y2sSched_A();
 
+                        } else if (YearSem.equals("2nd yr, 1st sem")) {
+                            bscs2y1sSched_A();
 
+                        } else if (YearSem.equals("2nd yr, 2nd sem")) {
+                            bscs2y2sSched_A();
+                        } else if (YearSem.equals("3rd yr, 1st sem")) {
+                            bscs3y1sSched_A();
+
+                        } else if (YearSem.equals("3rd yr, 2nd sem")) {
+                            bscs3y2sSched_A();
+                        } else if (YearSem.equals("4th yr, 1st sem")) {
+                            bscs4y1sSched_A();
+
+                        } else if (YearSem.equals("4th yr, 2nd sem")) {
+                            bscs4y2sSched_A();
                         }
+                }
 
                         else if(Course.equals("Bachelor of Elementary Education")) {
                             if (YearSem.equals("1st yr, 1st sem")) {
@@ -793,9 +792,6 @@ public class Pre_Enrollment extends AppCompatActivity {
 
 //////////// /////////////////////////MODE OF PAYMENT DROPDOWN /////////////////////////////////////////
 
-        MOP = new String[]{"-select-", "A - Cash", "B- Installment"};
-        moplist = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MOP);
-        mop.setAdapter(moplist);
 
         print.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -863,6 +859,9 @@ public class Pre_Enrollment extends AppCompatActivity {
                                 if (Course.equals("Bachelor of Science in Computer Science")) {
                                     BSCS1y2sem();
 
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED1y2sem();
+
                                 }
 
                             }
@@ -873,6 +872,143 @@ public class Pre_Enrollment extends AppCompatActivity {
                             }
                         });
                         break;
+                    case "2nd yr, 1st sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS2y1sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED2y1sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+                    case "2nd yr, 2nd sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS2y2sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED2y2sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+                    case "3rd yr, 1st sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS3y1sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED3y1sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+
+                    case "3rd yr, 2nd sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS3y2sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED3y2sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+                    case "4th yr, 1st sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS4y1sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED4y1sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+
+                    case "4th yr, 2nd sem":
+                        databaseRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String Course = snapshot.child("Course").getValue().toString();
+
+                                if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BSCS4y2sem();
+
+                                }else if (Course.equals("Bachelor of Science in Computer Science")) {
+                                    BEED4y2sem();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+                        break;
+
+
+
 
                 }
 
@@ -916,8 +1052,10 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 dataObj.name = String.valueOf(name.getText());
-                dataObj.mop = String.valueOf(mop.getSelectedItem());
+                dataObj.mop = String.valueOf(downpayment.getText());
                 dataObj.course = String.valueOf(course.getText());
                 dataObj.gmail = String.valueOf(gmail.getText());
                 dataObj.schoolyear = String.valueOf(schoolyear.getText());
@@ -948,15 +1086,36 @@ public class Pre_Enrollment extends AppCompatActivity {
 
                 dataObj.date = new Date().getTime();
                 dataObj.birthday = String.valueOf(birthday.getText());
-
-                print.child(userID).child("pre-enlist").child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
-
                 if (dataObj.schoolyear.isEmpty()) {
                     schoolyear.setError("School year is required!");
                     schoolyear.requestFocus();
                     return;
 
                 }
+                if (dataObj.mop.isEmpty()) {
+                    downpayment.setError("School year is required!");
+                    downpayment.requestFocus();
+                    return;
+
+                }
+                if (dataObj.yearAndsem.equals("--Select your Course--")) {
+
+                        TextView errorText = (TextView)semester.getSelectedView();
+                        errorText.setError("Invalid!");
+                        errorText.setTextColor(Color.RED);
+                        return;
+                    }
+                if (dataObj.section.equals("--Select--")) {
+
+                    TextView errorText = (TextView)section.getSelectedView();
+                    errorText.setError("Invalid!");
+                    errorText.setTextColor(Color.RED);
+                    return;
+                }
+
+                print.child(userID).child("pre-enlist").child(String.valueOf(invoiceNo + 1)).setValue(dataObj);
+
+
                 AlertDialog dlg=new AlertDialog.Builder(Pre_Enrollment.this)
                         .setTitle("Your Form is ready to Print")
                         .setMessage("File Location: Filemanager>Android>data>com.example.ccc...llmentapplication")
@@ -1208,9 +1367,9 @@ public class Pre_Enrollment extends AppCompatActivity {
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
-                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
+                String sub7 = snapshot.child("first_sem/subject_7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject_7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject_7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
@@ -1707,72 +1866,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("first_sem/subject1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("first_sem/subject2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("first_sem/subject3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("first_sem/subject4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("first_sem/subject5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("first_sem/subject6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("first_sem/subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("first_sem/subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("first_sem/subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("first_sem/subject7/code").getValue().toString();
+                String Des7 = snapshot.child("first_sem/subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("first_sem/subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("first_sem/subject8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("first_sem/subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("first_sem/subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("first_sem/subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("first_sem/subject9/code").getValue().toString();
+                String Des9 = snapshot.child("first_sem/subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("first_sem/subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("first_sem/subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("first_sem/subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("first_sem/subjec_t10/units").getValue().toString();
+                String sub10 = snapshot.child("first_sem/subject10/code").getValue().toString();
+                String Des10 = snapshot.child("first_sem/subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("first_sem/subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -1797,72 +1956,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -1886,44 +2045,44 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Introduction to Computing
-                String sub1 = snapshot.child("first_sem/subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("first_sem/subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("first_sem/subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("first_sem/subject1/code").getValue().toString();
+                String Des1 = snapshot.child("first_sem/subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("first_sem/subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("first_sem/subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("first_sem/subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("first_sem/subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("first_sem/subject2/code").getValue().toString();
+                String Des2 = snapshot.child("first_sem/subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("first_sem/subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("first_sem/subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("first_sem/subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("first_sem/subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("first_sem/subject3/code").getValue().toString();
+                String Des3 = snapshot.child("first_sem/subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("first_sem/subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("first_sem/subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("first_sem/subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("first_sem/subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("first_sem/subject4/code").getValue().toString();
+                String Des4 = snapshot.child("first_sem/subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("first_sem/subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("first_sem/subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("first_sem/subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("first_sem/subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("first_sem/subject5/code").getValue().toString();
+                String Des5 = snapshot.child("first_sem/subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("first_sem/subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("first_sem/subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("first_sem/subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("first_sem/subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("first_sem/subject6/code").getValue().toString();
+                String Des6 = snapshot.child("first_sem/subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("first_sem/subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
@@ -1935,9 +2094,9 @@ public class Pre_Enrollment extends AppCompatActivity {
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("first_sem/subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("first_sem/subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("first_sem/subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("first_sem/subject8/code").getValue().toString();
+                String Des8 = snapshot.child("first_sem/subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("first_sem/subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
@@ -1975,73 +2134,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2066,72 +2224,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2155,73 +2313,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2245,78 +2402,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
-
             }
 
 
@@ -2335,77 +2489,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
 
             }
 
@@ -2425,73 +2577,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2515,78 +2666,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
-
             }
 
 
@@ -2606,73 +2754,72 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
@@ -2696,77 +2843,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
 
             }
 
@@ -2786,78 +2931,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
-
             }
 
 
@@ -2876,78 +3018,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
-
             }
 
 
@@ -2966,77 +3105,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
 
             }
 
@@ -3056,77 +3193,75 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //Introduction to Computing
-                String sub1 = snapshot.child("subject_1/code").getValue().toString();
-                String Des1 = snapshot.child("subject_1/descriptive_title").getValue().toString();
-                String Unit = snapshot.child("subject_1/units").getValue().toString();
+                String sub1 = snapshot.child("subject1/code").getValue().toString();
+                String Des1 = snapshot.child("subject1/descriptive_title").getValue().toString();
+                String Unit = snapshot.child("subject1/units").getValue().toString();
                 SC1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("subject_2/code").getValue().toString();
-                String Des2 = snapshot.child("subject_2/descriptive_title").getValue().toString();
-                String Unit2 = snapshot.child("subject_2/units").getValue().toString();
+                String sub2 = snapshot.child("subject2/code").getValue().toString();
+                String Des2 = snapshot.child("subject2/descriptive_title").getValue().toString();
+                String Unit2 = snapshot.child("subject2/units").getValue().toString();
                 SC2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("subject_3/code").getValue().toString();
-                String Des3 = snapshot.child("subject_3/descriptive_title").getValue().toString();
-                String Unit3 = snapshot.child("subject_3/units").getValue().toString();
+                String sub3 = snapshot.child("subject3/code").getValue().toString();
+                String Des3 = snapshot.child("subject3/descriptive_title").getValue().toString();
+                String Unit3 = snapshot.child("subject3/units").getValue().toString();
                 SC3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("subject_4/code").getValue().toString();
-                String Des4 = snapshot.child("subject_4/descriptive_title").getValue().toString();
-                String Unit4 = snapshot.child("subject_4/units").getValue().toString();
+                String sub4 = snapshot.child("subject4/code").getValue().toString();
+                String Des4 = snapshot.child("subject4/descriptive_title").getValue().toString();
+                String Unit4 = snapshot.child("subject4/units").getValue().toString();
                 SC4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5 = snapshot.child("subject_5/code").getValue().toString();
-                String Des5 = snapshot.child("subject_5/descriptive_title").getValue().toString();
-                String Unit5 = snapshot.child("subject_5/units").getValue().toString();
+                String sub5 = snapshot.child("subject5/code").getValue().toString();
+                String Des5 = snapshot.child("subject5/descriptive_title").getValue().toString();
+                String Unit5 = snapshot.child("subject5/units").getValue().toString();
                 SC5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("subject_6/code").getValue().toString();
-                String Des6 = snapshot.child("subject_6/descriptive_title").getValue().toString();
-                String Unit6 = snapshot.child("subject_6/units").getValue().toString();
+                String sub6 = snapshot.child("subject6/code").getValue().toString();
+                String Des6 = snapshot.child("subject6/descriptive_title").getValue().toString();
+                String Unit6 = snapshot.child("subject6/units").getValue().toString();
                 SC6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("subject_7/code").getValue().toString();
-                String Des7 = snapshot.child("subject_7/descriptive_title").getValue().toString();
-                String Unit7 = snapshot.child("subject_7/units").getValue().toString();
+                String sub7 = snapshot.child("subject7/code").getValue().toString();
+                String Des7 = snapshot.child("subject7/descriptive_title").getValue().toString();
+                String Unit7 = snapshot.child("subject7/units").getValue().toString();
                 SC7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("subject_8/code").getValue().toString();
-                String Des8 = snapshot.child("subject_8/descriptive_title").getValue().toString();
-                String Unit8 = snapshot.child("subject_8/units").getValue().toString();
+                String sub8 = snapshot.child("subject8/code").getValue().toString();
+                String Des8 = snapshot.child("subject8/descriptive_title").getValue().toString();
+                String Unit8 = snapshot.child("subject8/units").getValue().toString();
                 SC8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("subject_9/code").getValue().toString();
-                String Des9 = snapshot.child("subject_9/descriptive_title").getValue().toString();
-                String Unit9 = snapshot.child("subject_9/units").getValue().toString();
+                String sub9 = snapshot.child("subject9/code").getValue().toString();
+                String Des9 = snapshot.child("subject9/descriptive_title").getValue().toString();
+                String Unit9 = snapshot.child("subject9/units").getValue().toString();
                 SC9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("subject_10/code").getValue().toString();
-                String Des10 = snapshot.child("subject_10/descriptive_title").getValue().toString();
-                String Unit10 = snapshot.child("subject_10/units").getValue().toString();
+                String sub10 = snapshot.child("subject10/code").getValue().toString();
+                String Des10 = snapshot.child("subject10/descriptive_title").getValue().toString();
+                String Unit10 = snapshot.child("subject10/units").getValue().toString();
                 SC10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);
-
 
             }
 
@@ -3204,7 +3339,7 @@ public class Pre_Enrollment extends AppCompatActivity {
         canvas.drawText("COURSE: " + course.getText(), 40, 174, paint);
         canvas.drawText("YEAR & SEM: " + semester.getSelectedItem(), 40, 191, paint);
         //
-        canvas.drawText("MODE OF PAYMENT: Plan " + mop.getSelectedItem(), 40, 208, paint);
+        canvas.drawText("Downpayment " + downpayment.getText(), 40, 208, paint);
         canvas.drawText("CODE", 40, 260, paint);
         canvas.drawText("DESCRIPTION: ", 175, 260, paint);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
@@ -3281,22 +3416,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
     private void bscs1y1sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3323,22 +3458,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs1y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -3352,8 +3487,6 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
-
-
             }
 
             @Override
@@ -3366,22 +3499,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs1y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -3406,22 +3538,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
     private void bscs1y2sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3448,22 +3580,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs1y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -3478,7 +3610,6 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s9.setText(sub9);
                 s10.setText(sub10);
 
-
             }
 
             @Override
@@ -3491,24 +3622,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs1y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -3531,22 +3660,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
     private void bscs2y1sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3573,24 +3701,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs2y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -3602,7 +3728,6 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
-
 
             }
 
@@ -3616,22 +3741,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs2y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -3655,22 +3779,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
     private void bscs2y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3684,6 +3807,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -3693,22 +3818,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs2y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
                 s1.setText(sub1);
@@ -3730,22 +3854,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs2y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -3769,22 +3892,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
     private void bscs3y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3798,6 +3920,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -3807,24 +3931,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs3y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -3845,22 +3966,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs3y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -3885,22 +4005,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
 
     private void bscs3y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -3914,6 +4034,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -3923,24 +4045,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs3y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -3961,22 +4081,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs3y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4002,22 +4121,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
 
     private void bscs4y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4031,6 +4149,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4040,24 +4160,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs4y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -4078,22 +4196,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs4y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4119,22 +4236,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
 
     private void bscs4y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4148,6 +4264,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4157,22 +4275,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs4y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -4195,22 +4313,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bscs4y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bscs").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4240,22 +4357,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
     private void beed1y1sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4271,6 +4387,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s10.setText(sub10);
 
 
+
+
             }
 
             @Override
@@ -4282,22 +4400,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed1y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -4331,16 +4448,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4365,22 +4481,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
     private void beed1y2sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4396,6 +4511,7 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s10.setText(sub10);
 
 
+
             }
 
             @Override
@@ -4407,22 +4523,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed1y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -4450,22 +4565,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed1y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4489,23 +4603,20 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
     private void beed2y1sSched_A() {
-
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4532,24 +4643,20 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed2y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -4575,24 +4682,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed2y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -4614,22 +4719,20 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
     private void beed2y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4643,6 +4746,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4652,24 +4757,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed2y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -4689,22 +4791,19 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed2y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4728,22 +4827,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
     private void beed3y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4757,6 +4855,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4766,22 +4866,20 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed3y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -4804,22 +4902,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed3y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4844,22 +4941,20 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
 
     private void beed3y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4873,6 +4968,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4882,24 +4979,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed3y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -4920,22 +5015,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed3y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -4961,22 +5055,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
 
     private void beed4y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -4990,6 +5083,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -4999,22 +5094,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed4y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -5037,22 +5131,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed4y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -5078,22 +5171,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
 
     private void beed4y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -5107,6 +5199,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -5116,24 +5210,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed4y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5154,24 +5245,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void beed4y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
-
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
         database.child("beed").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5197,22 +5285,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1st year 1st sem/////////////////////////////////////////
     private void bsoa1y1sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -5239,24 +5326,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa1y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5282,24 +5367,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa1y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsba").child("first_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5322,22 +5405,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////1nd year 2nd sem/////////////////////////////////////////
     private void bsoa1y2sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -5353,6 +5435,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s10.setText(sub10);
 
 
+
+
             }
 
             @Override
@@ -5364,24 +5448,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa1y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5407,22 +5489,20 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa1y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsba").child("first_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -5447,22 +5527,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////2nd year 1st sem/////////////////////////////////////////
     private void bsoa2y1sSched_A() {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -5489,25 +5568,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa2y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -5532,22 +5608,20 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa2y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -5571,22 +5645,21 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////2nd year 2nd sem/////////////////////////////////////////
     private void bsoa2y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -5600,6 +5673,8 @@ public class Pre_Enrollment extends AppCompatActivity {
                 s8.setText(sub8);
                 s9.setText(sub9);
                 s10.setText(sub10);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -5609,22 +5684,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa2y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
                 s1.setText(sub1);
@@ -5646,24 +5720,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa2y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("second_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5685,24 +5757,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     }
     ///////////////////////////////////3rd year 1st sem/////////////////////////////////////////
     private void bsoa3y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5723,22 +5793,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa3y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -5761,24 +5830,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa3y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5801,24 +5868,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////3rd year 2nd sem/////////////////////////////////////////
 
     private void bsoa3y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5839,22 +5904,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa3y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -5877,24 +5941,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa3y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("third_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5918,24 +5980,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 1st sem/////////////////////////////////////////
 
     private void bsoa4y1sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5956,24 +6016,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa4y1sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -5994,22 +6052,21 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa4y1sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6035,24 +6092,22 @@ public class Pre_Enrollment extends AppCompatActivity {
     ///////////////////////////////////4th year 2nd sem/////////////////////////////////////////
 
     private void bsoa4y2sSched_A(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6073,24 +6128,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa4y2sSched_B(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6111,24 +6164,22 @@ public class Pre_Enrollment extends AppCompatActivity {
 
     }
     private void bsoa4y2sSched_C(){
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference("schedule");
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("course_curriculum");
 
         database.child("bsoa").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6160,18 +6211,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6202,19 +6251,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -6245,18 +6291,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6285,18 +6329,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6327,18 +6369,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6370,16 +6410,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6410,16 +6449,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -6452,16 +6490,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -6495,16 +6532,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6534,16 +6570,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -6572,16 +6607,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
                 s1.setText(sub1);
@@ -6609,16 +6643,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6648,18 +6681,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6686,19 +6717,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -6724,16 +6752,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6764,18 +6791,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -6802,16 +6827,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -6840,16 +6864,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -6881,16 +6904,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -6919,16 +6941,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -6956,20 +6977,16 @@ public class Pre_Enrollment extends AppCompatActivity {
         database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -6998,16 +7015,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -7036,19 +7052,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7074,16 +7087,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -7119,18 +7131,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7161,18 +7171,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7204,19 +7212,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7244,19 +7249,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7286,18 +7288,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7329,16 +7329,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
@@ -7369,18 +7368,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7411,19 +7408,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7454,18 +7448,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7493,16 +7485,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -7531,16 +7522,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
                 s1.setText(sub1);
@@ -7568,18 +7558,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7607,18 +7595,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7645,18 +7631,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7683,18 +7667,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7723,19 +7705,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7761,16 +7740,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -7800,18 +7778,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7839,20 +7815,16 @@ public class Pre_Enrollment extends AppCompatActivity {
         database.child("bsba").child("fourth_year").child("first_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -7878,16 +7850,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
 
 
@@ -7916,18 +7887,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
-
 
                 s1.setText(sub1);
                 s2.setText(sub2);
@@ -7956,17 +7925,15 @@ public class Pre_Enrollment extends AppCompatActivity {
         database.child("bsba").child("fourth_year").child("second_sem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                //sectionA
-                String sub1 = snapshot.child("subject1/a").getValue().toString();
-                String sub2 = snapshot.child("subject2/a").getValue().toString();
-                String sub3 = snapshot.child("subject3/a").getValue().toString();
-                String sub4 = snapshot.child("subject4/a").getValue().toString();
-                String sub5 = snapshot.child("subject5/a").getValue().toString();
-                String sub6 = snapshot.child("subject6/a").getValue().toString();
-                String sub7 = snapshot.child("subject7/a").getValue().toString();
-                String sub8 = snapshot.child("subject8/a").getValue().toString();
-                String sub9 = snapshot.child("subject9/a").getValue().toString();
+                String sub1 = snapshot.child("subject01/a").getValue().toString();
+                String sub2 = snapshot.child("subject02/a").getValue().toString();
+                String sub3 = snapshot.child("subject03/a").getValue().toString();
+                String sub4 = snapshot.child("subject04/a").getValue().toString();
+                String sub5 = snapshot.child("subject05/a").getValue().toString();
+                String sub6 = snapshot.child("subject06/a").getValue().toString();
+                String sub7 = snapshot.child("subject07/a").getValue().toString();
+                String sub8 = snapshot.child("subject08/a").getValue().toString();
+                String sub9 = snapshot.child("subject09/a").getValue().toString();
                 String sub10 = snapshot.child("subject10/a").getValue().toString();
 
 
@@ -7995,19 +7962,16 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/b").getValue().toString();
-                String sub2 = snapshot.child("subject2/b").getValue().toString();
-                String sub3 = snapshot.child("subject3/b").getValue().toString();
-                String sub4 = snapshot.child("subject4/b").getValue().toString();
-                String sub5 = snapshot.child("subject5/b").getValue().toString();
-                String sub6 = snapshot.child("subject6/b").getValue().toString();
-                String sub7 = snapshot.child("subject7/b").getValue().toString();
-                String sub8 = snapshot.child("subject8/b").getValue().toString();
-                String sub9 = snapshot.child("subject9/b").getValue().toString();
+                String sub1 = snapshot.child("subject01/b").getValue().toString();
+                String sub2 = snapshot.child("subject02/b").getValue().toString();
+                String sub3 = snapshot.child("subject03/b").getValue().toString();
+                String sub4 = snapshot.child("subject04/b").getValue().toString();
+                String sub5 = snapshot.child("subject05/b").getValue().toString();
+                String sub6 = snapshot.child("subject06/b").getValue().toString();
+                String sub7 = snapshot.child("subject07/b").getValue().toString();
+                String sub8 = snapshot.child("subject08/b").getValue().toString();
+                String sub9 = snapshot.child("subject09/b").getValue().toString();
                 String sub10 = snapshot.child("subject10/b").getValue().toString();
-
-
                 s1.setText(sub1);
                 s2.setText(sub2);
                 s3.setText(sub3);
@@ -8033,16 +7997,15 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                //sectionA
-                String sub1 = snapshot.child("subject1/c").getValue().toString();
-                String sub2 = snapshot.child("subject2/c").getValue().toString();
-                String sub3 = snapshot.child("subject3/c").getValue().toString();
-                String sub4 = snapshot.child("subject4/c").getValue().toString();
-                String sub5 = snapshot.child("subject5/c").getValue().toString();
-                String sub6 = snapshot.child("subject6/c").getValue().toString();
-                String sub7 = snapshot.child("subject7/c").getValue().toString();
-                String sub8 = snapshot.child("subject8/c").getValue().toString();
-                String sub9 = snapshot.child("subject9/c").getValue().toString();
+                String sub1 = snapshot.child("subject01/c").getValue().toString();
+                String sub2 = snapshot.child("subject02/c").getValue().toString();
+                String sub3 = snapshot.child("subject03/c").getValue().toString();
+                String sub4 = snapshot.child("subject04/c").getValue().toString();
+                String sub5 = snapshot.child("subject05/c").getValue().toString();
+                String sub6 = snapshot.child("subject06/c").getValue().toString();
+                String sub7 = snapshot.child("subject07/c").getValue().toString();
+                String sub8 = snapshot.child("subject08/c").getValue().toString();
+                String sub9 = snapshot.child("subject09/c").getValue().toString();
                 String sub10 = snapshot.child("subject10/c").getValue().toString();
 
 
