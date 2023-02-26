@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
+    android:gravity="center"
     tools:context=".registerUser">
 
 
@@ -32,7 +33,7 @@
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:letterSpacing="0.2"
-        android:text="P.E.G.V.A"
+        android:text="P.R.E.G.V.A"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -53,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/arial"
-        android:text="Create an account"
+        android:text="Create An Account"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
@@ -157,10 +158,37 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/studentnumbertxt"
+                android:id="@+id/repeatpasswordtxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/password"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/arial"
+                android:hint="Student ID"
+                android:text="Repeat Password*"
+                android:textColor="@color/white" />
+            <EditText
+                android:id="@+id/repeatpassword"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_below="@+id/repeatpasswordtxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/editext_miniround"
+                android:fontFamily="@font/arial"
+                android:hint="Enter your desire password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/studentnumbertxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/repeatpassword"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
@@ -251,15 +279,15 @@
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/datetext"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="-2dp"
                 android:background="@drawable/editext_miniround"
-                android:fontFamily="@font/arial"
-                android:hint="Enter your birthday"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/black"
+                android:fontFamily="@font/arial"
+                android:gravity="center"
+                android:hint="Enter your birthday"
                 android:onClick="opendatePicker"
-                android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
@@ -298,7 +326,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/arial"
-                android:text="Mother Maiden's Name*"
+                android:text="Mother's Maiden Name*"
                 android:textColor="@color/white" />
 
             <EditText
@@ -337,7 +365,7 @@
                 android:background="@drawable/editext_miniround"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your father's name."
+                android:hint="Enter your Father's name."
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -395,18 +423,43 @@
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
+            <CheckBox
+                android:id="@+id/agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/arial"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:layout_below="@id/emergencycontactnumber"
+              />
+
+            <Button
+                android:id="@+id/readmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emergencycontactnumber"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/agree"
+                android:background="?attr/selectableItemBackground"
+                android:padding="0dp"
+                android:text="Agree in terms &amp; condition"
+                android:textColor="@color/red" />
 
             <Button
                 android:id="@+id/registeruser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/emergencycontactnumber"
+                android:layout_below="@id/agree"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/edittext_round"
                 android:backgroundTint="@color/blue"
                 android:ems="4"
+
                 android:fontFamily="@font/arial"
                 android:gravity="center"
                 android:text="Create"

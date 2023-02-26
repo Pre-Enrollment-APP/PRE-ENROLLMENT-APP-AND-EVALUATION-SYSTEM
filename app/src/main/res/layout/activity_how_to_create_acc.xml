@@ -90,25 +90,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Step 1"
-                android:fontFamily="@font/arial"
-                android:textStyle="bold"
-                android:textSize="13dp"
-                android:id="@+id/view1"
-                android:padding="10dp"
-                android:paddingStart="30dp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="1. Click Create an Account.\n2. Fill out the needed information required to accomplish your account.\n3. Tap Create.
 "
-                android:lineSpacingExtra="5dp"
+                android:lineSpacingExtra="7dp"
                 android:fontFamily="@font/arial"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
 
-                android:textSize="12dp"
+                android:textSize="13dp"
                 android:id="@+id/view2"
                 android:padding="10dp"
                 android:paddingStart="30dp"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bglight"
-    tools:context=".HowToReset"
+    tools:context=".HowToChangeEmail"
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout"
     >
@@ -107,7 +107,6 @@
         </androidx.cardview.widget.CardView>
 
 
-
         <androidx.cardview.widget.CardView
             android:id="@+id/card3"
             android:layout_width="match_parent"
@@ -137,55 +136,14 @@
 
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card3"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:backgroundTint="@color/superwhite"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="12dp">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. On the login screen, you must choose the 'Forgot password option' to change your Gmail password.
-\n2. Selecting this option will ask you for your Google email.
-\n3. Once you have entered your Google email, click Reset password - a link to reset your password will be sent to you.
-\n4. Go to Gmail.
-\n5. Click the Main Menu icon.
-\n6. Click Spam.
-\n7. Click no reply saying Reset your password for the project.
-\n8.Click the blue link to reset your password.
-\n9. Enter your new password.
-
-"
-                android:lineSpacingExtra="7dp"
-                android:fontFamily="@font/arial"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-
-                android:textSize="13dp"
-                android:id="@+id/view2"
-                android:padding="10dp"
-                android:paddingStart="30dp"
-                android:textColor="@color/black"/>
-
-
-        </androidx.cardview.widget.CardView>
-
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card5"
+            android:id="@+id/card4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/cv1"
+            android:layout_below="@+id/card3"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/superwhite"
             app:cardCornerRadius="20dp"
@@ -207,6 +165,23 @@
 
 
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card4"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/superwhite"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="12dp">
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
 
 
         <androidx.cardview.widget.CardView
@@ -215,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/card5"
+            android:layout_below="@+id/cv1"
             android:layout_marginEnd="20dp"
             android:backgroundTint="@color/superwhite"
             app:cardCornerRadius="20dp"

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,17 +22,18 @@
                 android:background="@color/blue"
                 />
             <ImageButton
-                android:id="@+id/back"
-                android:layout_width="23dp"
-                android:layout_height="22dp"
-                android:layout_marginStart="5dp"
+                android:paddingTop="3dp"
                 android:paddingStart="5dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/backs"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="1dp"
+                android:scaleType="fitXY"
                 android:layout_marginTop="8dp"
                 android:background="?attr/selectableItemBackground"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/back"
+
                 />
             <TextView
                 android:id="@+id/header_title"
@@ -99,7 +99,6 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card1"
-                android:clickable="false"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_below="@+id/first"
@@ -137,11 +136,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
                         android:layout_marginStart="23dp"
-                        android:clickable="false"
                         android:id="@+id/card2"
                         android:layout_marginBottom="15dp"
                         app:cardElevation="12dp"
@@ -150,7 +148,9 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            >
 
                             <TextView
                                 android:id="@+id/d1"
@@ -224,8 +224,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        android:clickable="false"
+                        android:layout_height="wrap_content"
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
@@ -240,7 +239,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d2"
@@ -313,12 +313,10 @@
                     </androidx.cardview.widget.CardView>
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
-                        android:clickable="false"
                         android:layout_marginStart="23dp"
                         android:id="@+id/card4"
                         android:layout_below="@id/card3"
@@ -329,7 +327,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d3"
@@ -403,8 +402,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
+
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -418,7 +417,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d4"
@@ -492,8 +492,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -507,7 +506,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d5"
@@ -582,8 +582,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -597,7 +596,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d6"
@@ -672,8 +672,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -687,7 +686,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d7"
@@ -761,8 +761,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -776,7 +775,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d8"
@@ -787,7 +787,8 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginStart="13dp"
                                 android:textColor="@color/gray"
-                                android:textSize="13dp" />
+                                android:textSize="13dp"
+                                />
                             <View
                                 android:id="@+id/v8"
                                 android:layout_width="match_parent"
@@ -851,8 +852,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -866,7 +866,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d9"
@@ -941,8 +942,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginEnd="23dp"
@@ -956,7 +956,8 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp">
 
                             <TextView
                                 android:id="@+id/d10"

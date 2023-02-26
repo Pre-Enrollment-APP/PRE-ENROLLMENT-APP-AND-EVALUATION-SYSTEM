@@ -54,7 +54,7 @@ public class viewing_grades2 extends AppCompatActivity{
         thirdyear=findViewById(R.id.thirdyear);
         fourthyear=findViewById(R.id.fourthyear);
 
-        back=findViewById(R.id.back);
+        back=findViewById(R.id.backs);
 
 
         des1 = findViewById(R.id.d1);
@@ -129,16 +129,16 @@ public class viewing_grades2 extends AppCompatActivity{
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y1sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y1sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y1sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y1sem();
@@ -162,16 +162,16 @@ public class viewing_grades2 extends AppCompatActivity{
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y2sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y2sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y2sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y2sem();
@@ -676,72 +676,72 @@ public class viewing_grades2 extends AppCompatActivity{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                String sub1 = snapshot.child("second_sem/grade01_32").getValue().toString();
-                String Des1 = snapshot.child("second_sem/des1_32").getValue().toString();
-                String Unit = snapshot.child("second_sem/unit1_32").getValue().toString();
+                String sub1 = snapshot.child("second_sem/grade01_22").getValue().toString();
+                String Des1 = snapshot.child("second_sem/des1_22").getValue().toString();
+                String Unit = snapshot.child("second_sem/unit1_22").getValue().toString();
                 g1.setText(sub1);
                 des1.setText(Des1);
                 units1.setText(Unit);
 
-                String sub2 = snapshot.child("second_sem/grade02_32").getValue().toString();
-                String Des2 = snapshot.child("second_sem/des2_32").getValue().toString();
-                String Unit2 = snapshot.child("second_sem/unit2_32").getValue().toString();
+                String sub2 = snapshot.child("second_sem/grade02_22").getValue().toString();
+                String Des2 = snapshot.child("second_sem/des2_22").getValue().toString();
+                String Unit2 = snapshot.child("second_sem/unit2_22").getValue().toString();
                 g2.setText(sub2);
                 des2.setText(Des2);
                 units2.setText(Unit2);
 
-                String sub3 = snapshot.child("second_sem/grade03_32").getValue().toString();
-                String Des3 = snapshot.child("second_sem/des3_32").getValue().toString();
-                String Unit3 = snapshot.child("second_sem/unit3_32").getValue().toString();
+                String sub3 = snapshot.child("second_sem/grade03_22").getValue().toString();
+                String Des3 = snapshot.child("second_sem/des3_22").getValue().toString();
+                String Unit3 = snapshot.child("second_sem/unit3_22").getValue().toString();
                 g3.setText(sub3);
                 des3.setText(Des3);
                 units3.setText(Unit3);
 
-                String sub4 = snapshot.child("second_sem/grade04_32").getValue().toString();
-                String Des4 = snapshot.child("second_sem/des4_32").getValue().toString();
-                String Unit4 = snapshot.child("second_sem/unit4_32").getValue().toString();
+                String sub4 = snapshot.child("second_sem/grade04_22").getValue().toString();
+                String Des4 = snapshot.child("second_sem/des4_22").getValue().toString();
+                String Unit4 = snapshot.child("second_sem/unit4_22").getValue().toString();
                 g4.setText(sub4);
                 des4.setText(Des4);
                 units4.setText(Unit4);
 
-                String sub5= snapshot.child("second_sem/grade05_32").getValue().toString();
-                String Des5 = snapshot.child("second_sem/des5_32").getValue().toString();
-                String Unit5 = snapshot.child("second_sem/unit5_32").getValue().toString();
+                String sub5= snapshot.child("second_sem/grade05_22").getValue().toString();
+                String Des5 = snapshot.child("second_sem/des5_22").getValue().toString();
+                String Unit5 = snapshot.child("second_sem/unit5_22").getValue().toString();
                 g5.setText(sub5);
                 des5.setText(Des5);
                 units5.setText(Unit5);
 
-                String sub6 = snapshot.child("second_sem/grade06_32").getValue().toString();
-                String Des6 = snapshot.child("second_sem/des6_32").getValue().toString();
-                String Unit6 = snapshot.child("second_sem/unit6_32").getValue().toString();
+                String sub6 = snapshot.child("second_sem/grade06_22").getValue().toString();
+                String Des6 = snapshot.child("second_sem/des6_22").getValue().toString();
+                String Unit6 = snapshot.child("second_sem/unit6_22").getValue().toString();
                 g6.setText(sub6);
                 des6.setText(Des6);
                 units6.setText(Unit6);
 
-                String sub7 = snapshot.child("second_sem/grade07_32").getValue().toString();
-                String Des7 = snapshot.child("second_sem/des7_32").getValue().toString();
-                String Unit7 = snapshot.child("second_sem/unit7_32").getValue().toString();
+                String sub7 = snapshot.child("second_sem/grade07_22").getValue().toString();
+                String Des7 = snapshot.child("second_sem/des7_22").getValue().toString();
+                String Unit7 = snapshot.child("second_sem/unit7_22").getValue().toString();
                 g7.setText(sub7);
                 des7.setText(Des7);
                 units7.setText(Unit7);
 
-                String sub8 = snapshot.child("second_sem/grade08_32").getValue().toString();
-                String Des8= snapshot.child("second_sem/des8_32").getValue().toString();
-                String Unit8 = snapshot.child("second_sem/unit8_32").getValue().toString();
+                String sub8 = snapshot.child("second_sem/grade08_22").getValue().toString();
+                String Des8= snapshot.child("second_sem/des8_22").getValue().toString();
+                String Unit8 = snapshot.child("second_sem/unit8_22").getValue().toString();
                 g8.setText(sub8);
                 des8.setText(Des8);
                 units8.setText(Unit8);
 
-                String sub9 = snapshot.child("second_sem/grade09_32").getValue().toString();
-                String Des9 = snapshot.child("second_sem/des9_32").getValue().toString();
-                String Unit9 = snapshot.child("second_sem/unit9_32").getValue().toString();
+                String sub9 = snapshot.child("second_sem/grade09_22").getValue().toString();
+                String Des9 = snapshot.child("second_sem/des9_22").getValue().toString();
+                String Unit9 = snapshot.child("second_sem/unit9_22").getValue().toString();
                 g9.setText(sub9);
                 des9.setText(Des9);
                 units9.setText(Unit9);
 
-                String sub10 = snapshot.child("second_sem/grade10_32").getValue().toString();
-                String Des10 = snapshot.child("second_sem/des10_32").getValue().toString();
-                String Unit10 = snapshot.child("second_sem/unit10_32").getValue().toString();
+                String sub10 = snapshot.child("second_sem/grade10_22").getValue().toString();
+                String Des10 = snapshot.child("second_sem/des10_22").getValue().toString();
+                String Unit10 = snapshot.child("second_sem/unit10_22").getValue().toString();
                 g10.setText(sub10);
                 des10.setText(Des10);
                 units10.setText(Unit10);

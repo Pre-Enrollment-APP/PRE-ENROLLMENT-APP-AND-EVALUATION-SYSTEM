@@ -129,7 +129,7 @@
                     android:fontFamily="@font/arial"
                     android:text="Administration Office-(8) 655-4078 \nFincace Office -(8)655-6127 \nHuman Resources Mngt. Dept. - (8)655-2965
 \nRegistrar's Office - (8)643-2000/(8)248-2898
-Purchasing Office - (8)655-0841 \nPurchasing Office - (8)655-0841"
+Purchasing Office - (8)655-0841"
                     android:textSize="13dp"
                     android:lineSpacingExtra="15dp"
                     android:id="@+id/text4"

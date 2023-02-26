@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/arial"
             android:padding="7dp"
-            android:text="Pre-enlistment"
+            android:text="Pre-Enlistment"
             android:textColor="@color/white"
             android:textSize="17dp" />
 
@@ -258,7 +258,8 @@
                             android:layout_marginTop="15dp"
                             android:layout_toRightOf="@+id/downpaymenttext"
                             android:background="@drawable/editext_miniround"
-                            android:paddingLeft="5dp" />
+                            android:paddingLeft="5dp"
+                            android:textSize="13dp" />
 
                         <TextView
                             android:id="@+id/semestertext"
@@ -384,7 +385,8 @@
                                 android:layout_height="75dp"
                                 android:clickable="false"
                                 android:cursorVisible="false"
-
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
                                 android:textSize="10dp" />
                             />
 

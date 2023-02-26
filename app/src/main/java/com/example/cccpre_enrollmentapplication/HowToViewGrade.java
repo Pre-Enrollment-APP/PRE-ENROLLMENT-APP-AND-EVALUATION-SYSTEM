@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -71,7 +72,7 @@ public class HowToViewGrade extends AppCompatActivity implements NavigationView.
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToViewGrade.this,HowToLogin.class);
+                Intent intent=new Intent(HowToViewGrade.this,HowLogin.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -95,7 +96,7 @@ public class HowToViewGrade extends AppCompatActivity implements NavigationView.
         text5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToViewGrade.this,HowToViewGrade.class);
+                Intent intent=new Intent(HowToViewGrade.this, help.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -178,6 +179,7 @@ public class HowToViewGrade extends AppCompatActivity implements NavigationView.
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
 
 
@@ -187,25 +189,38 @@ public class HowToViewGrade extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) { switch (item.getItemId()){
         case R.id.nav_home:
             Intent intent2=new Intent(HowToViewGrade.this,Home_Page.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent2 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
             break;
         case R.id.nav_profile:
             Intent intent=new Intent(HowToViewGrade.this,profile.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             break;
         case R.id.nav_about:
             Intent intent1=new Intent(HowToViewGrade.this,About.class);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent1);
             break;
         case R.id.nav_help:
             break;
-        case R.id.contact_us:
+        case R.id.nav_contactus:
             Intent intent3=new Intent(HowToViewGrade.this,contact_us.class);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
             startActivity(intent3);
             break;
         case R.id.nav_logout:
             FirebaseAuth.getInstance().signOut();
-            Intent intent4=new Intent(HowToViewGrade.this, login.class);
+            Intent intent4=new Intent(HowToViewGrade.this, help.class);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

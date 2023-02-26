@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -37,7 +40,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.Calendar;
 
@@ -47,25 +49,28 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     private ProgressBar progressbar;
     private Button registeruser, date, tr;
     private ImageButton Back;
+    private CheckBox agree;
+    private Button agreebutn;
+    private EditText repeatpass;
     private FirebaseUser user;
     String gradesRetrieve = null;
 
 
-    private String units1 = "", units2 = null, units3 = null, units4 = null, units5 = null, units6 = null, units7 = null, units8 = null, units9 = null, units10 = null; //1y 1sem
-    private String units1_12 = null, units2_12 = null, units3_12 = null, units4_12 = null, units5_12 = null, units6_12 = null, units7_12 = null, units8_12 = null, units9_12 = null, units10_12 = null; //1st 2sem
-    private String units1_21 = null, units2_21 = null, units3_21 = null, units4_21 = null, units5_21 = null, units6_21 = null, units7_21 = null, units8_21 = null, units9_21 = null, units10_21 = null; //2y 1sem
-    private String units1_22 = null, units2_22 = null, units3_22 = null, units4_22 = null, units5_22 = null, units6_22 = null, units7_22 = null, units8_22 = null, units9_22 = null, units10_22 = null; //2y 2sem
-    private String units1_31 = null, units2_31 = null, units3_31 = null, units4_31 = null, units5_31 = null, units6_31 = null, units7_31 = null, units8_31 = null, units9_31 = null, units10_31 = null; //3y 1sem
-    private String units1_32 = null, units2_32 = null, units3_32 = null, units4_32 = null, units5_32 = null, units6_32 = null, units7_32 = null, units8_32 = null, units9_32 = null, units10_32 = null; //3y 2sem
-    private String units1_41 = null, units2_41 = null, units3_41 = null, units4_41 = null, units5_41 = null, units6_41 = null, units7_41 = null, units8_41 = null, units9_41 = null, units10_41 = null; //4y 1sem
-    private String units1_42 = null, units2_42 = null, units3_42 = null, units4_42 = null, units5_42 = null, units6_42 = null, units7_42 = null, units8_42 = null, units9_42 = null, units10_42 = null; //4y 2sem
+    private String units1 = "0", units2 = "0", units3 = "0", units4 = "0", units5 = "0", units6 = "0", units7 = "0", units8 = "0", units9 = "0", units10 ="0"; //1y 1sem
+    private String units1_12 = "0", units2_12 = "0", units3_12 = "0", units4_12 = "0", units5_12 = "0", units6_12 ="0", units7_12 = "0", units8_12 = "0", units9_12 ="0", units10_12 = "0"; //1st 2sem
+    private String units1_21 = "0", units2_21 = "0", units3_21 = "0", units4_21 ="0", units5_21 = "0", units6_21 = "0", units7_21 ="0", units8_21 ="0", units9_21 = "0", units10_21 = "0"; //2y 1sem
+    private String units1_22 = "0", units2_22 = "0", units3_22 ="0", units4_22 ="0", units5_22 = "0", units6_22 = "0", units7_22 ="0", units8_22 = "0", units9_22 = "0", units10_22 = "0"; //2y 2sem
+    private String units1_31 ="0", units2_31 = "0", units3_31 = "0", units4_31 ="0", units5_31 = "0", units6_31 = "0", units7_31 ="0", units8_31 = "0", units9_31 = "0", units10_31 = "0"; //3y 1sem
+    private String units1_32 = "0", units2_32 = "0", units3_32 = "0", units4_32 ="0", units5_32 = "0", units6_32 ="0", units7_32 = "0", units8_32 = "0", units9_32 = "0", units10_32 = "0"; //3y 2sem
+    private String units1_41 ="0", units2_41 = "0", units3_41 = "0", units4_41 ="0", units5_41 = "0", units6_41 = "0", units7_41 ="0", units8_41 = "0", units9_41 = "0", units10_41 = "0"; //4y 1sem
+    private String units1_42 ="0", units2_42 = "0", units3_42 ="0", units4_42 ="0", units5_42 = "0", units6_42 = "0", units7_42 = "0", units8_42 = "0", units9_42 = "0", units10_42 ="0"; //4y 2sem
 
     private String des1 = null, des2 = null, des3 = null, des4 = null, des5 = null, des6 = null, des7 = null, des8 = null, des9 = null, des10 = null; //1y 1sem
     private String des1_2 = null, des2_2 = null, des3_2 = null, des4_2 = null, des5_2 = null, des6_2 = null, des7_2 = null, des8_2 = null, des9_2 = null, des10_2 = null; //1y 2sem
     private String des1_21 = null, des2_21 = null, des3_21 = null, des4_21 = null, des5_21 = null, des6_21 = null, des7_21 = null, des8_21 = null, des9_21 = null, des10_21 = null; //2y 1sem
     private String des1_22 = null, des2_22 = null, des3_22 = null, des4_22 = null, des5_22 = null, des6_22 = null, des7_22 = null, des8_22 = null, des9_22, des10_22 = null; //2y 2sem
     private String des1_31 = null, des2_31 = null, des3_31 = null, des4_31 = null, des5_31 = null, des6_31 = null, des7_31 = null, des8_31 = null, des9_31 = null, des10_31 = null; //3y 1sem
-    private String des1_32 = null, des2_32 = null, des3_32 = null, des4_32 = null, des5_32 = null, des6_32 = null, des7_32 = null, des8_32 = null, des9_32 = null, des10_32 = null; //3y 2sem
+    private String des1_32=null, des2_32 = null, des3_32 = null, des4_32 = null, des5_32 = null, des6_32 = null, des7_32 = null, des8_32 = null, des9_32 = null, des10_32 = null; //3y 2sem
     private String des1_41 = null, des2_41 = null, des3_41 = null, des4_41 = null, des5_41 = null, des6_41 = null, des7_41 = null, des8_41 = null, des9_41 = null, des10_41 = null; //4y 1sem
     private String des1_42 = null, des2_42 = null, des3_42 = null, des4_42 = null, des5_42 = null, des6_42 = null, des7_42 = null, des8_42 = null, des9_42 = null, des10_42 = null; //4y 2sem
 
@@ -98,7 +103,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     DatabaseReference grade1 = FirebaseDatabase.getInstance().getReference("User");
     DatabaseReference course_curriculum = FirebaseDatabase.getInstance().getReference("course_curriculum");
     Student_Grades dataObj = new Student_Grades();
-        Student_Grades1_2 dataObj1 = new Student_Grades1_2();
+    Student_Grades1_2 dataObj1 = new Student_Grades1_2();
     Student_Grades2_1 dataObj21 = new Student_Grades2_1();
     Student_Grades2_2 dataObj22 = new Student_Grades2_2();
     Student_Grades3_1 dataObj31 = new Student_Grades3_1();
@@ -128,13 +133,14 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         num = findViewById(R.id.number);
         date = findViewById(R.id.date);
         fname = findViewById(R.id.fathername);
-       fname.setSingleLine(true);
+        fname.setSingleLine(true);
         emergencynumber = findViewById(R.id.emergencycontactnumber);
         mname = findViewById(R.id.mothername);
-       mname.setSingleLine(true);
+        mname.setSingleLine(true);
         emergencyname = findViewById(R.id.emergencyname);
         studentnumber = findViewById(R.id.studentnumber);
-
+        agree = findViewById(R.id.agree);
+        agreebutn=findViewById(R.id.readmore);
 
         registeruser = findViewById(R.id.registeruser);
         registeruser.setOnClickListener(this);
@@ -147,7 +153,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         DateButton.setText(getTodaysDate());
 
         progressbar = findViewById(R.id.progressbar);
-
+        repeatpass=findViewById(R.id.repeatpassword);
 
         course = findViewById(R.id.course);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.courses, android.R.layout.simple_spinner_item);
@@ -158,7 +164,27 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         profile_pic = findViewById(R.id.profile);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-
+        agreebutn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                androidx.appcompat.app.AlertDialog dlg=new androidx.appcompat.app.AlertDialog.Builder(registerUser.this)
+                        .setTitle("Your Form is ready to Print")
+                        .setMessage("Pre-registration and Grade Viewing app. PREGVA committed to protecting your privacy. This privacy explains how your personal information is collected, used, and disclosed by Pre-registration and Grade Viewing app.\n" +
+                                "This Privacy Policies apply to our application named Pre-registration and Grade Viewing App, and it's associated subdomains collectively, our 'Services'. By accessing or using our service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure   of your personal information as described in this Privacy Policy and our Terms of Service.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent();
+                                intent.setType("application/pdf");
+                                intent.setAction(Intent.ACTION_GET_CONTENT);
+                                startActivity(intent);
+                                dialog.dismiss();
+                            }
+                        })
+                        .create();
+                dlg.show();
+            }
+        });
         profile_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,6 +212,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     }
 
 
+
     private void registeruser() {
 
         String Email = emailadd.getText().toString().trim();
@@ -200,7 +227,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         String Student_number = studentnumber.getText().toString().trim();
         String Emergency_name = emergencyname.getText().toString().trim();
         String Emergency_number = emergencynumber.getText().toString().trim();
-        String Gender = "";
+        String RepeatPassword= repeatpass.getText().toString().trim();
         String verify="not verify";
 
 
@@ -240,6 +267,13 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         if (Birthday.isEmpty()) {
             date.setError("Birthday is required!");
             date.requestFocus();
+            return;
+
+        }
+
+        if (!Password.equals(RepeatPassword)) {
+            repeatpass.setError("Did not match!");
+            repeatpass.requestFocus();
             return;
 
         }
@@ -303,7 +337,6 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         } else if (Course.equals("Bachelor of Science in Business Administration")) {
             bsbagradeview();
             savegrades();
-            ;
         } else if (Course.equals("Bachelor of Science in Office Administration")) {
             BSOAgradeview();
             savegrades();
@@ -313,8 +346,17 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         } else if (Course.equals("Bachelor of Arts in Religious Education")) {
             abreedgradeview();
             savegrades();
+        } else if (Course.equals("Bachelor of Secondary Education Major in English")) {
+            bsed_egradeview();
+            savegrades();
+        }else if (Course.equals("Bachelor of Secondary Education Major in Math")) {
+            bsed_mgradeview();
+            savegrades();
+        } else if (Course.equals("Bachelor of Secondary Education Major in Science")) {
+            bsed_sgradeview();
+            savegrades();
         } else if (Course.equals("Bachelor of Elementary Education")) {
-            //bsedgradeview();
+            beedgradeview();
             savegrades();
         }
         if (Course.equals("--Select your Course--")) {
@@ -325,79 +367,121 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             errorText.requestFocus();
             return;
         }
+        if (Course.equals("Bachelor of Science in Computer Science")) {
+            Bscsgradeview();
+            savegrades();
+
+        }
 
 
-        progressbar.setVisibility(View.VISIBLE);
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUserWithEmailAndPassword(Email, Password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+        if(!agree.isChecked()){
+            agree.setError("Agree Terms and Conditions");
+            agree.requestFocus();
+            return;
+        }
 
-                            User user = new User(Name, Email, Student_number, Course, Address, Birthday, Contact_Number, Mother, Emergency_number, Father, Emergency_name,verify);
-                            FirebaseDatabase.getInstance().getReference("User")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            if (task.isSuccessful()) {
-                                                savegrades();
-                                                if (task.isSuccessful()) {
-                                                    //1st year
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("User");
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.child(Student_number).exists()) {
+                    studentnumber.setError("Student number is already registered");
+                    studentnumber.requestFocus();
+                    return;
+                } else {
 
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("first_sem").setValue(dataObj);
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("second_sem").setValue(dataObj1);
-                                                    //2nd year
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("second_year").child("first_sem").setValue(dataObj21);
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("second_year").child("second_sem").setValue(dataObj22);
 
-                                                    //3rd year
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("third_year").child("first_sem").setValue(dataObj31);
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("third_year").child("second_sem").setValue(dataObj32);
-                                                    //4th year
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("fourth_year").child("first_sem").setValue(dataObj41);
-                                                    grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("fourth_year").child("second_sem").setValue(dataObj42);
+                    progressbar.setVisibility(View.VISIBLE);
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    auth.createUserWithEmailAndPassword(Email, Password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
 
-                                                }else {
-                                                    progressbar.setVisibility(View.GONE);
-                                                    Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
+                                        User user = new User(Name, Email, Student_number, Course, Address, Birthday, Contact_Number, Mother, Emergency_number, Father, Emergency_name, verify);
+                                        FirebaseDatabase.getInstance().getReference("User")
+                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                                            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
 
-                                                };
+                                                                    if (task.isSuccessful()) {
 
-                                                Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(registerUser.this, login.class);
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                startActivity(intent);
-                                                finish();
-                                            } else {
-                                                Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
-                                            }
-                                            progressbar.setVisibility(View.GONE);
+                                                                       savegrades();
+                                                                        if (task.isSuccessful()) {
+                                                                            //1st year
 
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("first_sem").setValue(dataObj);
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("first_year").child("second_sem").setValue(dataObj1);
+                                                                            //2nd year
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("second_year").child("first_sem").setValue(dataObj21);
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("second_year").child("second_sem").setValue(dataObj22);
+
+                                                                            //3rd year
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("third_year").child("first_sem").setValue(dataObj31);
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("third_year").child("second_sem").setValue(dataObj32);
+                                                                            //4th year
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("fourth_year").child("first_sem").setValue(dataObj41);
+                                                                            grade1.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("grades").child("fourth_year").child("second_sem").setValue(dataObj42);
+
+                                                                        } else {
+                                                                            progressbar.setVisibility(View.GONE);
+                                                                            Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
+
+                                                                        }
+                                                                    }
+                                                                }
+                                                            });
+
+                                                            Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                                                            Intent intent = new Intent(registerUser.this, login.class);
+                                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        } else {
+                                                            Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
+                                                        }
+                                                        progressbar.setVisibility(View.GONE);
+
+                                                    }
+                                                });
+
+                                    } else {
+                                        try {
+                                            throw task.getException();
+                                        } catch (FirebaseAuthWeakPasswordException e) {
+                                            pass.setError("Your password is too week. User a mix of alphabets,numbers and special character");
+                                            pass.requestFocus();
+                                        } catch (FirebaseAuthInvalidCredentialsException e) {
+                                            emailadd.setError("Your email is invalid or already in user. Kindly re-enter.");
+                                            emailadd.requestFocus();
+                                        } catch (FirebaseAuthUserCollisionException e) {
+                                            emailadd.setError("User is already registered with this email.");
+                                            emailadd.requestFocus();
+                                        } catch (Exception e) {
+                                            Log.e(TAG, e.getMessage());
+                                            Toast.makeText(registerUser.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                         }
-                                    });
+                                        progressbar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                }
+            }
 
-                        } else {
-                            try {
-                                throw task.getException();
-                            } catch (FirebaseAuthWeakPasswordException e) {
-                                pass.setError("Your password is too week. User a mix of alphabets,numbers and special character");
-                                pass.requestFocus();
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                emailadd.setError("Your email is invalid or already in user. Kindly re-enter.");
-                                emailadd.requestFocus();
-                            } catch (FirebaseAuthUserCollisionException e) {
-                                emailadd.setError("User is already registered with this email.");
-                                emailadd.requestFocus();
-                            } catch (Exception e) {
-                                Log.e(TAG, e.getMessage());
-                                Toast.makeText(registerUser.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                            }
-                            progressbar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         initDatePicker();
         DateButton = findViewById(R.id.date);
@@ -481,6 +565,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    private void registered(){
 
     }
 
@@ -981,7 +1069,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -993,20 +1081,19 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
                 SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
-                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("code").getValue().toString();
-                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
-                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
-                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
-                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
-                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
-                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
-
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
 
                 des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
                 des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -1069,10 +1156,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 des4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
                 des5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
                 des6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+                des7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
 
                 des1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
                 des2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -1162,7 +1249,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -1270,7 +1357,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -1282,19 +1369,19 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
                 SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
-                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("code").getValue().toString();
-                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
-                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
-                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
-                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
-                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
-                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
 
 
                 des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
@@ -1358,10 +1445,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 des4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
                 des5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
                 des6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+                des7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
 
                 des1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
                 des2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -1451,7 +1538,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -1475,6 +1562,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
                 units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
 
             }
 
@@ -1558,7 +1646,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -1570,19 +1658,19 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
                 SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
-                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("code").getValue().toString();
-                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
-                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
-                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
-                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
-                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
-                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
 
 
                 des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
@@ -1739,7 +1827,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -1764,6 +1852,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
                 units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
+
             }
 
             @Override
@@ -1773,11 +1862,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-   public void bsed_mgradeview() {
-        course_curriculum.child("bsed").addListenerForSingleValueEvent(new ValueEventListener() {
+    public void bsed_mgradeview() {
+        course_curriculum.child("bsed_m").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
 
                 SC1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
                 SC2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -1845,7 +1933,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -1857,20 +1945,19 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
                 SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
-                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("code").getValue().toString();
-                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
-                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
-                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
-                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
-                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
-                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
-
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
 
                 des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
                 des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -1933,10 +2020,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 des4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
                 des5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
                 des6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
-                des1_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+                des7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
 
                 des1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
                 des2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -2026,7 +2113,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -2051,9 +2138,583 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
                 units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
+
             }
 
-                @Override
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void bsed_sgradeview() {
+        course_curriculum.child("bsed_s").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                SC1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                SC2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                SC3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                SC4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                SC5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC6 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC7 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC8 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC9 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                SC1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC2_2 = snapshot.child("first_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC3_2 = snapshot.child("first_year").child("second_sem").child("subject03").child("code").getValue().toString();
+                SC4_2 = snapshot.child("first_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_2 = snapshot.child("first_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_2 = snapshot.child("first_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                SC7_2 = snapshot.child("first_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_2 = snapshot.child("first_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_2 = snapshot.child("first_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_2 = snapshot.child("first_year").child("second_sem").child("subject10").child("code").getValue().toString();
+
+
+                SC1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC3_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC4_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC5_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC6_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC7_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC8_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                SC1_22 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                SC2_22 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                SC3_22 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                SC4_22 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                SC5_22 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC6_22 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC7_22 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC8_22 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC9_22 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10_22 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                SC1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("code").getValue().toString();
+                SC3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("code").getValue().toString();
+                SC6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("code").getValue().toString();
+                SC7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("code").getValue().toString();
+                SC8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("code").getValue().toString();
+                SC9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("code").getValue().toString();
+                SC10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("code").getValue().toString();
+
+                SC1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("code").getValue().toString();
+                SC4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
+
+
+                SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("code").getValue().toString();
+                SC3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("code").getValue().toString();
+                SC6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("code").getValue().toString();
+                // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
+                SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
+                SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
+
+
+
+                SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                //SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
+
+                des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
+                des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des7 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des8 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des9 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des6 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_2 = snapshot.child("first_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_2 = snapshot.child("first_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_2 = snapshot.child("first_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_2 = snapshot.child("first_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_2 = snapshot.child("first_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_2 = snapshot.child("first_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_2 = snapshot.child("first_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_2 = snapshot.child("first_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_2 = snapshot.child("first_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_21 = snapshot.child("second_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_22 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_22 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_22 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_22 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_22 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_22 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_22 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_22 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_22 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_22 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                des1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                units1 = snapshot.child("first_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2 = snapshot.child("first_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3 = snapshot.child("first_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4 = snapshot.child("first_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5 = snapshot.child("first_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6 = snapshot.child("first_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7 = snapshot.child("first_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8 = snapshot.child("first_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9 = snapshot.child("first_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10 = snapshot.child("first_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+                units1_12 = snapshot.child("first_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_12 = snapshot.child("first_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_12 = snapshot.child("first_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_12 = snapshot.child("first_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_12 = snapshot.child("first_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_12 = snapshot.child("first_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_12 = snapshot.child("first_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_12 = snapshot.child("first_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_12 = snapshot.child("first_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_12 = snapshot.child("first_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_21 = snapshot.child("second_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+                units1_22 = snapshot.child("second_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_22 = snapshot.child("second_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_22 = snapshot.child("second_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_22 = snapshot.child("second_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_22 = snapshot.child("second_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_22 = snapshot.child("second_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_22 = snapshot.child("second_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_22 = snapshot.child("second_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_22 = snapshot.child("second_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_22 = snapshot.child("second_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+
+                units1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+
+                units1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void bsed_egradeview() {
+        course_curriculum.child("bsed_e").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                SC1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                SC2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                SC3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                SC4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                SC5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC6 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC7 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC8 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC9 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                SC1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC2_2 = snapshot.child("first_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC3_2 = snapshot.child("first_year").child("second_sem").child("subject03").child("code").getValue().toString();
+                SC4_2 = snapshot.child("first_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_2 = snapshot.child("first_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_2 = snapshot.child("first_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                SC7_2 = snapshot.child("first_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_2 = snapshot.child("first_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_2 = snapshot.child("first_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_2 = snapshot.child("first_year").child("second_sem").child("subject10").child("code").getValue().toString();
+
+
+                SC1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC3_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC4_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC5_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC6_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC7_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC8_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                SC1_22 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                SC2_22 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                SC3_22 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                SC4_22 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                SC5_22 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                SC6_22 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                SC7_22 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                SC8_22 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                SC9_22 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                SC10_22 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                SC1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("code").getValue().toString();
+                SC3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("code").getValue().toString();
+                SC6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("code").getValue().toString();
+                SC7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("code").getValue().toString();
+                SC8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("code").getValue().toString();
+                SC9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("code").getValue().toString();
+                SC10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("code").getValue().toString();
+
+                SC1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("code").getValue().toString();
+                SC4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
+
+
+                SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
+                SC2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("code").getValue().toString();
+                SC3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("code").getValue().toString();
+                SC4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("code").getValue().toString();
+                SC5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("code").getValue().toString();
+                SC6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("code").getValue().toString();
+                // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
+                SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
+                SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
+
+
+                SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
+                SC3_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
+                SC4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("code").getValue().toString();
+                SC5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("code").getValue().toString();
+                SC6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
+                // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
+                SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
+                SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
+                SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("code").getValue().toString();
+
+
+                des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
+                des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des7 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des8 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des9 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des6 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_2 = snapshot.child("first_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_2 = snapshot.child("first_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_2 = snapshot.child("first_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_2 = snapshot.child("first_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_2 = snapshot.child("first_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_2 = snapshot.child("first_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_2 = snapshot.child("first_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_2 = snapshot.child("first_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_2 = snapshot.child("first_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_21 = snapshot.child("second_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_22 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_22 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_22 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_22 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_22 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_22 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_22 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_22 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_22 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_22 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                des1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+
+                des1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
+                des2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
+                des3_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("descriptive_title").getValue().toString();
+                des4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("descriptive_title").getValue().toString();
+                des5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("descriptive_title").getValue().toString();
+                des6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("descriptive_title").getValue().toString();
+                des7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("descriptive_title").getValue().toString();
+
+                units1 = snapshot.child("first_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2 = snapshot.child("first_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3 = snapshot.child("first_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4 = snapshot.child("first_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5 = snapshot.child("first_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6 = snapshot.child("first_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7 = snapshot.child("first_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8 = snapshot.child("first_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9 = snapshot.child("first_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10 = snapshot.child("first_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+                units1_12 = snapshot.child("first_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_12 = snapshot.child("first_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_12 = snapshot.child("first_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_12 = snapshot.child("first_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_12 = snapshot.child("first_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_12 = snapshot.child("first_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_12 = snapshot.child("first_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_12 = snapshot.child("first_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_12 = snapshot.child("first_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_12 = snapshot.child("first_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_21 = snapshot.child("second_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_21 = snapshot.child("second_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_21 = snapshot.child("second_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_21 = snapshot.child("second_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_21 = snapshot.child("second_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_21 = snapshot.child("second_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_21 = snapshot.child("second_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_21 = snapshot.child("second_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_21 = snapshot.child("second_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_21 = snapshot.child("second_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+                units1_22 = snapshot.child("second_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_22 = snapshot.child("second_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_22 = snapshot.child("second_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_22 = snapshot.child("second_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_22 = snapshot.child("second_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_22 = snapshot.child("second_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_22 = snapshot.child("second_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_22 = snapshot.child("second_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_22 = snapshot.child("second_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_22 = snapshot.child("second_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_31 = snapshot.child("third_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_31 = snapshot.child("third_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_31 = snapshot.child("third_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_31 = snapshot.child("third_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_31 = snapshot.child("third_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_31 = snapshot.child("third_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_31 = snapshot.child("third_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_31 = snapshot.child("third_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_31 = snapshot.child("third_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_31 = snapshot.child("third_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+
+                units1_32 = snapshot.child("third_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_32 = snapshot.child("third_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_32 = snapshot.child("third_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_32 = snapshot.child("third_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_32 = snapshot.child("third_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_32 = snapshot.child("third_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+                units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
+                units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
+                units3_41 = snapshot.child("fourth_year").child("first_sem").child("subject03").child("units").getValue().toString();
+                units4_41 = snapshot.child("fourth_year").child("first_sem").child("subject04").child("units").getValue().toString();
+                units5_41 = snapshot.child("fourth_year").child("first_sem").child("subject05").child("units").getValue().toString();
+                units6_41 = snapshot.child("fourth_year").child("first_sem").child("subject06").child("units").getValue().toString();
+                units7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("units").getValue().toString();
+                units8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("units").getValue().toString();
+                units9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("units").getValue().toString();
+                units10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("units").getValue().toString();
+
+
+                units1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("units").getValue().toString();
+                units2_42 = snapshot.child("fourth_year").child("second_sem").child("subject02").child("units").getValue().toString();
+                units3_42 = snapshot.child("fourth_year").child("second_sem").child("subject03").child("units").getValue().toString();
+                units4_42 = snapshot.child("fourth_year").child("second_sem").child("subject04").child("units").getValue().toString();
+                units5_42 = snapshot.child("fourth_year").child("second_sem").child("subject05").child("units").getValue().toString();
+                units6_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("units").getValue().toString();
+                units7_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("units").getValue().toString();
+                units8_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("units").getValue().toString();
+                units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
+                units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
+
+
+            }
+
+            @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
@@ -2065,7 +2726,6 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
                 SC1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString();
                 SC2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
                 SC3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
@@ -2132,7 +2792,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -2144,7 +2804,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
@@ -2155,7 +2815,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
                 SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
                 SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
@@ -2164,10 +2824,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 des3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
                 des4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
                 des5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
-                des7 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
-                des8 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
-                des9 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
-                des6 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des7 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
+                des8 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
+                des9 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
+                des6 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
                 des10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
 
                 des1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
@@ -2313,7 +2973,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -2338,9 +2998,10 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
                 units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
+
             }
 
-                @Override
+            @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
@@ -2348,7 +3009,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
     }
 
     private void abreedgradeview() {
-        course_curriculum.child("beed").addListenerForSingleValueEvent(new ValueEventListener() {
+        course_curriculum.child("abreed").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -2418,7 +3079,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 SC7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("code").getValue().toString();
                 SC9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("code").getValue().toString();
-                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject010").child("code").getValue().toString();
+                SC10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("code").getValue().toString();
@@ -2430,7 +3091,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_41 = snapshot.child("fourth_year").child("first_sem").child("subject07").child("code").getValue().toString();
                 SC8_41 = snapshot.child("fourth_year").child("first_sem").child("subject08").child("code").getValue().toString();
                 SC9_41 = snapshot.child("fourth_year").child("first_sem").child("subject09").child("code").getValue().toString();
-                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject010").child("code").getValue().toString();
+                SC10_41 = snapshot.child("fourth_year").child("first_sem").child("subject10").child("code").getValue().toString();
 
 
                 SC1_42 = snapshot.child("fourth_year").child("second_sem").child("subject01").child("code").getValue().toString();
@@ -2441,20 +3102,20 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 // SC7_42 = snapshot.child("fourth_year").child("second_sem").child("subject06").child("code").getValue().toString();
                 SC8_42 = snapshot.child("fourth_year").child("second_sem").child("subject07").child("code").getValue().toString();
                 SC9_42 = snapshot.child("fourth_year").child("second_sem").child("subject08").child("code").getValue().toString();
-                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject0").child("code").getValue().toString();
+                SC10_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("code").getValue().toString();
                 SC2_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("code").getValue().toString();
 
 
                 des1 = snapshot.child("first_year").child("first_sem").child("subject01").child("descriptive_title").getValue().toString().trim();
-                des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString();
-                des3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString();
-                des4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString();
-                des5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString();
-                des7 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString();
-                des8 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString();
-                des9 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString();
-                des6 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString();
-                des10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString();
+                des2 = snapshot.child("first_year").child("first_sem").child("subject02").child("descriptive_title").getValue().toString().trim();
+                des3 = snapshot.child("first_year").child("first_sem").child("subject03").child("descriptive_title").getValue().toString().trim();
+                des4 = snapshot.child("first_year").child("first_sem").child("subject04").child("descriptive_title").getValue().toString().trim();
+                des5 = snapshot.child("first_year").child("first_sem").child("subject05").child("descriptive_title").getValue().toString().trim();
+                des7 = snapshot.child("first_year").child("first_sem").child("subject07").child("descriptive_title").getValue().toString().trim();
+                des8 = snapshot.child("first_year").child("first_sem").child("subject08").child("descriptive_title").getValue().toString().trim();
+                des9 = snapshot.child("first_year").child("first_sem").child("subject09").child("descriptive_title").getValue().toString().trim();
+                des6 = snapshot.child("first_year").child("first_sem").child("subject06").child("descriptive_title").getValue().toString().trim();
+                des10 = snapshot.child("first_year").child("first_sem").child("subject10").child("descriptive_title").getValue().toString().trim();
 
                 des1_2 = snapshot.child("first_year").child("second_sem").child("subject01").child("descriptive_title").getValue().toString();
                 des2_2 = snapshot.child("first_year").child("second_sem").child("subject02").child("descriptive_title").getValue().toString();
@@ -2599,7 +3260,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units7_32 = snapshot.child("third_year").child("second_sem").child("subject07").child("units").getValue().toString();
                 units8_32 = snapshot.child("third_year").child("second_sem").child("subject08").child("units").getValue().toString();
                 units9_32 = snapshot.child("third_year").child("second_sem").child("subject09").child("units").getValue().toString();
-                units10_32 = snapshot.child("third_year").child("second_sem").child("subjec10").child("units").getValue().toString();
+                units10_32 = snapshot.child("third_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
                 units1_41 = snapshot.child("fourth_year").child("first_sem").child("subject01").child("units").getValue().toString();
                 units2_41 = snapshot.child("fourth_year").child("first_sem").child("subject02").child("units").getValue().toString();
@@ -2624,6 +3285,7 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                 units9_42 = snapshot.child("fourth_year").child("second_sem").child("subject09").child("units").getValue().toString();
                 units10_42 = snapshot.child("fourth_year").child("second_sem").child("subject10").child("units").getValue().toString();
 
+
             }
 
             @Override
@@ -2632,6 +3294,27 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+    private void showAlertDialog() {
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(registerUser.this);
+        builder.setTitle("Email Not Verified");
+        builder.setMessage("Please verify your email now.");
+
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            }
+        });
+        androidx.appcompat.app.AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
 }
 
 

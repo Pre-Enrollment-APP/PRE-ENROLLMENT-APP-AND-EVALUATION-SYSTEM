@@ -71,7 +71,7 @@ public class HowToReset extends AppCompatActivity implements NavigationView.OnNa
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToReset.this,HowToLogIn.class);
+                Intent intent=new Intent(HowToReset.this,HowLogin.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -79,7 +79,7 @@ public class HowToReset extends AppCompatActivity implements NavigationView.OnNa
         text3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToReset.this,HowToReset.class);
+                Intent intent=new Intent(HowToReset.this,help.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -178,6 +178,7 @@ public class HowToReset extends AppCompatActivity implements NavigationView.OnNa
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
 
 
@@ -187,20 +188,32 @@ public class HowToReset extends AppCompatActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(@NonNull MenuItem item) { switch (item.getItemId()){
         case R.id.nav_home:
             Intent intent2=new Intent(HowToReset.this,Home_Page.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent2);
             break;
         case R.id.nav_profile:
             Intent intent=new Intent(HowToReset.this,profile.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             break;
         case R.id.nav_about:
             Intent intent1=new Intent(HowToReset.this,About.class);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent1);
             break;
         case R.id.nav_help:
             break;
-        case R.id.contact_us:
-            Intent intent3=new Intent(HowToReset.this,contact_us.class);
+        case R.id.nav_contactus:
+            Intent intent3=new Intent(HowToReset.this,help.class);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent3);
             break;
         case R.id.nav_logout:

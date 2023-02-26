@@ -71,7 +71,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(help.this,HowToLogIn.class);
+                Intent intent=new Intent(help.this,HowLogin.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -199,7 +199,7 @@ public class help extends AppCompatActivity implements NavigationView.OnNavigati
             break;
         case R.id.nav_help:
             break;
-        case R.id.contact_us:
+        case R.id.nav_contactus:
             Intent intent3=new Intent(help.this,contact_us.class);
             startActivity(intent3);
             break;

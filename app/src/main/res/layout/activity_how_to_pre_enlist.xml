@@ -152,7 +152,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="How to Pre-Enlist"
+                android:text="How to Pre-Registration"
                 android:fontFamily="@font/arial"
                 android:textStyle="bold"
                 android:textSize="15dp"
@@ -180,25 +180,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Step 1"
-                android:fontFamily="@font/arial"
-                android:textStyle="bold"
-                android:textSize="13dp"
-                android:id="@+id/view1"
-                android:padding="10dp"
-                android:paddingStart="30dp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. Click Create an Account.\n2. Fill out the needed information required to accomplish your account.\n3. Tap Create.
-"
-                android:lineSpacingExtra="5dp"
-                android:fontFamily="@font/arial"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"
+                android:text="1. On your home page, click the Pre-Registration button.
+\n2. Select Course.
+\n3. Select Year and Semester.
+\n4. Enter School Year.
+\n5. Select Section.
+\n6. Input your Downpayment
+\n7. Click OK.
+\n8. Once you clicked OK, your Form is ready to print and it can be seen in which file location it is saved.
+\n9. Click OK.
 
-                android:textSize="12dp"
+"
+                android:lineSpacingExtra="7dp"
+                android:fontFamily="@font/arial"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+
+                android:textSize="13dp"
                 android:id="@+id/view2"
                 android:padding="10dp"
                 android:paddingStart="30dp"

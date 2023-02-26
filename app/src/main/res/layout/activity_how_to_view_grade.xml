@@ -207,28 +207,17 @@
             app:cardCornerRadius="5dp"
             app:cardElevation="12dp">
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Step 1"
-                android:fontFamily="@font/arial"
-                android:textStyle="bold"
-                android:textSize="13dp"
-                android:id="@+id/view1"
-                android:padding="10dp"
-                android:paddingStart="30dp"
-                android:textColor="@color/black"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1. Click Create an Account.\n2. Fill out the needed information required to accomplish your account.\n3. Tap Create.
-"
+                android:text="1. On your home page, click the View Grade button."
                 android:lineSpacingExtra="5dp"
                 android:fontFamily="@font/arial"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
 
-                android:textSize="12dp"
+                android:textSize="13dp"
                 android:id="@+id/view2"
                 android:padding="10dp"
                 android:paddingStart="30dp"

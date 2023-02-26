@@ -10,7 +10,7 @@ public class studentinfo{
     String yearAndsem;
     String birthday;
     String gmail;
-    String mop;
+    Integer mop;
     String section;
     String des1;
     String des2;
@@ -201,11 +201,11 @@ public class studentinfo{
         this.yearAndsem = yearAndsem;
     }
 
-    public String getMop() {
+    public Integer getMop() {
         return mop;
     }
 
-    public void setMop(String mop) {
+    public void setMop(Integer mop) {
         this.mop = mop;
     }
 

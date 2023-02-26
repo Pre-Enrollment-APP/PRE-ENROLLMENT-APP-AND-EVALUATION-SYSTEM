@@ -55,7 +55,7 @@ public class ViewingGrades extends AppCompatActivity{
         thirdyear=findViewById(R.id.thirdyear);
         fourthyear=findViewById(R.id.fourthyear);
 
-        back=findViewById(R.id.back);
+        back=findViewById(R.id.backs);
 
 
         des1 = findViewById(R.id.d1);
@@ -128,21 +128,24 @@ public class ViewingGrades extends AppCompatActivity{
                                 if (Course.equals("Bachelor of Science in Computer Science")) {
                                     BSCS1y1sem();
 
+
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y1sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y1sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                    none();
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y1sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y1sem();
+                                    none();
                                 }
                             }
 
@@ -163,16 +166,17 @@ public class ViewingGrades extends AppCompatActivity{
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y2sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y2sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                    none();
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y2sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y2sem();
@@ -1599,6 +1603,58 @@ public class ViewingGrades extends AppCompatActivity{
         swipeCotainer.setColorSchemeColors(android.R.color.holo_blue_dark, android.R.color.holo_blue_light, android.R.color.holo_blue_bright, android.R.color.holo_blue_dark);
     }
 
+    private void none(){
+
+        String subject1= des1.getText().toString().trim();
+        String subject2= des2.getText().toString().trim();
+        String subject3= des3.getText().toString().trim();
+        String subject4= des4.getText().toString().trim();
+        String subject5= des5.getText().toString().trim();
+        String subject6= des6.getText().toString().trim();
+        String subject7= des7.getText().toString().trim();
+        String subject8= des8.getText().toString().trim();
+        String subject9= des9.getText().toString().trim();
+        String subject10= des10.getText().toString().trim();
+
+
+
+        if(subject1.equals("none" )){
+            des1.setText("Descriptive Title");
+        }
+        if(subject2.equals("none" )){
+            des2.setText("Descriptive Title");
+        }
+        if(subject3.equals("none" )){
+            des3.setText("Descriptive Title");
+        }
+
+        if(subject4.equals("none" )){
+            des4.setText("Descriptive Title");
+        }
+
+        if(subject5.equals("none" )){
+            des5.setText("Descriptive Title");
+        }
+
+        if(subject6.equals("none" )){
+            des6.setText("Descriptive Title");
+        }
+
+        if(subject7.equals("none" )){
+            des7.setText("Descriptive Title");
+        }
+        if(subject8.equals("none" )){
+            des8.setText("Descriptive Title");
+        }
+
+        if(subject9.equals("none" )){
+            des9.setText("Descriptive Title");
+        }
+
+        if(subject10.equals("none" )){
+            des10.setText("Descriptive Title");
+        }
+    }
 
 }
 

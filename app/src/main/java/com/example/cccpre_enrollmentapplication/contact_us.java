@@ -147,7 +147,7 @@ public class contact_us extends AppCompatActivity implements NavigationView.OnNa
             Intent intent5=new Intent(contact_us.this,help.class);
             startActivity(intent5);
             break;
-        case R.id.contact_us:
+        case R.id.nav_contactus:
             Intent intent3=new Intent(contact_us.this,contact_us.class);
             startActivity(intent3);
             break;

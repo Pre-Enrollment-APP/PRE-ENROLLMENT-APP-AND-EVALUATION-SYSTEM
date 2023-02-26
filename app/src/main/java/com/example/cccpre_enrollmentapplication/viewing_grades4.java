@@ -128,16 +128,16 @@ public class viewing_grades4 extends AppCompatActivity{
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y1sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y1sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y1sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y1sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y1sem();
@@ -161,16 +161,16 @@ public class viewing_grades4 extends AppCompatActivity{
 
                                 }else if (Course.equals("Bachelor of Elementary Education")){
                                     BEED1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in English")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in English")){
                                     BSE_E1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Science")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Science")){
                                     BSE_S1y2sem();
                                 }
                                 else if (Course.equals("Bachelor of Science in Office Administration")){
                                     BSOA1y2sem();
                                 }  else if (Course.equals("Bachelor of Science in Business Administration")){
                                     BSBA1y2sem();
-                                }else if (Course.equals("Bachelor of Secondary Education in Math")){
+                                }else if (Course.equals("Bachelor of Secondary Education Major in Math")){
                                     BSE_M1y2sem();
                                 }else if (Course.equals("Bachelor of Arts in Religious Education")){
                                     ABREED1y2sem();
@@ -587,7 +587,7 @@ public class viewing_grades4 extends AppCompatActivity{
     public void  BSBA1y1sem(){
         //
 
-        databaseRef.child(userID).child("grades").child("first_year").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseRef.child(userID).child("grades").child("fourth_year").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -753,7 +753,7 @@ public class viewing_grades4 extends AppCompatActivity{
 
     public void  BSOA1y1sem(){
         //
-        databaseRef.child(userID).child("grades").child("first_year").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseRef.child(userID).child("grades").child("fourth_year").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -1162,7 +1162,7 @@ public class viewing_grades4 extends AppCompatActivity{
     }
     public void  BSE_M1y2sem(){
         //
-        databaseRef.child(userID).child("grades").child("first_year").addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseRef.child(userID).child("grades").child("fourth_year").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -1406,6 +1406,7 @@ public class viewing_grades4 extends AppCompatActivity{
             }
         });
     }
+
     public void  BSE_S1y1sem(){
         //
         databaseRef.child(userID).child("grades").child("fourth_year").addListenerForSingleValueEvent(new ValueEventListener() {

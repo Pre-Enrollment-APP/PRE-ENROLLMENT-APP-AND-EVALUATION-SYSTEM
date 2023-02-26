@@ -8,17 +8,16 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,8 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-
-public class HowToCreateAcc extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HowToChangeEmail extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageButton pre_enrollment;
     private ImageButton Evaluation;
     private FirebaseAuth auth;
@@ -48,11 +46,12 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     private ProgressBar progressbar;
     Toolbar toolbar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_how_to_create_acc);
-        //buttons
+        setContentView(R.layout.activity_how_to_change_email);
+
 
         text1=findViewById(R.id.card1);
         text2=findViewById(R.id.card2);
@@ -63,7 +62,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToCreateAcc.this,help.class);
+                Intent intent=new Intent(HowToChangeEmail.this,help.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -71,7 +70,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToCreateAcc.this,HowLogin.class);
+                Intent intent=new Intent(HowToChangeEmail.this,HowLogin.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -79,7 +78,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         text3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToCreateAcc.this,HowToReset.class);
+                Intent intent=new Intent(HowToChangeEmail.this,HowToReset.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -87,7 +86,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         text4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToCreateAcc.this,HowToPreEnlist.class);
+                Intent intent=new Intent(HowToChangeEmail.this,HowToPreEnlist.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -95,7 +94,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         text5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HowToCreateAcc.this,HowToViewGrade.class);
+                Intent intent=new Intent(HowToChangeEmail.this,HowToViewGrade.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
@@ -151,7 +150,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
                 }
 
                 if (uri != null) {
-                    Picasso.with(HowToCreateAcc.this).load(uri).into(profilepic);
+                    Picasso.with(HowToChangeEmail.this).load(uri).into(profilepic);
                 } else {
                     profilepic.setImageResource(R.drawable.user);
                 }
@@ -187,18 +186,18 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) { switch (item.getItemId()){
         case R.id.nav_home:
-            Intent intent2=new Intent(HowToCreateAcc.this,Home_Page.class);
+            Intent intent2=new Intent(HowToChangeEmail.this,Home_Page.class);
             startActivity(intent2);
             break;
         case R.id.nav_profile:
-            Intent intent=new Intent(HowToCreateAcc.this,profile.class);
+            Intent intent=new Intent(HowToChangeEmail.this,profile.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             break;
         case R.id.nav_about:
-            Intent intent1=new Intent(HowToCreateAcc.this,About.class);
+            Intent intent1=new Intent(HowToChangeEmail.this,About.class);
             intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -207,7 +206,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
         case R.id.nav_help:
             break;
         case R.id.nav_contactus:
-            Intent intent3=new Intent(HowToCreateAcc.this,contact_us.class);
+            Intent intent3=new Intent(HowToChangeEmail.this,contact_us.class);
             intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -215,7 +214,7 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
             break;
         case R.id.nav_logout:
             FirebaseAuth.getInstance().signOut();
-            Intent intent4=new Intent(HowToCreateAcc.this, login.class);
+            Intent intent4=new Intent(HowToChangeEmail.this, login.class);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -227,5 +226,10 @@ public class HowToCreateAcc extends AppCompatActivity implements NavigationView.
     }
         //drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }

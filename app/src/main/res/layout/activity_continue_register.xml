@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:backgroundTint="@color/white"
+    tools:context=".continueRegister">
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="5dp"
+        android:paddingStart="5dp"
+        android:layout_marginTop="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/backblack"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/arial"
+        android:text="Agree to PREGVA's terms and policies"
+        android:textColor="@color/bluegrey"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/arial"
+        android:lineSpacingExtra="10dp"
+        android:text="Pre-registration and Grade Viewing app. PREGVA committed to protecting your privacy. This privacy explains how your personal information is collected, used, and disclosed by Pre-registration and Grade Viewing app.
+This Privacy Policies apply to our application named Pre-registration and Grade Viewing App, and it's associated subdomains collectively, our 'Services'. By accessing or using our service, you signify that you have read, understood, and agree to our collection, storage, use, and disclosure   of your personal information as described in this Privacy Policy and our Terms of Service."
+        android:textColor="@color/bluegrey"
+        android:textSize="15dp" />
+
+
+</RelativeLayout>
+
