@@ -57,18 +57,17 @@
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Pre-Enrollmet and Grade Viewing"
-                    android:fontFamily="@font/arial"
-                    android:padding="10dp"
-                    android:textStyle="bold"
-                    android:textSize="15dp"
-                    android:id="@+id/text1"
-                    android:textAlignment="center"
-                    android:textColor="@color/darkyellow"/>
-
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arial"
+                android:padding="10dp"
+                android:text="Pre-Registration and Grade Viewing"
+                android:textAlignment="center"
+                android:textColor="@color/darkyellow"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
 
         </androidx.cardview.widget.CardView>
@@ -94,7 +93,7 @@
                 android:text="This mobile application serves as a communication tool for the institution's students, professors, chairpersons, and registrars employee regarding pre-enlistment and grade viewing.
 
 \n\nThe mobile application has two important functions:
-\n(1) Pre-Enlistment
+\n(1) Pre-Registration
 \nIt includes the subjects to be enrolled, units, and scheduled days and times.
 \n(2) Grade Viewing
 \nIt includes the grades in all subjects evey semester.

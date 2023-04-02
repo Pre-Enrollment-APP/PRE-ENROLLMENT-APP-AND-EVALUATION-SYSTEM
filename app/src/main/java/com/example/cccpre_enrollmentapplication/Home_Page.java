@@ -234,4 +234,7 @@ import com.squareup.picasso.Picasso;
             swipeCotainer.setColorSchemeColors(android.R.color.holo_blue_dark, android.R.color.holo_blue_light, android.R.color.holo_blue_bright, android.R.color.holo_blue_dark);
         }
 
+        private void evaluationform(){
+
+        }
 }

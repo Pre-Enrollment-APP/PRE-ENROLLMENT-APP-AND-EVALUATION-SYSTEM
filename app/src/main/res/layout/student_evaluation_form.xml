@@ -1,55 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bglight"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:layout_gravity="center">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cainta Catholic Colleges"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
 
-        <View
-            android:background="@color/blue"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            tools:ignore="MissingConstraints" />
-        <ImageButton
-            android:id="@+id/menuicon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="7dp"
-            android:background="?attr/selectableItemBackground"
-            android:scaleType="fitXY"
-            android:src="@drawable/menu"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:letterSpacing="0.2"
-            android:padding="10dp"
-            android:text="View Grades"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            tools:ignore="MissingConstraints" />
 
 
     </RelativeLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="55dp"
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

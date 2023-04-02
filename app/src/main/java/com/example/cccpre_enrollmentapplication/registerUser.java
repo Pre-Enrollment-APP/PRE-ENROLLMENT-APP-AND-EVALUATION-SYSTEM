@@ -405,11 +405,6 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                                                 .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
-                                                        if (task.isSuccessful()) {
-                                                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                                            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                                @Override
-                                                                public void onComplete(@NonNull Task<Void> task) {
 
                                                                     if (task.isSuccessful()) {
 
@@ -435,10 +430,8 @@ public class registerUser extends AppCompatActivity implements View.OnClickListe
                                                                             Toast.makeText(registerUser.this, "Failed to register! try again.", Toast.LENGTH_LONG).show();
 
                                                                         }
-                                                                    }
-                                                                }
-                                                            });
 
+                                                           // showAlertDialog();
                                                             Toast.makeText(registerUser.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                                             Intent intent = new Intent(registerUser.this, login.class);
                                                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
