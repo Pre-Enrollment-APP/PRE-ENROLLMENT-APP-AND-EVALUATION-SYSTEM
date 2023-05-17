@@ -9,8 +9,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.Window;
@@ -39,6 +45,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+
     public class Home_Page extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageButton pre_enrollment;
     private ImageButton Evaluation;
@@ -54,7 +62,10 @@ import com.squareup.picasso.Picasso;
     NavigationView navigationView;
     private ProgressBar progressbar;
     Toolbar toolbar;
+    Bitmap bmp, scaledbmp;
+    Button form;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +82,9 @@ import com.squareup.picasso.Picasso;
 
         pre_enrollment=findViewById(R.id.preenroll);
         Evaluation = findViewById(R.id.evaluate);
+        //form=findViewById(R.id.form);
+
+
         status=findViewById(R.id.status);
         databaseRef = FirebaseDatabase.getInstance().getReference("pre_enrollment");
                 //toolbar
@@ -158,8 +172,6 @@ import com.squareup.picasso.Picasso;
 
 
 
-
-
         navigationView.setNavigationItemSelectedListener(this);
     }
     private void Status_preenroll(){
@@ -235,6 +247,23 @@ import com.squareup.picasso.Picasso;
         }
 
         private void evaluationform(){
+            PdfDocument myPdfDocument = new PdfDocument();
+            Paint paint = new Paint();
+            PdfDocument.PageInfo myPageInfo1 = new PdfDocument.PageInfo.Builder(596, 842,  1).create();
+            PdfDocument.Page myPage1 = myPdfDocument.startPage(myPageInfo1);
+            Canvas canvas = myPage1.getCanvas();
+            //
+            File file  =new File ( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"/Evaluation.pdf");
+            canvas.drawBitmap(scaledbmp, (myPageInfo1.getPageWidth() / 2) - 20, 10, paint);
+            paint.setTextAlign(Paint.Align.CENTER);
+            paint.setTextSize(14.0f);
+            paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+            canvas.drawText("Cainta Catholic College", myPageInfo1.getPageWidth() / 2, 66, paint);
+            paint.setTextSize(11.0f);
+            paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.NORMAL));
+            canvas.drawText("A Bonifacio Avenue, Poblacion Cainta Rizal,", myPageInfo1.getPageWidth() / 2, 65, paint);
+
+
 
         }
 }

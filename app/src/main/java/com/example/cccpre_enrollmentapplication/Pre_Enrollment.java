@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.FileProvider;
 
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -14594,12 +14595,12 @@ public class Pre_Enrollment extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 printPDF();
-                File file  =new File ( Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"/From.pdf");
-                Uri uri=Uri.fromFile(file);
+                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "From.pdf");
+                Uri uri = FileProvider.getUriForFile(Pre_Enrollment.this, "com.your.package.name.fileprovider", file);
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setDataAndType(uri, "application/pdf");
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 try {
                     startActivity(intent);

@@ -24,7 +24,7 @@ import java.util.List;
 
 public class evaluationform extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+ /*   RecyclerView recyclerView;
     private ImageButton menu_page;
 
     @Override
@@ -66,5 +66,5 @@ public class evaluationform extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 }

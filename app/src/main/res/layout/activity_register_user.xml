@@ -33,7 +33,7 @@
         android:fontFamily="@font/arial"
         android:gravity="center"
         android:letterSpacing="0.2"
-        android:text="P.R.E.G.V.A"
+        android:text="PREGVA"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -54,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/arial"
-        android:text="Create An Account"
+        android:text="Create an Account"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
@@ -365,7 +365,7 @@
                 android:background="@drawable/editext_miniround"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/arial"
-                android:hint="Enter your Father's name."
+                android:hint="Enter your Father's name"
                 android:paddingLeft="20dp"
                 android:textColor="@color/black"
                 android:textSize="15dp" />

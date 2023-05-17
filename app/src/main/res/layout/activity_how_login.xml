@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. Once you have created an account, on your android phone, go to Pre-Enrollment and Grade Viewing Application.
+                android:text="1. Once you have created an account, on your android phone, go to Pre-Registration and Grade Viewing Application.
 \n2. Enter your Google Account email and password.
 \n3. Tap Log in.
 \n4. To finish creating your account, you need to verify your email.

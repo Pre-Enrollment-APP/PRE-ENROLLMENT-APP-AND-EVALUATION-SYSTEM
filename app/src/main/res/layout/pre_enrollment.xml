@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/arial"
             android:padding="7dp"
-            android:text="Pre-Enlistment"
+            android:text="Pre-Registration"
             android:textColor="@color/white"
             android:textSize="17dp" />
 
